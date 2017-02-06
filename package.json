@@ -1,0 +1,16 @@
+{
+  "name": "grafisch-atelier-den-bosch",
+  "version": "1.0.0",
+  "description": "PHP Website inclusief CMS voor het Grafisch Atelier in Den Bosch",
+  "main": "gulpfile.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://jelledb@github.com/Jelledb/GADenBosch.git"
+  },
+  "author": "Groep T",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jelledb/GADenBosch/issues"
+  },
+  "homepage": "https://github.com/Jelledb/GADenBosch#readme"
+}
