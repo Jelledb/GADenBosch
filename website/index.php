@@ -1,7 +1,10 @@
-<html>
-    <head></head>
-    <body>
-        <p>Deze website is echt ziek vet</p>
-        <p><?php echo "Even een bewijs dat PHP werkt!" ?></p>
-    </body>
-</html>
+<?php
+    require 'header.php'
+?>
+
+    <p>Deze website is echt vet</p>
+    <p><?php echo "Even een bewijs dat PHP werkt!" ?></p>
+
+<?php
+    require 'footer.php'
+?>

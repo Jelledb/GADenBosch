@@ -8,4 +8,9 @@ notifications:
 before_script:
  - npm install -g gulp
  - npm install
-script: gulp build
+script: gulp deploy
+
+branches:
+only:
+ - master
+ - develop
