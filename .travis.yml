@@ -4,6 +4,7 @@ node_js:
 
 notifications:
   slack: groept:pO9eZDlJOLZfbzZZzYLyUyAC
+  email: false
 
 before_script:
  - npm install -g gulp
