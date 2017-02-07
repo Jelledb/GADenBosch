@@ -12,5 +12,8 @@
   "bugs": {
     "url": "https://github.com/Jelledb/GADenBosch/issues"
   },
-  "homepage": "https://github.com/Jelledb/GADenBosch#readme"
+  "homepage": "https://github.com/Jelledb/GADenBosch#readme",
+  "dependencies": {
+    "gulp": "^3.9.1"
+  }
 }

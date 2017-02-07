@@ -1,7 +1,7 @@
 language: node_js
 node_js:
  - "node"
- 
+
 notifications:
   slack: groept:pO9eZDlJOLZfbzZZzYLyUyAC
 
