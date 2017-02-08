@@ -2,6 +2,18 @@ var gulp = require('gulp');
 var runSequence = require('run-sequence');
 var ftp = require('vinyl-ftp');
 var del = require('del');
+var htmlReplace = require('gulp-html-replace');
+
+gulp.task('copy-dependencies', function() {
+    gulp.src('build/header.php')
+        .pipe(htmlReplace({
+            'css': 'dependencies/bootstrap.css'
+        }))
+        .pipe(gulp.dest('build'));
+
+    return gulp.src('node_modules/bootstrap/dist/css/bootstrap.css')
+        .pipe(gulp.dest('build/dependencies'));
+});
 
 gulp.task('clean', function() {
     return del('build/**', { force: true });
@@ -44,6 +56,7 @@ gulp.task('default', function() {
     runSequence(
         'clean',
         'build',
+        'copy-dependencies',
         'deploy'
     );
 });

@@ -1,10 +1,14 @@
 <html>
 <head>
     <!-- Onze eigen CSS voor de website -->
-    <link rel="stylesheet" href="website_style.css" type="text/css">
+    <link rel="stylesheet" href="website_style.css">
 
     <!-- Bootstrap CSS voor makkelijke responsiveness -->
+    <!-- build:css -->
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <!-- endbuild -->
+
+    <!-- Bootstrap settings -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 </head>
 <body>
