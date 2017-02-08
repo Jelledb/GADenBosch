@@ -23,9 +23,9 @@ Hieronder staan een aantal stappen die je moet ondernemen om de ontwikkelomgevin
 ### Productie/Acceptatie
 Deze omgeving wordt per sprint geüpdatet. Hierop staat een volwassen en werkende versie van het product. Deze omgeving wordt automatisch geüpdatet als er een nieuwe commit komt op de `master` branch. Deze omgeving wordt gebruikt om nieuwe changes per sprint te laten zien aan de klant.
 
-Deze omgeving kun je hier vinden: http://student.aii.avans.nl/ICT/jburger
+Deze omgeving kun je hier vinden: http://student.aii.avans.nl/ICT/jburger/master
 
 ### Test
 Deze omgeving wordt vaker geüpdatet, namelijk bij elke commit op de `develop` branch. Deze omgeving is minder stabiel dan productie, maar ook deze omgeving zou af en toe gebruikt kunnen worden om te laten zien aan de klant. De klant kan dan makkelijk feedback geven.
 
-Deze omgeving kun je hier vinden: http://student.aii.avans.nl/ICT/jburger
+Deze omgeving kun je hier vinden: http://student.aii.avans.nl/ICT/jburger/develop
