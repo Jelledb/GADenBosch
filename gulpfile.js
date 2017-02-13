@@ -3,6 +3,7 @@ var runSequence = require('run-sequence');
 var ftp = require('vinyl-ftp');
 var del = require('del');
 var htmlReplace = require('gulp-html-replace');
+var args = require('yargs').argv;
 
 gulp.task('copy-dependencies', function() {
     gulp.src('build/header.php')
@@ -28,6 +29,12 @@ gulp.task('build', function() {
 });
 
 gulp.task('deploy', function() {
+    // get branch name
+    var branch = args.branch;
+    if (branch !== 'develop' && branch !== 'master') {
+        return;
+    }
+
     // steps for the deployment process
     console.log('Starting gulp deployment process');
 
@@ -41,12 +48,13 @@ gulp.task('deploy', function() {
     );
 
     // delete old stuff and add the new stuff afterwards
-    conn.rmdir('/ict/jburger/master', function(err) {
+    console.log('[Deployment] Removing old build.');
+    conn.rmdir('/ict/jburger/' + branch, function(err) {
         console.log(err);
-        console.log('Hoi');
 
+        console.log('[Deployment] Removed old build, deploying the new build.');
         gulp.src('build/**/*')
-            .pipe(conn.dest('/ict/jburger/master', function(err) {
+            .pipe(conn.dest('/ict/jburger/' + branch, function(err) {
                 console.log(err);
             }));
     });

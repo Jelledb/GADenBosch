@@ -20,5 +20,8 @@
     "gulp-html-replace": "^1.6.2",
     "run-sequence": "^1.2.2",
     "vinyl-ftp": "^0.6.0"
+  },
+  "devDependencies": {
+    "yargs": "^6.6.0"
   }
 }
