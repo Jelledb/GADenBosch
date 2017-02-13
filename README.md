@@ -20,6 +20,8 @@ Hieronder staan een aantal stappen die je moet ondernemen om de ontwikkelomgevin
 
 ## Live omgevingen
 
+Build-status: https://travis-ci.com/Jelledb/GADenBosch.svg?token=E3NExhogtpeWTpSrY88B&branch=develop
+
 ### Productie/Acceptatie
 Deze omgeving wordt per sprint geüpdatet. Hierop staat een volwassen en werkende versie van het product. Deze omgeving wordt automatisch geüpdatet als er een nieuwe commit komt op de `master` branch. Deze omgeving wordt gebruikt om nieuwe changes per sprint te laten zien aan de klant.
 
