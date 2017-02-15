@@ -13,7 +13,7 @@ class Connect
     function __construct()
     {
         $testdb  = new Database('jjeening_db');
-        $testdb->showAll();
+        $testdb->showAllUsers();
         $testdb->close();
 
     }
