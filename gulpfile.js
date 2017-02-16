@@ -8,9 +8,13 @@ var args = require('yargs').argv;
 gulp.task('copy-dependencies', function() {
     gulp.src('build/header.php')
         .pipe(htmlReplace({
-            'css': 'dependencies/bootstrap.css'
+            'css': 'dependencies/bootstrap.css',
+            'fa': 'dependencies/font-awesome/css/font-awesome.min.css'
         }))
         .pipe(gulp.dest('build'));
+
+    gulp.src('node_modules/font-awesome/**')
+        .pipe(gulp.dest('build/dependencies/font-awesome'));
 
     return gulp.src('node_modules/bootstrap/dist/css/bootstrap.css')
         .pipe(gulp.dest('build/dependencies'));

@@ -1,3 +1,12 @@
+/* Color codes
+   - Green from logo: #32ae45
+   - Red from logo: #f05a29
+   - Blue from logo: #01acf0
+   - Yellow from logo: #ffe400
+   - Pink from logo: #f3848d
+*/
+
+
 /* Remove the default margin */
 body {
     margin: 0;
@@ -13,10 +22,69 @@ nav {
 
 footer {
     width: 100%;
-    height: 30px;
-    background-color: #383838;
+    border-top: 1px solid #e7e7e7;
+    color: #5e5e5e;
+    padding-top: 10px;
+}
+
+.copyright-statement {
+    margin-top: 10px;
+    padding: 5px;
+    font-style: italic;
+}
+
+.social-media-channels {
+    margin-top: 10px;
+}
+
+.social-media-channels a {
+    color: gray;
+    padding: 4px;
+}
+.social-media-channels a:hover {
+    text-decoration: none;
+}
+
+.social-media-channels i {
+    font-size: 28px;
+    width: 48px;
+    border-radius: 50%;
+    background-color: #f05a29;
+    height: 48px;
+    text-align: center;
+    line-height: 46px;
     color: white;
 }
+<<<<<<< HEAD
 .orange-title{
     color: #ff8c00;
+=======
+
+.contact-footer .contact-icon {
+    color: #32ae45;
+    float: left;
+    width: 25px;
+}
+
+.contact-footer .contact-details {
+    text-align: left;
+}
+
+.contact-icon .fa-map-marker {
+    color: #f05a29;
+    margin-top: 9px;
+    margin-left: 3px;
+}
+
+.contact-icon .fa-envelope-o {
+    color: #01acf0;
+}
+
+.contact-icon .fa-phone {
+    margin-left: 2px;
+}
+
+.contact-footer > div {
+    padding: 7px;
+>>>>>>> refs/remotes/origin/develop
 }
