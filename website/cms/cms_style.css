@@ -3,5 +3,7 @@ body {
 }
 
 header {
-
+    background: linear-gradient(dodgerblue, white);
+    height: 100px;
+    
 }
