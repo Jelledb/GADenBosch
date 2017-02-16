@@ -6,15 +6,18 @@
  * Date: 2/9/2017
  * Time: 09:29
  */
-include 'Database.class.php';
+include 'User.php';
 
 class Connect
 {
     function __construct()
     {
-        $testdb  = new Database('jjeening_db');
-        $testdb->showAllUsers();
-        $testdb->close();
+        $us = new User();
+
+//       echo $us->login('aa','geheim');
+        $us->register("jan", "janssen", "vught","aaaa", "pietstraat" ,0, "jangmailcom", "geheim",0);
+        
+        
 
     }
 }
