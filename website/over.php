@@ -10,7 +10,7 @@
 
 
 
-            <div class="container">
+            <div class="container".col-md-12>
                 <h1 class="orange-title">Over ons</h1>
                 <h4>Doelstellingen Grafisch Atelier Den Bosch</h4>
                 <ol>
