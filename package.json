@@ -16,6 +16,7 @@
   "dependencies": {
     "bootstrap": "^3.3.7",
     "del": "^2.2.2",
+    "font-awesome": "^4.7.0",
     "gulp": "^3.9.1",
     "gulp-html-replace": "^1.6.2",
     "run-sequence": "^1.2.2",

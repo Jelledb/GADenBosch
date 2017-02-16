@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
     <!-- endbuild -->
 
+    <!-- Font Awesome voor iconen -->
+    <!-- build:fa -->
+    <link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css">
+    <!-- endbuild -->
+
     <!-- Bootstrap settings -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 </head>
