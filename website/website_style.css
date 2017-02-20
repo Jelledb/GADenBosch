@@ -12,6 +12,14 @@ body {
     margin: 0;
 }
 
+.kopje{
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.link{
+    color: #f3848d;
+}
 .navbar-nav.nav {
     float: right;
 }
