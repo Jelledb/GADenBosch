@@ -15,25 +15,29 @@
 
     <!-- Bootstrap settings -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <script>
+        function toggleNavigation() {
+
+        }
+    </script>
 </head>
 <body>
-<nav class="navbar navbar-default">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-brand">Grafisch Atelier</a>
-        </div>
-        <ul class="nav navbar-nav">
-            <li class="active">
-                <a href="nieuws.php">Nieuws</a>
-            </li>
-            <li>
-                <a href="over.php">Over</a>
-            </li>
-            <li>
-                <a href="">Webwinkel</a>
-            </li>
-            <li>
-                <a href="">Reserveren</a>
+<nav>
+    <div class="nav-logo">
+        <a href="/">
+            <img src="assets/logo.svg">
+        </a>
+    </div>
+    <div class="nav-elements">
+        <ul id="nav-list">
+            <li><a href="">home</a></li>
+            <li><a href="">nieuws</a></li>
+            <li><a href="">over</a></li>
+            <li><a href="">werkplaats</a></li>
+            <li><a href="">contact</a></li>
+            <li class="icon visible-md-block visible-lg-block">
+                <a href="javascript:void(0);" onclick="toggleNavigation()">&#9776;</a>
             </li>
         </ul>
     </div>

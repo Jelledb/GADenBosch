@@ -12,14 +12,6 @@ body {
     margin: 0;
 }
 
-.navbar-nav.nav {
-    float: right;
-}
-
-nav {
-    padding: 0 20px;
-}
-
 footer {
     width: 100%;
     border-top: 1px solid #e7e7e7;
@@ -82,4 +74,57 @@ footer {
 
 .contact-footer > div {
     padding: 7px;
+}
+
+nav {
+    height: 60px;
+    border-bottom: 1px solid #bbbbbb;
+    position: fixed;
+    width: 100%;
+    background: white;
+}
+
+.nav-logo {
+    float: left;
+}
+
+.nav-logo img {
+    height: 60px;
+    padding-left: 20px;
+}
+
+.nav-elements {
+    float: right;
+    height: inherit;
+}
+
+#nav-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    line-height: 60px;
+}
+
+#nav-list li {
+    float: left;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 200;
+}
+
+#nav-list li:hover {
+    background-color: rgba(255, 152, 0, 0.18);
+}
+
+#nav-list a {
+    color: #222222;
+    display: block;
+    height: 100%;
+    width: 100%;
+    padding: 0 18px;
+}
+
+#nav-list a:hover {
+    text-decoration: none;
 }
