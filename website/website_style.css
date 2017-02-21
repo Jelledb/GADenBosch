@@ -20,11 +20,10 @@ footer {
 }
 .container {
     padding-top: 70px;
-    margin-left: 50px;
 }
 
 .slider {
-    max-width: 900px;
+    width: 100%;
 }
 
 .copyright-statement {
