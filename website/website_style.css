@@ -111,10 +111,19 @@ nav {
     font-size: 18px;
     text-transform: uppercase;
     font-weight: 200;
+    /* Fade out effect */
+    -webkit-transition: all .4s ease-out;
+    -moz-transition: all .4s ease-out;
+    -o-transition: all .4s ease-out;
+    transition: all .4s ease-out;
 }
 
 #nav-list li:hover {
     background-color: rgba(255, 152, 0, 0.18);
+    -webkit-transition: all .4s ease;
+    -moz-transition: all .4s ease;
+    -o-transition: all .4s ease;
+    transition: all .4s ease;
 }
 
 #nav-list a {
