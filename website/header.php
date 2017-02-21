@@ -16,10 +16,10 @@
     <!-- Bootstrap settings -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 </head>
-<body>
-<nav class="navbar navbar-default">
+<body >
+<nav class="navbar navbar-default" >
     <div class="container-fluid">
-        <div class="navbar-header">
+        <div class="navbar-header ">
             <a class="navbar-brand">Grafisch Atelier</a>
         </div>
         <ul class="nav navbar-nav">
