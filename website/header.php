@@ -31,12 +31,26 @@
     </div>
     <div class="nav-elements">
         <ul id="nav-list">
-            <li><a href="">home</a></li>
-            <li><a href="">nieuws</a></li>
-            <li><a href="">over</a></li>
-            <li><a href="">werkplaats</a></li>
-            <li><a href="">contact</a></li>
-            <li class="icon visible-md-block visible-lg-block">
+            <li>
+                <a href="">home</a>
+            </li>
+            <li>
+                <a href="">nieuws</a>
+                <div class="splitter"></div>
+            </li>
+            <li>
+                <a href="">over ons</a>
+                <div class="splitter"></div>
+            </li>
+            <li>
+                <a href="">werkplaats</a>
+                <div class="splitter"></div>
+            </li>
+            <li>
+                <a href="">contact</a>
+                <div class="splitter"></div>
+            </li>
+            <li class="icon hidden-sm hidden-lg hidden-md">
                 <a href="javascript:void(0);" onclick="toggleNavigation()">&#9776;</a>
             </li>
         </ul>
