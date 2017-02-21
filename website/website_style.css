@@ -89,6 +89,7 @@ nav {
     position: fixed;
     width: 100%;
     background: white;
+    z-index: 99999;
 }
 
 .nav-logo {
