@@ -15,6 +15,12 @@
 
     <!-- Bootstrap settings -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <script>
+        function toggleNavigation() {
+
+        }
+    </script>
 </head>
 <body >
 <nav class="navbar navbar-default" >
@@ -27,13 +33,23 @@
                 <a href="nieuws.php">Nieuws</a>
             </li>
             <li>
-                <a href="over.php">Over</a>
+                <a href="">nieuws</a>
+                <div class="splitter"></div>
             </li>
             <li>
-                <a href="">Webwinkel</a>
+                <a href="">over ons</a>
+                <div class="splitter"></div>
             </li>
             <li>
-                <a href="">Reserveren</a>
+                <a href="">werkplaats</a>
+                <div class="splitter"></div>
+            </li>
+            <li>
+                <a href="">contact</a>
+                <div class="splitter"></div>
+            </li>
+            <li class="icon hidden-sm hidden-lg hidden-md">
+                <a href="javascript:void(0);" onclick="toggleNavigation()">&#9776;</a>
             </li>
         </ul>
     </div>
