@@ -111,6 +111,14 @@ nav {
     font-size: 18px;
     text-transform: uppercase;
     font-weight: 200;
+}
+
+#nav-list a {
+    color: #235a2b;
+    display: block;
+    height: 100%;
+    width: 100%;
+    padding: 0 18px;
     /* Fade out effect */
     -webkit-transition: all .4s ease-out;
     -moz-transition: all .4s ease-out;
@@ -118,20 +126,12 @@ nav {
     transition: all .4s ease-out;
 }
 
-#nav-list li:hover {
-    background-color: rgba(255, 152, 0, 0.18);
+#nav-list a:hover {
+    color: #f05a29;
     -webkit-transition: all .4s ease;
     -moz-transition: all .4s ease;
     -o-transition: all .4s ease;
     transition: all .4s ease;
-}
-
-#nav-list a {
-    color: #222222;
-    display: block;
-    height: 100%;
-    width: 100%;
-    padding: 0 18px;
 }
 
 #nav-list .splitter {
