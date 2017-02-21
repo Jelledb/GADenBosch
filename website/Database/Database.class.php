@@ -28,7 +28,7 @@ class Database extends mysqli
     }
 
 
-    public function showAll()
+    public function showAllUsers()
     {
 
         $result = $this->query('select * from user');
@@ -44,6 +44,11 @@ class Database extends mysqli
             echo "</tr>";
         }
         echo "</table>";
+    }
+
+    public function addUser($firstname,$lastname){
+
+        $this->query('INSERT INTO ,jjeening_db, user  ( id_user ,  firstname, lastname, isfriend) VALUES (NULL,'.$firstname ,$lastname.'0');
     }
 
 }

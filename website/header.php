@@ -22,17 +22,15 @@
         }
     </script>
 </head>
-<body>
-<nav>
-    <div class="nav-logo">
-        <a href="/">
-            <img src="assets/logo.svg">
-        </a>
-    </div>
-    <div class="nav-elements">
-        <ul id="nav-list">
-            <li>
-                <a href="">home</a>
+<body >
+<nav class="navbar navbar-default" >
+    <div class="container-fluid">
+        <div class="navbar-header ">
+            <a class="navbar-brand">Grafisch Atelier</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="active">
+                <a href="nieuws.php">Nieuws</a>
             </li>
             <li>
                 <a href="">nieuws</a>
