@@ -18,6 +18,14 @@ footer {
     color: #5e5e5e;
     padding-top: 10px;
 }
+.container {
+    padding-top: 70px;
+    margin-left: 50px;
+}
+
+.slider {
+    max-width: 900px;
+}
 
 .copyright-statement {
     margin-top: 10px;

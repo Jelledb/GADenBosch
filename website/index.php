@@ -15,17 +15,14 @@
             $('.bxslider').bxSlider({
                 mode: 'horizontal',
                 useCSS: false,
-                infiniteLoop: false,
-                hideControlOnEnd: true,
+                infiniteLoop: true,
+                hideControlOnEnd: false,
                 easing: 'easeOutBack',
                 speed: 1000
             });
         });
     </script>
-
 <div class="container">
-    <p>Deze website is echt vet</p>
-    <p>Deze website is echt vet</p>
     <div class="slider">
         <ul class="bxslider">
             <li><img src="Images/hp_home1.jpg" title="foto 1"/></li>
@@ -34,6 +31,8 @@
             <li><img src="Images/hp_werkplaatsfoto web 4.jpg" title="foto 4"/></li>
         </ul>
     </div>
+    <p>Deze website is echt vet</p>
+    <p>Deze website is echt vet</p>
     <p>Deze website is echt vet</p>
     <p>Deze website is echt vet</p>
     <p>Deze website is echt vet</p>
