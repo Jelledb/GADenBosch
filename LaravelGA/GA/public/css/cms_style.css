@@ -2,8 +2,15 @@ body {
     margin: 0;
 }
 
-header {
+.headers {
     background: linear-gradient(dodgerblue, white);
+
     height: 100px;
-    
+}
+h2{
+    color:white;
+}
+.titel{
+    color:white;
+    margin-left: 10px;
 }

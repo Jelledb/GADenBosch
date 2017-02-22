@@ -3,9 +3,9 @@
 
 <head>
     <!-- Onze eigen CSS voor de website -->
-    <link rel="stylesheet" href="website_style.css">
+    <!--<link rel="stylesheet" href="website_style.css">
     <!-- Onze eigen CSS voor CMS website -->
-    <link rel="stylesheet" href="cms_style.css" type="text/css">
+    <link rel="stylesheet" href="../../public/css/cms_style.css" type="text/css">
 
     <!-- Bootstrap CSS voor makkelijke responsiveness -->
     <!-- build:css -->
@@ -14,28 +14,26 @@
 
     <!-- Font Awesome voor iconen -->
     <!-- build:fa -->
-    <link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css">
+    <!--<link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css">
     <!-- endbuild -->
 
     <!-- Bootstrap settings -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 </head>
 <body>
-<header>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-2">
-                Links
+  <div class="row headers">
+            <div class="col-sm-3 titel">
+                <h2>Grafisch Atelier</h2>
             </div>
-            <div class="col-sm-8">
+            <div class="col-sm-6">
                 midden
             </div>
-            <div class="col-sm-2">
+            <div class="col-sm-3">
                 Rechts
             </div>
         </div>
-    </div>
-    <p>Dit is de header van het CMS</p>
-</header>
+
+
+
 </body>
 </html>
