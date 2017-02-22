@@ -1,0 +1,9 @@
+body {
+    margin: 0;
+}
+
+header {
+    background: linear-gradient(dodgerblue, white);
+    height: 100px;
+    
+}

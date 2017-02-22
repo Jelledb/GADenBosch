@@ -14,3 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('foo',['cmsHome' => 'CMShomeController@index']);
+
+Route::get('foo', function (){
+   return "Hello world!";
+});
