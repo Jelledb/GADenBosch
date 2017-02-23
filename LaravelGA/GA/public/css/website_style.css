@@ -1,0 +1,155 @@
+/* Color codes
+   - Green from logo: #32ae45
+   - Red from logo: #f05a29
+   - Blue from logo: #01acf0
+   - Yellow from logo: #ffe400
+   - Pink from logo: #f3848d
+*/
+
+
+/* Remove the default margin */
+body {
+    margin: 0;
+}
+
+footer {
+    width: 100%;
+    border-top: 1px solid #e7e7e7;
+    color: #5e5e5e;
+    padding-top: 10px;
+}
+.container {
+    padding-top: 70px;
+}
+
+.slider {
+    width: 100%;
+}
+
+.copyright-statement {
+    margin-top: 10px;
+    padding: 5px;
+    font-style: italic;
+}
+
+.social-media-channels {
+    margin-top: 10px;
+}
+
+.social-media-channels a {
+    color: gray;
+    padding: 4px;
+}
+.social-media-channels a:hover {
+    text-decoration: none;
+}
+
+.social-media-channels i {
+    font-size: 28px;
+    width: 48px;
+    border-radius: 50%;
+    background-color: #f05a29;
+    height: 48px;
+    text-align: center;
+    line-height: 46px;
+    color: white;
+}
+
+.contact-footer .contact-icon {
+    color: #32ae45;
+    float: left;
+    width: 25px;
+}
+
+.contact-footer .contact-details {
+    text-align: left;
+}
+
+.contact-icon .fa-map-marker {
+    color: #f05a29;
+    margin-top: 9px;
+    margin-left: 3px;
+}
+
+.contact-icon .fa-envelope-o {
+    color: #01acf0;
+}
+
+.contact-icon .fa-phone {
+    margin-left: 2px;
+}
+
+.contact-footer > div {
+    padding: 7px;
+}
+
+nav {
+    height: 60px;
+    border-bottom: 1px solid #bbbbbb;
+    position: fixed;
+    width: 100%;
+    background: white;
+    z-index: 99999;
+}
+
+.nav-logo {
+    float: left;
+}
+
+.nav-logo img {
+    height: 60px;
+    padding-left: 20px;
+}
+
+.nav-elements {
+    float: right;
+    height: inherit;
+}
+
+#nav-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    line-height: 60px;
+}
+
+#nav-list li {
+    float: left;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 200;
+}
+
+#nav-list a {
+    color: #235a2b;
+    display: block;
+    height: 100%;
+    width: 100%;
+    padding: 0 18px;
+    /* Fade out effect */
+    -webkit-transition: all .4s ease-out;
+    -moz-transition: all .4s ease-out;
+    -o-transition: all .4s ease-out;
+    transition: all .4s ease-out;
+}
+
+#nav-list a:hover {
+    color: #f05a29;
+    -webkit-transition: all .4s ease;
+    -moz-transition: all .4s ease;
+    -o-transition: all .4s ease;
+    transition: all .4s ease;
+}
+
+#nav-list .splitter {
+    width: 1px;
+    height: 28px;
+    display: inline-block;
+    margin-top: -44px;
+    background-color: #cccccc;
+}
+
+#nav-list a:hover, #nav-list a:focus {
+    text-decoration: none;
+}
