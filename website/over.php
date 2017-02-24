@@ -24,7 +24,7 @@
                     <li>Educatie en kennisoverdracht</li>
                     <li>Aanbieden van exposities en projecten met een relatie tot grafische kunst en vormgeving</li>
                 </ol>
-                    <a href="#" class="link">Jaarverslag 2015</a>
+                    <a href="http://gadenbosch.nl/pdfs/jaarverslag2015DEF.pdf" class="link">Jaarverslag 2015</a>
                         <br><br>
                 <p><strong>Coördinator:</strong> Kristel van Genugten<br>
                     <strong>Algemeen werkplaatsbeheer:</strong> Peter Koene<br>

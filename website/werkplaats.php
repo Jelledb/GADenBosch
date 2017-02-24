@@ -56,7 +56,7 @@
                         <strong>Te koop</strong><br>
                         Heb je materialen nodig? Dan kun je ook bij ons terecht.
                         Wij hebben vele soorten materialen voor alle technieken te koop.
-                    Zie hiervoor onze <a href="#" class="link">prijslijst</a>.
+                    Zie hiervoor onze <a href="http://fedha.nl/prijzen" class="link">prijslijst</a>.
                     <br><br>
                     </p>
                 </div>
@@ -104,7 +104,7 @@
                         Wisselende bezetting
                         <br><br>
                         <strong>Kosten</strong><br>
-                        <a href="#" class="link">Prijslijst 2017</a>
+                        <a href="http://fedha.nl/prijzen" class="link">Prijslijst 2017</a>
                     </p>
 
 
