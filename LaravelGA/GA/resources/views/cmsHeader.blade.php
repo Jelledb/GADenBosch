@@ -21,19 +21,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 </head>
 <body>
-  <div class="row headers">
-            <div class="col-sm-3 titel">
-                <h2>Grafisch Atelier</h2>
+<header class="headers">
+  <div class="row">
+            <div class="col-md-2">
+                <h2 class="titel">Grafisch Atelier</h2>
+
             </div>
-            <div class="col-sm-6">
-                midden
+            <div class="col-md-8">
+
             </div>
-            <div class="col-sm-3">
-                Rechts
+            <div class="col-md-2">
+
             </div>
         </div>
+    <div class="row">
+        <div class="col-md-2">
+            <h3 class="cmsName">CMS</h3>
+        </div>
+        <div class="col-md-8">
 
+        </div>
+        <div class="col-md-2">
 
+        </div>
+    </div>
+</header>
 
-</body>
-</html>

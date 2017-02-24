@@ -1,16 +1,23 @@
 body {
     margin: 0;
 }
-
 .headers {
     background: linear-gradient(dodgerblue, white);
-
-    height: 100px;
-}
-h2{
-    color:white;
+    padding-left: 10px;
 }
 .titel{
     color:white;
-    margin-left: 10px;
+    margin-bottom: 0px;
+    margin-top: 10px;
+}
+.cmsName{
+    color:#858585;
+    text-align: right;
+    margin-right: 15px;
+}
+.menu{
+
+}
+.home-screen{
+
 }
