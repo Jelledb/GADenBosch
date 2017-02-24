@@ -12,6 +12,21 @@ body {
     margin: 0;
 }
 
+.kopje{
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.link{
+    color: #f3848d;
+}
+.navbar-nav.nav {
+    float: right;
+}
+
+nav {
+    padding: 0 20px;
+}
 footer {
     width: 100%;
     border-top: 1px solid #e7e7e7;
