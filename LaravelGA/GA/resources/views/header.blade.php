@@ -1,7 +1,7 @@
 <html>
 <head>
     <!-- Onze eigen CSS voor de website -->
-    <link rel="stylesheet" href="website_style.css">
+    <link rel="stylesheet" href="../../public/css/website_style.css">
 
     <!-- Bootstrap CSS voor makkelijke responsiveness -->
     <!-- build:css -->
@@ -26,7 +26,7 @@
 <nav>
     <div class="nav-logo">
         <a href="/">
-            <img src="assets/logo.svg">
+            <img src="../assets/images/logo.svg">
         </a>
     </div>
     <div class="nav-elements">

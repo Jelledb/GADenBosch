@@ -27,6 +27,14 @@ footer {
     padding-top: 10px;
 }
 
+.container {
+    padding-top: 70px;
+}
+
+.slider {
+    width: 100%;
+}
+
 .copyright-statement {
     margin-top: 10px;
     padding: 5px;
@@ -82,4 +90,75 @@ footer {
 
 .contact-footer > div {
     padding: 7px;
+}
+
+nav {
+    height: 60px;
+    border-bottom: 1px solid #bbbbbb;
+    position: fixed;
+    width: 100%;
+    background: white;
+    z-index: 99999;
+}
+
+.nav-logo {
+    float: left;
+}
+
+.nav-logo img {
+    height: 60px;
+    padding-left: 20px;
+}
+
+.nav-elements {
+    float: right;
+    height: inherit;
+}
+
+#nav-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    line-height: 60px;
+}
+
+#nav-list li {
+    float: left;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 200;
+}
+
+#nav-list a {
+    color: #235a2b;
+    display: block;
+    height: 100%;
+    width: 100%;
+    padding: 0 18px;
+    /* Fade out effect */
+    -webkit-transition: all .4s ease-out;
+    -moz-transition: all .4s ease-out;
+    -o-transition: all .4s ease-out;
+    transition: all .4s ease-out;
+}
+
+#nav-list a:hover {
+    color: #f05a29;
+    -webkit-transition: all .4s ease;
+    -moz-transition: all .4s ease;
+    -o-transition: all .4s ease;
+    transition: all .4s ease;
+}
+
+#nav-list .splitter {
+    width: 1px;
+    height: 28px;
+    display: inline-block;
+    margin-top: -44px;
+    background-color: #cccccc;
+}
+
+#nav-list a:hover, #nav-list a:focus {
+    text-decoration: none;
 }
