@@ -12,12 +12,21 @@ body {
     margin: 0;
 }
 
+.navbar-nav.nav {
+    float: right;
+}
+
+nav {
+    padding: 0 20px;
+}
+
 footer {
     width: 100%;
     border-top: 1px solid #e7e7e7;
     color: #5e5e5e;
     padding-top: 10px;
 }
+
 .container {
     padding-top: 70px;
 }
