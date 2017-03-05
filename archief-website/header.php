@@ -1,7 +1,7 @@
 <html>
 <head>
     <!-- Onze eigen CSS voor de website -->
-    <link rel="stylesheet" href="website_style.css">
+    <link rel="stylesheet" href="../public/css/website_style.css">
 
     <!-- Bootstrap CSS voor makkelijke responsiveness -->
     <!-- build:css -->

@@ -1,27 +1,22 @@
 <!DOCTYPE html>
 <html lang="{{ config('app.locale') }}">
 <head>
+    <!-- Onze eigen CSS voor de website -->
+    <link rel="stylesheet" href="{{ asset('css/website_style.css') }}">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
+
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
-
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-
-    <!-- Onze eigen CSS voor de website -->
-    <link rel="stylesheet" href="website_style.css">
-    <!-- Onze eigen CSS voor CMS website -->
-    <link rel="stylesheet" href="../../public/css/_style.css" type="text/css">
-
-    <!-- Font Awesome voor iconen -->
-    <!-- build:fa -->
-    <link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css">
-    <!-- endbuild -->
 
     <!-- Bootstrap settings -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -46,7 +41,7 @@
     <nav>
         <div class="nav-logo">
             <a href="/">
-                <img src="../assets/images/logo.svg">
+                <img src="{{ asset('images/logo.svg') }}">
             </a>
         </div>
         <div class="nav-elements">

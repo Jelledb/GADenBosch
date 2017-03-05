@@ -2,7 +2,11 @@
 <html>
 <head>
     <!-- Onze eigen CSS voor het CMS -->
-    <link rel="stylesheet" href="../../public/css/cms_style.css" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/cms_style.css') }}">
+
+    <!-- Bootstrap CSS -->
+
+    <!-- Font Awesome -->
 
     <!-- Bootstrap CSS voor makkelijke responsiveness -->
     <!-- build:css -->

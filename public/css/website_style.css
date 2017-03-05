@@ -160,7 +160,6 @@ nav {
 #nav-list .splitter {
     width: 1px;
     height: 28px;
-    display: inline-block;
     margin-top: -44px;
     background-color: #cccccc;
 }
