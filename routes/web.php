@@ -11,8 +11,29 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+/* Website routes. */
+Route::get('/', function() {
+    return view('index');
+});
+
+Route::get('/nieuws', function() {
+    return view('nieuws');
+});
+
+Route::get('/over', function() {
+    return view('over');
+});
+
+Route::get('/werkplaats', function() {
+    return view('werkplaats');
+});
+
+/* CMS routes. */
+Route::group(array('prefix' => 'cms'), function() {
+    Route::get('/', function() {
+        return view('cms/index');
+    });
+    // TODO hier komt hoogstwaarschijnlijk nog meer bij
 });
 
 Auth::routes();
