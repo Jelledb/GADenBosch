@@ -2,7 +2,7 @@
 
 namespace App;
 
-
+// this class represents the model for the SESSION cart, NOT the the database cart.
 
 class Cart
 {
