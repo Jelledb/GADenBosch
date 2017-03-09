@@ -1,6 +1,17 @@
 @extends('layouts.cms')
 
 @section('content')
-<p>Hoi, hier kun je lekker inloggen. Leuk he?</p>
-<p><?php echo "Even een bewijs dat PHP werkt." ?></p>
+
+    <div class="row">
+        <div class="col-md-9 breadcrumb breadcrumbs"></div>
+        <div class="col-md-3"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-9">
+
+        </div>
+        <div class="col-md-3">
+
+         </div>
+    </div>
 @endsection
