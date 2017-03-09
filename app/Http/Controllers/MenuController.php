@@ -17,7 +17,7 @@ class MenuController extends Controller
         return view('werkplaats');
     }
     function getContact(){
-        return view('Contact');
+        return view('contact');
     }
     function getNieuws(){
         return view('nieuws');
