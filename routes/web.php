@@ -31,8 +31,10 @@ Route::get('/werkplaats', function() {
 /* CMS routes. */
 Route::group(array('prefix' => 'cms'), function() {
     Route::get('/', function() {
-        return view('cms/index');
+        return view('cms/cmslogin');
     });
+    Route::get('/startpagina', 'MenuController@cmshome');
+
     // TODO hier komt hoogstwaarschijnlijk nog meer bij
 });
 

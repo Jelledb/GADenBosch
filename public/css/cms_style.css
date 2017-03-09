@@ -1,0 +1,39 @@
+body {
+    margin: 0;
+}
+.headers {
+    background: linear-gradient(dodgerblue, white);
+    padding-left: 10px;
+}
+.titel{
+    color:white;
+    margin-bottom: 0px;
+    margin-top: 10px;
+}
+.cmsName{
+    color:#858585;
+    text-align: right;
+    margin-right: 15px;
+}
+.row{
+    margin-right: 0px !important;
+}
+.maincontent{
+    border-style: solid;
+    border-color: black;
+    border-radius: 1px;
+    border-width: 1px;
+}
+.padding-right{
+    padding-right: 0px !important;
+}
+.breadcrumbs{
+    border-color: black !important;
+    background-color: darkgray !important;
+    border: 1px !important;
+
+    margin-bottom: 0px !important;
+}
+.home-screen{
+
+}
