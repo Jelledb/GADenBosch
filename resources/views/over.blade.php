@@ -1,30 +1,35 @@
-<!DOCTYPE html>
-    <html>
-        <head>
-            <title>Over ons</title>
-            <?php
-            require 'header.php';
-            ?>
-        </head>
-        <body>
+@extends('layouts.website')
 
+@section('content')
 
-
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script>
+        function initialize() {
+            var map_canvas = document.getElementById('map_canvas');
+            var map_options = {
+                center: new google.maps.LatLng(51.69545, 5.29674),
+                zoom: 14,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            }
+            var map = new google.maps.Map(map_canvas, map_options)
+            var myLatlng = new google.maps.LatLng(51.69545, 5.29674);
+            var marker = new google.maps.Marker({
+                position: myLatlng,
+                map: map,
+                title:"Grafisch Atelier Den Bosch"
+            });
+        }
+        google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+    <div id="map_canvas"></div>
             <div class="container">
+
 
 
                 <div class="row">
 
                     <div class="col-md-4 col-md-offset-2">
-                        <h1>Over ons</h1>
-                        <br><br>
-                <strong>Doelstellingen Grafisch Atelier Den Bosch</strong>
-                <ol>
-                    <li>Het bieden van grafische werkplaatsfaciliteiten voor kunstenaars</li>
-                    <li>Educatie en kennisoverdracht</li>
-                    <li>Aanbieden van exposities en projecten met een relatie tot grafische kunst en vormgeving</li>
-                </ol>
-                    <a href="http://gadenbosch.nl/pdfs/jaarverslag2015DEF.pdf" target="_blank" class="link">Jaarverslag 2015</a>
+                        <h2>Contact</h2>
                         <br><br>
                 <p><strong>Coördinator:</strong> Kristel van Genugten<br>
                     <strong>Algemeen werkplaatsbeheer:</strong> Peter Koene<br>
@@ -38,22 +43,29 @@
                     - Roos Terra – bestuurslid<br>
                     - Peter Korsman – bestuurslid<br>
                     - Hans Derks – bestuurslid</p>
-                        <br><br>
+                        <br>
+
+                        <strong>Adres:</strong><br>
+                        Boschveldweg 471A<br>
+                        5211 VK ‘s-Hertogenbosch<br>
+                        T +31 (0)736 134 277<br>
+                        info@gadenbosch.nl<br>
+                        <br>
+                        - IBAN: NL21INGB0005275472<br>
+                        - BIC: INGBNL2A<br>
+                        - RSIN/Fiscaal nummer: 0082 31 424<br>
+                        - Kamer van Koophandel nummer: 41082086 0000<br>
+
                     </div>
 
                     <div class="col-md-4">
-                        <h1>Openingstijden</h1>
+                        <h2>Openingstijden</h2>
                         <br><br>
                         ma t/m vrij van 9:00 - 17:00<br>
                         za van 13:00 - 17:00
                         <br><br>
-                        <strong>GA Den Bosch gesloten:</strong><br>
-                        Op 27 en 28 februari 2017, tijdens carnaval, zijn wij gesloten.
+
                     </div>
                 </div>
             </div>
-        </body>
-    </html>
-<?php
-require 'footer.php';
-?>
+@endsection
