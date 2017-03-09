@@ -47,18 +47,18 @@
         <div class="nav-elements">
             <ul id="nav-list">
                 <li>
-                    <a href="">home</a>
+                    <a href="{{url('/')}}">home</a>
                 </li>
                 <li>
-                    <a href="">nieuws</a>
+                    <a href="{{url('/nieuws')}}">nieuws</a>
                     <div class="splitter"></div>
                 </li>
                 <li>
-                    <a href="">nieuws</a>
+                    <a href="{{url('/nieuws')}}">nieuws</a>
                     <div class="splitter"></div>
                 </li>
                 <li>
-                    <a href="">over ons</a>
+                    <a href="{{url('/over')}}">over ons</a>
                     <div class="splitter"></div>
                 </li>
                 <li>
@@ -66,7 +66,7 @@
                     <div class="splitter"></div>
                 </li>
                 <li>
-                    <a href="">contact</a>
+                    <a href="{{url('/contact')}}">contact</a>
                     <div class="splitter"></div>
                 </li>
                 <li class="icon hidden-sm hidden-lg hidden-md">
