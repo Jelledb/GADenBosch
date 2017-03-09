@@ -21,13 +21,25 @@
     <!-- Bootstrap settings -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-    <!-- jQuery library (served from Google) -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
     <!-- bxSlider Javascript file -->
-    <script src="../../archief-website/javascript/jquery.bxslider.min.js"></script>
-    <script src="../../archief-website/javascript/jquery.easing.1.3.js"></script>
+    <script src="{{asset('js/jquery.bxslider.min.js')}}"></script>
+    <script src="{{asset('js/jquery.easing.1.3.js')}}"></script>
     <!-- bxSlider CSS file -->
-    <link rel="stylesheet" type="text/css" href="../../archief-website/slider_style.css" />
+    <link rel="stylesheet" type="text/css" href="{{asset('css/slider_style.css')}}" />
+
+    <script type="text/javascript">
+        $(window).ready(function(){
+            $('.bxslider').bxSlider({
+                mode: 'horizontal',
+                useCSS: false,
+                infiniteLoop: true,
+                hideControlOnEnd: false,
+                easing: 'easeOutBack',
+                speed: 1000
+            });
+        });
+    </script>
 
     <!-- Scripts -->
     <script>
