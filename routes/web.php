@@ -28,10 +28,7 @@ Route::get('/werkplaats', function() {
     return view('werkplaats');
 });
 
-Route::get('/vriendenOverzicht', function() {
-    return view('friends.vriendenOverzicht');
-});
-
+Route::get('/vriendenOverzicht', 'MenuController@friendPage');
 
 
 /* CMS routes. */
