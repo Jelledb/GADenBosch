@@ -2,15 +2,34 @@
 
 @section('content')
 
-
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script>
+        function initialize() {
+            var map_canvas = document.getElementById('map_canvas');
+            var map_options = {
+                center: new google.maps.LatLng(51.69545, 5.29674),
+                zoom: 14,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            }
+            var map = new google.maps.Map(map_canvas, map_options)
+            var myLatlng = new google.maps.LatLng(51.69545, 5.29674);
+            var marker = new google.maps.Marker({
+                position: myLatlng,
+                map: map,
+                title:"Grafisch Atelier Den Bosch"
+            });
+        }
+        google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
 
             <div class="container">
+                <div id="map_canvas"></div>
 
 
                 <div class="row">
 
                     <div class="col-md-4 col-md-offset-2">
-                        <h1>Over ons</h1>
+                        <h2>Over ons</h2>
                         <br><br>
                         <p>Het Grafisch Atelier biedt een goed geoutilleerde werkplaats met deskundige ondersteuning om werk te vervaardigen en een omgeving om te experimenteren.
                         <br><br>
@@ -44,7 +63,7 @@
                     </div>
 
                     <div class="col-md-4">
-                        <h1>Openingstijden</h1>
+                        <h2>Openingstijden</h2>
                         <br><br>
                         ma t/m vrij van 9:00 - 17:00<br>
                         za van 13:00 - 17:00

@@ -11,6 +11,12 @@
 body {
     margin: 0;
 }
+#map_canvas {
+    width: 1150px;
+    height: 400px;
+    margin-top: 10%;
+    margin-bottom: 5%;
+}
 
 .kopje{
     font-weight: bold;
