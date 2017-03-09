@@ -12,6 +12,14 @@
                     <div class="col-md-4 col-md-offset-2">
                         <h1>Over ons</h1>
                         <br><br>
+                        <p>Het Grafisch Atelier biedt een goed geoutilleerde werkplaats met deskundige ondersteuning om werk te vervaardigen en een omgeving om te experimenteren.
+                        <br><br>
+                        Op de etsafdeling zijn twee etspersen aanwezig welke naast diepdruk ook worden gebruikt voor hoogdruk: hout- en linodruk.
+                        <br><br>
+                        De lithopers van het GA is een handaangedreven mechanische pers met een druktafel van 80x120 cm. Er zijn ruim voldoende lithostenen vain diverse maten aanwezig.
+                        <br><br>
+                            Er zijn 5 zeefdruktafels met vacuümafzuiging. Maximaal drukformaat A1. Er wordt in de zeefdrukwerkplaats alleen nog met milieuvriendelijke inkten voor papier en textiel op waterbasis gewerkt.</p>
+                        <br><br>
                 <strong>Doelstellingen Grafisch Atelier Den Bosch</strong>
                 <ol>
                     <li>Het bieden van grafische werkplaatsfaciliteiten voor kunstenaars</li>
