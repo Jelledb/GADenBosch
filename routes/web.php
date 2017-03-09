@@ -24,9 +24,7 @@ Route::get('/over', function() {
     return view('over');
 });
 
-Route::get('/werkplaats', function() {
-    return view('werkplaats');
-});
+Route::get('/werkplaats','MenuController@getWerkplaats');
 
 /* CMS routes. */
 Route::group(array('prefix' => 'cms'), function() {

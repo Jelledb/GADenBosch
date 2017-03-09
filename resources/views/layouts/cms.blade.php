@@ -50,7 +50,7 @@
                     <!--<small><b>MANAGEMENT</b></small>-->
                 </h5>
                 <ul class="nav nav-pills nav-stacked">
-                    <li><a href="#">Tentoonstellingen</a></li>
+                    <li><a href="#">Tentoonstellingen </a></li>
                     <li><a href="#">Workshops</a></li>
                     <li><a href="#">Nieuws</a></li>
                     <li><a href="#">Events</a></li>

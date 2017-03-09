@@ -62,7 +62,7 @@
                     <div class="splitter"></div>
                 </li>
                 <li>
-                    <a href="">werkplaats</a>
+                    <a href="{{url('/werkplaats')}}">werkplaats</a>
                     <div class="splitter"></div>
                 </li>
                 <li>
