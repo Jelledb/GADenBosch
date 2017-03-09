@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
+use App\Products;
 
 class MenuController extends Controller
 {
+
     function getIndex(){
         return view('index');
     }
@@ -24,8 +26,18 @@ class MenuController extends Controller
         return view('over');
     }
 
-    public function cmshome(){
+
+
+    public function cmshome()
+    {
+
         return view('cms/cmshome');
 
+    }
+    //
+
+    public function friendPage() {
+        $products = Products::all();
+        return view('friends.overzicht', compact('products'));
     }
 }

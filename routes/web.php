@@ -24,6 +24,9 @@ Route::get('/contact','MenuController@getContact');
 
 
 
+Route::get('/vriendenOverzicht', 'MenuController@friendPage');
+
+
 /* CMS routes. */
 Route::group(array('prefix' => 'cms'), function() {
     Route::get('/', function() {

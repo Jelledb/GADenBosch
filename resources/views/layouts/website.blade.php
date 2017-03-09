@@ -54,7 +54,11 @@
                     <div class="splitter"></div>
                 </li>
                 <li>
+
                     <a href="{{url('/nieuws')}}">nieuws</a>
+
+                    <a href=" {{ url('vriendenOverzicht') }} ">vrienden</a>
+
                     <div class="splitter"></div>
                 </li>
                 <li>
