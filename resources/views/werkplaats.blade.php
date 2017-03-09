@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-    <html>
-    <head>
-        <title>Werkplaats</title>
-        <?php
-        require 'header.php';
-        ?>
-        </head>
+@extends('layouts.website')
 
-        <body>
+@section('content')
 
 
 
@@ -111,8 +104,5 @@
                 </div>
                 </div>
             </div>
-        </body>
-    </html>
-<?php
-require 'footer.php';
-?>
+
+@endsection

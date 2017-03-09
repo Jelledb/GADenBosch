@@ -1,12 +1,6 @@
-<!DOCTYPE html>
-    <html>
-        <head>
-            <title>Over ons</title>
-            <?php
-            require 'header.php';
-            ?>
-        </head>
-        <body>
+@extends('layouts.website')
+
+@section('content')
 
 
 
@@ -52,8 +46,4 @@
                     </div>
                 </div>
             </div>
-        </body>
-    </html>
-<?php
-require 'footer.php';
-?>
+@endsection
