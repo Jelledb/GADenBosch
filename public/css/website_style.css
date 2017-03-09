@@ -41,6 +41,11 @@ footer {
     width: 100%;
 }
 
+.nieuws-overzicht-home {
+    position: absolute;
+
+}
+
 .copyright-statement {
     margin-top: 10px;
     padding: 5px;
