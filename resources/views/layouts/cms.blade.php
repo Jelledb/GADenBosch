@@ -10,12 +10,12 @@
 
     <!-- Bootstrap CSS voor makkelijke responsiveness -->
     <!-- build:css -->
-    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
     <!-- endbuild -->
 
     <!-- Font Awesome voor iconen -->
     <!-- build:fa -->
-    <!--<link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
     <!-- endbuild -->
 
     <!-- Bootstrap settings -->
@@ -34,17 +34,18 @@
         <div class="col-md-2">
             <h3 class="cmsName">CMS</h3>
         </div>
-        <div class="col-md-8"></div>
+        <div class="col-md-8 "></div>
         <div class="col-md-2"></div>
     </div>
+
 </header>
 <div class="menu">
     <div class="row">
-        <div class="col-md-2">
+        <div class="col-md-2 padding-right">
             <!-- It can be fixed with bootstrap affix http://getbootstrap.com/javascript/#affix-->
             <div id="sidebar" class="well sidebar-nav">
                 <ul class="nav nav-pills nav-stacked">
-                    <li class="active"><a href="#">Startpagina</a></li>
+                    <li class="active"><a href="cms/startpagina">Startpagina</a></li>
                 </ul>
                 <h5><i class="glyphicon"></i>
                     <!--<small><b>MANAGEMENT</b></small>-->
@@ -77,7 +78,8 @@
                 </ul>
             </div>
         </div>
-        <div class="col-md-10">
+        <div class="col-md-10 ">
+
             <!-- Content Here -->
             @yield('content')
         </div>
