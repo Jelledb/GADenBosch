@@ -1,11 +1,37 @@
 @extends('layouts.website')
 
 @section('content')
-
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <!-- bxSlider Javascript file -->
+    <script src="../../public/js/jquery.bxslider.min.js"></script>
+    <script src="../../public/js/jquery.easing.1.3.js"></script>
+    <!-- bxSlider CSS file -->
+    <link rel="stylesheet" type="text/css" href="../../public/css/slider_style.css" />
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.bxslider').bxSlider({
+                mode: 'horizontal',
+                useCSS: false,
+                infiniteLoop: true,
+                hideControlOnEnd: false,
+                easing: 'easeOutBack',
+                speed: 1000
+            });
+        });
+    </script>
 
 
 <div class="container ">
     <h2 class="col-md-offset-2">Werkplaats</h2>
+    <br><br>
+    <div class="slider">
+        <ul class="bxslider">
+            <li><img src="{{asset('images/wp1.jpg')}}" title="foto 1"/></li>
+        <!--<li><img src="{{asset('images/wp2.jpg')}}" title="foto 2"/></li>
+            <li><img src="{{asset('images/wp3.jpg')}}" title="foto 3"/></li>-->
+        </ul>
+    </div>
+
     <br><br>
     <div class="row">
         <div class="col-md-4 col-md-offset-2">
@@ -59,7 +85,7 @@
             <strong>Te koop</strong><br>
             Heb je materialen nodig? Dan kun je ook bij ons terecht.
             Wij hebben vele soorten materialen voor alle technieken te koop.
-            Zie hiervoor onze <a href="http://fedha.nl/prijzen" class="link">prijslijst</a>.
+            Zie hiervoor onze <a href="http://fedha.nl/prijzen" class="link" target="_blank">prijslijst</a>.
             <br><br>
             </p>
         </div>
@@ -107,7 +133,7 @@
             Wisselende bezetting
             <br><br>
             <strong>Kosten</strong><br>
-            <a href="http://fedha.nl/prijzen" class="link">Prijslijst 2017</a>
+            <a href="http://fedha.nl/prijzen" class="link" target="_blank">Prijslijst 2017</a>
             </p>
 
 
