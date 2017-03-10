@@ -39,7 +39,7 @@
                                             <br/>
                                             <?php echo '<img src="data:image/png;base64,' . base64_encode($product->image) . '"/>';  ?>
                                             <br/>
-                                            {{ $product->discription }}
+                                            {{ $product->description_short }}
                                             <br/>
                                             <?php
                                             $counter++;
@@ -52,12 +52,12 @@
 
                                         @endif
                             @endif
-                                @if((($counter % 3) != 0) and end($products))
-                                    <?php echo "</tr>" ?>
-                                @endif
+
                         @endforeach
 
-
+                            @if((($counter % 3) != 0) and end($products))
+                                <?php echo "</tr>" ?>
+                            @endif
                     </table>
                 </div>
             </div>

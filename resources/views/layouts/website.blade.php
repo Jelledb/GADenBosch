@@ -54,11 +54,7 @@
                     <div class="splitter"></div>
                 </li>
                 <li>
-
-                    <a href="{{url('/nieuws')}}">nieuws</a>
-
                     <a href=" {{ url('vriendenOverzicht') }} ">vrienden</a>
-
                     <div class="splitter"></div>
                 </li>
                 <li>
@@ -139,10 +135,5 @@
         <p>Copyright © 20<?php echo date("y") ?> Grafisch Atelier Den Bosch</p>
     </div>
 </footer>
-</body>
-</html>
-
-<!-- Scripts -->
-<script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>
