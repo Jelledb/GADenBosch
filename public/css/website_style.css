@@ -29,6 +29,11 @@ body {
     text-decoration: underline;
 }
 
+#werkplaats-btn{
+    background-color: #f05a29;
+    font-weight: bold;
+}
+
 .link{
     color: #f3848d;
 }
