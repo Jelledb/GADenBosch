@@ -135,7 +135,7 @@
             <strong>Kosten</strong><br>
             <a href="http://fedha.nl/prijzen" class="link" target="_blank">Prijslijst 2017</a>
             </p>
-
+            <button type="button" class="btn" id="werkplaats-btn">Reserveer een werkplaats</button>
 
         </div>
     </div>
