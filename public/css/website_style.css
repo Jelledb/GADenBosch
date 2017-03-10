@@ -56,6 +56,21 @@ footer {
 
 }
 
+.nieuws-nu {
+    border: 3px solid rgb(238,134,141);
+    padding: 10px;
+}
+
+.nieuws-workshops {
+    border: 3px solid rgb(0,174,239);
+    padding: 10px;
+}
+
+.nieuws-archief {
+    border: 3px solid rgb(241,90,41);
+    padding: 10px;
+}
+
 .copyright-statement {
     margin-top: 10px;
     padding: 5px;
