@@ -11,6 +11,10 @@
 body {
     margin: 0;
 }
+#map_canvas {
+    height: 400px;
+    padding-top: 60px;
+}
 
 .kopje{
     font-weight: bold;
@@ -39,6 +43,11 @@ footer {
 
 .slider {
     width: 100%;
+}
+
+.nieuws-overzicht-home {
+    position: absolute;
+
 }
 
 .copyright-statement {
@@ -166,4 +175,19 @@ nav {
 
 #nav-list a:hover, #nav-list a:focus {
     text-decoration: none;
+}
+
+.sponsors {
+    padding: 5px;
+    border: 4px solid transparent;
+    align-content: center;
+}
+
+.sponsors td, th{
+    text-align: center;
+}
+
+.sponsors img {
+    width: 200px;
+    height: 200px;
 }

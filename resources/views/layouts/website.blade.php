@@ -21,25 +21,13 @@
     <!-- Bootstrap settings -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
     <!-- bxSlider Javascript file -->
     <script src="{{asset('js/jquery.bxslider.min.js')}}"></script>
     <script src="{{asset('js/jquery.easing.1.3.js')}}"></script>
+    <script src="{{asset('js/slider-script.js')}}"></script>
     <!-- bxSlider CSS file -->
     <link rel="stylesheet" type="text/css" href="{{asset('css/slider_style.css')}}" />
-
-    <script type="text/javascript">
-        $(window).ready(function(){
-            $('.bxslider').bxSlider({
-                mode: 'horizontal',
-                useCSS: false,
-                infiniteLoop: true,
-                hideControlOnEnd: false,
-                easing: 'easeOutBack',
-                speed: 1000
-            });
-        });
-    </script>
 
     <!-- Scripts -->
     <script>
@@ -59,26 +47,30 @@
         <div class="nav-elements">
             <ul id="nav-list">
                 <li>
-                    <a href="">home</a>
+                    <a href="{{url('/')}}">home</a>
                 </li>
                 <li>
-                    <a href="">nieuws</a>
+                    <a href="{{url('/nieuws')}}">nieuws</a>
                     <div class="splitter"></div>
                 </li>
                 <li>
-                    <a href="">nieuws</a>
+
+                    <a href="{{url('/nieuws')}}">nieuws</a>
+
+                    <a href=" {{ url('vriendenOverzicht') }} ">vrienden</a>
+
                     <div class="splitter"></div>
                 </li>
                 <li>
-                    <a href="">over ons</a>
+                    <a href="{{url('/over')}}">over ons</a>
                     <div class="splitter"></div>
                 </li>
                 <li>
-                    <a href="">werkplaats</a>
+                    <a href="{{url('/werkplaats')}}">werkplaats</a>
                     <div class="splitter"></div>
                 </li>
                 <li>
-                    <a href="">contact</a>
+                    <a href="{{url('/contact')}}">contact</a>
                     <div class="splitter"></div>
                 </li>
                 <li class="icon hidden-sm hidden-lg hidden-md">
