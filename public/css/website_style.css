@@ -16,6 +16,14 @@ body {
     padding-top: 60px;
 }
 
+.contact-content{
+    padding: 5%;
+}
+
+#contact-container{
+    margin-bottom: 5%;
+}
+
 .kopje{
     font-weight: bold;
     text-decoration: underline;
