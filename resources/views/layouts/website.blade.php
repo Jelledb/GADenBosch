@@ -54,7 +54,11 @@
                     <div class="splitter"></div>
                 </li>
                 <li>
-                    <a href=" {{ url('vriendenOverzicht') }} ">vrienden</a>
+                    <a href="{{url('/shop')}}">webshop</a>
+                    <div class="splitter"></div>
+                </li>
+                <li>
+                    <a href=" {{ url('vriendWorden') }} ">vrienden</a>
                     <div class="splitter"></div>
                 </li>
                 <li>
@@ -63,6 +67,10 @@
                 </li>
                 <li>
                     <a href="{{url('/werkplaats')}}">werkplaats</a>
+                    <div class="splitter"></div>
+                </li>
+                <li>
+                    <a href="{{url('/sponsors')}}">sponsoren</a>
                     <div class="splitter"></div>
                 </li>
                 <li>
@@ -83,7 +91,8 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-4">
-                <p>Hier moet nog een sponsor komen</p>
+                {{--Commented. Ff vragen of hij dat ook wil hebben in de nieuwe site.--}}
+                {{--<p>Hier moet nog een sponsor komen</p>--}}
             </div>
             <div class="col-sm-4 contact-footer text-center">
                 <h3>Contact</h3>
@@ -127,12 +136,13 @@
                 </div>
             </div>
             <div class="col-sm-4">
-                <p>Hier moet ook een sponsor komen</p>
+                {{--Commented. Ff vragen of hij dat ook wil hebben in de nieuwe site.--}}
+                {{--<p>Hier moet ook een sponsor komen</p>--}}
             </div>
         </div>
     </div>
     <div class="copyright-statement text-center">
-        <p>Copyright © 20<?php echo date("y") ?> Grafisch Atelier Den Bosch</p>
+        <p>Copyright © 2017-20<?php echo date("y") ?> Grafisch Atelier Den Bosch</p>
     </div>
 </footer>
 </body>

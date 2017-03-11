@@ -1,9 +1,19 @@
-<?php
-    require 'header.php';
-?>
+@extends('layouts.website')
 
-<p>Dit is de nieuws pagina</p>
+@section('content')
 
-<?php
-    require 'footer.php';
-?>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="panel panel-default">
+                    <div>
+                        <h1 class="centerH1">Nieuwsberichten</h1>
+                        <br />
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+@endsection

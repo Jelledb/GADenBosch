@@ -22,9 +22,9 @@ Route::get('/werkplaats','MenuController@getWerkplaats');
 
 Route::get('/contact','MenuController@getContact');
 
+Route::get('/sponsors', 'SponsorController@getSponsorPage');
 
-
-Route::get('/vriendenOverzicht', 'MenuController@friendPage');
+Route::get('/vriendWorden', 'MenuController@friendPage');
 
 
 /* CMS routes. */

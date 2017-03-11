@@ -4,7 +4,7 @@
 
 
 
-    <div class="container" style="height: 1800px;">
+    <div class="container">
         <h2 class="col-md-offset-2">Werkplaats</h2>
         <br><br>
         <div class="slider">
