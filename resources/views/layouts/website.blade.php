@@ -54,7 +54,7 @@
                     <div class="splitter"></div>
                 </li>
                 <li>
-                    <a href="{{url('/shop')}}">webshop</a>
+                    <a href="{{url('/winkel')}}">winkel</a>
                     <div class="splitter"></div>
                 </li>
                 <li>

@@ -26,6 +26,7 @@ Route::get('/sponsors', 'SponsorController@getSponsorPage');
 
 Route::get('/vriendWorden', 'MenuController@friendPage');
 
+Route::get('/winkel', 'ShopController@getShopWindow');
 
 /* CMS routes. */
 Route::group(array('prefix' => 'cms'), function() {
