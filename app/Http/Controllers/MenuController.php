@@ -33,4 +33,7 @@ class MenuController extends Controller
     public function cmsNewEducatie(){
         return view('cms/cmseducatieWorkshop');
     }
+    public function cmsSchool(){
+        return view('cms/cmsEducatieScholen');
+    }
 }

@@ -59,6 +59,7 @@
                     <li><a href="{{ url('cms/news') }}">Nieuws</a></li>
                     <li><a href="#">Events</a></li>
                     <li><a href="{{ url('cms/educatie') }}">Educatie</a></li>
+                    <li><a href="{{ url('cms/Scholen') }}">Scholen</a></li>
                     <li><a href="#">Shop</a></li>
                     <li><a href="#">'Bedank'-pagina's</a></li>
                     <li><a href="#">Informatie</a></li>
