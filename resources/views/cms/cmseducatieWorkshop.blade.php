@@ -58,9 +58,11 @@
             <div class="col-md-3"></div>
         </div>
         <hr class="breeklijn"/>
-            prijs: <form>
-                <input type="text">
-        </form>
+            <p>Docent:</p>
+            <form><input type="text"></form>
+        <hr class="breeklijn"/>
+            <p>Prijs:</p>
+            <form><input type="text"></form>
         <hr class="breeklijn"/>
         <div class="row">
             <div class="col-md-3">
