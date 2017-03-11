@@ -30,11 +30,16 @@ Route::get('/werkplaats', function() {
 
 /* CMS routes. */
 Route::group(array('prefix' => 'cms'), function() {
-    Route::get('/', function() {
-        return view('cms/cmslogin');
-    });
-    Route::get('/startpagina', 'MenuController@cmshome');
 
+    Route::get('/startpagina', 'MenuController@cmshome');
+    Route::get('/tentoonstellingen', 'MenuController@cmsTentoonstellingen');
+    Route::get('/workshop', 'MenuController@cmsWorkshop');
+    Route::get('/lijsttentoonstellingen', 'MenuController@cmslijstTentoonstellingen');
+    Route::get('/workshops', 'MenuController@cmsworkshops');
+    Route::get('/newNews', 'MenuController@cmsnewnews');
+    Route::get('/news', 'MenuController@cmsnews');
+    Route::get('/educatie', 'MenuController@cmsEducatie');
+    Route::get('/newEducatie', 'MenuController@cmsNewEducatie');
     // TODO hier komt hoogstwaarschijnlijk nog meer bij
 });
 

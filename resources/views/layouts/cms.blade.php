@@ -18,6 +18,9 @@
     <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
     <!-- endbuild -->
 
+
+    <!-- bxSlider Javascript file -->
+
     <!-- Bootstrap settings -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 </head>
@@ -45,17 +48,17 @@
             <!-- It can be fixed with bootstrap affix http://getbootstrap.com/javascript/#affix-->
             <div id="sidebar" class="well sidebar-nav">
                 <ul class="nav nav-pills nav-stacked">
-                    <li class="active"><a href="cms/startpagina">Startpagina</a></li>
+                    <li><a href="{{ url('cms/startpagina') }}">Startpagina</a></li>
                 </ul>
                 <h5><i class="glyphicon"></i>
                     <!--<small><b>MANAGEMENT</b></small>-->
                 </h5>
                 <ul class="nav nav-pills nav-stacked">
-                    <li><a href="#">Tentoonstellingen</a></li>
-                    <li><a href="#">Workshops</a></li>
-                    <li><a href="#">Nieuws</a></li>
+                    <li><a href="{{ url('cms/lijsttentoonstellingen') }}">Tentoonstellingen</a></li>
+                    <li><a href="{{ url('cms/workshops') }}">Workshops</a></li>
+                    <li><a href="{{ url('cms/news') }}">Nieuws</a></li>
                     <li><a href="#">Events</a></li>
-                    <li><a href="#">Educatie</a></li>
+                    <li><a href="{{ url('cms/educatie') }}">Educatie</a></li>
                     <li><a href="#">Shop</a></li>
                     <li><a href="#">'Bedank'-pagina's</a></li>
                     <li><a href="#">Informatie</a></li>
