@@ -79,6 +79,16 @@ footer {
     padding: 10px;
 }
 
+.textblok {
+    position: absolute;
+    top: 600px;
+}
+
+.leesmeer {
+    bottom: 2px;
+    position: absolute;
+}
+
 .nieuws-archief {
     border: 3px solid rgb(241,90,41);
     padding: 10px;
