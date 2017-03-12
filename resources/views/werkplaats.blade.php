@@ -3,7 +3,6 @@
 @section('content')
 
 
-
     <div class="container">
         <h2 class="col-md-offset-2">Werkplaats</h2>
         <br><br>
@@ -14,30 +13,22 @@
                 <li><img src="{{asset('images/wp3.jpg')}}" title="foto 3"/></li>
             </ul>
         </div>
-
         <br><br>
         <div class="row">
             <div class="col-md-4 col-md-offset-2">
 
                 <p><strong>Welkom in de mooiste grafiekwerkplaats van Nederland!</strong><br><br>
 
-                    Het Grafisch Atelier biedt kunstenaars, vormgevers en creatieven een goed geoutilleerde werkplaats
-                    met deskundige ondersteuning en een omgeving om te experimenteren. In het GA wordt zoveel mogelijk
-                    gewerkt met non-toxic materialen.
+                    Het Grafisch Atelier biedt kunstenaars, vormgevers en creatieven een goed geoutilleerde werkplaats met deskundige ondersteuning en een omgeving om te experimenteren. In het GA wordt zoveel mogelijk gewerkt met non-toxic materialen.
                     <br><br>
                     <strong>Aan de slag</strong><br>
-                    Reserveer van te voren een werkplek. Dit kan telefonisch, via de email of middels de agenda die in
-                    de werkplaats ligt. Kun je niet komen? Meld je dan af. Anders zijn wij genoodzaakt kosten in
-                    rekening te brengen voor de tijd dat je de werkplek hebt gereserveerd.
+                    Reserveer van te voren een werkplek. Dit kan telefonisch, via de email of middels de agenda die in de werkplaats ligt. Kun je niet komen? Meld je dan af. Anders zijn wij genoodzaakt kosten in rekening te brengen voor de tijd dat je de werkplek hebt gereserveerd.
                     <br><br>
                     <strong>Voor het eerst aan de slag in het GA?</strong><br>
-                    Je bent verplicht een introductie te volgen. Als je in het GA een cursus hebt gevolgd in de techniek
-                    waarin je aan de slag gaat, dan staat dit gelijk aan een introductie.
+                    Je bent verplicht een introductie te volgen. Als je in het GA een cursus hebt gevolgd in de techniek waarin je aan de slag gaat, dan staat dit gelijk aan een introductie.
                     <br><br>
                     <strong>Zeefdruk</strong><br>
-                    Er zijn 5 zeefdruktafels met vacuümafzuiging: een zeefdruktafel voor maximaal A1 formaat, drie
-                    tafels voor A2 formaat en een tafel voor A3 formaat. Verder hebben we een grote collectie zeeframen
-                    in allerlei formaten.
+                    Er zijn 5 zeefdruktafels met vacuümafzuiging: een zeefdruktafel voor maximaal A1 formaat, drie tafels voor A2 formaat  en een tafel voor A3 formaat. Verder hebben we een grote collectie zeeframen in allerlei formaten.
                     <br><br>
                     <strong>Hoogdruk en diepdruk</strong><br>
                     Op de etsafdeling zijn twee etspersen aanwezig, een van 100 x 200 cm en een van 100 x 60 cm.
@@ -50,35 +41,27 @@
                     <li>Polymeer</li>
                     <li>Materiaaldruk</li>
                     <li>Houtdruk</li>
-                </ul>
-                <br>
+                </ul><br>
                 Voor inbijten van zink- en koperplaten wordt gebruik gemaakt van kopersulfaat en ijzerchloride.
                 <br><br>
                 <strong>Steendruk</strong><br>
-                De lithopers van het GA is een handaangedreven mechanische pers, met een druktafel van 80 x 120 cm. Er
-                zijn zo’n 50 lithostenen aanwezig, van diverse maten.
+                De lithopers van het GA is een handaangedreven mechanische pers, met een druktafel van 80 x 120 cm. Er zijn zo’n 50 lithostenen aanwezig, van diverse maten.
                 <br><br>
                 <strong>Cyanotype & gomdruk</strong><br>
                 Voor het maken van cyanotype en gomdruk hebben wij een mooie DOKA, belichter en diverse papieren.
                 <br><br>
                 <strong>Kopieermachine</strong><br>
-                Met de kopieermachine kunnen transparanten tot A3 formaat worden gemaak. Ook grotere formaten zijn in
-                overleg mogelijk. Neem hiervoor contact op met het GA.
+                Met de kopieermachine kunnen transparanten tot A3 formaat worden gemaak. Ook grotere formaten zijn in overleg mogelijk. Neem hiervoor contact op met het GA.
                 <br><br>
                 <strong>Te koop</strong><br>
                 Heb je materialen nodig? Dan kun je ook bij ons terecht.
                 Wij hebben vele soorten materialen voor alle technieken te koop.
-                Zie hiervoor onze <a href="http://fedha.nl/prijzen" class="link" target="_blank">prijslijst</a>.
+                Zie hiervoor onze <a href="http://fedha.nl/prijzen" class="link">prijslijst</a>.
                 <br><br>
                 </p>
             </div>
             <div class="col-md-4">
                 <p>
-
-                    <strong>Openingstijden werkplaats:</strong><br>
-                    ma t/m vrij van 9:00 - 17:00<br>
-                    za van 13:00 - 17:00
-                    <br><br>
                 <h4 class="kopje">Beheerders</h4>
 
                 <strong>Maandagochtend:</strong><br>
@@ -116,12 +99,14 @@
                 Wisselende bezetting
                 <br><br>
                 <strong>Kosten</strong><br>
-                <a href="http://fedha.nl/prijzen" class="link" target="_blank">Prijslijst 2017</a>
+                <a href="http://fedha.nl/prijzen" class="link">Prijslijst 2017</a><br><br>
+                <button type="button" class="btn" id="werkplaats-btn">Reserveer een werkplaats</button>
                 </p>
 
 
             </div>
         </div>
     </div>
+
 
 @endsection

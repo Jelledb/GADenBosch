@@ -22,9 +22,22 @@ body {
     padding-top: 60px;
 }
 
+.contact-content, .over-content{
+    padding: 5%;
+}
+
+#contact-container{
+    margin-bottom: 5%;
+}
+
 .kopje{
     font-weight: bold;
     text-decoration: underline;
+}
+
+#werkplaats-btn{
+    background-color: #f05a29;
+    font-weight: bold;
 }
 
 .link{
