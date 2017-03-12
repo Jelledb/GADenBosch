@@ -54,9 +54,11 @@
                     <!--<small><b>MANAGEMENT</b></small>-->
                 </h5>
                 <ul class="nav nav-pills nav-stacked">
+
                     <li><a href="{{ url('cms/lijsttentoonstellingen') }}">Tentoonstellingen</a></li>
                     <li><a href="{{ url('cms/workshops') }}">Workshops</a></li>
                     <li><a href="{{ url('cms/news') }}">Nieuws</a></li>
+
                     <li><a href="#">Events</a></li>
                     <li><a href="{{ url('cms/educatie') }}">Educatie</a></li>
                     <li><a href="{{ url('cms/Scholen') }}">Scholen</a></li>

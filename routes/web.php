@@ -12,21 +12,21 @@
 */
 
 /* Website routes. */
-Route::get('/', function() {
-    return view('index');
-});
+Route::get('/','MenuController@getIndex');
 
-Route::get('/nieuws', function() {
-    return view('nieuws');
-});
+Route::get('/nieuws','MenuController@getNieuws');
 
-Route::get('/over', function() {
-    return view('over');
-});
+Route::get('/over','MenuController@getOverons');
 
-Route::get('/werkplaats', function() {
-    return view('werkplaats');
-});
+Route::get('/werkplaats','MenuController@getWerkplaats');
+
+Route::get('/contact','MenuController@getContact');
+
+Route::get('/sponsors', 'SponsorController@getSponsorPage');
+
+Route::get('/vriendWorden', 'MenuController@friendPage');
+
+Route::get('/winkel', 'ShopController@getShopWindow');
 
 /* CMS routes. */
 Route::group(array('prefix' => 'cms'), function() {
