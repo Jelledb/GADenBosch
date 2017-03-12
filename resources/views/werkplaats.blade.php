@@ -3,7 +3,7 @@
 @section('content')
 
 
-    <div class="container ">
+    <div class="container">
         <h2 class="col-md-offset-2">Werkplaats</h2>
         <br><br>
         <div class="slider">

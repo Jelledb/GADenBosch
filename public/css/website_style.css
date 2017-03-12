@@ -211,6 +211,7 @@ nav {
     text-decoration: none;
 }
 
+/* Sponsoren */
 .sponsors {
     padding: 5px;
     border: 4px solid transparent;
@@ -224,4 +225,27 @@ nav {
 .sponsors img {
     width: 200px;
     height: 200px;
+}
+
+.sponsorTitle {
+    padding: 0 5px;
+    margin: 0 5px;
+}
+
+
+
+/* General shit */
+.centerH1 {
+    text-align: center;
+}
+
+.text {
+    padding: 0 10px;
+}
+
+button {
+    display: block;
+    float: none;
+    width: 100px;
+    margin: 0 auto;
 }
