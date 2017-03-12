@@ -6,6 +6,12 @@
    - Pink from logo: #f3848d
 */
 
+/* Fonts */
+@font-face {
+    font-family: Brandon;
+    src: url("../fonts/Brandon_reg.otf") format("opentype");
+}
+
 
 /* Remove the default margin */
 body {
@@ -61,6 +67,21 @@ footer {
 .nieuws-overzicht-home {
     position: absolute;
 
+}
+
+.nieuws-nu {
+    border: 3px solid rgb(238,134,141);
+    padding: 10px;
+}
+
+.nieuws-workshops {
+    border: 3px solid rgb(0,174,239);
+    padding: 10px;
+}
+
+.nieuws-archief {
+    border: 3px solid rgb(241,90,41);
+    padding: 10px;
 }
 
 .copyright-statement {
@@ -153,13 +174,13 @@ nav {
 
 #nav-list li {
     float: left;
-    font-size: 18px;
+    font-family: 'Brandon', serif;
+    font-size: 14px;
     text-transform: uppercase;
-    font-weight: 200;
 }
 
 #nav-list a {
-    color: #235a2b;
+    color: black;
     display: block;
     height: 100%;
     width: 100%;
@@ -181,8 +202,8 @@ nav {
 
 #nav-list .splitter {
     width: 1px;
-    height: 28px;
-    margin-top: -44px;
+    height: 20px;
+    margin-top: -40px;
     background-color: #cccccc;
 }
 

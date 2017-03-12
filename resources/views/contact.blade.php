@@ -31,7 +31,7 @@
             <div class="col-md-4 col-md-offset-2">
 
                         <h2>Contact</h2>
-                        <br><br>
+                        <br>
                         <div class="panel panel-default">
                             <div class="contact-content">
                                 <strong>Adres:</strong><br>
@@ -67,7 +67,7 @@
             <div class="col-md-4" >
 
                         <h2>Openingstijden</h2>
-                        <br><br>
+                        <br>
                 <div class="panel panel-default">
                     <div class="contact-content">
                         ma t/m vrij van 9:00 - 17:00<br>
