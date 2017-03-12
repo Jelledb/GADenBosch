@@ -4,7 +4,7 @@
 
 
     <div class="container ">
-        <h1 class="col-md-offset-2">Werkplaats</h1>
+        <h2 class="col-md-offset-2">Werkplaats</h2>
         <br><br>
         <div class="slider">
             <ul class="bxslider">
