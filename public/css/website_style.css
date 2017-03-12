@@ -194,7 +194,7 @@ nav {
     display: block;
     height: 100%;
     width: 100%;
-    padding: 0 18px;
+    padding: 0 14px;
     /* Fade out effect */
     -webkit-transition: all .4s ease-out;
     -moz-transition: all .4s ease-out;
@@ -210,15 +210,12 @@ nav {
     transition: all .4s ease;
 }
 
-#nav-list .splitter {
-    width: 1px;
-    height: 20px;
-    margin-top: -40px;
-    background-color: #cccccc;
-}
-
 #nav-list a:hover, #nav-list a:focus {
     text-decoration: none;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
 }
 
 /* Sponsoren */
