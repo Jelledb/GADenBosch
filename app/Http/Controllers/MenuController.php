@@ -63,6 +63,12 @@ class MenuController extends Controller
     public function cmsnewShopItem(){
         return view('cms/cmsnewShopItem');
     }
+    public function cmssponsors(){
+        return view('cms/cmssponsors');
+    }
+    public function cmsNewSponsor(){
+        return view('cms/cmsNewSponsor');
+    }
     public function friendPage() {
         return view('wordVriend');
     }

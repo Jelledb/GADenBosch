@@ -8,7 +8,7 @@
     </div>
     <div class="row">
         <div class="col-md-9">
-            <h2>Shop</h2>
+            <h2>Sponsoren</h2>
         </div>
         <div class="col-md-3">
 
@@ -21,9 +21,10 @@
                 <thead>
                 <tr>
                     <th class="col-md-1">Toon</th>
-                    <th class="col-md-2">Prijs</th>
-                    <th class="col-md-5">Titel</th>
+                    <th class="col-md-4">Naam</th>
+                    <th class="col-md-2"></th>
                     <th class="col-md-5"></th>
+
                 </tr>
                 </thead>
                 <tbody>
@@ -36,13 +37,13 @@
                         </div>
                     </td>
                     <td>
-                        Hier komt de prijs
+                        Hier komt de naam van de sponsor
                     </td>
-                    <td>Hier komt de titel van het kunstwerk</td>
                     <td>
-                        <a href="{{ url('cms/newShopItem') }}"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                        <a href="{{ url('cms/newSponsor') }}"><i class="fa fa-pencil" aria-hidden="true"></i></a>
                         <a href="#"><i class="fa fa-trash" aria-hidden="true"></i></a>
                     </td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td>
@@ -53,15 +54,13 @@
                         </div>
                     </td>
                     <td>
-                        Hier komt de prijs
+                        Hier komt de naam van de sponsor
                     </td>
                     <td>
-                        Hier komt de titel van het kunstwerk
-                    </td>
-                    <td>
-                        <a href="{{ url('cms/newShopItem') }}"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                        <a href="{{ url('cms/newSponsor') }}"><i class="fa fa-pencil" aria-hidden="true"></i></a>
                         <a href="#"><i class="fa fa-trash" aria-hidden="true"></i></a>
                     </td>
+                    <td></td>
                 </tr>
 
                 <tr>
@@ -73,15 +72,13 @@
                         </div>
                     </td>
                     <td>
-                       Hier komt de prijs
+                        Hier komt de naam van de sponsor
                     </td>
                     <td>
-                        Hier komt de titel van het kunstwerk
-                    </td>
-                    <td>
-                        <a href="{{ url('cms/newShopItem') }}"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                        <a href="{{ url('cms/newSponsor') }}"><i class="fa fa-pencil" aria-hidden="true"></i></a>
                         <a href="#"><i class="fa fa-trash" aria-hidden="true"></i></a>
                     </td>
+                    <td></td>
                 </tr>
                 </tbody>
             </table>
