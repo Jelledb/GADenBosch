@@ -7,11 +7,11 @@
         <div class="col-md-3"></div>
     </div>
     <div class="row">
-        <div class="col-md-9">
+        <div class="col-md-7">
             <h2>Nieuws</h2>
         </div>
-        <div class="col-md-3">
-
+        <div class="col-md-5 newbutton">
+            <a href="{{ url('cms/newNews') }}"><input type="submit" value="Nieuw nieuwsartikel maken"  name="submit"></a>
         </div>
     </div>
     <div class="row">

@@ -7,11 +7,11 @@
         <div class="col-md-3"></div>
     </div>
     <div class="row">
-        <div class="col-md-9">
+        <div class="col-md-7">
             <h2>Sponsoren</h2>
         </div>
-        <div class="col-md-3">
-
+        <div class="col-md-5 newbutton">
+            <a href="{{ url('cms/newSponsor') }}"><input type="submit" value="Nieuwe sponsor toevoegen"  name="submit"></a>
         </div>
     </div>
     <div class="row">

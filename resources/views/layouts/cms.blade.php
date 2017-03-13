@@ -59,7 +59,7 @@
                     <li><a href="{{ url('cms/workshops') }}">Workshops</a></li>
                     <li><a href="{{ url('cms/news') }}">Nieuws</a></li>
 
-                    <li><a href="#">Events</a></li>
+                    <!--<li><a href="#">Events</a></li>-->
                     <li><a href="{{ url('cms/educatie') }}">Educatie</a></li>
                     <li><a href="{{ url('cms/Scholen') }}">Scholen</a></li>
                     <li><a href="{{ url('cms/Shop') }}">Shop</a></li>
@@ -71,16 +71,16 @@
                 </h5>
                 <ul class="nav nav-pills nav-stacked">
                     <li><a href="{{ url('cms/menu') }}">Hoofdmenu</a></li>
-                    <li><a href="#">Foto's homepage</a></li>
-                    <li><a href="#">Footer</a></li>
+                    <!--<li><a href="#">Foto's homepage</a></li>-->
+                    <!--<li><a href="#">Footer</a></li>-->
                 </ul>
                 <h5><i class="glyphicon"></i>
 
                 </h5>
                 <ul class="nav nav-pills nav-stacked">
-                    <li><a href="#">Nieuwsbrieven</a></li>
-                    <li><a href="#">Profielen</a></li>
-                    <li><a href="#">Logbestanden</a></li>
+                    <li><a href="{{ url('cms/nieuwsbrief') }}">Nieuwsbrieven</a></li>
+                    <!--<li><a href="#">Profielen</a></li>-->
+                    <!--<li><a href="#">Logbestanden</a></li>-->
                 </ul>
             </div>
         </div>
