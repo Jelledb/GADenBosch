@@ -50,12 +50,6 @@ body {
 nav {
     padding: 0 20px;
 }
-footer {
-    width: 100%;
-    border-top: 1px solid #e7e7e7;
-    color: #5e5e5e;
-    padding-top: 10px;
-}
 .container {
     padding-top: 70px;
 }
@@ -94,14 +88,31 @@ footer {
     padding: 10px;
 }
 
+footer {
+    width: 100%;
+    border-top: 1px solid #e7e7e7;
+    color: white;
+    padding-top: 10px;
+    font-family: 'Brandon', serif;
+    background-color: #424242;
+    box-shadow: 0 0 5px #ccc;
+}
+
+footer > .container {
+    padding-top: 0;
+    padding-bottom: 30px;
+}
+
 .copyright-statement {
     margin-top: 10px;
-    padding: 5px;
-    font-style: italic;
+    padding: 10px 0 2px 0;
+    font-size: 15px;
+    background-color: #f05a29;
+    color: white;
 }
 
 .social-media-channels {
-    margin-top: 10px;
+    margin-top: 30px;
 }
 
 .social-media-channels a {
@@ -113,14 +124,14 @@ footer {
 }
 
 .social-media-channels i {
-    font-size: 28px;
-    width: 48px;
+    font-size: 18px;
+    width: 36px;
     border-radius: 50%;
     background-color: #f05a29;
-    height: 48px;
+    height: 36px;
     text-align: center;
-    line-height: 46px;
-    color: white;
+    line-height: 36px;
+    color: #424242;
 }
 
 .contact-footer .contact-icon {
@@ -131,6 +142,10 @@ footer {
 
 .contact-footer .contact-details {
     text-align: left;
+}
+
+.contact-details a, .contact-details a:hover {
+    color: #aad8ff;
 }
 
 .contact-icon .fa-map-marker {
