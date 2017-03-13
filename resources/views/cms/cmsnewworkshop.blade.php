@@ -3,7 +3,7 @@
 @section('content')
 
     <div class="row">
-        <div class="col-md-12 breadcrumb breadcrumbs"></div>
+        <div class="col-md-12 breadcrumb breadcrumbs">CMS >> Workshop Nieuws >> Nieuws Item</div>
     </div>
     <div class="row">
         <div class="col-md-9">
