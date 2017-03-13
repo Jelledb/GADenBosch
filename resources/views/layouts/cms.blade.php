@@ -84,11 +84,12 @@
                 </ul>
             </div>
         </div>
-        <div class="col-md-10 ">
+        <div class="col-md-8 ">
 
             <!-- Content Here -->
             @yield('content')
         </div>
+        <div class="col-md-2"></div>
     </div>
 </div>
 </body>
