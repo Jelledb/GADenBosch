@@ -70,7 +70,7 @@
                     <!--<small><b>USERS</b></small>-->
                 </h5>
                 <ul class="nav nav-pills nav-stacked">
-                    <li><a href="#">Hoofdmenu</a></li>
+                    <li><a href="{{ url('cms/menu') }}">Hoofdmenu</a></li>
                     <li><a href="#">Foto's homepage</a></li>
                     <li><a href="#">Footer</a></li>
                 </ul>

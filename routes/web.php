@@ -46,6 +46,8 @@ Route::group(array('prefix' => 'cms'), function() {
     Route::get('/sponsors', 'MenuController@cmssponsors');
     Route::get('/newSponsor', 'MenuController@cmsNewSponsor');
     Route::get('/informatie', 'MenuController@cmsInformatie');
+    Route::get('/menu', 'MenuController@cmsMenu');
+    Route::get('/newMenu', 'MenuController@cmsNewMenu');
     // TODO hier komt hoogstwaarschijnlijk nog meer bij
 });
 

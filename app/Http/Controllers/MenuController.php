@@ -72,6 +72,12 @@ class MenuController extends Controller
     public function cmsInformatie(){
         return view('cms/cmsInformatie');
     }
+    public function cmsMenu(){
+        return view('cms/cmsHoofdmenu');
+    }
+    public function cmsNewMenu(){
+        return view('cms/cmsNewMenu');
+    }
     public function friendPage() {
         return view('wordVriend');
     }

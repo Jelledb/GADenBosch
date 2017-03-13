@@ -8,7 +8,7 @@
     </div>
     <div class="row">
         <div class="col-md-9">
-            <h2>Workshop</h2>
+            <h2>Workshop Nieuws</h2>
         </div>
         <div class="col-md-3">
 
