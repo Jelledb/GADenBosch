@@ -91,10 +91,10 @@
                         </ul>
                     </li>
                 @endif
-                <li class="icon hidden-lg hidden-md">
-                    <a onclick="toggleNavigation()">&#9776;</a>
-                </li>
             </ul>
+            <div class="menu-icon icon hidden-lg hidden-md">
+                <a onclick="toggleNavigation()">&#9776;</a>
+            </div>
         </div>
     </nav>
 

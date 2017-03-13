@@ -175,6 +175,10 @@ nav {
     z-index: 99999;
 }
 
+nav .dropdown-menu {
+    position: relative;
+}
+
 .nav-logo {
     float: left;
 }
