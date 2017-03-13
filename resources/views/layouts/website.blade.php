@@ -47,31 +47,53 @@
         <div class="nav-elements">
             <ul id="nav-list">
                 <li>
-                    <a href="{{url('/')}}">home</a>
+                    <a href="{{ url('/nieuws') }}">nieuws</a>
                 </li>
                 <li>
-                    <a href="{{url('/nieuws')}}">nieuws</a>
-                    <div class="splitter"></div>
+                    <a href="{{ url('/winkel') }}">winkel</a>
                 </li>
                 <li>
-                    <a href=" {{ url('vriendenOverzicht') }} ">vrienden</a>
-                    <div class="splitter"></div>
+                    <a href="{{ url('vriendWorden') }} ">vrienden</a>
                 </li>
                 <li>
-                    <a href="{{url('/over')}}">over ons</a>
-                    <div class="splitter"></div>
+                    <a href="{{ url('/werkplaats') }}">werkplaats</a>
                 </li>
                 <li>
-                    <a href="{{url('/werkplaats')}}">werkplaats</a>
-                    <div class="splitter"></div>
+                    <a href="{{ url('/sponsors') }}">sponsoren</a>
                 </li>
                 <li>
-                    <a href="{{url('/contact')}}">contact</a>
-                    <div class="splitter"></div>
+                    <a href="{{ url('/over') }}">over ons</a>
+                </li>
+                <li>
+                    <a href="{{ url('/contact') }}">contact</a>
                 </li>
                 <li class="icon hidden-sm hidden-lg hidden-md">
                     <a href="javascript:void(0);" onclick="toggleNavigation()">&#9776;</a>
                 </li>
+                @if (Auth::guest())
+                    <li><a href="{{ route('login') }}">Inloggen</a></li>
+                    <li><a href="{{ route('register') }}">Registreer</a></li>
+                @else
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            Ingelogd als {{ Auth::user()->name }} <span class="caret"></span>
+                        </a>
+
+                        <ul class="dropdown-menu" role="menu">
+                            <li>
+                                <a href="{{ route('logout') }}"
+                                   onclick="event.preventDefault();
+                                                    document.getElementById('logout-form').submit();">
+                                    Uitloggen
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    {{ csrf_field() }}
+                                </form>
+                            </li>
+                        </ul>
+                    </li>
+                @endif
             </ul>
         </div>
     </nav>
@@ -83,7 +105,8 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-4">
-                <p>Hier moet nog een sponsor komen</p>
+                {{--Commented. Ff vragen of hij dat ook wil hebben in de nieuwe site.--}}
+                {{--<p>Hier moet nog een sponsor komen</p>--}}
             </div>
             <div class="col-sm-4 contact-footer text-center">
                 <h3>Contact</h3>
@@ -127,12 +150,13 @@
                 </div>
             </div>
             <div class="col-sm-4">
-                <p>Hier moet ook een sponsor komen</p>
+                {{--Commented. Ff vragen of hij dat ook wil hebben in de nieuwe site.--}}
+                {{--<p>Hier moet ook een sponsor komen</p>--}}
             </div>
         </div>
     </div>
     <div class="copyright-statement text-center">
-        <p>Copyright © 20<?php echo date("y") ?> Grafisch Atelier Den Bosch</p>
+        <p>Copyright © 2017-20<?php echo date("y") ?> Grafisch Atelier Den Bosch</p>
     </div>
 </footer>
 </body>

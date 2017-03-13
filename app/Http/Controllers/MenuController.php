@@ -25,19 +25,14 @@ class MenuController extends Controller
     function getOverons(){
         return view('over');
     }
-
-
-
     public function cmshome()
     {
-
         return view('cms/cmshome');
-
     }
-    //
-
     public function friendPage() {
-        $products = Products::all();
-        return view('friends.overzicht', compact('products'));
+        return view('wordVriend');
+    }
+    public function getWebShop() {
+        return view('webshop');
     }
 }
