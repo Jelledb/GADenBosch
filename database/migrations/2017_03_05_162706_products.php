@@ -22,8 +22,8 @@ class Products extends Migration
         Schema::create('products',function(Blueprint $table){
             $table->increments('id');
             $table->string('name');
-            $table->string('discriptionshort');
-            $table->string('discriptionlong');
+            $table->string('description_short')->nullable();
+            $table->string('description_long')->nullable();
             $table->binary("image")->nullable();
             $table->unsignedInteger('cat_id')->nullable();
 

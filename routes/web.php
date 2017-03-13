@@ -22,8 +22,6 @@ Route::get('/werkplaats','MenuController@getWerkplaats');
 
 Route::get('/contact','MenuController@getContact');
 
-
-
 Route::get('/vriendenOverzicht', 'MenuController@friendPage');
 
 
