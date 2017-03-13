@@ -67,9 +67,6 @@
                 <li>
                     <a href="{{ url('/contact') }}">contact</a>
                 </li>
-                <li class="icon hidden-sm hidden-lg hidden-md">
-                    <a href="javascript:void(0);" onclick="toggleNavigation()">&#9776;</a>
-                </li>
                 @if (Auth::guest())
                     <li><a href="{{ route('login') }}">Inloggen</a></li>
                     <li><a href="{{ route('register') }}">Registreer</a></li>
@@ -95,6 +92,9 @@
                     </li>
                 @endif
             </ul>
+            <div class="menu-icon icon hidden-lg hidden-md">
+                <a onclick="toggleNavigation()">&#9776;</a>
+            </div>
         </div>
     </nav>
 
@@ -104,11 +104,7 @@
 <footer>
     <div class="container">
         <div class="row">
-            <div class="col-sm-4">
-                {{--Commented. Ff vragen of hij dat ook wil hebben in de nieuwe site.--}}
-                {{--<p>Hier moet nog een sponsor komen</p>--}}
-            </div>
-            <div class="col-sm-4 contact-footer text-center">
+            <div class="col-sm-4 contact-footer">
                 <h3>Contact</h3>
                 <div class="contact-details">
                     <div>
@@ -137,6 +133,9 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="col-sm-4">
+                <h3>Volg ons</h3>
                 <div class="social-media-channels">
                     <a href="" target="_blank">
                         <i class="fa fa-linkedin"></i>
@@ -150,8 +149,8 @@
                 </div>
             </div>
             <div class="col-sm-4">
-                {{--Commented. Ff vragen of hij dat ook wil hebben in de nieuwe site.--}}
-                {{--<p>Hier moet ook een sponsor komen</p>--}}
+                <h3>Sponsoren</h3>
+                <span>Lorem ipsum dolor sit amet</span>
             </div>
         </div>
     </div>

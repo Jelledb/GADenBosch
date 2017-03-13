@@ -18,6 +18,9 @@
     <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
     <!-- endbuild -->
 
+
+    <!-- bxSlider Javascript file -->
+
     <!-- Bootstrap settings -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 </head>
@@ -45,44 +48,48 @@
             <!-- It can be fixed with bootstrap affix http://getbootstrap.com/javascript/#affix-->
             <div id="sidebar" class="well sidebar-nav">
                 <ul class="nav nav-pills nav-stacked">
-                    <li class="active"><a href="cms/startpagina">Startpagina</a></li>
+                    <li><a href="{{ url('cms/startpagina') }}">Startpagina</a></li>
                 </ul>
                 <h5><i class="glyphicon"></i>
                     <!--<small><b>MANAGEMENT</b></small>-->
                 </h5>
                 <ul class="nav nav-pills nav-stacked">
-                    <li><a href="#">Tentoonstellingen </a></li>
-                    <li><a href="#">Workshops</a></li>
-                    <li><a href="#">Nieuws</a></li>
-                    <li><a href="#">Events</a></li>
-                    <li><a href="#">Educatie</a></li>
-                    <li><a href="#">Shop</a></li>
-                    <li><a href="#">'Bedank'-pagina's</a></li>
-                    <li><a href="#">Informatie</a></li>
+
+                    <li><a href="{{ url('cms/lijsttentoonstellingen') }}">Tentoonstellingen</a></li>
+                    <li><a href="{{ url('cms/workshops') }}">Workshops</a></li>
+                    <li><a href="{{ url('cms/news') }}">Nieuws</a></li>
+
+                    <!--<li><a href="#">Events</a></li>-->
+                    <li><a href="{{ url('cms/educatie') }}">Educatie</a></li>
+                    <li><a href="{{ url('cms/Scholen') }}">Scholen</a></li>
+                    <li><a href="{{ url('cms/Shop') }}">Shop</a></li>
+                    <li><a href="{{ url('cms/sponsors')}}">Sponsoren</a></li>
+                    <li><a href="{{ url('cms/informatie') }}">Informatie</a></li>
                 </ul>
                 <h5><i class="glyphicon "></i>
                     <!--<small><b>USERS</b></small>-->
                 </h5>
                 <ul class="nav nav-pills nav-stacked">
-                    <li><a href="#">Hoofdmenu</a></li>
-                    <li><a href="#">Foto's homepage</a></li>
-                    <li><a href="#">Footer</a></li>
+                    <li><a href="{{ url('cms/menu') }}">Hoofdmenu</a></li>
+                    <!--<li><a href="#">Foto's homepage</a></li>-->
+                    <!--<li><a href="#">Footer</a></li>-->
                 </ul>
                 <h5><i class="glyphicon"></i>
 
                 </h5>
                 <ul class="nav nav-pills nav-stacked">
-                    <li><a href="#">Nieuwsbrieven</a></li>
-                    <li><a href="#">Profielen</a></li>
-                    <li><a href="#">Logbestanden</a></li>
+                    <li><a href="{{ url('cms/nieuwsbrief') }}">Nieuwsbrieven</a></li>
+                    <!--<li><a href="#">Profielen</a></li>-->
+                    <!--<li><a href="#">Logbestanden</a></li>-->
                 </ul>
             </div>
         </div>
-        <div class="col-md-10 ">
+        <div class="col-md-8 ">
 
             <!-- Content Here -->
             @yield('content')
         </div>
+        <div class="col-md-2"></div>
     </div>
 </div>
 </body>
