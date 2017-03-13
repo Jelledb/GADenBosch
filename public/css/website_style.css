@@ -116,11 +116,19 @@ footer > .container {
 }
 
 .social-media-channels a {
-    color: gray;
+    color: #424242;
     padding: 4px;
+    -webkit-transition: all .4s ease-out;
+    -moz-transition: all .4s ease-out;
+    -o-transition: all .4s ease-out;
+    transition: all .4s ease-out;
 }
 .social-media-channels a:hover {
     text-decoration: none;
+    color: white;
+    -webkit-transition: all .4s ease;
+    -moz-transition: all .4s ease;
+    -o-transition: all .4s ease;
 }
 
 .social-media-channels i {
@@ -131,7 +139,6 @@ footer > .container {
     height: 36px;
     text-align: center;
     line-height: 36px;
-    color: #424242;
 }
 
 .contact-footer .contact-icon {
