@@ -21,6 +21,8 @@ class Products extends Migration
 
         Schema::create('products',function(Blueprint $table){
             $table->increments('id');
+            $table->integer('price');
+            $table->integer('friendprice');
             $table->string('name');
             $table->string('description_short')->nullable();
             $table->string('description_long')->nullable();

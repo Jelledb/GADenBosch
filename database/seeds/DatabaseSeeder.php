@@ -13,7 +13,11 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // $this->call(UsersTableSeeder::class);
-        $this->seedSponsors();
+        //$this->seedSponsors();
+
+        DB::table('roles')->insert([[
+            'id' => 1, 'rolename' => 'admin'],['id' => 2, 'rolename' => 'vrijwilliger'],['id' => 3, 'rolename' => 'klant']]);
+
 
     }
 

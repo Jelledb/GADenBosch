@@ -19,7 +19,7 @@ class CreateSponsorsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('url');
-            $table->binary('logo');
+            $table->binary('image');
         });
     }
 
