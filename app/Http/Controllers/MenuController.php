@@ -14,7 +14,7 @@ class MenuController extends Controller
     }
     function getWerkplaats ()
     {
-        return view('werkplaats');
+        return view('werkplaats.werkplaats');
     }
     function getContact(){
         return view('contact');

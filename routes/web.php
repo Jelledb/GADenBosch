@@ -20,6 +20,8 @@ Route::get('/over','MenuController@getOverons');
 
 Route::get('/werkplaats','MenuController@getWerkplaats');
 
+Route::get('/detailWerkplaats', 'WorkplaceController@getDetailedPage');
+
 Route::get('/contact','MenuController@getContact');
 
 Route::get('/sponsors', 'SponsorController@getSponsorPage');
