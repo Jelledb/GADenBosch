@@ -1,9 +1,12 @@
+<html>
+<head>
+    <link rel="stylesheet" href="{{ URL::asset('css/calendarStyle.css') }}" />
+</head>
+
+</html>
 <?php
-/**
- *@author  Xu Ding
- *@email   thedilab@gmail.com
- *@website http://www.StarTutorial.com
- **/
+
+
 class Calender {
 
     /**
@@ -27,6 +30,8 @@ class Calender {
     private $daysInMonth=0;
 
     private $naviHref= null;
+
+    private $afspraak = date('Y-m-d',strtotime('2017'.'-'.'03'.'-'.'17'));
 
     /********************* PUBLIC **********************/
 
@@ -70,6 +75,7 @@ class Calender {
             '</div>'.
             '<div class="box-content">'.
             '<ul class="label">'.$this->_createLabels().'</ul>';
+
         $content.='<div class="clear"></div>';
         $content.='<ul class="dates">';
 
@@ -115,6 +121,10 @@ class Calender {
             $this->currentDate = date('Y-m-d',strtotime($this->currentYear.'-'.$this->currentMonth.'-'.($this->currentDay)));
 
             $cellContent = $this->currentDay;
+            //if ($this->currentDate == $this->afspraak){
+           //     $cellContent = $this->afspraak;
+           // }
+            /////////// hier celcontent meegeven
 
             $this->currentDay++;
 
@@ -168,7 +178,6 @@ class Calender {
     }
 
 
-
     /**
      * calculate number of weeks in a particular month
      */
@@ -216,3 +225,5 @@ class Calender {
 
 
 }
+
+
