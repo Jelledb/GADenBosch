@@ -16,7 +16,7 @@ class CreateWorkspaceTypeTable extends Migration
         // Create the Workspace Type table
 
         Schema::create('workspace_type', function(Blueprint $table) {
-           $table->increments('id');
+           $table->increments('id')->unsigned();
            $table->string('name');
 
         });

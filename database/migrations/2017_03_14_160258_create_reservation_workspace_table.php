@@ -16,6 +16,8 @@ class CreateReservationWorkspaceTable extends Migration
         // Pivot table for reservation/workspace
         Schema::create('reservation_workspace', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('reservation_id')->unsigned();
+            $table->integer('workspace_id')->unsigned();
             $table->foreign('reservation_id')->references('id')->on('reservation')->onDelete('cascade');
             $table->foreign('workspace_id')->references('id')->on('workspace')->onDelete('cascade');
 
