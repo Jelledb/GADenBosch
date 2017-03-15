@@ -14,6 +14,8 @@ class Calender {
      */
     public function __construct(){
         $this->naviHref = htmlentities($_SERVER['PHP_SELF']);
+
+        $this->afspraak = date('Y-m-d',strtotime("2017".'-'."03".'-'."17"));
     }
 
     /********************* PROPERTY ********************/
@@ -31,7 +33,10 @@ class Calender {
 
     private $naviHref= null;
 
-    private $afspraak = date('Y-m-d',strtotime('2017'.'-'.'03'.'-'.'17'));
+    private $afspraak=null;
+
+
+
 
     /********************* PUBLIC **********************/
 
@@ -121,9 +126,9 @@ class Calender {
             $this->currentDate = date('Y-m-d',strtotime($this->currentYear.'-'.$this->currentMonth.'-'.($this->currentDay)));
 
             $cellContent = $this->currentDay;
-            //if ($this->currentDate == $this->afspraak){
-           //     $cellContent = $this->afspraak;
-           // }
+            if ($this->currentDate == $this->afspraak){
+                $cellContent = "afspraak";
+            }
             /////////// hier celcontent meegeven
 
             $this->currentDay++;
