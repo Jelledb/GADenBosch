@@ -33,7 +33,6 @@ class Calender {
 
     private $naviHref= null;
 
-    private $afspraak=null;
 
 
 
@@ -125,10 +124,8 @@ class Calender {
 
             $this->currentDate = date('Y-m-d',strtotime($this->currentYear.'-'.$this->currentMonth.'-'.($this->currentDay)));
 
-            $cellContent = $this->currentDay;
-            if ($this->currentDate == $this->afspraak){
-                $cellContent = "afspraak";
-            }
+            $cellContent = "<a href = {{route('dagPlanning',['currentDay']=>this->currentDay]}} class= btn-success btn-lg role = button > {!! this->$currentDay !!} </a>";
+
             /////////// hier celcontent meegeven
 
             $this->currentDay++;
