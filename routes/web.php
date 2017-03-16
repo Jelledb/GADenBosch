@@ -12,17 +12,17 @@
 */
 
 /* Website routes. */
-Route::get('/','MenuController@getIndex');
+Route::get('/', 'MenuController@getIndex');
 
-Route::get('/nieuws','MenuController@getNieuws');
+Route::get('/nieuws', 'MenuController@getNieuws');
 
-Route::get('/over','MenuController@getOverons');
+Route::get('/over', 'MenuController@getOverons');
 
-Route::get('/werkplaats','MenuController@getWerkplaats');
+Route::get('/werkplaats', 'MenuController@getWerkplaats');
 
 Route::get('/detailWerkplaats', 'WorkplaceController@getDetailedPage');
 
-Route::get('/contact','MenuController@getContact');
+Route::get('/contact', 'MenuController@getContact');
 
 
 Route::get('/vriendenOverzicht', 'MenuController@friendPage');
@@ -34,11 +34,13 @@ Route::get('/vriendWorden', 'MenuController@friendPage');
 
 Route::get('/winkel', 'ShopController@getShopWindow');
 
-Route::get('/werkplaatsOverzicht', 'CalenderController@getDetail');
+Route::get('/werkplaatsOverzicht', 'CalenderController@getWorkplace');
+
+Route::get('/dagPlanning', 'CalenderController@dayplanning');
 
 
 /* CMS routes. */
-Route::group(array('prefix' => 'cms'), function() {
+Route::group(array('prefix' => 'cms'), function () {
 
     Route::get('/startpagina', 'MenuController@cmshome');
     Route::get('/tentoonstellingen', 'MenuController@cmsTentoonstellingen');
