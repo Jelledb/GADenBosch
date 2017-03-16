@@ -20,7 +20,7 @@ Route::get('/over', 'MenuController@getOverons');
 
 Route::get('/werkplaats', 'MenuController@getWerkplaats');
 
-Route::get('/detailWerkplaats', 'WorkplaceController@getDetailedPage');
+Route::get('/detailWerkplaats/{id}', 'WorkplaceController@getDetailedPage');
 
 Route::get('/contact', 'MenuController@getContact');
 
@@ -34,7 +34,7 @@ Route::get('/vriend-worden', 'MenuController@friendPage');
 
 Route::get('/winkel', 'ShopController@getShopWindow');
 
-Route::get('/werkplaatsOverzicht', 'CalenderController@getWorkplace');
+Route::get('/werkplaatsOverzicht', 'WorkplaceController@getWorkspacePage');
 
 Route::get('/dagPlanning{currentDay}', 'CalenderController@dayplanning');
 
