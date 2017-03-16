@@ -17,4 +17,5 @@ class WorkplaceController extends Controller
     public function getDetailedPage($id) {
         return view('werkplaats.detailedWerkplaats', compact('id'));
     }
+
 }

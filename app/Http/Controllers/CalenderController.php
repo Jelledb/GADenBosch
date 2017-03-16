@@ -12,9 +12,10 @@ class CalenderController extends Controller
         return view('werkplaats.werkplaatsOverzicht');
     }
 
-    function dayplanning(){
+    function getdayplanning($currentDay){
+        $data = $currentDay;
 
-        return view('werkplaats.dagPlanning');
+        return view('werkplaats.dagPlanning',$data);
     }
 
 }

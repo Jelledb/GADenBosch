@@ -36,7 +36,7 @@ Route::get('/winkel', 'ShopController@getShopWindow');
 
 Route::get('/werkplaatsOverzicht', 'WorkplaceController@getWorkspacePage');
 
-Route::get('/dagPlanning{currentDay}', 'CalenderController@dayplanning');
+Route::get('/dagPlanning{currentDay}', 'CalenderController@getdayplanning');
 
 
 /* CMS routes. */
