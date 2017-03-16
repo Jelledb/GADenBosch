@@ -150,7 +150,7 @@
             </div>
             <div class="col-sm-4">
                 <h3>Sponsoren</h3>
-                <span>Lorem ipsum dolor sit amet</span>
+                <span><a href="{{ url('vacatures') }}">Vacatures</a></span>
             </div>
         </div>
     </div>

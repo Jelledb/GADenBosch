@@ -25,6 +25,7 @@ Route::get('/contact','MenuController@getContact');
 
 Route::get('/vriendenOverzicht', 'MenuController@friendPage');
 
+Route::get('/vacatures', 'MenuController@getVacatures');
 
 Route::get('/sponsors', 'SponsorController@getSponsorPage');
 
