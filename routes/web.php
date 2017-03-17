@@ -38,7 +38,7 @@ Route::get('/werkplaatsOverzicht', 'WorkplaceController@getWorkspacePage');
 
 Route::get('/dagPlanning', 'CalenderController@getDetailedWorkspace');
 
-Route::get('/detailedWerkplaats', 'CalenderController@getDayplanning');
+//Route::get('/detailedWerkplaats', 'CalenderController@getDayplanning');
 
 
 
