@@ -7,15 +7,22 @@ use Illuminate\Http\Request;
 
 class CalenderController extends Controller
 {
-    function getWorkplace(){
+    function getWorkplace()
+    {
 
         return view('werkplaats.werkplaatsOverzicht');
     }
 
-    function getdayplanning($currentDay){
+    function getDayplanning($currentDay)
+    {
         $data = $currentDay;
 
-        return view('werkplaats.dagPlanning',$data);
+        return view('werkplaats.dagPlanning', $data);
     }
 
+}
+
+function getDetailedWorkspace()
+{
+    return view('werkplaats.detailedWerkplaats');
 }

@@ -128,7 +128,7 @@ class Calender
 
 
             $cellContent = <<<HTML
-              <a href="{{ route('dagPlanning',['currentDay']=>$this->currentDay}}"> $this->currentDay </a>
+              <a href="{{ route('detailedWerkplaats',['currentDay' =>$this->currentDay])}}"> $this->currentDay </a>
 HTML;
 
 
