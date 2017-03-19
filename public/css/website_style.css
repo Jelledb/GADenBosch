@@ -282,3 +282,61 @@ button {
     width: 100px;
     margin: 0 auto;
 }
+
+fieldset.formFieldset ol.formContainer li {
+    background-image: none;
+    list-style: none;
+    padding: 5px;
+    margin: 0;
+    clear: both;
+}
+.rsform-block {
+    overflow: hidden;
+}
+
+
+fieldset {
+    display: block;
+    -webkit-margin-start: 2px;
+    -webkit-margin-end: 2px;
+    -webkit-padding-before: 0.35em;
+    -webkit-padding-start: 0.75em;
+    -webkit-padding-end: 0.75em;
+    -webkit-padding-after: 0.625em;
+    min-width: -webkit-min-content;
+}
+
+.formError {
+    color: #CF4D4D;
+    font-weight: bold;
+    font-size: 10px;
+}
+
+.formRed {
+    color: red;
+    font-weight: bold;
+}
+
+.rsform-input-box.rsform-error, .rsform-text-box.rsform-error, .rsform-password-box.rsform-error, .rsform-calendar-box.rsform-error, .rsform-captcha-box.rsform-error, .rsform-select-box.rsform-error {
+    border: 1px solid #E1B2B3;
+    background: #FBE3E4;
+}
+
+div.formBody {
+    display: block;
+    float: left;
+}
+
+input, textarea, keygen, select, button {
+    text-rendering: auto;
+    color: initial;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    margin: 0em 0em 0em 0em;
+    font: 13.3333px Arial;
+}

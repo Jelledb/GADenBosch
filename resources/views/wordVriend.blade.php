@@ -2,6 +2,7 @@
 
 @section('content')
 
+
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
@@ -9,33 +10,44 @@
                     <h1 class="centerH1">Vriend worden?</h1>
                     <br>
                     <div class="text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi a congue nibh, ac condimentum
-                        metus.
-                        Ut nec lectus non mi aliquet volutpat et sit amet sapien. Fusce at auctor urna. Nunc nisi massa,
-                        consectetur non neque eu, faucibus tempus ante. Quisque vitae dui eu nibh feugiat aliquet a at
-                        neque. Nulla ac sapien sit amet nibh venenatis posuere. Nulla eget scelerisque elit. Aliquam
-                        ornare
-                        posuere nunc, nec pharetra elit gravida vitae. Sed viverra tempor urna quis egestas.
+                        Ook in 2017 kunnen wij niet zonder onze vrienden.<br>
+                        Met een kleine of grote vriendendonatie helpt u het Grafisch Atelier ook in 2017 weer aan de weg te timmeren. We hebben weer veel mooie plannen voor projecten, workshops en exposities.
+                        Vrienden ontvangen in 2017 een grafisch vriendengeschenk van Alexia Pnevmatikos gratis!
                         <br><br>
-                        Donec suscipit, odio ac eleifend accumsan, nisi odio molestie quam, eu convallis libero massa
-                        non
-                        urna. Phasellus sagittis lacus blandit nulla consequat maximus. In id vehicula velit. Vestibulum
-                        at
-                        auctor libero, non pretium arcu. Donec velit lacus, sollicitudin vitae lobortis ut, suscipit eu
-                        mi.
-                        Aenean ornare erat tellus, ac dictum erat sollicitudin id. Ut faucibus in sem ut accumsan. Donec
-                        nisl enim, tincidunt eget est venenatis, pulvinar accumsan mi. Class aptent taciti sociosqu ad
-                        litora torquent per conubia nostra, per inceptos himenaeos. Vivamus ut vehicula ante. Curabitur
-                        dapibus, orci vel finibus facilisis, lorem urna gravida mauris, convallis sollicitudin erat
-                        risus
-                        eget lectus. In dapibus leo eu lacus consequat ultricies. Aenean sit amet ultricies neque, at
-                        bibendum ligula. Praesent eget ex orci. Suspendisse potenti. Aenean bibendum auctor lectus, ac
-                        ullamcorper tortor tristique eget.
-                        <br><br>
-                        Donec eu tellus dolor. Ut eget mattis quam, sit amet accumsan mauris. Nulla at tincidunt nisl.
-                        Duis
-                        eu mattis erat. Quisque et libero ullamcorper, fermentum orci eu, viverra lacus. Cras porta diam
-                        mauris. Aenean sagittis magna ut leo laoreet eleifend.
+                        Vriend van het GA ben je al vanaf € 45,- per jaar, maar een groter bedrag is meer dan welkom.
+                        <br>
+                        <p class="formRed">Vul alle verplichte velden in</p>
+                        <p><form method="post"  id="userForm" enctype="multipart/form-data" action="https://www.gadenbosch.ga/vriend"><fieldset class="formFieldset">
+                        <ol class="formContainer" id="rsform_1_page_0">
+                            <li class="rsform-block rsform-block-naam">
+                                <div class="formCaption">Naam<strong class="formRequired">*</strong></div>
+                                <div class="formBody"><input type="text" value="" size="20"  name="form[Naam]" id="Naam"  class="rsform-input-box"/><span class="formClr"><span id="component1" class="formNoError">Vul uw naam in.</span></span></div>
+                                <div class="formDescription"></div>
+                            </li>
+                            <li class="rsform-block rsform-block-adres">
+                                <div class="formCaption">Adres<strong class="formRequired">*</strong></div>
+                                <div class="formBody"><input type="text" value="" size="20"  name="form[Adres]" id="Adres"  class="rsform-input-box"/><span class="formClr"><span id="component23" class="formNoError">Voer uw adres in!</span></span></div>
+                                <div class="formDescription"></div>
+                            </li>
+                            <li class="rsform-block rsform-block-postcode">
+                                <div class="formCaption">Postcode<strong class="formRequired">*</strong></div>
+                                <div class="formBody"><input type="text" value="" size="20"  name="form[Postcode]" id="Postcode"  class="rsform-input-box"/><span class="formClr"><span id="component24" class="formNoError">Voer uw postcode in!</span></span></div>
+                                <div class="formDescription"></div>
+                            </li>
+                            <li class="rsform-block rsform-block-woonplaats">
+                                <div class="formCaption">Woonplaats<strong class="formRequired">*</strong></div>
+                                <div class="formBody"><input type="text" value="" size="20"  name="form[Woonplaats]" id="Woonplaats"  class="rsform-input-box"/><span class="formClr"><span id="component25" class="formNoError">Voer uw woonplaats in!</span></span></div>
+                                <div class="formDescription"></div>
+                            </li>
+                            <li class="rsform-block rsform-block-email">
+                                <div class="formCaption">E-mail<strong class="formRequired">*</strong></div>
+                                <div class="formBody"><input type="text" value="" size="20"  name="form[Email]" id="Email"  class="rsform-input-box"/><span class="formClr"><span id="component3" class="formNoError">Voer uw e-mailadres in.</span></span></div>
+                                <div class="formDescription"></div>
+                            </li>
+                        </ol>
+                            </fieldset>
+                            <input type="hidden" name="form[formId]" value="1"/></form></p>
+
                     </div>
                 </div>
             </div>
