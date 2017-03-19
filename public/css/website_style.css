@@ -1,0 +1,284 @@
+/* Color codes
+   - Green from logo: #32ae45
+   - Red from logo: #f05a29
+   - Blue from logo: #01acf0
+   - Yellow from logo: #ffe400
+   - Pink from logo: #f3848d
+*/
+
+/* Fonts */
+@font-face {
+    font-family: Brandon;
+    src: url("../fonts/Brandon_reg.otf") format("opentype");
+}
+
+
+/* Remove the default margin */
+body {
+    margin: 0;
+}
+#map_canvas {
+    height: 400px;
+    padding-top: 60px;
+}
+
+.contact-content, .over-content{
+    padding: 5%;
+}
+
+#contact-container{
+    margin-bottom: 5%;
+}
+
+.kopje{
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+#werkplaats-btn{
+    background-color: #f05a29;
+    font-weight: bold;
+}
+
+.link{
+    color: #f3848d;
+}
+.navbar-nav.nav {
+    float: right;
+}
+
+nav {
+    padding: 0 20px;
+}
+.container {
+    padding-top: 70px;
+}
+
+.slider {
+    width: 100%;
+}
+
+.nieuws-overzicht-home {
+    position: absolute;
+
+}
+
+.nieuws-nu {
+    border: 3px solid rgb(238,134,141);
+    padding: 10px;
+}
+
+.nieuws-workshops {
+    border: 3px solid rgb(0,174,239);
+    padding: 10px;
+}
+
+.textblok {
+    position: absolute;
+    top: 600px;
+}
+
+.leesmeer {
+    bottom: 2px;
+    position: absolute;
+}
+
+.nieuws-archief {
+    border: 3px solid rgb(241,90,41);
+    padding: 10px;
+}
+
+footer {
+    width: 100%;
+    border-top: 1px solid #e7e7e7;
+    color: white;
+    padding-top: 10px;
+    font-family: 'Brandon', serif;
+    background-color: #424242;
+    box-shadow: 0 0 5px #ccc;
+}
+
+footer > .container {
+    padding-top: 0;
+    padding-bottom: 30px;
+}
+
+.copyright-statement {
+    margin-top: 10px;
+    padding: 10px 0 2px 0;
+    font-size: 15px;
+    background-color: #f05a29;
+    color: white;
+}
+
+.social-media-channels {
+    margin-top: 30px;
+}
+
+.social-media-channels a {
+    color: #424242;
+    padding: 4px;
+    -webkit-transition: all .4s ease-out;
+    -moz-transition: all .4s ease-out;
+    -o-transition: all .4s ease-out;
+    transition: all .4s ease-out;
+}
+.social-media-channels a:hover {
+    text-decoration: none;
+    color: white;
+    -webkit-transition: all .4s ease;
+    -moz-transition: all .4s ease;
+    -o-transition: all .4s ease;
+}
+
+.social-media-channels i {
+    font-size: 18px;
+    width: 36px;
+    border-radius: 50%;
+    background-color: #f05a29;
+    height: 36px;
+    text-align: center;
+    line-height: 36px;
+}
+
+.contact-footer .contact-icon {
+    color: #32ae45;
+    float: left;
+    width: 25px;
+}
+
+.contact-footer .contact-details {
+    text-align: left;
+}
+
+.contact-details a, .contact-details a:hover {
+    color: #aad8ff;
+}
+
+.contact-icon .fa-map-marker {
+    color: #f05a29;
+    margin-top: 9px;
+    margin-left: 3px;
+}
+
+.contact-icon .fa-envelope-o {
+    color: #01acf0;
+}
+
+.contact-icon .fa-phone {
+    margin-left: 2px;
+}
+
+.contact-footer > div {
+    padding: 7px;
+}
+
+nav {
+    height: 60px;
+    border-bottom: 1px solid #bbbbbb;
+    position: fixed;
+    width: 100%;
+    background: white;
+    z-index: 99999;
+}
+
+nav .dropdown-menu {
+    position: relative;
+}
+
+.nav-logo {
+    float: left;
+}
+
+.nav-logo img {
+    height: 60px;
+    padding-left: 20px;
+}
+
+.nav-elements {
+    float: right;
+    height: inherit;
+}
+
+#nav-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    line-height: 60px;
+}
+
+#nav-list li {
+    float: left;
+    font-family: 'Brandon', serif;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+#nav-list a {
+    color: black;
+    display: block;
+    height: 100%;
+    width: 100%;
+    padding: 0 14px;
+    /* Fade out effect */
+    -webkit-transition: all .4s ease-out;
+    -moz-transition: all .4s ease-out;
+    -o-transition: all .4s ease-out;
+    transition: all .4s ease-out;
+}
+
+#nav-list a:hover {
+    color: #f05a29;
+    -webkit-transition: all .4s ease;
+    -moz-transition: all .4s ease;
+    -o-transition: all .4s ease;
+    transition: all .4s ease;
+}
+
+#nav-list a:hover, #nav-list a:focus {
+    text-decoration: none;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Sponsoren */
+.sponsors {
+    padding: 5px;
+    border: 4px solid transparent;
+    align-content: center;
+}
+
+.sponsors td, th{
+    text-align: center;
+}
+
+.sponsors img {
+    width: 200px;
+    height: 200px;
+}
+
+.sponsorTitle {
+    padding: 0 5px;
+    margin: 0 5px;
+}
+
+
+
+/* General shit */
+.centerH1 {
+    text-align: center;
+}
+
+.text {
+    padding: 0 10px;
+}
+
+button {
+    display: block;
+    float: none;
+    width: 100px;
+    margin: 0 auto;
+}

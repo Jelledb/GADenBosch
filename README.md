@@ -1,6 +1,16 @@
 # GADenBosch
 GitHub repository voor de website van het Grafisch Atelier Den Bosch gemaakt door Groep T.
 
+## Code kwaliteit
+
+Code kwaliteit wordt automatisch ge-monitord door CodeClimate. De status hiervan staat hieronder:
+
+[![Code Climate](https://codeclimate.com/repos/58a459827bd0840fbe0028ae/badges/d9a44723d6290b6b0ffc/gpa.svg)](https://codeclimate.com/repos/58a459827bd0840fbe0028ae/feed)
+
+[![Test Coverage](https://codeclimate.com/repos/58a459827bd0840fbe0028ae/badges/d9a44723d6290b6b0ffc/coverage.svg)](https://codeclimate.com/repos/58a459827bd0840fbe0028ae/coverage)
+
+[![Issue Count](https://codeclimate.com/repos/58a459827bd0840fbe0028ae/badges/d9a44723d6290b6b0ffc/issue_count.svg)](https://codeclimate.com/repos/58a459827bd0840fbe0028ae/feed)
+
 ## Ontwikkelomgeving opzetten
 
 Hieronder staan een aantal stappen die je moet ondernemen om de ontwikkelomgeving succesvol werkende te krijgen.
@@ -19,6 +29,8 @@ Hieronder staan een aantal stappen die je moet ondernemen om de ontwikkelomgevin
 7. Als alles goed is gegaan kun je nu aan de slag :-)
 
 ## Live omgevingen
+
+Build-status: ![Build Status](https://travis-ci.com/Jelledb/GADenBosch.svg?token=E3NExhogtpeWTpSrY88B&branch=develop)
 
 ### Productie/Acceptatie
 Deze omgeving wordt per sprint geüpdatet. Hierop staat een volwassen en werkende versie van het product. Deze omgeving wordt automatisch geüpdatet als er een nieuwe commit komt op de `master` branch. Deze omgeving wordt gebruikt om nieuwe changes per sprint te laten zien aan de klant.
