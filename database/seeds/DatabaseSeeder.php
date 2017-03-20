@@ -17,7 +17,9 @@ class DatabaseSeeder extends Seeder
 
         DB::table('roles')->insert([[
             'id' => 1, 'rolename' => 'admin'],['id' => 2, 'rolename' => 'vrijwilliger'],['id' => 3, 'rolename' => 'klant']]);
-
+        DB::table('vacatures')->insert([
+            ['id' => 1, 'datum' => 07-04-2017, 'description' => 'Dit is een vacature voor beheerder van de werkplaats.', 'title' => 'Werkplaatsbeheerder'],
+            ['id' => 2, 'datum' => 21-03-2017, 'description' => 'Dit is een vacature voor beheerder van het atelier.', 'title' => 'Atelierbeheerder']]);
 
     }
 
