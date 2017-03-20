@@ -47,7 +47,7 @@
         <div class="nav-elements">
             <ul id="nav-list">
                 <li>
-                    <a href="{{ url('/nieuws') }}">nieuws</a>
+                    <a href="{{ url('/nieuws') }}">nieuwstest</a>
                 </li>
                 <li>
                     <a href="{{ url('/winkel') }}">winkel</a>
