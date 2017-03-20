@@ -63,6 +63,11 @@ nav {
 
 }
 
+.fotoblok, .fotoblok img{
+    width: 275px;
+    height: auto;
+}
+
 .nieuws-nu {
     border: 3px solid rgb(238,134,141);
     padding: 10px;
@@ -74,13 +79,11 @@ nav {
 }
 
 .textblok {
-    position: absolute;
     top: 600px;
 }
 
 .leesmeer {
     bottom: 2px;
-    position: absolute;
 }
 
 .nieuws-archief {
