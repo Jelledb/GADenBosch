@@ -15,9 +15,13 @@ class CalenderController extends Controller
 
     function getDayplanning($currentDay)
     {
-        $data = $currentDay;
+        $data[0] = $currentDay;
 
-        return view('werkplaats.dagPlanning', $data);
+        //dag object opvragen waar currentday
+
+
+
+        return view('werkplaats.dagPlanning', $data[0]);
     }
 
 }

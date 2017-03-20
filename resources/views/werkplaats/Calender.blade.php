@@ -126,11 +126,15 @@ class Calender
             $this->currentDate = date('Y-m-d', strtotime($this->currentYear . '-' . $this->currentMonth . '-' . ($this->currentDay)));
 
 
+//            <a href="{{ route('detailedWerkplaats',['currentDay' =>$this->currentDay])}}"> $this->currentDay </a>
 
-            $cellContent = <<<HTML
-              <a href="{{ route('detailedWerkplaats',['currentDay' =>$this->currentDay])}}"> $this->currentDay </a>
-HTML;
+            $cellContent =
 
+        // '<a href="'.' {{ route('.'dagPlanning'.',['.'currentDay'.' =>'.$this->currentDay.'])}}'.'"> '.$this->currentDay.' </a>';
+            '<a href="/dagPlanning/'.$this->currentDay.'"> '.$this->currentDay.' </a>';
+
+            //'<a href="'.' {{ route('.'dagPlanning'.',['.'currentDay'.' =>'.$this->currentDay.'])}}'.'"> '.$this->currentDay.' </a>';
+//$cellContent = '<a href="{{ route('.'dagPlanning'.',['.'currentDay'.' =>$this->currentDay])}}"> $this->currentDay </a>';
 
 
 
@@ -145,7 +149,7 @@ HTML;
 
 
         return '<li id="li-' . $this->currentDate . '" class="' . ($cellNumber % 7 == 1 ? ' start ' : ($cellNumber % 7 == 0 ? ' end ' : ' ')) .
-            ($cellContent == null ? 'mask' : '') . '">' . $cellContent . '</li>';
+            ($cellContent == null ? 'mask' : '') . '">'. $cellContent . '</li>';
     }
 
     /**

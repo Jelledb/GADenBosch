@@ -14,7 +14,7 @@
 
 
 
-        {{ $id }}
+        {{--{{ $id }}--}}
     </div>
 
 @endsection

@@ -20,7 +20,7 @@ Route::get('/over', 'MenuController@getOverons');
 
 Route::get('/werkplaats', 'MenuController@getWerkplaats');
 
-Route::get('/detailWerkplaats/{id}', 'WorkplaceController@getDetailedPage');
+//Route::get('/detailedWerkplaats/{id}', 'WorkplaceController@getDetailedWerkplaats');
 
 Route::get('/contact', 'MenuController@getContact');
 
@@ -36,10 +36,15 @@ Route::get('/winkel', 'ShopController@getShopWindow');
 
 Route::get('/werkplaatsOverzicht', 'WorkplaceController@getWorkspacePage');
 
-Route::get('/dagPlanning{currentDay}', 'WorkplaceController@getDetailedWorkspace');
+Route::get('/dagPlanning/{currentday}','WorkplaceController@getDayplanning');
 
-//Route::get('/detailedWerkplaats', 'CalenderController@getDayplanning');
+//Route::get('/dagPlanning/{currentDay}', function ($currentDay){
+//    dd($currentDay);
+//});
 
+
+// temporary rout without an id parameter
+Route::get('/detailedWerkplaats', 'WorkplaceController@getDetailedWerkplaats');
 
 
 
