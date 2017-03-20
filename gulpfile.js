@@ -11,25 +11,19 @@ gulp.task('deploy', function() {
         return;
     }
 
-    const directories = {
-        'master': '/var/www/html',
-        'develop': '/var/www/html-dev/'
-    };
+    const directory = '/var/www/html';
 
     // steps for the deployment process
     console.log('Starting gulp deployment process');
 
-    // pull the branch.
-    const directory = directories[branch];
-
-    var config = {
+    const config = {
         host: '95.85.39.161',
         port: 22,
         username: 'root',
         password: 'codelance'
     };
 
-    var gulpSSH = new GulpSSH({
+    const gulpSSH = new GulpSSH({
         ignoreErrors: false,
         sshConfig: config
     });
