@@ -8,6 +8,7 @@ $(document).ready(function(){
         infiniteLoop: true,
         hideControlOnEnd: false,
         easing: 'easeOutBack',
-        speed: 1000
+        speed: 1000,
+        auto: true
     });
 });
