@@ -14,8 +14,9 @@ class WorkplaceController extends Controller
         return view('werkplaats.werkplaatsOverzicht', compact('workplaces'));
     }
 
-    public function getDetailedWerkplaats() {
-        return view('werkplaats.detailedWerkplaats');
+    public function getDetailedWerkplaats($id) {
+        $werkplaatsid[] = $id;
+        return view('werkplaats.detailedWerkplaats', compact('werkplaatsid'));
     }
 
     function getDayplanning($currentDay)

@@ -9,12 +9,9 @@
         $calender = new Calender();
         echo $calender->show();
 
-        $lala = "<a href = dfasdfasdfasdfasdf";
         ?>
+        {{ $werkplaatsid[0] }}
 
-
-
-        {{--{{ $id }}--}}
     </div>
 
 @endsection

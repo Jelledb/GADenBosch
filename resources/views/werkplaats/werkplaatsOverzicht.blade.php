@@ -21,10 +21,7 @@
                     @foreach($workplaces as $workplace)
 
                         <li>
-
-                            {{ $workplace->workspace_type_id . " " . $workplace->size_id}}
-
-
+                            <a href = "{{url("detailedWerkplaats/".$workplace->id)}}"> {{ $workplace->workspace_type_id . " " . $workplace->size_id }}</a>
                         </li>
 
                     @endforeach

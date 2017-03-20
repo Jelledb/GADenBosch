@@ -24,9 +24,7 @@ Route::get('/werkplaats', 'MenuController@getWerkplaats');
 
 Route::get('/contact', 'MenuController@getContact');
 
-
 Route::get('/vrienden-overzicht', 'MenuController@friendPage');
-
 
 Route::get('/sponsors', 'SponsorController@getSponsorPage');
 
@@ -35,6 +33,8 @@ Route::get('/vriend-worden', 'MenuController@friendPage');
 Route::get('/winkel', 'ShopController@getShopWindow');
 
 Route::get('/werkplaatsOverzicht', 'WorkplaceController@getWorkspacePage');
+
+Route::get('/detailedWerkplaats/{id}', 'WorkplaceController@getDetailedWerkplaats');
 
 Route::get('/dagPlanning/{currentday}','WorkplaceController@getDayplanning');
 
