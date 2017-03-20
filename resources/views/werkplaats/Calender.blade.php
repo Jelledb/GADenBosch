@@ -131,7 +131,7 @@ class Calender
             $cellContent =
 
         // '<a href="'.' {{ route('.'dagPlanning'.',['.'currentDay'.' =>'.$this->currentDay.'])}}'.'"> '.$this->currentDay.' </a>';
-            '<a href="/dagPlanning/'.$this->currentDay.'"> '.$this->currentDay.' </a>';
+            '<a href="/dagPlanning/'.$this->currentDate.'"> '.$this->currentDay.' </a>';
 
             //'<a href="'.' {{ route('.'dagPlanning'.',['.'currentDay'.' =>'.$this->currentDay.'])}}'.'"> '.$this->currentDay.' </a>';
 //$cellContent = '<a href="{{ route('.'dagPlanning'.',['.'currentDay'.' =>$this->currentDay])}}"> $this->currentDay </a>';

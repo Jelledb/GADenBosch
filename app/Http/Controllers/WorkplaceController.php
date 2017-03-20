@@ -20,7 +20,7 @@ class WorkplaceController extends Controller
 
     function getDayplanning($currentDay)
     {
-        $data = $currentDay;
+        $data[] = $currentDay;
 
         return view('werkplaats.dagPlanning', $data);
     }
