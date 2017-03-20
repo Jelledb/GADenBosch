@@ -58,13 +58,8 @@ nav {
     width: 100%;
 }
 
-.nieuws-overzicht-home {
-    position: absolute;
-
-}
-
 .fotoblok, .fotoblok img{
-    width: 275px;
+    width: 100%;
     height: auto;
 }
 
@@ -84,6 +79,10 @@ nav {
 
 .leesmeer {
     bottom: 2px;
+}
+
+#item .arch:first-of-type {
+    font-size: 24px;
 }
 
 .nieuws-archief {

@@ -11,7 +11,7 @@
             <li><img src="{{asset('images/hp_werkplaatsfoto web 4.jpg')}}" title="foto 4"/></li>
         </ul>
     </div>
-    <div class="nieuws-overzicht-home">
+    <div class="col-md-12">
         <div id="item" class="nieuws-nu col-md-3">
             <h2 class="arch">Jaarprent 2016</h2>
             <div class="fotoblok">
