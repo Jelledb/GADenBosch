@@ -6,7 +6,7 @@
     </div>
 
         <?php
-        $calender = new Calender();
+        $calender = new Calender($werkplaatsid[0]);
         echo $calender->show();
 
         ?>

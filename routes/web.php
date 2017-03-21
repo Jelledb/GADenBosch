@@ -36,7 +36,7 @@ Route::get('/werkplaatsOverzicht', 'WorkplaceController@getWorkspacePage');
 
 Route::get('/detailedWerkplaats/{id}', 'WorkplaceController@getDetailedWerkplaats');
 
-Route::get('/dagPlanning/{currentday}','WorkplaceController@getDayplanning');
+Route::get('/dagPlanning/{currentday}/{id}','WorkplaceController@getDayplanning');
 
 //Route::get('/dagPlanning/{currentDay}', function ($currentDay){
 //    dd($currentDay);

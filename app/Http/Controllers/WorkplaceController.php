@@ -19,10 +19,10 @@ class WorkplaceController extends Controller
         return view('werkplaats.detailedWerkplaats', compact('werkplaatsid'));
     }
 
-    function getDayplanning($currentDay)
+    function getDayplanning($currentDay, $id)
     {
-        $data[] = $currentDay;
-
+        $data["day"] = $currentDay;
+        $data["id"] = $id;
         return view('werkplaats.dagPlanning', $data);
     }
 

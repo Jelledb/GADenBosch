@@ -10,11 +10,13 @@
 class Calender
 {
 
+    private $id;
     /**
      * Constructor
      */
-    public function __construct()
+    public function __construct($id)
     {
+        $this->id = $id;
         $this->naviHref = htmlentities($_SERVER['PHP_SELF']);
 
         $this->afspraak = date('Y-m-d', strtotime("2017" . '-' . "03" . '-' . "17"));
@@ -131,7 +133,7 @@ class Calender
             $cellContent =
 
         // '<a href="'.' {{ route('.'dagPlanning'.',['.'currentDay'.' =>'.$this->currentDay.'])}}'.'"> '.$this->currentDay.' </a>';
-            '<a href="/dagPlanning/'.$this->currentDate.'"> '.$this->currentDay.' </a>';
+            '<a href="/dagPlanning/'.$this->currentDate .'/'. $this->id .'"> '.$this->currentDay.' </a>';
 
             //'<a href="'.' {{ route('.'dagPlanning'.',['.'currentDay'.' =>'.$this->currentDay.'])}}'.'"> '.$this->currentDay.' </a>';
 //$cellContent = '<a href="{{ route('.'dagPlanning'.',['.'currentDay'.' =>$this->currentDay])}}"> $this->currentDay </a>';
