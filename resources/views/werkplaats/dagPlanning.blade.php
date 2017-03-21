@@ -1,50 +1,63 @@
-
-<html>
-<head>
-    <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
-</head>
-<body>
-
-<div>
-
-    <ol>
-
-        <?php
-
-        $time = "08:00";
+@extends('layouts.website')
 
 
+@section('content')
+
+    <div class="container">
+        <div class="row">
+            <div class="panel panel-default">
+                <h1 class="centerH1">Reserveer</h1>
+                <br/>
+                <div class="row justify-content-md-center">
+                    <div class="col-md-4">
+                        <?php
+                        createTimeSlots("9:00", 5);
+
+                        ?>
+
+                        <?php
+                        createTimeSlots("10:00", 7);
+
+                        ?>
+                    </div>
+                </div>
+
+                <input type="button" value="Reserveer"/>
+
+            </div>
 
 
-        for ($x = 0; $x <= 8; $x++) {
+        </div>
 
-            $time = date('H:i', strtotime( $time .'+1 hour'));
-//           echo '<input  id="'.$x.'" name="'.$x.'" type="button" class="btn btn-primary" data-toggle="button" aria-pressed="true" autocomplete="off" value="'.$time.'">
+    </div>
+
+
+@endsection
+
+
+
+<?php
+
+use App\Reservation;
+
+function createTimeSlots($startTime, $amountOfHours)
+{
+    $startTime = date('H:i', strtotime($startTime));
+    echo "<select>";
+    for ($i = 0; $i < $amountOfHours; $i++) {
+        echo "<option value=$startTime>$startTime</option>";
+        $startTime = date('H:i', strtotime($startTime . '+1 hour'));
+    }
+    echo "</select>";
+}
+
+function saveReservation()
+{
+//    $reservation = new Reservation();
 //
-//            </input>';
-         echo  '<div class="btn-group" data-toggle="buttons">
-  <label class="btn btn-primary active">
-    <input type="checkbox" autocomplete="off" checked> Checkbox 1 (pre-checked)
-            </label>
-  <label class="btn btn-primary">
-    <input type="checkbox" autocomplete="off"> Checkbox 2
-            </label>
-  <label class="btn btn-primary">
-    <input type="checkbox" autocomplete="off"> Checkbox 3
-            </label>
-</div>';
+//    DB::table('reservation')->insert(
+//      array('date_in' => )
+//    );
+}
 
-           // echo "<li> $time </li>";
-
-        }
-
-
-        ?>
-
-
-    </ol>
-
-</div>
-
-</body>
-</html>
+?>
