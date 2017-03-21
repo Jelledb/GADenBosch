@@ -11,18 +11,18 @@
                 <div class="row justify-content-md-center">
                     <div class="col-md-4">
                         <?php
-                        createTimeSlots("9:00", 5);
+                        createTimeSlots("9:00", 5, "startTime");
 
                         ?>
 
                         <?php
-                        createTimeSlots("10:00", 7);
+                        createTimeSlots("10:00", 7, "endTime");
 
                         ?>
                     </div>
                 </div>
 
-                <input type="button" value="Reserveer"/>
+                <a href="{{action('WorkplaceController@saveToDatabase')}}"><input type="button" value="Reserveer"/></a>
 
             </div>
 
@@ -40,10 +40,10 @@
 
 use App\Reservation;
 
-function createTimeSlots($startTime, $amountOfHours)
+function createTimeSlots($startTime, $amountOfHours, $name)
 {
     $startTime = date('H:i', strtotime($startTime));
-    echo "<select>";
+    echo "<select id=$name>";
     for ($i = 0; $i < $amountOfHours; $i++) {
         echo "<option value=$startTime>$startTime</option>";
         $startTime = date('H:i', strtotime($startTime . '+1 hour'));
@@ -53,11 +53,12 @@ function createTimeSlots($startTime, $amountOfHours)
 
 function saveReservation()
 {
-//    $reservation = new Reservation();
-//
-//    DB::table('reservation')->insert(
-//      array('date_in' => )
-//    );
+    $date = date('Y-m-d H:i:s');
+    $dateLater = date('Y-m-d H:i:s', strtotime($date . '+1 hour'));
+
+    DB::table('reservation')->insert(
+        array('date_in' => $date, 'date_out' => $dateLater, 'user_id' => 3)
+    );
 }
 
 ?>

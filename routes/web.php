@@ -38,10 +38,10 @@ Route::get('/detailedWerkplaats/{id}', 'WorkplaceController@getDetailedWerkplaat
 
 Route::get('/dagPlanning/{currentday}/{id}','WorkplaceController@getDayplanning');
 
+Route::get('function', 'WorkplaceController@saveToDatabase');
 //Route::get('/dagPlanning/{currentDay}', function ($currentDay){
 //    dd($currentDay);
 //});
-
 
 // temporary rout without an id parameter
 Route::get('/detailedWerkplaats', 'WorkplaceController@getDetailedWerkplaats');
