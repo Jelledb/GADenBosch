@@ -47,17 +47,6 @@ class Paginas extends Migration
             $table->string('tekst');
             $table->binary("image")->nullable();
         });
-        Schema::create('news', function (Blueprint $table){
-            $table->increments('id');
-            $table->date('start_date');
-            $table->date('end_datet');
-            $table->string('duration');
-            $table->integer('price');
-            $table->string('menu');
-            $table->string('titel');
-            $table->string('tekst');
-            $table->binary("image")->nullable();
-        });
         Schema::create('photos', function (Blueprint $table){
         $table->increments('id');
         $table->date('start_date');

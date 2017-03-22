@@ -2,27 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\NewsItem;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
 
     /**
-     * Show the application dashboard.
+     * Show the index page including the three latest news items.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        return view('home');
+        $newsItems = NewsItem::where('zichtbaar', 1)
+            ->take(3)
+            ->get();
+        return view('index', ['newsItems' => $newsItems, '' => '']);
     }
 }

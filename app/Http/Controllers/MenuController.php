@@ -8,10 +8,6 @@ use App\Products;
 
 class MenuController extends Controller
 {
-
-    function getIndex(){
-        return view('index');
-    }
     function getWerkplaats ()
     {
         return view('werkplaats');

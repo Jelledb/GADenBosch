@@ -10,7 +10,6 @@
                         <h1 class="centerH1">Nieuwsberichten</h1>
                         <br />
                     </div>
-
                 </div>
             </div>
         </div>

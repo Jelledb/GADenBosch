@@ -58,36 +58,6 @@ nav {
     width: 100%;
 }
 
-.nieuws-overzicht-home {
-    position: absolute;
-
-}
-
-.nieuws-nu {
-    border: 3px solid rgb(238,134,141);
-    padding: 10px;
-}
-
-.nieuws-workshops {
-    border: 3px solid rgb(0,174,239);
-    padding: 10px;
-}
-
-.textblok {
-    position: absolute;
-    top: 600px;
-}
-
-.leesmeer {
-    bottom: 2px;
-    position: absolute;
-}
-
-.nieuws-archief {
-    border: 3px solid rgb(241,90,41);
-    padding: 10px;
-}
-
 footer {
     width: 100%;
     border-top: 1px solid #e7e7e7;
@@ -265,6 +235,31 @@ nav .dropdown-menu {
     margin: 0 5px;
 }
 
+.nieuws-item-home {
+    height: 180px;
+    border: solid 1px red;
+    padding: 10px;
+}
+
+.nieuws-item-home .nieuws-date {
+    font-style: italic;
+    color: #545153;
+}
+
+.nieuws-item-home .nieuws-titel {
+    font-size: 30px;
+    color: #01acf0;
+}
+
+.nieuws-item-home h2 {
+
+}
+
+.nieuws-item-home img {
+    height: 100%;
+    width: 60px;
+    float: left;
+}
 
 
 /* General shit */

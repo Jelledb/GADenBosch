@@ -12,7 +12,7 @@
 */
 
 /* Website routes. */
-Route::get('/','MenuController@getIndex');
+Route::get('/','HomeController@index');
 
 Route::get('/nieuws','MenuController@getNieuws');
 
