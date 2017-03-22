@@ -28,7 +28,7 @@ Route::get('/vriendenOverzicht', 'MenuController@friendPage');
 
 Route::get('/sponsors', 'SponsorController@getSponsorPage');
 
-Route::get('/vriendWorden', 'MenuController@friendPage');
+Route::get('/vriendWorden', 'FriendController@create');
 
 Route::get('/winkel', 'ShopController@getShopWindow');
 
