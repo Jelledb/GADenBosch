@@ -1,8 +1,8 @@
 @extends('layouts.website')
 
 @section('content')
-
-    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDJf9ODoIbEDJ5hiFGQlmjK31sJ0SDT7XM"></script>
     <script>
         function initialize() {
             var map_canvas = document.getElementById('map_canvas');
