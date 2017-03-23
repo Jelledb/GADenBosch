@@ -34,23 +34,29 @@
                     </tr>
 
                     @foreach($allExpositions as $expos)
+                        @if(strtotime($expos->date_to) >= strtotime('now'))
                         <tr>
                             <td>{{ $expos->id }}</td>
                             <td>{{ $expos->date_from }}</td>
                             <td>{{ $expos->date_to }}</td>
                             <td>{{ $expos->open_times }}</td>
-                            <td>{{ $expos->extra }}</td>
+                            @if($expos->extra != null)
+                                <td>{{ $expos->extra }}</td>
+                            @else
+                                <td>GEEN EXTRA'S</td>
+                            @endif
                             <td>{{ $expos->opening }}</td>
                             <td>{{ $expos->opening_time }}</td>
                             <td>{{ $expos->message }}</td>
                             <td>{{ $expos->title }}</td>
                             <td>{{ $expos->subtitle }}</td>
                             <td>{{ $expos->introduction }}</td>
-                            <td>{{ $expos->text }}</td>
+                            <td>{!! $expos->text !!}</td>
                             <td>{{ $expos->location }}</td>
                             <td>{{ $expos->toon }}</td>
                             <td>{{ $expos->template }}</td>
                         </tr>
+                        @endif
                     @endforeach
                 </table>
             </div>
