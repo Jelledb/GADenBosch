@@ -34,6 +34,8 @@ Route::get('/winkel', 'ShopController@getShopWindow');
 
 Route::get('/agenda', 'AgendaController@getExpositions');
 
+Route::get('/agendaitem/{id}', 'AgendaItemController@getExpositionItem');
+
 /* CMS routes. */
 Route::group(array('prefix' => 'cms'), function() {
 
