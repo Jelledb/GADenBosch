@@ -56,6 +56,9 @@
                     <a href="{{ url('vriendWorden') }} ">vrienden</a>
                 </li>
                 <li>
+                    <a href="{{ url('agenda') }}">agenda</a>
+                </li>
+                <li>
                     <a href="{{ url('/werkplaats') }}">werkplaats</a>
                 </li>
                 <li>
