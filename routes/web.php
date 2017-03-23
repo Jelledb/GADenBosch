@@ -34,9 +34,9 @@ Route::get('/winkel', 'ShopController@getShopWindow');
 
 Route::get('/werkplaatsOverzicht', 'WorkplaceController@getWorkspacePage');
 
-Route::get('/detailedWerkplaats/{id}', 'WorkplaceController@getDetailedWerkplaats');
+Route::get('/detailed-werkplaats/{id}', 'WorkplaceController@getDetailedWerkplaats');
 
-Route::get('/dagPlanning/{currentday}/{id}','WorkplaceController@getDayplanning');
+Route::get('/dag-planning/{currentday}/{id}','WorkplaceController@getDayplanning');
 
 Route::get('function', 'WorkplaceController@saveToDatabase');
 //Route::get('/dagPlanning/{currentDay}', function ($currentDay){
