@@ -11,10 +11,25 @@
             <li><img src="{{asset('images/hp_werkplaatsfoto web 4.jpg')}}" title="foto 4"/></li>
         </ul>
     </div>
-    @foreach($newsItems as $newsItem)
-        {{ $newsItem->titel }}
-    @endforeach
     <div class="nieuws-overzicht-home">
+        <h2>Laatste nieuws</h2>
+
+        <a href="/nieuws">Klik hier om alle nieuwsberichten te lezen</a>
+
+        @foreach($newsItems as $newsItem)
+            <div class="nieuws-item-home panel panel-default">
+                <div class="nieuws-item-foto">
+                    <img src="{{asset('images/foto-nieuws-homepage/265_DickVerdult_Jaarprent_2017_GrafischAtelierDenBosch.jpg')}}">
+                </div>
+                <p class="nieuws-titel">
+                    <a href="/nieuws/{{ $newsItem->id }}">{{ $newsItem->titel }}</a>
+                </p>
+                <span class="nieuws-date">Geplaatst op {{ $newsItem->aangemaakt }}</span>
+                <div class="textblok">{{ $newsItem->tekst }}</div>
+            </div>
+        @endforeach
+    </div>
+    <div class="nieuws-overzicht-home" style="display: none;">
         <div class="nieuws-item-home panel panel-default">
             <img src="{{asset('images/foto-nieuws-homepage/265_DickVerdult_Jaarprent_2017_GrafischAtelierDenBosch.jpg')}}">
             <a href="">

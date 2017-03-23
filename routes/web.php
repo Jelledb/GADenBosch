@@ -14,7 +14,9 @@
 /* Website routes. */
 Route::get('/','HomeController@index');
 
-Route::get('/nieuws','MenuController@getNieuws');
+Route::get('nieuws','NewsController@getNewsList');
+
+Route::get('nieuws/{id}', 'NewsController@getNewsItem');
 
 Route::get('/over','MenuController@getOverons');
 
