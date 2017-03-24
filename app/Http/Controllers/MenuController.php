@@ -34,6 +34,12 @@ class MenuController extends Controller
     public function cmsTentoonstellingen(){
         return view('cms/cmsnewtentoonstellingen');
     }
+    public function cmsEditTentoonstelling($id){
+        $exposition = expositions::where('id', $id)
+            ->take(1)
+            ->get();
+        return view('cms/cmsedittentoonstelling')->with('editExpo', $exposition);
+    }
     public function cmsWorkshop(){
         return view('cms/cmsnewworkshop');
     }

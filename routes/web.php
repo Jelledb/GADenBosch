@@ -43,6 +43,7 @@ Route::group(array('prefix' => 'cms'), function() {
 
     Route::get('/startpagina', 'MenuController@cmshome');
     Route::get('/tentoonstellingen', 'MenuController@cmsTentoonstellingen');
+    Route::get('/bewerktentoonstelling/{id}', 'MenuController@cmsEditTentoonstelling');
     Route::get('/workshop', 'MenuController@cmsWorkshop');
     Route::get('/lijsttentoonstellingen', 'MenuController@cmslijstTentoonstellingen');
     Route::get('/workshops', 'MenuController@cmsworkshops');

@@ -37,7 +37,11 @@
                         <td>
                             <div class="checkbox toonbutton">
                                 <label>
-                                    <input type="checkbox" value="">
+                                    @if($expos->visible == 1)
+                                        <input type="checkbox" value="{{ $expos->id }}" checked disabled>
+                                    @else
+                                        <input type="checkbox" value="{{ $expos->id }}" disabled>
+                                    @endif
                                 </label>
                             </div>
                         </td>
@@ -53,7 +57,7 @@
                         </td>
                         <td>{!! $expos->title !!}</td>
                         <td>
-                            <a href="{{ url('cms/tentoonstellingen') }}"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                            <a href="bewerktentoonstelling/{{$expos->id}}"><i class="fa fa-pencil" aria-hidden="true"></i></a>
                             <a href="#"><i class="fa fa-trash" aria-hidden="true"></i></a>
                         </td>
                     </tr>
