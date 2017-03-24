@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\expositions;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use App\Products;
@@ -37,7 +38,9 @@ class MenuController extends Controller
         return view('cms/cmsnewworkshop');
     }
     public function cmslijstTentoonstellingen(){
-        return view('cms/cmstentoonstellingen');
+        $expositions = expositions::orderBy('id', 'desc')
+            ->get();
+        return view('cms/cmstentoonstellingen')->with('allExpositions', $expositions);
     }
     public function cmsworkshops(){
         return view('cms/cmsworkshops');

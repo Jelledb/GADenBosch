@@ -15,6 +15,10 @@
                             @if($expos->subtitle != null)
                                 <h2 class="h2">{!! $expos->subtitle !!}</h2>
                             @endif
+
+                                @if($expos->opening != '0000-00-00' && $expos->opening_time != null)
+                                    <h2 class="h2">Openingsdatum: {!! $expos->opening !!} {!! $expos->opening_time !!}</h2>
+                                @endif
                             {!! $expos->text !!}
 
                             @if($expos->extra != null)
