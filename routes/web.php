@@ -36,6 +36,8 @@ Route::get('/agenda', 'AgendaController@getExpositions');
 
 Route::get('/agendaitem/{id}', 'AgendaItemController@getExpositionItem');
 
+Route::get('/archief-agenda', 'ArchiveAgendaController@getArchiveAgenda');
+
 /* CMS routes. */
 Route::group(array('prefix' => 'cms'), function() {
 
