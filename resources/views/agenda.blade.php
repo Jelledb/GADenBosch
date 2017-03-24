@@ -16,8 +16,6 @@
 
                 <table cellspacing="10">
                     @foreach($allExpositions as $expos)
-                        @if(strtotime($expos->date_to) >= strtotime('now'))
-
                         <tr>
                             <td><strong>{{ $expos->date_from }}</strong></td>
                             <td>&nbsp;t/m&nbsp;</td>
@@ -25,7 +23,6 @@
                             <td>&nbsp;</td>
                             <td><a href="/agendaitem/{{ $expos->id }}">{{ preg_replace('/ {2,}/', ' ', preg_replace('/<[^>]*>/', ' ', $expos->title)) }}</a></td>
                         </tr>
-                        @endif
                     @endforeach
                 </table>
                 <br />
