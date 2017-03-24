@@ -7,7 +7,7 @@
             <div class="col-md-8 col-md-offset-2">
                 @foreach($specificExposition as $expos)
                     <div class="panel panel-default">
-                        <div>
+                        <div style="padding:10px">
                             @if($expos->title != null)
                                 <h1 class="centerH1">{!! $expos->title !!}</h1>
                             @endif
@@ -18,6 +18,8 @@
                             {!! $expos->text !!}
 
                             @if($expos->extra != null)
+                                <br />
+                                <br />
                                 <p>Let op: {!! $expos->extra !!}</p>
                             @endif
                         </div>

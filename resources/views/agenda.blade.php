@@ -19,11 +19,11 @@
                         @if(strtotime($expos->date_to) >= strtotime('now'))
 
                         <tr>
-                            <td>{{ $expos->date_from }}</td>
+                            <td><strong>{{ $expos->date_from }}</strong></td>
+                            <td>&nbsp;t/m&nbsp;</td>
+                            <td><strong>{{ $expos->date_to }}</strong></td>
                             <td>&nbsp;</td>
-                            <td>{{ $expos->date_to }}</td>
-                            <td>&nbsp;</td>
-                            <td><a href="/agendaitem/{{ $expos->id }}">{!! $expos->title !!}</a></td>
+                            <td><a href="/agendaitem/{{ $expos->id }}">{{ preg_replace('/ {2,}/', ' ', preg_replace('/<[^>]*>/', ' ', $expos->title)) }}</a></td>
                         </tr>
                         @endif
                     @endforeach
