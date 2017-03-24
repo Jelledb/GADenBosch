@@ -14,6 +14,40 @@
 
         </div>
     </div>
+
+    <div class="row">
+        <div class="col-md-2">
+            <h4>Datum van</h4><br />
+            <input value="{{ $expo->date_from }}" />
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-2">
+            <h4>Datum tot</h4><br />
+            <input value="{{ $expo->date_to }}" />
+        </div>
+    </div>
+
+    <br />
+    <br />
+
+    <div class="row">
+        <div class="col-md-8">
+            <h4>Openingstijden</h4><br />
+            <input style="width: 300px;" value="{{ $expo->open_times }}" />
+        </div>
+    </div>
+
+    <br />
+    <br />
+    <br />
+    <div class="row">
+        <div class="col-md-8">
+            <h4>Tekst</h4>
+            <textarea rows="5" cols="80">{!! $expo->text !!}</textarea>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+
     <div class="row">
 
         <div class="col-md-3">
@@ -37,12 +71,6 @@
         <div class="col-md-3">
 
         </div>
-    </div>
-    <div class="row">
-        <div class="col-md-8">
-            <textarea rows="5" cols="80">{!! $expo->text !!}</textarea>
-        </div>
-        <div class="col-md-4"></div>
     </div>
     <!--
     <hr class="breeklijn"/>
