@@ -164,6 +164,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         Mollie\Laravel\MollieServiceProvider::class,
+        Laravel\Socialite\SocialiteServiceProvider::class,
 
 
         /*
@@ -231,6 +232,8 @@ return [
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
         'Mollie' => Mollie\Laravel\Facades\Mollie::class,
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+
 
     ],
 

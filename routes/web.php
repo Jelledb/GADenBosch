@@ -28,7 +28,11 @@ Route::get('/vriendenOverzicht', 'MenuController@friendPage');
 
 Route::get('/sponsors', 'SponsorController@getSponsorPage');
 
-Route::get('/vriendWorden', 'FriendController@create');
+Route::get('/vriend-worden', 'MenuController@friendPage');
+
+Route::put('/vriend-worden', 'FriendController@becomeFriend');
+
+Route::post('/vriend-worden-redirect', 'FriendController@paymentUpdate');
 
 Route::get('/winkel', 'ShopController@getShopWindow');
 
@@ -59,3 +63,10 @@ Route::group(array('prefix' => 'cms'), function() {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
+Route::group(['middleware' => 'auth'], function () {
+
+    // All my routes that needs a logged in user
+    Route::put('/vriend-worden', 'FriendController@becomeFriend');
+
+});
