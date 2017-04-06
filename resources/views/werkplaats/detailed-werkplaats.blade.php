@@ -6,11 +6,11 @@
     </div>
 
         <?php
-        $calender = new Calender($werkplaatsid[0]);
+        $calender = new Calender($occupation,$workspace);
         echo $calender->show();
 
         ?>
-        {{ $werkplaatsid[0] }}
+
 
     </div>
 

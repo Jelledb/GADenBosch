@@ -14,9 +14,11 @@ class Calender
     /**
      * Constructor
      */
-    public function __construct($id)
+    public function __construct($occupation,$workspace)
     {
-        $this->id = $id;
+
+
+        dd($occupation,$workspace);
         $this->naviHref = htmlentities($_SERVER['PHP_SELF']);
 
         $this->afspraak = date('Y-m-d', strtotime("2017" . '-' . "03" . '-' . "17"));

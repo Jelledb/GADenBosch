@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Reservation;
 use App\Workspace;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -16,8 +17,12 @@ class WorkplaceController extends Controller
     }
 
     public function getDetailedWerkplaats($id) {
-        $werkplaatsid[] = $id;
-        return view('werkplaats.detailedWerkplaats', compact('werkplaatsid'));
+
+         $occupation =  Reservation::occupation($id)->get();
+         $workspace = Workspace::workspace($id)->get();
+
+
+        return view('werkplaats.detailed-werkplaats', compact('occupation','workspace'));
     }
 
     function getDayplanning($currentDay, $id)
@@ -35,5 +40,6 @@ class WorkplaceController extends Controller
             array('date_in' => $date, 'date_out' => $dateLater, 'user_id' => 3)
         );
     }
+
 
 }
