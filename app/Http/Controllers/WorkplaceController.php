@@ -13,7 +13,7 @@ class WorkplaceController extends Controller
 
     public function getWorkspacePage() {
         $workplaces = Workspace::all();
-        return view('werkplaats.werkplaatsOverzicht', compact('workplaces'));
+        return view('werkplaats.werkplaats-overzicht', compact('workplaces'));
     }
 
     public function getDetailedWerkplaats($id) {

@@ -32,7 +32,7 @@ Route::get('/vriend-worden', 'MenuController@friendPage');
 
 Route::get('/winkel', 'ShopController@getShopWindow');
 
-Route::get('/werkplaatsOverzicht', 'WorkplaceController@getWorkspacePage');
+Route::get('/werkplaats-overzicht', 'WorkplaceController@getWorkspacePage');
 
 Route::get('/detailed-werkplaats/{id}', 'WorkplaceController@getDetailedWerkplaats');
 

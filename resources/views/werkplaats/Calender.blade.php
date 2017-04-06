@@ -10,15 +10,19 @@
 class Calender
 {
 
-    private $id;
+    private $workspace;
+    private $occupation;
+    private $occupationString;
     /**
      * Constructor
      */
     public function __construct($occupation,$workspace)
     {
+               $this->workspace = $workspace[0];
+               $this->occupation = $occupation[0];
 
 
-        dd($occupation,$workspace);
+
         $this->naviHref = htmlentities($_SERVER['PHP_SELF']);
 
         $this->afspraak = date('Y-m-d', strtotime("2017" . '-' . "03" . '-' . "17"));
@@ -135,7 +139,7 @@ class Calender
             $cellContent =
 
         // '<a href="'.' {{ route('.'dagPlanning'.',['.'currentDay'.' =>'.$this->currentDay.'])}}'.'"> '.$this->currentDay.' </a>';
-            '<a href="/dag-planning/'.$this->currentDate .'/'. $this->id .'"> '.$this->currentDay.' </a>';
+            '<a href="/dag-planning/'.$this->currentDate .'/'. $this->workspace->id .'"> '.$this->currentDay.' </a>';
 
             //'<a href="'.' {{ route('.'dagPlanning'.',['.'currentDay'.' =>'.$this->currentDay.'])}}'.'"> '.$this->currentDay.' </a>';
 //$cellContent = '<a href="{{ route('.'dagPlanning'.',['.'currentDay'.' =>$this->currentDay])}}"> $this->currentDay </a>';
@@ -152,7 +156,7 @@ class Calender
         }
 
 
-        return '<li id="li-' . $this->currentDate . '" class="' . ($cellNumber % 7 == 1 ? ' start ' : ($cellNumber % 7 == 0 ? ' end ' : ' ')) .
+        return '<li id="' .'good'. '" class="' . ($cellNumber % 7 == 1 ? ' start ' : ($cellNumber % 7 == 0 ? ' end ' : ' ')) .
             ($cellContent == null ? 'mask' : '') . '">'. $cellContent . '</li>';
     }
 
@@ -241,6 +245,21 @@ class Calender
             $month = date("m", time());
 
         return date('t', strtotime($year . '-' . $month . '-01'));
+    }
+    private function occupation(){
+        $this->occupationString = $this->currentDate;
+
+        foreach ($this->occupation as $oc){
+            echo $oc;
+
+            //$total_secs = $end_time - $start_time;
+
+            // $elapsed_secs = time() - $start_time;
+
+            // $percent = round(($elapsed_secs/$total_secs)*100);
+        }
+        return 'good'; // html string;
+
     }
 
 
