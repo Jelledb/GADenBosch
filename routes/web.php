@@ -30,7 +30,7 @@ Route::get('/sponsors', 'SponsorController@getSponsorPage');
 
 Route::get('/vriend-worden', 'MenuController@friendPage');
 
-Route::put('/vriend-worden', 'FriendController@becomeFriend');
+Route::get('/vriend-worden-pay', 'FriendController@becomeFriend');
 
 Route::post('/vriend-worden-redirect', 'FriendController@paymentUpdate');
 
@@ -70,3 +70,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::put('/vriend-worden', 'FriendController@becomeFriend');
 
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');

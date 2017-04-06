@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Redirect;
+use Mollie\Laravel\Facades\Mollie;
 
 class FriendController extends Controller
 {
@@ -15,11 +19,11 @@ class FriendController extends Controller
         // Mollie shit doen hier
         // payment aanmaken
         if(Auth::check()) {
+            $user = Auth::user();
             $customer = Mollie::api()->customers()->create([
-                "name" => "John Doe",
-                "email" => "john@doe.com",
+                "name" => $user->name,
+                "email" => $user->email,
             ]);
-
 
             $payment = Mollie::api()->payments()->create([
                 "amount" => 45.00,
@@ -28,6 +32,8 @@ class FriendController extends Controller
                 "description" => "1 Jaar Vriend Worden GA Den Bosch",
                 "redirectUrl" => "https://gadenbosch.ga/vriend-worden",
             ]);
+
+            return Redirect::toditwerktniet($payment->getPaymentUrl())->crashpls();
         }
 
     }
