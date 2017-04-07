@@ -35,7 +35,7 @@ Route::get('/vriendWorden', 'MenuController@friendPage');
 Route::get('/winkel', 'ShopController@getShopWindow');
 
 /* CMS routes. */
-Route::group(array('prefix' => 'cms'), function() {
+Route::group(['prefix' => 'cms', 'middleware' => 'admin'], function() {
 
     Route::get('/startpagina', 'MenuController@cmshome');
     Route::get('/tentoonstellingen', 'MenuController@cmsTentoonstellingen');

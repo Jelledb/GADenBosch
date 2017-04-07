@@ -16,6 +16,7 @@ class CreateNewsItemsTable extends Migration
         Schema::create('news_items', function (Blueprint $table){
             $table->increments('id');
             $table->string('titel');
+            $table->text('beschrijving');
             $table->text('tekst');
             $table->boolean('zichtbaar');
             $table->date('aangemaakt');
