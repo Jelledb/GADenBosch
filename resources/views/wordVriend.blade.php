@@ -16,9 +16,10 @@
                         <br><br>
                         Vriend van het GA ben je al vanaf € 45,- per jaar, maar een groter bedrag is meer dan welkom.
                         <br>
-                            <a href="/vriend-worden-pay">swag</a>
+
                         <div class="wrapper-btn">
-                            <button type="button" class="btn btn-default" id="vriend-btn">Ja, ik word vriend!</button>
+
+                            <button type="button" class="btn btn-default" id="vriend-btn"><a id="vriend-a" href="/vriend-worden-pay">Ja, ik word vriend!</a></button>
                         </div>
 
                     </div>
