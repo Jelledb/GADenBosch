@@ -60,6 +60,9 @@ Route::group(array('prefix' => 'cms'), function() {
     Route::get('/menu', 'MenuController@cmsMenu');
     Route::get('/newMenu', 'MenuController@cmsNewMenu');
     Route::get('/nieuwsbrief', 'MenuController@cmsNieuwsbrief');
+    Route::get('/vacature', 'VacatureController@getCmsVacature');
+    Route::get('/vacature/{id}', 'VacatureController@getCMSRUVacature');
+
     // TODO hier komt hoogstwaarschijnlijk nog meer bij
 });
 
