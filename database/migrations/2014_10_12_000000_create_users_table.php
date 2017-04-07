@@ -25,6 +25,7 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email');
             $table->tinyInteger('isfriend')->default('0');
+            $table->dateTime('friendDate');
             $table->string('password');
             $table->unsignedInteger('role_id')->default('1');
             $table->rememberToken();
@@ -33,8 +34,6 @@ class CreateUsersTable extends Migration
 
 
         });
-
-
 
 }
 

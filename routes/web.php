@@ -64,12 +64,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
-Route::group(['middleware' => 'auth'], function () {
-
-    // All my routes that needs a logged in user
-    Route::put('/vriend-worden', 'FriendController@becomeFriend');
-
-});
 
 Auth::routes();
 
