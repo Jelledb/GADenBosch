@@ -23,12 +23,13 @@ Route::get('/werkplaats','MenuController@getWerkplaats');
 Route::get('/contact','MenuController@getContact');
 
 
-Route::get('/vriendenOverzicht', 'MenuController@friendPage');
+Route::get('/vrienden-overzicht', 'MenuController@friendPage');
 
 
 Route::get('/sponsors', 'SponsorController@getSponsorPage');
 
 Route::get('/vriend-worden', 'MenuController@friendPage');
+
 
 Route::get('/vriend-worden-pay', 'FriendController@becomeFriend');
 
