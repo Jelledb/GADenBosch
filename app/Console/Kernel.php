@@ -27,6 +27,11 @@ class Kernel extends ConsoleKernel
     {
         // $schedule->command('inspire')
         //          ->hourly();
+
+//        $schedule->call(function () {
+//            DB::Users('recent_users')->1;
+//        })->yearly();
+
     }
 
     /**
