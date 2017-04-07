@@ -22,16 +22,22 @@ Route::get('/werkplaats','MenuController@getWerkplaats');
 
 Route::get('/contact','MenuController@getContact');
 
-
 Route::get('/vriendenOverzicht', 'MenuController@friendPage');
 
-Route::get('/vacatures', 'VacatureController@getVacaturePage');
+Route::group(array('prefix' => 'vacatures'), function(){
+    Route::get('', 'VacatureController@getVacaturePage');
+    Route::get('/{id}', 'VacatureController@getDetailPage');
+});
+
+
+
 
 Route::get('/sponsors', 'SponsorController@getSponsorPage');
 
 Route::get('/vriendWorden', 'MenuController@friendPage');
 
 Route::get('/winkel', 'ShopController@getShopWindow');
+
 
 /* CMS routes. */
 Route::group(array('prefix' => 'cms'), function() {
@@ -56,6 +62,7 @@ Route::group(array('prefix' => 'cms'), function() {
     Route::get('/nieuwsbrief', 'MenuController@cmsNieuwsbrief');
     // TODO hier komt hoogstwaarschijnlijk nog meer bij
 });
+
 
 Auth::routes();
 

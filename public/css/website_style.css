@@ -27,6 +27,7 @@ body {
 }
 .vacature{
     height: auto;
+    width: auto;
     margin-bottom: 10px !important;
     padding-bottom: 10px !important;
 }
