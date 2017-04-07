@@ -30,11 +30,6 @@ Route::get('/sponsors', 'SponsorController@getSponsorPage');
 
 Route::get('/vriend-worden', 'MenuController@friendPage');
 
-
-Route::get('/vriend-worden-pay', 'FriendController@becomeFriend');
-
-Route::post('/vriend-worden-redirect', 'FriendController@paymentUpdate');
-
 Route::get('/winkel', 'ShopController@getShopWindow');
 
 /* CMS routes. */
@@ -60,11 +55,6 @@ Route::group(array('prefix' => 'cms'), function() {
     Route::get('/nieuwsbrief', 'MenuController@cmsNieuwsbrief');
     // TODO hier komt hoogstwaarschijnlijk nog meer bij
 });
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index');
-
 
 Auth::routes();
 

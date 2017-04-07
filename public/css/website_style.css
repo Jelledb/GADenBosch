@@ -40,22 +40,6 @@ body {
     font-weight: bold;
 }
 
-#vriend-btn{
-    background-color: #f05a29;
-    font-weight: bold;
-    margin-top: 5%;
-    margin-bottom: 5%;
-}
-
-#vriend-a{
-    text-decoration: none;
-    color: white;
-}
-
-.wrapper-btn{
-    text-align: center;
-}
-
 .link{
     color: #f3848d;
 }
@@ -295,5 +279,6 @@ nav .dropdown-menu {
 button {
     display: block;
     float: none;
+    width: 100px;
     margin: 0 auto;
 }
