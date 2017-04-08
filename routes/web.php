@@ -22,7 +22,9 @@ Route::get('/werkplaats','MenuController@getWerkplaats');
 
 Route::get('/contact','MenuController@getContact');
 
-Route::get('/vriendenOverzicht', 'MenuController@friendPage');
+
+Route::get('/vrienden-overzicht', 'MenuController@friendPage');
+
 
 Route::group(array('prefix' => 'vacatures'), function(){
     Route::get('', 'VacatureController@getVacaturePage');
@@ -35,18 +37,29 @@ Route::group(array('prefix' => 'vacatures'), function(){
 
 Route::get('/sponsors', 'SponsorController@getSponsorPage');
 
-Route::get('/vriendWorden', 'MenuController@friendPage');
+Route::get('/vriend-worden', 'MenuController@friendPage');
 
 Route::get('/winkel', 'ShopController@getShopWindow');
+
+
+Route::get('/agenda', 'AgendaController@getExpositions');
+
+Route::get('/agendaitem/{id}', 'AgendaItemController@getExpositionItem');
+
+Route::get('/archief-agenda', 'ArchiveAgendaController@getArchiveAgenda');
 
 
 /* CMS routes. */
 Route::group(array('prefix' => 'cms'), function() {
 
     Route::get('/startpagina', 'MenuController@cmshome');
-    Route::get('/tentoonstellingen', 'MenuController@cmsTentoonstellingen');
+    Route::get('/nieuwtentoonstelling', 'MenuController@cmsTentoonstellingen');
+    Route::post('/nieuwtentoonstelling', 'CmsTentoonstelling@newTentoonstelling');
+    Route::get('/bewerktentoonstelling/{id}', 'MenuController@cmsEditTentoonstelling');
+    Route::post('/bewerktentoonstelling/{id}', ['as' => 'bewerktentoonstelling', 'uses' => 'CmsTentoonstelling@editTentoonstelling']);
+    Route::get('/deletetentoonstelling/{id}', ['as' => 'deletetentoonstelling', 'uses' => 'CmsTentoonstelling@deleteTentoonstelling']);
     Route::get('/workshop', 'MenuController@cmsWorkshop');
-    Route::get('/lijsttentoonstellingen', 'MenuController@cmslijstTentoonstellingen');
+    Route::get('/lijsttentoonstellingen', ['as' => 'lijsttentoonstellingen', 'uses' => 'MenuController@cmslijstTentoonstellingen']);
     Route::get('/workshops', 'MenuController@cmsworkshops');
     Route::get('/newNews', 'MenuController@cmsnewnews');
     Route::get('/news', 'MenuController@cmsnews');

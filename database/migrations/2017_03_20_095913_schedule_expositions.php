@@ -29,6 +29,7 @@ class ScheduleExpositions extends Migration
             $table->enum('location', ['exporuimte', 'portiersloge'])->default('exporuimte');
             $table->enum('toon', ['yes', 'no'])->default('yes');
             $table->tinyInteger('template')->default(1);
+            $table->boolean('visible')->defualt(1);
         });
     }
 

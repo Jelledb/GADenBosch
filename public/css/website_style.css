@@ -67,9 +67,9 @@ nav {
     width: 100%;
 }
 
-.nieuws-overzicht-home {
-    position: absolute;
-
+.fotoblok, .fotoblok img{
+    width: 100%;
+    height: auto;
 }
 
 .nieuws-nu {
@@ -83,13 +83,15 @@ nav {
 }
 
 .textblok {
-    position: absolute;
     top: 600px;
 }
 
 .leesmeer {
     bottom: 2px;
-    position: absolute;
+}
+
+#item .arch:first-of-type {
+    font-size: 24px;
 }
 
 .nieuws-archief {
