@@ -27,6 +27,7 @@ Route::get('/vriendenOverzicht', 'MenuController@friendPage');
 Route::group(array('prefix' => 'vacatures'), function(){
     Route::get('', 'VacatureController@getVacaturePage');
     Route::get('/{id}', 'VacatureController@getDetailPage');
+
 });
 
 
@@ -61,7 +62,10 @@ Route::group(array('prefix' => 'cms'), function() {
     Route::get('/newMenu', 'MenuController@cmsNewMenu');
     Route::get('/nieuwsbrief', 'MenuController@cmsNieuwsbrief');
     Route::get('/vacature', 'VacatureController@getCmsVacature');
-    Route::get('/vacature/{id}', 'VacatureController@getCMSRUVacature');
+    Route::get('/vacature/edit/{id}', 'VacatureController@getCMSRUVacature');
+    Route::patch('/vacature/update/{id}', 'VacatureController@update');
+    Route::get('/vacature/getcreate','VacatureController@getcreate');
+    Route::post('/vacature/create','VacatureController@create');
 
     // TODO hier komt hoogstwaarschijnlijk nog meer bij
 });

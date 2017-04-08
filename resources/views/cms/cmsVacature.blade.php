@@ -10,7 +10,7 @@
             <h2>Vacatures</h2>
         </div>
         <div class="col-md-5 newbutton">
-            <a href="{{ url('cms/workshop') }}"><input type="submit" value="Nieuwe vacature aanmaken"  name="submit"></a>
+            <a href="{{ url('cms/vacature/getcreate') }}"><input type="submit" value="Nieuwe vacature aanmaken"  name="submit"></a>
         </div>
     </div>
     <div class="row">
@@ -41,7 +41,7 @@
                     </td>
                     <td>{{$vacature->title}}</td>
                     <td>
-                        <a href="{{ url('cms/vacature', [$vacature->id]) }}"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                        <a href="{{ url('cms/vacature/edit', [$vacature->id]) }}"><i class="fa fa-pencil" aria-hidden="true"></i></a>
                         <a href="#"><i class="fa fa-trash" aria-hidden="true"></i></a>
                         <a href="#"><i class="fa fa-floppy-o" aria-hidden="true"></i></a>
                     </td>

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 class VacatureController extends Controller
 {
+    public $timestamps = false;
     // Return the SponserView with the sponsors.
     public function getVacaturePage() {
         $vacatures = vacatures::all();
@@ -31,10 +32,34 @@ class VacatureController extends Controller
             'short_description' => 'required'
         ]);
 
-        vacatures::find($id)->update($request->all());
+        $vacature = vacatures::find($id);
+        if($vacature){
+            $vacature->title = "$request->title";
+            $vacature->timestamps = false;
+            $vacature->short_description = "$request->short_description";
+            $vacature->description = "$request->description";
+            $vacature->save();
+        }
         //todo
-        return redirect()->url('/vacature')
+        return redirect('cms/vacature')
             ->with('success','Product is bewerkt!');
 
+    }
+    public function getcreate(){
+        return view('cms/cmsCVacature');
+    }
+    public function create(Request $request){
+        $this->validate($request, [
+            'title' => 'required',
+            'description' => 'required',
+            'short_description' => 'required'
+        ]);
+
+        $vacature = new vacatures();
+        $vacature->title = "$request->title";
+        $vacature->description = "$request->description";
+        $vacature->short_description = "$request->short_description";
+        $vacature->timestamps = false;
+        $vacature->save();
     }
 }
