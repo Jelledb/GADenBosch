@@ -23,32 +23,32 @@
             </ul>
         </div>
     @endif
-    {!! Form::model($vacature, ['method' => 'PATCH','url' => ['cms/vacature/update', $vacature->id]]) !!}
+    {!! Form::open(array('url' => 'cms/vacature/create', 'method' =>'POST')) !!}
     <div class="row">
         <div class="col-md-8">
             <h3>Titel:</h3>
-            {!! Form::text('title', "$vacature->title", array('class' => 'form-control')) !!}
+            {!! Form::text('title', null, array('class' => 'form-control')) !!}
         </div>
     </div>
     <div class="row">
         <div class="col-md-8">
             <h3>Korte beschrijving:</h3>
-            {!! Form::text('short_description', "$vacature->short_description", array('class' => 'form-control')) !!}
+            {!! Form::text('short_description', null, array('class' => 'form-control')) !!}
         </div>
         <div class="col-md-4"></div>
     </div>
-    <hr class="breeklijn"/>
+
     <div class="row">
         <div class="col-md-8">
-            <h3>volledige beschrijving:</h3>
-            {!! Form::textarea('description', null, array('placeholder' => "$vacature->description",'class' => 'form-control')) !!}
+            <h3>Volledige beschrijving:</h3>
+            {!! Form::textarea('description', null, array('class' => 'form-control')) !!}
         </div>
         <div class="col-md-4"></div>
     </div>
     <hr class="breeklijn"/>
     <div class="row">
         <div class="col-md-3">
-            <button type="submit" class="btn btn-primary">Sla bewerking op</button>
+            <button type="submit" class="btn btn-primary">Sla Vacature op</button>
         </div>
         <div class="col-md-9"></div>
     </div>

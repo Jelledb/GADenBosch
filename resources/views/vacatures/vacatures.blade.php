@@ -20,6 +20,7 @@
     </div>
 
             @foreach($vacatures as $vacature)
+                @if($vacature->show === 1)
                 @if($counter === 0)
                     <div class="row">
                 @endif
@@ -27,7 +28,7 @@
                     <div class="col-md-4">
                         <div id="item vacatureblok" class="nieuws-nu vacature">
                             <h2 class="arch">{{ $vacature->title}}</h2>
-                            <div class="textblok">{{ $vacature->short_description }}</div>
+                            <div>{{ $vacature->short_description }}</div>
                             <div class="leetsmeer arch"><a href="{{url('/vacatures', [$vacature->id])}}">LEES VERDER &gt;</a></div>
                         </div>
 
@@ -43,6 +44,7 @@
                                 $counter =1;
                             ?>
                         @endif
+                @endif
             @endforeach
 
 </div>

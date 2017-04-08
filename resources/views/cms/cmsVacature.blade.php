@@ -19,9 +19,9 @@
                 <thead>
                 <tr>
                     <th class="col-md-1">Toon</th>
-                    <th class="col-md-2">Datum</th>
+
                     <th class="col-md-5">Titel</th>
-                    <th class="col-md-5"></th>
+                    <th class="col-md-6"></th>
                 </tr>
                 </thead>
                 <tbody>
@@ -30,20 +30,21 @@
                     <td>
                         <div class="checkbox toonbutton">
                             <label>
-                                <input type="checkbox" value="">
+                                {!! Form::model($vacature, ['method' => 'POST','url' => ['cms/vacature/toon', $vacature->id]]) !!}
+                                @if($vacature->show === 1)
+                                <input name="toon1" type="checkbox" value="1" checked>
+                                    @else
+                                    <input name="toon2" type="checkbox" value="1">
+                                    @endif
                             </label>
                         </div>
-                    </td>
-                    <td>
-                        <form>
-                            <input type="date" value="{{$vacature->datum}}">
-                        </form>
                     </td>
                     <td>{{$vacature->title}}</td>
                     <td>
                         <a href="{{ url('cms/vacature/edit', [$vacature->id]) }}"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-trash" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-floppy-o" aria-hidden="true"></i></a>
+                        <a href="{{ url('cms/vacature/delete', [$vacature->id]) }}"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                        <button type="submit"><i class="fa fa-floppy-o" aria-hidden="true"></i></button>
+                        {!! Form::close() !!}
                     </td>
                 </tr>
                 @endforeach

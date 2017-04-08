@@ -30,10 +30,12 @@ class VacatureController extends Controller
             'title' => 'required',
             'description' => 'required',
             'short_description' => 'required'
+
         ]);
 
         $vacature = vacatures::find($id);
         if($vacature){
+
             $vacature->title = "$request->title";
             $vacature->timestamps = false;
             $vacature->short_description = "$request->short_description";
@@ -61,5 +63,34 @@ class VacatureController extends Controller
         $vacature->short_description = "$request->short_description";
         $vacature->timestamps = false;
         $vacature->save();
+        return redirect('cms/vacature')
+            ->with('success','Product is bewerkt!');
+    }
+    public function delete($id){
+        vacatures::find($id)->delete();
+        return redirect('cms/vacature')
+            ->with('success','Product is bewerkt!');
+    }
+    public function updateToon(Request $request, $id){
+        $vacature = vacatures::find($id);
+        if($vacature->show === 1){
+            if($request->toon1 === "1"){
+                $vacature->show = 1;
+            }else{
+                $vacature->show = 0;
+            }
+
+        }else{
+            if($request->toon2 === "1"){
+                $vacature->show = 1;
+            }else{
+                $vacature->show = 0;
+            }
+        }
+
+        $vacature->timestamps = false;
+        $vacature->save();
+        return redirect('cms/vacature')
+            ->with('success','Product is bewerkt!');
     }
 }

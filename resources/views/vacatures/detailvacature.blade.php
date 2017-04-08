@@ -6,6 +6,9 @@
             <h2>{{$vacature->title}}</h2>
         </div>
         <div class="row">
+            <p>{{$vacature->datum}}</p>
+        </div>
+        <div class="row">
             <p>{{$vacature->description}}</p>
         </div>
         <div class="row">

@@ -66,6 +66,8 @@ Route::group(array('prefix' => 'cms'), function() {
     Route::patch('/vacature/update/{id}', 'VacatureController@update');
     Route::get('/vacature/getcreate','VacatureController@getcreate');
     Route::post('/vacature/create','VacatureController@create');
+    Route::get('/vacature/delete/{id}', 'VacatureController@delete');
+    Route::post('/vacature/toon/{id}', 'VacatureController@updateToon');
 
     // TODO hier komt hoogstwaarschijnlijk nog meer bij
 });
