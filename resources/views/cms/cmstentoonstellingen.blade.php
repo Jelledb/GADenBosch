@@ -11,7 +11,7 @@
         </div>
         <div class="col-md-5 newbutton">
             <div class="row">
-                <a href="{{ url('cms/tentoonstellingen') }}"><input type="submit" value="Nieuwe tentoonstelling"  name="submit"></a>
+                <a href="{{ url('cms/nieuwtentoonstelling') }}"><input type="submit" value="Nieuwe tentoonstelling"  name="submit"></a>
             </div>
         </div>
     </div>
@@ -58,7 +58,7 @@
                         <td>{!! $expos->title !!}</td>
                         <td>
                             <a href="bewerktentoonstelling/{{$expos->id}}"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-                            <a href="#"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                            <a href="{{route('deletetentoonstelling', $expos->id)}}"><i class="fa fa-trash" aria-hidden="true"></i></a>
                         </td>
                     </tr>
                 @endforeach

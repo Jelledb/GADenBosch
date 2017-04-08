@@ -42,11 +42,13 @@ Route::get('/archief-agenda', 'ArchiveAgendaController@getArchiveAgenda');
 Route::group(array('prefix' => 'cms'), function() {
 
     Route::get('/startpagina', 'MenuController@cmshome');
-    Route::get('/tentoonstellingen', 'MenuController@cmsTentoonstellingen');
+    Route::get('/nieuwtentoonstelling', 'MenuController@cmsTentoonstellingen');
+    Route::post('/nieuwtentoonstelling', 'CmsTentoonstelling@newTentoonstelling');
     Route::get('/bewerktentoonstelling/{id}', 'MenuController@cmsEditTentoonstelling');
     Route::post('/bewerktentoonstelling/{id}', ['as' => 'bewerktentoonstelling', 'uses' => 'CmsTentoonstelling@editTentoonstelling']);
+    Route::get('/deletetentoonstelling/{id}', ['as' => 'deletetentoonstelling', 'uses' => 'CmsTentoonstelling@deleteTentoonstelling']);
     Route::get('/workshop', 'MenuController@cmsWorkshop');
-    Route::get('/lijsttentoonstellingen', 'MenuController@cmslijstTentoonstellingen');
+    Route::get('/lijsttentoonstellingen', ['as' => 'lijsttentoonstellingen', 'uses' => 'MenuController@cmslijstTentoonstellingen']);
     Route::get('/workshops', 'MenuController@cmsworkshops');
     Route::get('/newNews', 'MenuController@cmsnewnews');
     Route::get('/news', 'MenuController@cmsnews');
