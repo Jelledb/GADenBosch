@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Reservation;
+use App\reservation_workspace;
 use App\Workspace;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -18,7 +19,7 @@ class WorkplaceController extends Controller
 
     public function getDetailedWerkplaats($id) {
 
-         $occupation =  Reservation::occupation($id)->get();
+         $occupation =  reservation_workspace::occupation($id)->get();;
          $workspace = Workspace::workspace($id)->get();
 
 

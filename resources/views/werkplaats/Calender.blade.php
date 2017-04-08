@@ -12,15 +12,19 @@ class Calender
 
     private $workspace;
     private $occupation;
-    private $occupationString;
+    private $dayColor;
+    private $totalSecondsInDay;
+
     /**
      * Constructor
      */
-    public function __construct($occupation,$workspace)
+    public function __construct($occupation, $workspace)
     {
-               $this->workspace = $workspace[0];
-               $this->occupation = $occupation[0];
+        $this->workspace = $workspace[0];
 
+        $this->occupation = $occupation;
+
+        $this->totalSecondsInDay = 28800;
 
 
         $this->naviHref = htmlentities($_SERVER['PHP_SELF']);
@@ -138,12 +142,11 @@ class Calender
 
             $cellContent =
 
-        // '<a href="'.' {{ route('.'dagPlanning'.',['.'currentDay'.' =>'.$this->currentDay.'])}}'.'"> '.$this->currentDay.' </a>';
-            '<a href="/dag-planning/'.$this->currentDate .'/'. $this->workspace->id .'"> '.$this->currentDay.' </a>';
+                // '<a href="'.' {{ route('.'dagPlanning'.',['.'currentDay'.' =>'.$this->currentDay.'])}}'.'"> '.$this->currentDay.' </a>';
+                '<a href="/dag-planning/' . $this->currentDate . '/' . $this->workspace->id . '"> ' . $this->currentDay . ' </a>';
 
             //'<a href="'.' {{ route('.'dagPlanning'.',['.'currentDay'.' =>'.$this->currentDay.'])}}'.'"> '.$this->currentDay.' </a>';
 //$cellContent = '<a href="{{ route('.'dagPlanning'.',['.'currentDay'.' =>$this->currentDay])}}"> $this->currentDay </a>';
-
 
 
             $this->currentDay++;
@@ -155,9 +158,10 @@ class Calender
             $cellContent = null;
         }
 
+        $this->colorChanger();
 
-        return '<li id="' .'good'. '" class="' . ($cellNumber % 7 == 1 ? ' start ' : ($cellNumber % 7 == 0 ? ' end ' : ' ')) .
-            ($cellContent == null ? 'mask' : '') . '">'. $cellContent . '</li>';
+        return '<li id="' . $this->dayColor . '" class="' . ($cellNumber % 7 == 1 ? ' start ' : ($cellNumber % 7 == 0 ? ' end ' : ' ')) .
+            ($cellContent == null ? 'mask' : '') . '">' . $cellContent . '</li>';
     }
 
     /**
@@ -246,19 +250,61 @@ class Calender
 
         return date('t', strtotime($year . '-' . $month . '-01'));
     }
-    private function occupation(){
-        $this->occupationString = $this->currentDate;
 
-        foreach ($this->occupation as $oc){
-            echo $oc;
+    // return status
+    private function colorChanger()
+    {   $percent = null;
 
-            //$total_secs = $end_time - $start_time;
+        foreach ($this->occupation as $oc) {
 
-            // $elapsed_secs = time() - $start_time;
 
-            // $percent = round(($elapsed_secs/$total_secs)*100);
+            $convertIn = \Carbon\Carbon::parse($oc->date_in)->format('Y-m-d');
+            $convertOut = \Carbon\Carbon::parse($oc->date_out)->format('Y-m-d');
+            $convertCurrent = \Carbon\Carbon::parse($this->currentDate)->format('Y-m-d');
+            $start_time = (int)strtotime($oc->date_in);
+            $end_time = (int)strtotime($oc->date_out);
+
+
+            //calculates interval between 2 dates
+            if (strtotime($convertIn) == strtotime($convertCurrent)) {
+
+
+                // $total_secs = $end_time - $start_time;
+
+
+                $total_secs = $end_time - $start_time;
+
+
+
+
+                $elapsed_secs = $this->totalSecondsInDay - $start_time;
+
+                //echo $elapsed_secs;
+                if (isset($percent)) {
+                    $percent += round(($total_secs / $this->totalSecondsInDay) * 100);
+                } else {
+                    $percent = round(($total_secs / $this->totalSecondsInDay) * 100);
+                }
+
+
+
+
+            }
+
+
+
+
         }
-        return 'good'; // html string;
+        echo "- ",$percent," ",$this->workspace->id," -";
+        if ( isset($percent)||$percent < 25) {
+            $this->dayColor = 'good';
+        }
+        if ($percent < 51 && $percent >24) {
+            $this->dayColor = 'normal';
+        }
+        if ($percent > 50) {
+            $this->dayColor = 'bad';
+        }
 
     }
 

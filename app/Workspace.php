@@ -8,7 +8,7 @@ class Workspace extends Model
 {
     protected $table = 'workspaces';
     function Reservation(){
-        $this->belongsToMany('App/Workspace');
+        $this->belongsToMany('App\Workspace');
     }
     function scopeWorkspace($query,$id){
         return $query->join('reservation_workspace','workspace_id','=','workspaces.id' )
