@@ -295,7 +295,7 @@ class Calender
 
 
         }
-        echo "- ",$percent," ",$this->workspace->id," -";
+        echo " - ",$percent," ",$this->workspace->id," - ";
         if ( isset($percent)||$percent < 25) {
             $this->dayColor = 'good';
         }
