@@ -235,6 +235,10 @@ nav .dropdown-menu {
     margin: 0 5px;
 }
 
+.nieuws-overzicht-home {
+    font-family: 'Brandon', serif;
+}
+
 .nieuws-item-home {
     height: 180px;
     border: solid 1px red;

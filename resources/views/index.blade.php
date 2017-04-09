@@ -13,19 +13,20 @@
     </div>
     <div class="nieuws-overzicht-home">
         <h2>Laatste nieuws</h2>
-
-        <a href="/nieuws">Klik hier om alle nieuwsberichten te lezen</a>
+        <div>
+            <a href="/nieuws">Klik hier om alle nieuwsberichten te lezen</a>
+        </div>
 
         @foreach($newsItems as $newsItem)
-            <div class="nieuws-item-home panel panel-default">
+            <div class="nieuws-item-home panel panel-default col-md-6">
                 <div class="nieuws-item-foto">
                     <img src="{{asset('images/foto-nieuws-homepage/265_DickVerdult_Jaarprent_2017_GrafischAtelierDenBosch.jpg')}}">
                 </div>
                 <p class="nieuws-titel">
                     <a href="/nieuws/{{ $newsItem->id }}">{{ $newsItem->titel }}</a>
                 </p>
-                <span class="nieuws-date">Geplaatst op {{ $newsItem->aangemaakt }}</span>
-                <div class="textblok">{{ $newsItem->tekst }}</div>
+                <span class="nieuws-date">Geplaatst op {{ date("d-m-Y", strtotime($newsItem->aangemaakt)) }}</span>
+                <div class="textblok">{{ $newsItem->beschrijving }}</div>
             </div>
         @endforeach
     </div>

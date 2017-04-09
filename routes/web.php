@@ -37,13 +37,13 @@ Route::get('/winkel', 'ShopController@getShopWindow');
 /* CMS routes. */
 Route::group(['prefix' => 'cms', 'middleware' => 'admin'], function() {
 
+    Route::resource('news', 'NewsItemController');
+
     Route::get('/startpagina', 'MenuController@cmshome');
     Route::get('/tentoonstellingen', 'MenuController@cmsTentoonstellingen');
     Route::get('/workshop', 'MenuController@cmsWorkshop');
     Route::get('/lijsttentoonstellingen', 'MenuController@cmslijstTentoonstellingen');
     Route::get('/workshops', 'MenuController@cmsworkshops');
-    Route::get('/newNews', 'MenuController@cmsnewnews');
-    Route::get('/news', 'MenuController@cmsnews');
     Route::get('/educatie', 'MenuController@cmsEducatie');
     Route::get('/newEducatie', 'MenuController@cmsNewEducatie');
     Route::get('/Scholen', 'MenuController@cmsSchool');
