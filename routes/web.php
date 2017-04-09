@@ -25,12 +25,17 @@ Route::get('/werkplaats','MenuController@getWerkplaats');
 Route::get('/contact','MenuController@getContact');
 
 
-Route::get('/vriendenOverzicht', 'MenuController@friendPage');
+Route::get('/vrienden-overzicht', 'MenuController@friendPage');
 
 
 Route::get('/sponsors', 'SponsorController@getSponsorPage');
 
-Route::get('/vriendWorden', 'MenuController@friendPage');
+Route::get('/vriend-worden', 'MenuController@friendPage');
+
+
+Route::get('/vriend-worden-pay', 'FriendController@becomeFriend');
+
+Route::post('/vriend-worden-redirect', 'FriendController@paymentUpdate');
 
 Route::get('/winkel', 'ShopController@getShopWindow');
 
@@ -57,6 +62,11 @@ Route::group(['prefix' => 'cms', 'middleware' => 'admin'], function() {
     Route::get('/nieuwsbrief', 'MenuController@cmsNieuwsbrief');
     // TODO hier komt hoogstwaarschijnlijk nog meer bij
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
+
 
 Auth::routes();
 
