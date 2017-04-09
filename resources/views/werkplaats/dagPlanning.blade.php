@@ -46,25 +46,48 @@ $start = ["9:00" => "9:00", "10:00" => "10:00", "11:00" => "11:00", "12:00" => "
             });
         });
 
-        jQuery(document).ready(function ($) {
-        function lala() {
-            $('#submit').attr('disabled', 'disabled');
-            var x = document.getElementById('submit').value;
-            if(x != ''){
-                $('#submit').attr('disabled', '');
-            }
-            else {
-                $('#submit').attr('disabled', 'disabled');
-            }
-        }});
+//        jQuery(document).ready(function ($) {
+//            function lala() {
+//                $('#submit').attr('disabled', 'disabled');
+//                var x = document.getElementById('submit').value;
+//                if (x != '') {
+//                    $('#submit').attr('disabled', '');
+//                }
+//                else {
+//                    $('#submit').attr('disabled', 'disabled');
+//                }
+//            }
+//        });
 
     </script>
 
     <div class="container">
         <div class="row">
             <div class="panel panel-default">
-                <h1 class="centerH1">Reserveer</h1>
+                <h1 class="centerH1">Reserveringen</h1>
                 <br/>
+                <div class="col-md-8 col-md-offset-2">
+                    <table id="time-table">
+                        <thead>
+                        <tr>
+                            <th>Starttijd</th>
+                            <th>Eindtijd</th>
+                        </tr>
+                        @foreach($data['occupation'] as $oc)
+                            <?php
+                            $dateIn = Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $oc->date_in)->format('H:i');
+                            $dateOut = Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $oc->date_out)->format('H:i');
+                            ?>
+                            <tr>
+                                <th>{{$dateIn}}</th>
+                                <th>{{$dateOut}}</th>
+                                @endforeach
+                            </tr>
+                        </thead>
+                    </table>
+                    <h1 class="centerH1">Reserveer</h1>
+                </div>
+
                 <div class="row justify-content-md-center">
                     <div class="col-md-4 col-md-offset-4">
 
@@ -97,6 +120,7 @@ $start = ["9:00" => "9:00", "10:00" => "10:00", "11:00" => "11:00", "12:00" => "
                         {!! Form::hidden('werkplaats', $data["id"]) !!}
 
                         {!! Form::close() !!}
+
                     </div>
                 </div>
             </div>

@@ -10,13 +10,23 @@
 class Calender
 {
 
-    private $id;
+    private $selectedWorkspace;
+    private $occupation;
+    private $dayColor;
+    private $totalSecondsInDay;
+
     /**
      * Constructor
      */
-    public function __construct($id)
+    public function __construct($occupation, $selectedWorkspace)
     {
-        $this->id = $id;
+        $this->selectedWorkspace = $selectedWorkspace[0];
+
+        $this->occupation = $occupation;
+
+        $this->totalSecondsInDay = 28800;
+
+
         $this->naviHref = htmlentities($_SERVER['PHP_SELF']);
 
         $this->afspraak = date('Y-m-d', strtotime("2017" . '-' . "03" . '-' . "17"));
@@ -132,12 +142,11 @@ class Calender
 
             $cellContent =
 
-        // '<a href="'.' {{ route('.'dagPlanning'.',['.'currentDay'.' =>'.$this->currentDay.'])}}'.'"> '.$this->currentDay.' </a>';
-            '<a href="/dag-planning/'.$this->currentDate .'/'. $this->id .'"> '.$this->currentDay.' </a>';
+                // '<a href="'.' {{ route('.'dagPlanning'.',['.'currentDay'.' =>'.$this->currentDay.'])}}'.'"> '.$this->currentDay.' </a>';
+                '<a href="/dag-planning/' . $this->currentDate . '/' . $this->selectedWorkspace->id . '"> ' . $this->currentDay . ' </a>';
 
             //'<a href="'.' {{ route('.'dagPlanning'.',['.'currentDay'.' =>'.$this->currentDay.'])}}'.'"> '.$this->currentDay.' </a>';
 //$cellContent = '<a href="{{ route('.'dagPlanning'.',['.'currentDay'.' =>$this->currentDay])}}"> $this->currentDay </a>';
-
 
 
             $this->currentDay++;
@@ -149,9 +158,10 @@ class Calender
             $cellContent = null;
         }
 
+        $this->colorChanger();
 
-        return '<li id="li-' . $this->currentDate . '" class="' . ($cellNumber % 7 == 1 ? ' start ' : ($cellNumber % 7 == 0 ? ' end ' : ' ')) .
-            ($cellContent == null ? 'mask' : '') . '">'. $cellContent . '</li>';
+        return '<li id="' . $this->dayColor . '" class="' . ($cellNumber % 7 == 1 ? ' start ' : ($cellNumber % 7 == 0 ? ' end ' : ' ')) .
+            ($cellContent == null ? 'mask' : '') . '">' . $cellContent . '</li>';
     }
 
     /**
@@ -239,6 +249,63 @@ class Calender
             $month = date("m", time());
 
         return date('t', strtotime($year . '-' . $month . '-01'));
+    }
+
+    // return status
+    private function colorChanger()
+    {   $percent = null;
+
+        foreach ($this->occupation as $oc) {
+
+
+            $convertIn = \Carbon\Carbon::parse($oc->date_in)->format('Y-m-d');
+            $convertOut = \Carbon\Carbon::parse($oc->date_out)->format('Y-m-d');
+            $convertCurrent = \Carbon\Carbon::parse($this->currentDate)->format('Y-m-d');
+            $start_time = (int)strtotime($oc->date_in);
+            $end_time = (int)strtotime($oc->date_out);
+
+
+            //calculates interval between 2 dates
+            if (strtotime($convertIn) == strtotime($convertCurrent)) {
+
+
+                // $total_secs = $end_time - $start_time;
+
+
+                $total_secs = $end_time - $start_time;
+
+
+
+
+                //$elapsed_secs = $this->totalSecondsInDay - $start_time;
+
+
+                if (isset($percent)) {
+                    $percent += round(($total_secs / $this->totalSecondsInDay) * 100);
+                } else {
+                    $percent = round(($total_secs / $this->totalSecondsInDay) * 100);
+                }
+
+
+
+
+            }
+
+
+
+
+        }
+
+        if ( isset($percent)||$percent < 25) {
+            $this->dayColor = 'good';
+        }
+        if ($percent < 51 && $percent >24) {
+            $this->dayColor = 'normal';
+        }
+        if ($percent > 50) {
+            $this->dayColor = 'bad';
+        }
+
     }
 
 

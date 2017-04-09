@@ -4,20 +4,8 @@
     <div class="container">
         @include('werkplaats.Calender')
     </div>
-
     <?php
-    $calender = new Calender($workplace->id);
+    $calender = new Calender($occupation, $selectedWorkspace);
     echo $calender->show();
-
-
     ?>
-
-    {{ $workplace->id }}
-
-    {{ $workplace->name }}
-    {{ $workplace->size }}
-
-
-
-
 @endsection

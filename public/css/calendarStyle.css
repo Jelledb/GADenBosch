@@ -94,7 +94,32 @@ div#calendar ul.dates{
 }
 
 /** overall width = width+padding-right**/
-div#calendar ul.dates li{
+/*div#calendar ul.dates li{*/
+    /*margin:0px;*/
+    /*padding:0px;*/
+    /*margin-right:5px;*/
+    /*margin-top: 5px;*/
+    /*line-height:80px;*/
+    /*vertical-align:middle;*/
+    /*float:left;*/
+    /*list-style-type:none;*/
+    /*width:80px;*/
+    /*height:80px;*/
+    /*font-size:25px;*/
+    /*background-color: #DDD;*/
+    /*color:#000;*/
+    /*text-align:center;*/
+/*}*/
+
+:focus{
+    outline:none;
+}
+
+div.clear{
+    clear:both;
+}
+
+#bad{
     margin:0px;
     padding:0px;
     margin-right:5px;
@@ -106,15 +131,40 @@ div#calendar ul.dates li{
     width:80px;
     height:80px;
     font-size:25px;
-    background-color: #DDD;
-    color:#000;
+    background-color: #c9302c;
+    color:#c9302c;
     text-align:center;
 }
+#good{
 
-:focus{
-    outline:none;
+    margin:0px;
+    padding:0px;
+    margin-right:5px;
+    margin-top: 5px;
+    line-height:80px;
+    vertical-align:middle;
+    float:left;
+    list-style-type:none;
+    width:80px;
+    height:80px;
+    font-size:25px;
+    background-color: #4cae4c;
+    color:#4cae4c;
+    text-align:center;
 }
-
-div.clear{
-    clear:both;
+#normal{
+    margin:0px;
+    padding:0px;
+    margin-right:5px;
+    margin-top: 5px;
+    line-height:80px;
+    vertical-align:middle;
+    float:left;
+    list-style-type:none;
+    width:80px;
+    height:80px;
+    font-size:25px;
+    background-color: #ffff00;
+    color:#ffff00;
+    text-align:center;
 }

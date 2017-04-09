@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Reservation;
-use App\reservation_werkspace;
+use App\reservation_workspace;
 use App\Workspace;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -13,16 +13,23 @@ class WorkplaceController extends Controller
     //
 
     public function getWorkspacePage() {
-        //$workplaces = Workspace::all();
+        $workplaces = Workspace::all();
         return view('werkplaats.werkplaats-overzicht', compact('workplaces'));
     }
 
-    public function getDetailedWerkplaats(Workspace $workplace) {
-        return view('werkplaats.detailed-werkplaats', compact('workplace'));
+    public function getDetailedWerkplaats($id) {
+
+
+         $occupation =  reservation_workspace::occupation($id)->get();;
+
+         $selectedWorkspace = Workspace::workspace($id)->get();
+
+
+        return view('werkplaats.detailed-werkplaats', compact('occupation','selectedWorkspace'));
     }
 
     function getDayplanning($currentDay, $id)
-    {
+    {   $data['occupation'] =  reservation_workspace::Occupationday($id,$currentDay)->get();;
         $data["day"] = $currentDay;
         $data["id"] = $id;
 
@@ -54,9 +61,8 @@ class WorkplaceController extends Controller
 
         $id = $reservation->id;
 
-        reservation_werkspace::create(['reservation_id' => $id, 'workspace_id' => $request->werkplaats]);
+        reservation_workspace::create(['reservation_id' => $id, 'workspace_id' => $request->werkplaats]);
 
         return redirect('werkplaats-overzicht');
     }
-
 }

@@ -27,7 +27,7 @@ class RouteServiceProvider extends ServiceProvider
 
         parent::boot();
 
-        Route::model('workspace', 'App\Workspace');
+        //Route::model('workspace', 'App\Workspace');
     }
 
     /**
