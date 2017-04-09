@@ -2,11 +2,9 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
-
-class Workspace extends Model
+class Workspace extends BaseModel
 {
     // Model for a Workspace
 
-
+    protected $fillable = ['name', 'size'];
 }

@@ -7,6 +7,7 @@
 ?>
 
 
+
 @section('content');
 
 <div class="container">
@@ -21,7 +22,7 @@
                     @foreach($workplaces as $workplace)
 
                         <li>
-                            <a href = "{{url("detailed-werkplaats/".$workplace->id)}}"> {{ $workplace->workspace_type_id . " " . $workplace->size_id }}</a>
+                            <a href = "{{url("detailed-werkplaats/".$workplace->id)}}"> {{ $workplace->name . " " . $workplace->size}}</a>
                         </li>
 
                     @endforeach

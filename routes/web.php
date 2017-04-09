@@ -32,11 +32,12 @@ Route::get('/vriend-worden', 'MenuController@friendPage');
 
 Route::get('/winkel', 'ShopController@getShopWindow');
 
-Route::get('/werkplaatsOverzicht', 'WorkplaceController@getWorkspacePage');
+Route::get('/werkplaats-overzicht', 'WorkplaceController@getWorkspacePage');
 
-Route::get('/detailed-werkplaats/{id}', 'WorkplaceController@getDetailedWerkplaats');
+Route::get('/detailed-werkplaats/{workplace}', 'WorkplaceController@getDetailedWerkplaats');
 
 Route::get('/dag-planning/{currentday}/{id}','WorkplaceController@getDayplanning');
+Route::post('/dag-planning/{currentday}/{id}', 'WorkplaceController@createReservation');
 
 Route::get('function', 'WorkplaceController@saveToDatabase');
 //Route::get('/dagPlanning/{currentDay}', function ($currentDay){

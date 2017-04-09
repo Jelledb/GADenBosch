@@ -5,13 +5,19 @@
         @include('werkplaats.Calender')
     </div>
 
-        <?php
-        $calender = new Calender($werkplaatsid[0]);
-        echo $calender->show();
+    <?php
+    $calender = new Calender($workplace->id);
+    echo $calender->show();
 
-        ?>
-        {{ $werkplaatsid[0] }}
 
-    </div>
+    ?>
+
+    {{ $workplace->id }}
+
+    {{ $workplace->name }}
+    {{ $workplace->size }}
+
+
+
 
 @endsection

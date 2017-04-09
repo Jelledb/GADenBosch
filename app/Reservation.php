@@ -2,10 +2,9 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
-
-class Reservation extends Model
+class Reservation extends BaseModel
 {
-    //
+    protected $table = "reservation";
+    protected $fillable = ['date_in', 'date_out', 'user_id'];
 
 }

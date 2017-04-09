@@ -15,14 +15,9 @@ class DatabaseSeeder extends Seeder
         // $this->call(UsersTableSeeder::class);
         //$this->seedSponsors();
 
-        DB::table('roles')->insert([['rolename' => 'admin'], ['rolename' => 'vrijwilliger'], ['rolename' => 'klant']]);
+        //DB::table('roles')->insert([['rolename' => 'admin'], ['rolename' => 'vrijwilliger'], ['rolename' => 'klant']]);
 
-        $this->seedUsers();
 
-        $this->seedReservations();
-
-        $this->seedWorkSpaceSize();
-        $this->seedWorkspaceType();
         $this->seedWorkspace();
     }
 
@@ -60,23 +55,15 @@ class DatabaseSeeder extends Seeder
 
     private function seedWorkspace()
     {
-        DB::table('workspace')->insert([
-            ['workspace_type_id' => 1,
-                'size_id' => 3],
-            ['workspace_type_id' => 1,
-                'size_id' => 2],
-            ['workspace_type_id' => 1,
-                'size_id' => 2],
-            ['workspace_type_id' => 1,
-                'size_id' => 2],
-            ['workspace_type_id' => 1,
-                'size_id' => 1],
-            ['workspace_type_id' => 2,
-                'size_id' => 2],
-            ['workspace_type_id' => 3,
-                'size_id' => 3],
-            ['workspace_type_id' => 3,
-                'size_id' => 2],
+        DB::table('workspaces')->insert([
+            ['name' => 'Zeefdruk', 'size' => 'klein'],
+            ['name' => 'Zeefdruk', 'size' => 'middel'],
+            ['name' => 'Zeefdruk', 'size' => 'middel'],
+            ['name' => 'Zeefdruk', 'size' => 'middel'],
+            ['name' => 'Zeefdruk', 'size' => 'groot'],
+            ['name' => 'Lithografie', 'size' => null],
+            ['name' => 'Hoog/diepdruk', 'size' => 'middel'],
+            ['name' => 'Hoog/diepdruk', 'size' => 'groot'],
         ]);
     }
 
