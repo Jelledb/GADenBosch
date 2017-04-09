@@ -18,8 +18,11 @@
                         <br>
 
                         <div class="wrapper-btn">
-
-                            <button type="button" class="btn btn-default" id="vriend-btn"><a id="vriend-a" href="/vriend-worden-pay">Ja, ik word vriend!</a></button>
+                            @if (Auth::check() && Auth::user()->isfriend == 1)
+                            <button type="button" class="btn btn-default" id="vriend-btn"><a id="vriend-a" href="/vriend-worden-pay">U bent al een vriend</a></button>
+                        @else
+                                <button type="button" class="btn btn-default" id="vriend-btn"><a id="vriend-a" href="/vriend-worden-pay">Ja, ik word vriend!</a></button>
+                            @endif
                         </div>
 
                     </div>
