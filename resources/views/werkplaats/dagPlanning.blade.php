@@ -8,6 +8,14 @@
             <div class="panel panel-default">
                 <h1 class="centerH1">Reserveer</h1>
                 <br/>
+                <div class="row justify-content-md-right">
+                    <h1 class="centerH1">Bezetting</h1>
+                    <?php
+                        foreach ($occupation as $oc){
+                            echo $oc->date_in," ",$oc->date_out;
+                        }
+                        ?>
+                </div>
                 <div class="row justify-content-md-center">
                     <div class="col-md-4">
                         <?php

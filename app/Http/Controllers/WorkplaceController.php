@@ -27,9 +27,12 @@ class WorkplaceController extends Controller
     }
 
     function getDayplanning($currentDay, $id)
-    {
+    {   $data['occupation'] =  reservation_workspace::Occupationday($id,$currentDay)->get();;
         $data["day"] = $currentDay;
         $data["id"] = $id;
+
+        
+
         return view('werkplaats.dagPlanning', $data);
     }
 
