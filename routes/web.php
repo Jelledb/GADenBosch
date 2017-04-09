@@ -12,9 +12,11 @@
 */
 
 /* Website routes. */
-Route::get('/','MenuController@getIndex');
+Route::get('/','HomeController@index');
 
-Route::get('/nieuws','MenuController@getNieuws');
+Route::get('nieuws','NewsController@getNewsList');
+
+Route::get('nieuws/{id}', 'NewsController@getNewsItem');
 
 Route::get('/over','MenuController@getOverons');
 
@@ -39,7 +41,9 @@ Route::get('/agendaitem/{id}', 'AgendaItemController@getExpositionItem');
 Route::get('/archief-agenda', 'ArchiveAgendaController@getArchiveAgenda');
 
 /* CMS routes. */
-Route::group(array('prefix' => 'cms'), function() {
+Route::group(['prefix' => 'cms', 'middleware' => 'admin'], function() {
+
+    Route::resource('news', 'NewsItemController');
 
     Route::get('/startpagina', 'MenuController@cmshome');
     Route::get('/nieuwtentoonstelling', 'MenuController@cmsTentoonstellingen');
@@ -50,8 +54,6 @@ Route::group(array('prefix' => 'cms'), function() {
     Route::get('/workshop', 'MenuController@cmsWorkshop');
     Route::get('/lijsttentoonstellingen', ['as' => 'lijsttentoonstellingen', 'uses' => 'MenuController@cmslijstTentoonstellingen']);
     Route::get('/workshops', 'MenuController@cmsworkshops');
-    Route::get('/newNews', 'MenuController@cmsnewnews');
-    Route::get('/news', 'MenuController@cmsnews');
     Route::get('/educatie', 'MenuController@cmsEducatie');
     Route::get('/newEducatie', 'MenuController@cmsNewEducatie');
     Route::get('/Scholen', 'MenuController@cmsSchool');

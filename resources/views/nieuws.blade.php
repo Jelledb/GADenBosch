@@ -2,15 +2,25 @@
 
 @section('content')
 
-    <div class="container">
+    <div class="container nieuws-overzicht-home">
         <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <div class="panel panel-default">
+            <div class="col-md-6 col-md-offset-3">
+                <div>
                     <div>
                         <h1 class="centerH1">Nieuwsberichten</h1>
-                        <br />
                     </div>
-
+                    @foreach($newsItems as $newsItem)
+                        <div class="nieuws-item-home panel panel-default">
+                            <div class="nieuws-item-foto">
+                                <img src="{{asset('images/foto-nieuws-homepage/265_DickVerdult_Jaarprent_2017_GrafischAtelierDenBosch.jpg')}}">
+                            </div>
+                            <p class="nieuws-titel">
+                                <a href="/nieuws/{{ $newsItem->id }}">{{ $newsItem->titel }}</a>
+                            </p>
+                            <span class="nieuws-date">Geplaatst op {{ date("d-m-Y", strtotime($newsItem->aangemaakt)) }}</span>
+                            <div class="textblok">{{ $newsItem->beschrijving }}</div>
+                        </div>
+                    @endforeach
                 </div>
             </div>
         </div>
