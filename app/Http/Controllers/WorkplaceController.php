@@ -31,7 +31,7 @@ class WorkplaceController extends Controller
         $data["day"] = $currentDay;
         $data["id"] = $id;
 
-        
+
 
         return view('werkplaats.dagPlanning', $data);
     }
