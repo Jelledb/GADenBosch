@@ -2,7 +2,6 @@
 
 @section('content')
 
-
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
@@ -10,9 +9,13 @@
                     <h1 class="centerH1">Vriend worden?</h1>
                     <br>
                     <div class="text">
-                        Ook in 2017 kunnen wij niet zonder onze vrienden.<br>
-                        Met een kleine of grote vriendendonatie helpt u het Grafisch Atelier ook in 2017 weer aan de weg te timmeren. We hebben weer veel mooie plannen voor projecten, workshops en exposities.
-                        Vrienden ontvangen in 2017 een grafisch vriendengeschenk van Alexia Pnevmatikos gratis!
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi a congue nibh, ac condimentum
+                        metus.
+                        Ut nec lectus non mi aliquet volutpat et sit amet sapien. Fusce at auctor urna. Nunc nisi massa,
+                        consectetur non neque eu, faucibus tempus ante. Quisque vitae dui eu nibh feugiat aliquet a at
+                        neque. Nulla ac sapien sit amet nibh venenatis posuere. Nulla eget scelerisque elit. Aliquam
+                        ornare
+                        posuere nunc, nec pharetra elit gravida vitae. Sed viverra tempor urna quis egestas.
                         <br><br>
                         Vriend van het GA ben je al vanaf € 45,- per jaar, maar een groter bedrag is meer dan welkom.
                         <br>
@@ -24,9 +27,7 @@
                                 <button type="button" class="btn btn-default" id="vriend-btn"><a id="vriend-a" href="/vriend-worden-pay">Ja, ik word vriend!</a></button>
                             @endif
                         </div>
-
                     </div>
-
                 </div>
             </div>
         </div>

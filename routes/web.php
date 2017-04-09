@@ -32,12 +32,13 @@ Route::get('/sponsors', 'SponsorController@getSponsorPage');
 
 Route::get('/vriend-worden', 'MenuController@friendPage');
 
-
-Route::get('/vriend-worden-pay', 'FriendController@becomeFriend');
-
-Route::post('/vriend-worden-redirect', 'FriendController@paymentUpdate');
-
 Route::get('/winkel', 'ShopController@getShopWindow');
+
+Route::get('/agenda', 'AgendaController@getExpositions');
+
+Route::get('/agendaitem/{id}', 'AgendaItemController@getExpositionItem');
+
+Route::get('/archief-agenda', 'ArchiveAgendaController@getArchiveAgenda');
 
 /* CMS routes. */
 Route::group(['prefix' => 'cms', 'middleware' => 'admin'], function() {
@@ -45,9 +46,13 @@ Route::group(['prefix' => 'cms', 'middleware' => 'admin'], function() {
     Route::resource('news', 'NewsItemController');
 
     Route::get('/startpagina', 'MenuController@cmshome');
-    Route::get('/tentoonstellingen', 'MenuController@cmsTentoonstellingen');
+    Route::get('/nieuwtentoonstelling', 'MenuController@cmsTentoonstellingen');
+    Route::post('/nieuwtentoonstelling', 'CmsTentoonstelling@newTentoonstelling');
+    Route::get('/bewerktentoonstelling/{id}', 'MenuController@cmsEditTentoonstelling');
+    Route::post('/bewerktentoonstelling/{id}', ['as' => 'bewerktentoonstelling', 'uses' => 'CmsTentoonstelling@editTentoonstelling']);
+    Route::get('/deletetentoonstelling/{id}', ['as' => 'deletetentoonstelling', 'uses' => 'CmsTentoonstelling@deleteTentoonstelling']);
     Route::get('/workshop', 'MenuController@cmsWorkshop');
-    Route::get('/lijsttentoonstellingen', 'MenuController@cmslijstTentoonstellingen');
+    Route::get('/lijsttentoonstellingen', ['as' => 'lijsttentoonstellingen', 'uses' => 'MenuController@cmslijstTentoonstellingen']);
     Route::get('/workshops', 'MenuController@cmsworkshops');
     Route::get('/educatie', 'MenuController@cmsEducatie');
     Route::get('/newEducatie', 'MenuController@cmsNewEducatie');
@@ -62,11 +67,6 @@ Route::group(['prefix' => 'cms', 'middleware' => 'admin'], function() {
     Route::get('/nieuwsbrief', 'MenuController@cmsNieuwsbrief');
     // TODO hier komt hoogstwaarschijnlijk nog meer bij
 });
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index');
-
 
 Auth::routes();
 

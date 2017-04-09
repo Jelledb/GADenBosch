@@ -40,22 +40,6 @@ body {
     font-weight: bold;
 }
 
-#vriend-btn{
-    background-color: #f05a29;
-    font-weight: bold;
-    margin-top: 5%;
-    margin-bottom: 5%;
-}
-
-#vriend-a{
-    text-decoration: none;
-    color: white;
-}
-
-.wrapper-btn{
-    text-align: center;
-}
-
 .link{
     color: #f3848d;
 }
@@ -72,6 +56,38 @@ nav {
 
 .slider {
     width: 100%;
+}
+
+.fotoblok, .fotoblok img{
+    width: 100%;
+    height: auto;
+}
+
+.nieuws-nu {
+    border: 3px solid rgb(238,134,141);
+    padding: 10px;
+}
+
+.nieuws-workshops {
+    border: 3px solid rgb(0,174,239);
+    padding: 10px;
+}
+
+.textblok {
+    top: 600px;
+}
+
+.leesmeer {
+    bottom: 2px;
+}
+
+#item .arch:first-of-type {
+    font-size: 24px;
+}
+
+.nieuws-archief {
+    border: 3px solid rgb(241,90,41);
+    padding: 10px;
 }
 
 footer {
@@ -312,5 +328,6 @@ nav .dropdown-menu {
 button {
     display: block;
     float: none;
+    width: 100px;
     margin: 0 auto;
 }
