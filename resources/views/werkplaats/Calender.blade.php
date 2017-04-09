@@ -277,9 +277,9 @@ class Calender
 
 
 
-                $elapsed_secs = $this->totalSecondsInDay - $start_time;
+                //$elapsed_secs = $this->totalSecondsInDay - $start_time;
 
-                //echo $elapsed_secs;
+
                 if (isset($percent)) {
                     $percent += round(($total_secs / $this->totalSecondsInDay) * 100);
                 } else {
@@ -295,7 +295,7 @@ class Calender
 
 
         }
-        echo " - ",$percent," ",$this->workspace->id," - ";
+
         if ( isset($percent)||$percent < 25) {
             $this->dayColor = 'good';
         }
