@@ -1,8 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.cms')
 
 @section('content')
-    <div class="container">
-        <div class="row">
+    <div>
+        <div>
             <div class="col-lg-12 margin-tb">
                 <div class="pull-left">
                     <h2>Nieuwsbericht bewerken</h2>
@@ -49,7 +49,7 @@
 
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Toon op homepage</strong>
+                    <strong>Zichtbaar</strong>
                     <input type='hidden' value='0' name='zichtbaar'>
                     <input type='checkbox' value='1' name='zichtbaar'>
                 </div>

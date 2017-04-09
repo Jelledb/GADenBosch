@@ -37,10 +37,14 @@ class NewsItemController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            '' => ''
+            'titel' => 'required',
+            'beschrijving' => 'required',
+            'tekst' => 'required',
+            'zichtbaar' => 'required',
         ]);
-        NewsItem::create($request->all());
-        return redirect()->route('cms.news.index')
+
+        NewsItem::create(array_merge($request->all(), ['aangemaakt' => date('Y-m-d')]));
+        return redirect()->route('news.index')
             ->with('success', 'Nieuwsbericht is aangemaakt');
     }
 
@@ -66,11 +70,14 @@ class NewsItemController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            '' => ''
+            'titel' => 'required',
+            'beschrijving' => 'required',
+            'tekst' => 'required',
+            'zichtbaar' => 'required',
         ]);
 
         NewsItem::find($id)->update($request->all());
-        return redirect()->route('cms.news.index')
+        return redirect()->route('news.index')
             ->with('success', 'Het nieuwsbericht is bijgewerkt.');
     }
 
@@ -83,7 +90,7 @@ class NewsItemController extends Controller
     public function destroy($id)
     {
         NewsItem::find($id)->delete();
-        return redirect()->route('cms.news.index')
+        return redirect()->route('news.index')
             ->with('success', 'Het nieuwsbericht is verwijderd.');
     }
 }

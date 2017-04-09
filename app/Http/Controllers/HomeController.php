@@ -16,7 +16,7 @@ class HomeController extends Controller
     public function index()
     {
         $newsItems = NewsItem::where('zichtbaar', 1)
-            ->take(3)
+            ->take(4)
             ->orderBy('aangemaakt', 'desc')
             ->get();
         return view('index', ['newsItems' => $newsItems, '' => '']);

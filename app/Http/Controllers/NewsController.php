@@ -3,13 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\NewsItem;
-use Illuminate\Http\Request;
 
 class NewsController extends Controller
 {
 
     /**
-     * Create a view for a list of a news items.
+     * Create a view for a list of news items.
      *
      * @return view
      */
@@ -17,7 +16,7 @@ class NewsController extends Controller
         $newsItems = NewsItem::where('zichtbaar', 1)
             ->orderBy('aangemaakt', 'desc')
             ->get();
-        return view('nieuws', ['newsItems', $newsItems]);
+        return view('nieuws', ['newsItems' => $newsItems]);
     }
 
     /**

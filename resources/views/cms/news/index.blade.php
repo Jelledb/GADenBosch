@@ -1,8 +1,8 @@
 @extends('layouts.cms')
 
 @section('content')
-    <div class="">
-        <div class="">
+    <div>
+        <div style="height: 60px;">
             <div class="margin-tb">
                 <div class="pull-left">
                     <h2>Nieuwsberichten beheren</h2>
