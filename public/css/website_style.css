@@ -300,3 +300,15 @@ tr:nth-child(even) {
 }
 
 /* Werkplaats CSS */
+
+.workspaces ul {
+    padding: 0;
+    list-style: none;
+}
+
+.workspaces {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    align-content: center;
+}
