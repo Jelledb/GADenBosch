@@ -13,7 +13,10 @@ class CreateUserIsfriendCol extends Migration
      */
     public function up()
     {
-        Schema::update('');
+        Schema::table('users', function($table)
+        {
+            $table->dateTime('frienddate')->nullable();
+        });
     }
 
     /**
