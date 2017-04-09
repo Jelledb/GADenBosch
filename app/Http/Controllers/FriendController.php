@@ -34,31 +34,15 @@ class FriendController extends Controller
                 "name" => $user->name,
                 "email" => $user->email,
             ]);
-
-
             $payment = Mollie::api()->payments()->create([
                 "amount" => 45.00,
                 'customerId' => $customer->id,
                 'recurringType' => 'first',
                 "description" => "1 Jaar Vriend Worden GA Den Bosch",
                 "redirectUrl" => "http://gadenbosch.ga/vriend-worden",
-                "webhookUrl"  => "http://gadenbosch.ga/mollie-webhook/",
-
-
+                "webhookUrl" => "http://gadenbosch.ga/vriend-worden-redirect",
             ]);
             return Redirect::to($payment->getPaymentUrl());
-
-            $payment = Mollie::api()->payments()->get($payment->id);
-
-            if ($payment->isPaid())
-            {
-                $user = Auth::user();
-                $user->isFriend = '1';
-                $user->frienddate = Carbon::now();
-                // frienddate updaten
-                $user->save();
-            }
-
 
 
         }
@@ -73,8 +57,11 @@ class FriendController extends Controller
         /// become_friend_date op vandaag zetten.
 
 
-        $mijnId = $request->input('id');
-        $payment = Mollie::api()->payments()->get($mijnId);
+//        $mijnId = $request->input('id');
+        $payment = Mollie::api()->payments()->get(Input::get('id'));
+
+        // $payment = Mollie::api()->payments()->get($_POST["id"]);
+
 
         if ($payment->isPaid())
         {
@@ -85,7 +72,6 @@ class FriendController extends Controller
             $user->save();
 
             echo "Payment received.";
-            return Redirect::route('wordVriend');
         }
 
     }
