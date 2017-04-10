@@ -59,10 +59,11 @@ class FriendController extends Controller
 
 
 //        $mijnId = $request->input('id');
-        $payment = Mollie::api()->payments()->get(Input::get('id'));
+        //$payment = Mollie::api()->payments()->get(Input::get('id'));
 
         // $payment = Mollie::api()->payments()->get($_POST["id"]);
-
+        $payment_id = 'tr_WDqYK6vllg';
+        $payment = Mollie::api()->payments->get($payment_id);
 
         if ($payment->isPaid())
         {
