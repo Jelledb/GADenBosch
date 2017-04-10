@@ -31,7 +31,7 @@
                         <div class="checkbox toonbutton">
                             <label>
                                 {!! Form::model($vacature, ['method' => 'POST','url' => ['cms/vacature/toon', $vacature->id]]) !!}
-                                @if($vacature->show === 1)
+                                @if($vacature->show == 1)
                                 <input name="toon1" type="checkbox" value="1" checked>
                                     @else
                                     <input name="toon2" type="checkbox" value="1">
