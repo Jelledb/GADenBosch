@@ -9,33 +9,20 @@
                     <h1 class="centerH1">Vriend worden?</h1>
                     <br>
                     <div class="text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi a congue nibh, ac condimentum
-                        metus.
-                        Ut nec lectus non mi aliquet volutpat et sit amet sapien. Fusce at auctor urna. Nunc nisi massa,
-                        consectetur non neque eu, faucibus tempus ante. Quisque vitae dui eu nibh feugiat aliquet a at
-                        neque. Nulla ac sapien sit amet nibh venenatis posuere. Nulla eget scelerisque elit. Aliquam
-                        ornare
-                        posuere nunc, nec pharetra elit gravida vitae. Sed viverra tempor urna quis egestas.
+                        Ook in 2017 kunnen wij niet zonder onze vrienden.<br>
+                        Met een kleine of grote vriendendonatie helpt u het Grafisch Atelier ook in 2017 weer aan de weg te timmeren. We hebben weer veel mooie plannen voor projecten, workshops en exposities.
+                        Vrienden ontvangen in 2017 een grafisch vriendengeschenk van Alexia Pnevmatikos gratis!
                         <br><br>
-                        Donec suscipit, odio ac eleifend accumsan, nisi odio molestie quam, eu convallis libero massa
-                        non
-                        urna. Phasellus sagittis lacus blandit nulla consequat maximus. In id vehicula velit. Vestibulum
-                        at
-                        auctor libero, non pretium arcu. Donec velit lacus, sollicitudin vitae lobortis ut, suscipit eu
-                        mi.
-                        Aenean ornare erat tellus, ac dictum erat sollicitudin id. Ut faucibus in sem ut accumsan. Donec
-                        nisl enim, tincidunt eget est venenatis, pulvinar accumsan mi. Class aptent taciti sociosqu ad
-                        litora torquent per conubia nostra, per inceptos himenaeos. Vivamus ut vehicula ante. Curabitur
-                        dapibus, orci vel finibus facilisis, lorem urna gravida mauris, convallis sollicitudin erat
-                        risus
-                        eget lectus. In dapibus leo eu lacus consequat ultricies. Aenean sit amet ultricies neque, at
-                        bibendum ligula. Praesent eget ex orci. Suspendisse potenti. Aenean bibendum auctor lectus, ac
-                        ullamcorper tortor tristique eget.
-                        <br><br>
-                        Donec eu tellus dolor. Ut eget mattis quam, sit amet accumsan mauris. Nulla at tincidunt nisl.
-                        Duis
-                        eu mattis erat. Quisque et libero ullamcorper, fermentum orci eu, viverra lacus. Cras porta diam
-                        mauris. Aenean sagittis magna ut leo laoreet eleifend.
+                        Vriend van het GA ben je al vanaf € 45,- per jaar, maar een groter bedrag is meer dan welkom.
+                        <br>
+
+                        <div class="wrapper-btn">
+                            @if (Auth::check() && Auth::user()->isfriend == 1)
+                            <button type="button" class="btn btn-default" id="vriend-btn"><span id="vriend-a">U bent al een vriend</span></button>
+                        @else
+                                <button type="button" class="btn btn-default" id="vriend-btn"><a id="vriend-a" href="/vriend-worden-pay">Ja, ik word vriend!</a></button>
+                            @endif
+                        </div>
                     </div>
                 </div>
             </div>

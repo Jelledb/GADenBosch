@@ -13,7 +13,7 @@
         </div>
         <div class="row">
             <p>
-                heeft u intresse mail ons op: <a href="mailto:info@gadenbosch.nl">info@gadenbosch.nl</a> of bel ons op: <a href="tel:+31736134277">073 613 4277</a>
+                Heeft u interesse mail ons op: <a href="mailto:info@gadenbosch.nl">info@gadenbosch.nl</a> of bel ons op: <a href="tel:+31736134277">073 613 4277</a>
             </p>
         </div>
     </div>

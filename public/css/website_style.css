@@ -49,6 +49,22 @@ body {
     font-weight: bold;
 }
 
+#vriend-btn{
+    background-color: #f05a29;
+    font-weight: bold;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+#vriend-a{
+    text-decoration: none;
+    color: white;
+}
+
+.wrapper-btn{
+    text-align: center;
+}
+
 .link{
     color: #f3848d;
 }
@@ -276,6 +292,53 @@ nav .dropdown-menu {
     margin: 0 5px;
 }
 
+.nieuws-overzicht-home {
+    font-family: 'Brandon', serif;
+}
+
+.nieuws-item-home {
+    height: 180px;
+    border: solid 1px red;
+    padding: 10px;
+}
+
+.nieuws-date {
+    color: #777373;
+    font-size: 12px;
+    margin-bottom: 3px;
+    display: inline-block;
+}
+
+.nieuws-item-home .nieuws-titel {
+    font-size: 20px;
+    color: #01acf0;
+}
+
+.nieuws-item-home .nieuws-item-foto {
+    height: 100%;
+    width: 180px;
+    float: left;
+    margin-right: 10px;
+    overflow: hidden;
+}
+
+.nieuws-item-home .nieuws-item-foto img {
+    height: 100%;
+    margin: 0 auto;
+    display: block;
+}
+
+.nieuws-item {
+    padding-bottom: 50px;
+}
+
+.nieuws-item img {
+    display: block;
+    margin: 0 auto;
+}
+.nieuws-item-foto-groot {
+    overflow: hidden;
+}
 
 
 /* General shit */
@@ -290,6 +353,5 @@ nav .dropdown-menu {
 button {
     display: block;
     float: none;
-    width: 100px;
     margin: 0 auto;
 }
