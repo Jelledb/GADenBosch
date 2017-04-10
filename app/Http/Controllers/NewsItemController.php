@@ -49,7 +49,7 @@ class NewsItemController extends Controller
         if ($request->foto) {
             $folder = '/images/uploads/';
             $extension = $request->foto->getClientOriginalExtension();
-            $fotoPath = 'news_item_' . $newsItem->id . $extension;
+            $fotoPath = 'news_item_' . $newsItem->id . '.' . $extension;
 
             $request->foto->storeAs('', $fotoPath, 'uploaded_images');
 
@@ -101,7 +101,7 @@ class NewsItemController extends Controller
         if ($request->foto) {
             $folder = '/images/uploads/';
             $extension = $request->foto->getClientOriginalExtension();
-            $fotoPath = 'news_item_' . $id . $extension;
+            $fotoPath = 'news_item_' . $id . '.' . $extension;
 
             $request->foto->storeAs('', $fotoPath, 'uploaded_images');
 
