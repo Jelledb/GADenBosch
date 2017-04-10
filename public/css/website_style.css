@@ -21,7 +21,16 @@ body {
     height: 400px;
     padding-top: 60px;
 }
-
+#vacatureblok{
+    position: relative !important;
+    top: 0px !important;
+}
+.vacature{
+    height: auto;
+    width: auto;
+    margin-bottom: 10px !important;
+    padding-bottom: 10px !important;
+}
 .contact-content, .over-content{
     padding: 5%;
 }
@@ -38,6 +47,22 @@ body {
 #werkplaats-btn{
     background-color: #f05a29;
     font-weight: bold;
+}
+
+#vriend-btn{
+    background-color: #f05a29;
+    font-weight: bold;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+#vriend-a{
+    text-decoration: none;
+    color: white;
+}
+
+.wrapper-btn{
+    text-align: center;
 }
 
 .link{
@@ -328,7 +353,6 @@ nav .dropdown-menu {
 button {
     display: block;
     float: none;
-    width: 100px;
     margin: 0 auto;
 }
 

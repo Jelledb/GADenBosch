@@ -80,6 +80,7 @@
                         </a>
 
                         <ul class="dropdown-menu" role="menu">
+
                             <li>
                                 <a href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
@@ -153,7 +154,7 @@
             </div>
             <div class="col-sm-4">
                 <h3>Sponsoren</h3>
-                <span>Lorem ipsum dolor sit amet</span>
+                <span><a href="{{ url('vacatures') }}">Vacatures</a></span>
             </div>
         </div>
     </div>

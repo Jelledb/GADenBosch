@@ -91,6 +91,5 @@ class MenuController extends Controller
     }
     public function getWebShop() {
         return view('webshop');
-
     }
 }

@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Redirect;
 use Mollie\Laravel\Facades\Mollie;
 use Carbon\Carbon;
+use Socialite;
 class FriendController extends Controller
 {
 
