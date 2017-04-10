@@ -52,7 +52,7 @@ class FriendController extends Controller
 
     }
 
-    public function paymentUpdate(Request $request) {
+    public function paymentUpdate() {
         // checken bij mollie of betaling is gelukt
         // als het gelukt is, database updaten: User.isFriend op true zetten.
         /// become_friend_date op vandaag zetten.
