@@ -20,7 +20,9 @@
         @foreach($newsItems as $newsItem)
             <div class="nieuws-item-home panel panel-default col-md-6">
                 <div class="nieuws-item-foto">
-                    <img src="{{asset('images/foto-nieuws-homepage/265_DickVerdult_Jaarprent_2017_GrafischAtelierDenBosch.jpg')}}">
+                    @if($newsItem->foto)
+                        <img src="{{ $newsItem->foto }}">
+                    @endif
                 </div>
                 <p class="nieuws-titel">
                     <a href="/nieuws/{{ $newsItem->id }}">{{ $newsItem->titel }}</a>

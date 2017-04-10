@@ -24,7 +24,7 @@
             </div>
         @endif
 
-        {!! Form::model($item, ['method' => 'PATCH','route' => ['news.update', $item->id]]) !!}
+        {!! Form::model($item, ['method' => 'PATCH', 'files' => true, 'route' => ['news.update', $item->id]]) !!}
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
@@ -55,7 +55,12 @@
                 </div>
             </div>
 
-            <!-- TODO foto -->
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Afbeelding:</strong>
+                    <input type="file" class="form-control" name="foto">
+                </div>
+            </div>
 
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                 <button type="submit" class="btn btn-primary">Sla bewerking op</button>

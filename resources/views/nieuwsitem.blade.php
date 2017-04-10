@@ -10,9 +10,10 @@
                 <p>{{ $newsItem->tekst }}</p>
             </div>
             <div class="col-md-6 nieuws-item-foto-groot">
-                <img src="http://placehold.it/600x300">
+                @if($newsItem->foto)
+                    <img src="{{ $newsItem->foto }}">
+                @endif
             </div>
         </div>
-
     </div>
 @endsection
