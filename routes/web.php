@@ -12,9 +12,11 @@
 */
 
 /* Website routes. */
-Route::get('/', 'MenuController@getIndex');
+Route::get('/','HomeController@index');
 
-Route::get('/nieuws', 'MenuController@getNieuws');
+Route::get('nieuws','NewsController@getNewsList');
+
+Route::get('nieuws/{id}', 'NewsController@getNewsItem');
 
 Route::get('/over', 'MenuController@getOverons');
 
@@ -39,7 +41,7 @@ Route::get('/detailed-werkplaats/{id}', 'WorkplaceController@getDetailedWerkplaa
 Route::get('/dag-planning/{currentday}/{id}','WorkplaceController@getDayplanning');
 Route::post('/dag-planning/{currentday}/{id}', 'WorkplaceController@createReservation');
 
-Route::get('function', 'WorkplaceController@saveToDatabase');
+//Route::get('function', 'WorkplaceController@saveToDatabase');
 //Route::get('/dagPlanning/{currentDay}', function ($currentDay){
 //    dd($currentDay);
 //});
@@ -51,15 +53,26 @@ Route::get('/detailedWerkplaats', 'WorkplaceController@getDetailedWerkplaats');
 
 
 /* CMS routes. */
-Route::group(array('prefix' => 'cms'), function () {
+Route::get('/agenda', 'AgendaController@getExpositions');
+
+Route::get('/agendaitem/{id}', 'AgendaItemController@getExpositionItem');
+
+Route::get('/archief-agenda', 'ArchiveAgendaController@getArchiveAgenda');
+
+/* CMS routes. */
+Route::group(['prefix' => 'cms', 'middleware' => 'admin'], function() {
+
+    Route::resource('news', 'NewsItemController');
 
     Route::get('/startpagina', 'MenuController@cmshome');
-    Route::get('/tentoonstellingen', 'MenuController@cmsTentoonstellingen');
+    Route::get('/nieuwtentoonstelling', 'MenuController@cmsTentoonstellingen');
+    Route::post('/nieuwtentoonstelling', 'CmsTentoonstelling@newTentoonstelling');
+    Route::get('/bewerktentoonstelling/{id}', 'MenuController@cmsEditTentoonstelling');
+    Route::post('/bewerktentoonstelling/{id}', ['as' => 'bewerktentoonstelling', 'uses' => 'CmsTentoonstelling@editTentoonstelling']);
+    Route::get('/deletetentoonstelling/{id}', ['as' => 'deletetentoonstelling', 'uses' => 'CmsTentoonstelling@deleteTentoonstelling']);
     Route::get('/workshop', 'MenuController@cmsWorkshop');
-    Route::get('/lijsttentoonstellingen', 'MenuController@cmslijstTentoonstellingen');
+    Route::get('/lijsttentoonstellingen', ['as' => 'lijsttentoonstellingen', 'uses' => 'MenuController@cmslijstTentoonstellingen']);
     Route::get('/workshops', 'MenuController@cmsworkshops');
-    Route::get('/newNews', 'MenuController@cmsnewnews');
-    Route::get('/news', 'MenuController@cmsnews');
     Route::get('/educatie', 'MenuController@cmsEducatie');
     Route::get('/newEducatie', 'MenuController@cmsNewEducatie');
     Route::get('/Scholen', 'MenuController@cmsSchool');

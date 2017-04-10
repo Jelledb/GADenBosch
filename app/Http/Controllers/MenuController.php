@@ -2,16 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\expositions;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use App\Products;
 
 class MenuController extends Controller
 {
-
-    function getIndex(){
-        return view('index');
-    }
     function getWerkplaats ()
     {
         return view('werkplaats.werkplaats');
@@ -33,11 +30,19 @@ class MenuController extends Controller
     public function cmsTentoonstellingen(){
         return view('cms/cmsnewtentoonstellingen');
     }
+    public function cmsEditTentoonstelling($id){
+        $exposition = expositions::where('id', $id)
+            ->take(1)
+            ->get();
+        return view('cms/cmsedittentoonstelling')->with('editExpo', $exposition);
+    }
     public function cmsWorkshop(){
         return view('cms/cmsnewworkshop');
     }
     public function cmslijstTentoonstellingen(){
-        return view('cms/cmstentoonstellingen');
+        $expositions = expositions::orderBy('id', 'desc')
+            ->get();
+        return view('cms/cmstentoonstellingen')->with('allExpositions', $expositions);
     }
     public function cmsworkshops(){
         return view('cms/cmsworkshops');

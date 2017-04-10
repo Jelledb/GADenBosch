@@ -17,25 +17,16 @@
                         ornare
                         posuere nunc, nec pharetra elit gravida vitae. Sed viverra tempor urna quis egestas.
                         <br><br>
-                        Donec suscipit, odio ac eleifend accumsan, nisi odio molestie quam, eu convallis libero massa
-                        non
-                        urna. Phasellus sagittis lacus blandit nulla consequat maximus. In id vehicula velit. Vestibulum
-                        at
-                        auctor libero, non pretium arcu. Donec velit lacus, sollicitudin vitae lobortis ut, suscipit eu
-                        mi.
-                        Aenean ornare erat tellus, ac dictum erat sollicitudin id. Ut faucibus in sem ut accumsan. Donec
-                        nisl enim, tincidunt eget est venenatis, pulvinar accumsan mi. Class aptent taciti sociosqu ad
-                        litora torquent per conubia nostra, per inceptos himenaeos. Vivamus ut vehicula ante. Curabitur
-                        dapibus, orci vel finibus facilisis, lorem urna gravida mauris, convallis sollicitudin erat
-                        risus
-                        eget lectus. In dapibus leo eu lacus consequat ultricies. Aenean sit amet ultricies neque, at
-                        bibendum ligula. Praesent eget ex orci. Suspendisse potenti. Aenean bibendum auctor lectus, ac
-                        ullamcorper tortor tristique eget.
-                        <br><br>
-                        Donec eu tellus dolor. Ut eget mattis quam, sit amet accumsan mauris. Nulla at tincidunt nisl.
-                        Duis
-                        eu mattis erat. Quisque et libero ullamcorper, fermentum orci eu, viverra lacus. Cras porta diam
-                        mauris. Aenean sagittis magna ut leo laoreet eleifend.
+                        Vriend van het GA ben je al vanaf € 45,- per jaar, maar een groter bedrag is meer dan welkom.
+                        <br>
+
+                        <div class="wrapper-btn">
+                            @if (Auth::check() && Auth::user()->isfriend == 1)
+                            <button type="button" class="btn btn-default" id="vriend-btn"><a id="vriend-a" href="/vriend-worden-pay">U bent al een vriend</a></button>
+                        @else
+                                <button type="button" class="btn btn-default" id="vriend-btn"><a id="vriend-a" href="/vriend-worden-pay">Ja, ik word vriend!</a></button>
+                            @endif
+                        </div>
                     </div>
                 </div>
             </div>
