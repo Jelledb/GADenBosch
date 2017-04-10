@@ -24,7 +24,7 @@
             </div>
         @endif
 
-        {!! Form::open(array('route' => 'news.store','method'=>'POST')) !!}
+        {!! Form::open(array('route' => 'news.store','method'=>'POST', 'files' => true)) !!}
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
@@ -49,13 +49,18 @@
 
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
+                    <strong>Afbeelding:</strong>
+                    <input type="file" class="form-control" name="foto" enctype="multipart/form-data">
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
                     <strong>Zichtbaar</strong>
                     <input type='hidden' value='0' name='zichtbaar'>
                     <input type='checkbox' value='1' name='zichtbaar'>
                 </div>
             </div>
-
-            <!-- TODO foto -->
 
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                 <button type="submit" class="btn btn-primary">Sla bewerking op</button>

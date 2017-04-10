@@ -43,7 +43,20 @@ class NewsItemController extends Controller
             'zichtbaar' => 'required',
         ]);
 
-        NewsItem::create(array_merge($request->all(), ['aangemaakt' => date('Y-m-d')]));
+        $newsItem = NewsItem::create(array_merge($request->all(), ['aangemaakt' => date('Y-m-d')]));
+
+        // if the user gave a picture, save it.
+        if ($request->foto) {
+            $folder = '/images/uploads/';
+            $extension = $request->foto->getClientOriginalExtension();
+            $fotoPath = 'news_item_' . $newsItem->id . $extension;
+
+            $request->foto->storeAs('', $fotoPath, 'uploaded_images');
+
+            $fotoPath = $folder . $fotoPath;
+            $newsItem->foto = $fotoPath;
+            $newsItem->save();
+        }
         return redirect()->route('news.index')
             ->with('success', 'Nieuwsbericht is aangemaakt');
     }
@@ -76,7 +89,27 @@ class NewsItemController extends Controller
             'zichtbaar' => 'required',
         ]);
 
-        NewsItem::find($id)->update($request->all());
+        $fotoPath = null;
+        $newsItem = NewsItem::find($id);
+
+        // prevent the user from deleting the picture when no picture is given.
+        if ($newsItem->foto) {
+            $fotoPath = $newsItem->foto;
+        }
+
+        // if the user gave a picture, save it.
+        if ($request->foto) {
+            $folder = '/images/uploads/';
+            $extension = $request->foto->getClientOriginalExtension();
+            $fotoPath = 'news_item_' . $id . $extension;
+
+            $request->foto->storeAs('', $fotoPath, 'uploaded_images');
+
+            $fotoPath = $folder . $fotoPath;
+        }
+
+        NewsItem::find($id)->update(array_merge($request->all(), ['foto' => $fotoPath]));
+
         return redirect()->route('news.index')
             ->with('success', 'Het nieuwsbericht is bijgewerkt.');
     }
