@@ -21,7 +21,16 @@ body {
     height: 400px;
     padding-top: 60px;
 }
-
+#vacatureblok{
+    position: relative !important;
+    top: 0px !important;
+}
+.vacature{
+    height: auto;
+    width: auto;
+    margin-bottom: 10px !important;
+    padding-bottom: 10px !important;
+}
 .contact-content, .over-content{
     padding: 5%;
 }

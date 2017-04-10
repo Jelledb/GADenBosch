@@ -4,7 +4,9 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "41830b0a4ded02a72fa0286aa4973f74",
+
+    "content-hash": "f287e3086330b7812d2239a9aee0f108",
+
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -38,355 +40,6 @@
             ],
             "description": "implementation of xdg base directory specification for php",
             "time": "2014-10-24T07:27:01+00:00"
-        },
-        {
-            "name": "doctrine/annotations",
-            "version": "v1.4.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/doctrine/annotations.git",
-                "reference": "54cacc9b81758b14e3ce750f205a393d52339e97"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/annotations/zipball/54cacc9b81758b14e3ce750f205a393d52339e97",
-                "reference": "54cacc9b81758b14e3ce750f205a393d52339e97",
-                "shasum": ""
-            },
-            "require": {
-                "doctrine/lexer": "1.*",
-                "php": "^5.6 || ^7.0"
-            },
-            "require-dev": {
-                "doctrine/cache": "1.*",
-                "phpunit/phpunit": "^5.7"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.4.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Doctrine\\Common\\Annotations\\": "lib/Doctrine/Common/Annotations"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Roman Borschel",
-                    "email": "roman@code-factory.org"
-                },
-                {
-                    "name": "Benjamin Eberlei",
-                    "email": "kontakt@beberlei.de"
-                },
-                {
-                    "name": "Guilherme Blanco",
-                    "email": "guilhermeblanco@gmail.com"
-                },
-                {
-                    "name": "Jonathan Wage",
-                    "email": "jonwage@gmail.com"
-                },
-                {
-                    "name": "Johannes Schmitt",
-                    "email": "schmittjoh@gmail.com"
-                }
-            ],
-            "description": "Docblock Annotations Parser",
-            "homepage": "http://www.doctrine-project.org",
-            "keywords": [
-                "annotations",
-                "docblock",
-                "parser"
-            ],
-            "time": "2017-02-24T16:22:25+00:00"
-        },
-        {
-            "name": "doctrine/cache",
-            "version": "v1.6.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/doctrine/cache.git",
-                "reference": "b6f544a20f4807e81f7044d31e679ccbb1866dc3"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/cache/zipball/b6f544a20f4807e81f7044d31e679ccbb1866dc3",
-                "reference": "b6f544a20f4807e81f7044d31e679ccbb1866dc3",
-                "shasum": ""
-            },
-            "require": {
-                "php": "~5.5|~7.0"
-            },
-            "conflict": {
-                "doctrine/common": ">2.2,<2.4"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "~4.8|~5.0",
-                "predis/predis": "~1.0",
-                "satooshi/php-coveralls": "~0.6"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.6.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Doctrine\\Common\\Cache\\": "lib/Doctrine/Common/Cache"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Roman Borschel",
-                    "email": "roman@code-factory.org"
-                },
-                {
-                    "name": "Benjamin Eberlei",
-                    "email": "kontakt@beberlei.de"
-                },
-                {
-                    "name": "Guilherme Blanco",
-                    "email": "guilhermeblanco@gmail.com"
-                },
-                {
-                    "name": "Jonathan Wage",
-                    "email": "jonwage@gmail.com"
-                },
-                {
-                    "name": "Johannes Schmitt",
-                    "email": "schmittjoh@gmail.com"
-                }
-            ],
-            "description": "Caching library offering an object-oriented API for many cache backends",
-            "homepage": "http://www.doctrine-project.org",
-            "keywords": [
-                "cache",
-                "caching"
-            ],
-            "time": "2016-10-29T11:16:17+00:00"
-        },
-        {
-            "name": "doctrine/collections",
-            "version": "v1.4.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/doctrine/collections.git",
-                "reference": "1a4fb7e902202c33cce8c55989b945612943c2ba"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/collections/zipball/1a4fb7e902202c33cce8c55989b945612943c2ba",
-                "reference": "1a4fb7e902202c33cce8c55989b945612943c2ba",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^5.6 || ^7.0"
-            },
-            "require-dev": {
-                "doctrine/coding-standard": "~0.1@dev",
-                "phpunit/phpunit": "^5.7"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.3.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "Doctrine\\Common\\Collections\\": "lib/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Roman Borschel",
-                    "email": "roman@code-factory.org"
-                },
-                {
-                    "name": "Benjamin Eberlei",
-                    "email": "kontakt@beberlei.de"
-                },
-                {
-                    "name": "Guilherme Blanco",
-                    "email": "guilhermeblanco@gmail.com"
-                },
-                {
-                    "name": "Jonathan Wage",
-                    "email": "jonwage@gmail.com"
-                },
-                {
-                    "name": "Johannes Schmitt",
-                    "email": "schmittjoh@gmail.com"
-                }
-            ],
-            "description": "Collections Abstraction library",
-            "homepage": "http://www.doctrine-project.org",
-            "keywords": [
-                "array",
-                "collections",
-                "iterator"
-            ],
-            "time": "2017-01-03T10:49:41+00:00"
-        },
-        {
-            "name": "doctrine/common",
-            "version": "v2.7.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/doctrine/common.git",
-                "reference": "930297026c8009a567ac051fd545bf6124150347"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/common/zipball/930297026c8009a567ac051fd545bf6124150347",
-                "reference": "930297026c8009a567ac051fd545bf6124150347",
-                "shasum": ""
-            },
-            "require": {
-                "doctrine/annotations": "1.*",
-                "doctrine/cache": "1.*",
-                "doctrine/collections": "1.*",
-                "doctrine/inflector": "1.*",
-                "doctrine/lexer": "1.*",
-                "php": "~5.6|~7.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^5.4.6"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.7.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Doctrine\\Common\\": "lib/Doctrine/Common"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Roman Borschel",
-                    "email": "roman@code-factory.org"
-                },
-                {
-                    "name": "Benjamin Eberlei",
-                    "email": "kontakt@beberlei.de"
-                },
-                {
-                    "name": "Guilherme Blanco",
-                    "email": "guilhermeblanco@gmail.com"
-                },
-                {
-                    "name": "Jonathan Wage",
-                    "email": "jonwage@gmail.com"
-                },
-                {
-                    "name": "Johannes Schmitt",
-                    "email": "schmittjoh@gmail.com"
-                }
-            ],
-            "description": "Common Library for Doctrine projects",
-            "homepage": "http://www.doctrine-project.org",
-            "keywords": [
-                "annotations",
-                "collections",
-                "eventmanager",
-                "persistence",
-                "spl"
-            ],
-            "time": "2017-01-13T14:02:13+00:00"
-        },
-        {
-            "name": "doctrine/dbal",
-            "version": "v2.5.12",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/doctrine/dbal.git",
-                "reference": "7b9e911f9d8b30d43b96853dab26898c710d8f44"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/dbal/zipball/7b9e911f9d8b30d43b96853dab26898c710d8f44",
-                "reference": "7b9e911f9d8b30d43b96853dab26898c710d8f44",
-                "shasum": ""
-            },
-            "require": {
-                "doctrine/common": ">=2.4,<2.8-dev",
-                "php": ">=5.3.2"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "4.*",
-                "symfony/console": "2.*||^3.0"
-            },
-            "suggest": {
-                "symfony/console": "For helpful console commands such as SQL execution and import of files."
-            },
-            "bin": [
-                "bin/doctrine-dbal"
-            ],
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.5.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "Doctrine\\DBAL\\": "lib/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Roman Borschel",
-                    "email": "roman@code-factory.org"
-                },
-                {
-                    "name": "Benjamin Eberlei",
-                    "email": "kontakt@beberlei.de"
-                },
-                {
-                    "name": "Guilherme Blanco",
-                    "email": "guilhermeblanco@gmail.com"
-                },
-                {
-                    "name": "Jonathan Wage",
-                    "email": "jonwage@gmail.com"
-                }
-            ],
-            "description": "Database Abstraction Layer",
-            "homepage": "http://www.doctrine-project.org",
-            "keywords": [
-                "database",
-                "dbal",
-                "persistence",
-                "queryobject"
-            ],
-            "time": "2017-02-08T12:53:47+00:00"
         },
         {
             "name": "doctrine/inflector",
@@ -456,60 +109,6 @@
             "time": "2015-11-06T14:35:42+00:00"
         },
         {
-            "name": "doctrine/lexer",
-            "version": "v1.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/doctrine/lexer.git",
-                "reference": "83893c552fd2045dd78aef794c31e694c37c0b8c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/lexer/zipball/83893c552fd2045dd78aef794c31e694c37c0b8c",
-                "reference": "83893c552fd2045dd78aef794c31e694c37c0b8c",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.2"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "Doctrine\\Common\\Lexer\\": "lib/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Roman Borschel",
-                    "email": "roman@code-factory.org"
-                },
-                {
-                    "name": "Guilherme Blanco",
-                    "email": "guilhermeblanco@gmail.com"
-                },
-                {
-                    "name": "Johannes Schmitt",
-                    "email": "schmittjoh@gmail.com"
-                }
-            ],
-            "description": "Base library for a lexer that can be used in Top-Down, Recursive Descent Parsers.",
-            "homepage": "http://www.doctrine-project.org",
-            "keywords": [
-                "lexer",
-                "parser"
-            ],
-            "time": "2014-09-09T13:34:57+00:00"
-        },
-        {
             "name": "erusev/parsedown",
             "version": "1.6.2",
             "source": {
@@ -550,6 +149,7 @@
                 "parser"
             ],
             "time": "2017-03-29T16:04:15+00:00"
+
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -775,6 +375,7 @@
             ],
             "abandoned": "laravelcollective/html",
             "time": "2015-01-01T16:31:18+00:00"
+
         },
         {
             "name": "jakub-onderka/php-console-color",
@@ -865,6 +466,7 @@
         },
         {
             "name": "laravel/framework",
+
             "version": "v5.4.17",
             "source": {
                 "type": "git",
@@ -875,7 +477,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/laravel/framework/zipball/f7675d59e3863a58ecdff1a5ee1dcd0cff788f4b",
                 "reference": "f7675d59e3863a58ecdff1a5ee1dcd0cff788f4b",
-                "shasum": ""
+
             },
             "require": {
                 "doctrine/inflector": "~1.0",
@@ -990,6 +592,7 @@
                 "framework",
                 "laravel"
             ],
+
             "time": "2017-04-03T13:07:39+00:00"
         },
         {
@@ -1902,7 +1505,12 @@
         },
         {
             "name": "ramsey/uuid",
+<<<<<<< HEAD
+
+            "version": "3.6.0",
+=======
             "version": "3.6.1",
+>>>>>>> 37151aec0a4d38e19bffb5db01cd674ad4af440a
             "source": {
                 "type": "git",
                 "url": "https://github.com/ramsey/uuid.git",
@@ -1910,8 +1518,14 @@
             },
             "dist": {
                 "type": "zip",
+<<<<<<< HEAD
+                "url": "https://api.github.com/repos/ramsey/uuid/zipball/0b7bdfb180e72c8d76e75a649ced67e392201458",
+                "reference": "0b7bdfb180e72c8d76e75a649ced67e392201458",
+
+=======
                 "url": "https://api.github.com/repos/ramsey/uuid/zipball/4ae32dd9ab8860a4bbd750ad269cba7f06f7934e",
                 "reference": "4ae32dd9ab8860a4bbd750ad269cba7f06f7934e",
+>>>>>>> 37151aec0a4d38e19bffb5db01cd674ad4af440a
                 "shasum": ""
             },
             "require": {
@@ -1980,7 +1594,13 @@
                 "identifier",
                 "uuid"
             ],
+<<<<<<< HEAD
+
+            "time": "2017-03-18T15:38:09+00:00"
+
+=======
             "time": "2017-03-26T20:37:53+00:00"
+>>>>>>> 37151aec0a4d38e19bffb5db01cd674ad4af440a
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -2038,7 +1658,13 @@
         },
         {
             "name": "symfony/console",
+<<<<<<< HEAD
+
+            "version": "v3.2.6",
+
+=======
             "version": "v3.2.7",
+>>>>>>> 37151aec0a4d38e19bffb5db01cd674ad4af440a
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
@@ -2101,7 +1727,13 @@
         },
         {
             "name": "symfony/css-selector",
+<<<<<<< HEAD
+
+            "version": "v3.2.6",
+
+=======
             "version": "v3.2.7",
+>>>>>>> 37151aec0a4d38e19bffb5db01cd674ad4af440a
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/css-selector.git",
@@ -2154,7 +1786,13 @@
         },
         {
             "name": "symfony/debug",
+<<<<<<< HEAD
+
+            "version": "v3.2.6",
+
+=======
             "version": "v3.2.7",
+>>>>>>> 37151aec0a4d38e19bffb5db01cd674ad4af440a
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/debug.git",
@@ -2211,7 +1849,13 @@
         },
         {
             "name": "symfony/event-dispatcher",
+<<<<<<< HEAD
+
+            "version": "v3.2.6",
+
+=======
             "version": "v3.2.7",
+>>>>>>> 37151aec0a4d38e19bffb5db01cd674ad4af440a
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/event-dispatcher.git",
@@ -2271,7 +1915,13 @@
         },
         {
             "name": "symfony/finder",
+<<<<<<< HEAD
+
+            "version": "v3.2.6",
+
+=======
             "version": "v3.2.7",
+>>>>>>> 37151aec0a4d38e19bffb5db01cd674ad4af440a
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/finder.git",
@@ -2320,7 +1970,13 @@
         },
         {
             "name": "symfony/http-foundation",
+<<<<<<< HEAD
+
+            "version": "v3.2.6",
+
+=======
             "version": "v3.2.7",
+>>>>>>> 37151aec0a4d38e19bffb5db01cd674ad4af440a
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-foundation.git",
@@ -2373,7 +2029,12 @@
         },
         {
             "name": "symfony/http-kernel",
+<<<<<<< HEAD
+
+            "version": "v3.2.6",
+=======
             "version": "v3.2.7",
+>>>>>>> 37151aec0a4d38e19bffb5db01cd674ad4af440a
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-kernel.git",
@@ -2381,8 +2042,14 @@
             },
             "dist": {
                 "type": "zip",
+<<<<<<< HEAD
+                "url": "https://api.github.com/repos/symfony/http-kernel/zipball/bc909e85b8585c9edf043d0fca871308c41bb9b4",
+                "reference": "bc909e85b8585c9edf043d0fca871308c41bb9b4",
+
+=======
                 "url": "https://api.github.com/repos/symfony/http-kernel/zipball/8285ab5faf1306b1a5ebcf287fe91c231a6de88e",
                 "reference": "8285ab5faf1306b1a5ebcf287fe91c231a6de88e",
+>>>>>>> 37151aec0a4d38e19bffb5db01cd674ad4af440a
                 "shasum": ""
             },
             "require": {
@@ -2451,7 +2118,13 @@
             ],
             "description": "Symfony HttpKernel Component",
             "homepage": "https://symfony.com",
+<<<<<<< HEAD
+
+            "time": "2017-03-10T18:35:31+00:00"
+
+=======
             "time": "2017-04-05T12:52:03+00:00"
+>>>>>>> 37151aec0a4d38e19bffb5db01cd674ad4af440a
         },
         {
             "name": "symfony/polyfill-mbstring",
@@ -2514,7 +2187,12 @@
         },
         {
             "name": "symfony/process",
+<<<<<<< HEAD
+
+            "version": "v3.2.6",
+=======
             "version": "v3.2.7",
+>>>>>>> 37151aec0a4d38e19bffb5db01cd674ad4af440a
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/process.git",
@@ -2563,7 +2241,13 @@
         },
         {
             "name": "symfony/routing",
+<<<<<<< HEAD
+
+            "version": "v3.2.6",
+
+=======
             "version": "v3.2.7",
+>>>>>>> 37151aec0a4d38e19bffb5db01cd674ad4af440a
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/routing.git",
@@ -2638,7 +2322,13 @@
         },
         {
             "name": "symfony/translation",
+<<<<<<< HEAD
+
+            "version": "v3.2.6",
+
+=======
             "version": "v3.2.7",
+>>>>>>> 37151aec0a4d38e19bffb5db01cd674ad4af440a
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/translation.git",
@@ -2702,7 +2392,13 @@
         },
         {
             "name": "symfony/var-dumper",
+<<<<<<< HEAD
+
+            "version": "v3.2.6",
+
+=======
             "version": "v3.2.7",
+>>>>>>> 37151aec0a4d38e19bffb5db01cd674ad4af440a
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/var-dumper.git",
@@ -3579,7 +3275,12 @@
         },
         {
             "name": "phpunit/phpunit",
+<<<<<<< HEAD
+
+            "version": "5.7.17",
+=======
             "version": "5.7.19",
+>>>>>>> 37151aec0a4d38e19bffb5db01cd674ad4af440a
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
@@ -3587,8 +3288,14 @@
             },
             "dist": {
                 "type": "zip",
+<<<<<<< HEAD
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/68752b665d3875f9a38a357e3ecb35c79f8673bf",
+                "reference": "68752b665d3875f9a38a357e3ecb35c79f8673bf",
+
+=======
                 "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/69c4f49ff376af2692bad9cebd883d17ebaa98a1",
                 "reference": "69c4f49ff376af2692bad9cebd883d17ebaa98a1",
+>>>>>>> 37151aec0a4d38e19bffb5db01cd674ad4af440a
                 "shasum": ""
             },
             "require": {
@@ -3657,7 +3364,12 @@
                 "testing",
                 "xunit"
             ],
+<<<<<<< HEAD
+
+            "time": "2017-03-19T16:52:12+00:00"
+=======
             "time": "2017-04-03T02:22:27+00:00"
+>>>>>>> 37151aec0a4d38e19bffb5db01cd674ad4af440a
         },
         {
             "name": "phpunit/phpunit-mock-objects",
@@ -4233,7 +3945,9 @@
         },
         {
             "name": "symfony/yaml",
+
             "version": "v3.2.7",
+
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
