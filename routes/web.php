@@ -28,6 +28,15 @@ Route::get('/contact','MenuController@getContact');
 Route::get('/vrienden-overzicht', 'MenuController@friendPage');
 
 
+Route::group(array('prefix' => 'vacatures'), function(){
+    Route::get('', 'VacatureController@getVacaturePage');
+    Route::get('/{id}', 'VacatureController@getDetailPage');
+
+});
+
+
+
+
 Route::get('/sponsors', 'SponsorController@getSponsorPage');
 
 Route::get('/vriend-worden', 'MenuController@friendPage');
@@ -38,11 +47,13 @@ Route::post('/vriend-worden-redirect', 'FriendController@paymentUpdate');
 
 Route::get('/winkel', 'ShopController@getShopWindow');
 
+
 Route::get('/agenda', 'AgendaController@getExpositions');
 
 Route::get('/agendaitem/{id}', 'AgendaItemController@getExpositionItem');
 
 Route::get('/archief-agenda', 'ArchiveAgendaController@getArchiveAgenda');
+
 
 /* CMS routes. */
 Route::group(['prefix' => 'cms', 'middleware' => 'admin'], function() {
@@ -69,8 +80,17 @@ Route::group(['prefix' => 'cms', 'middleware' => 'admin'], function() {
     Route::get('/menu', 'MenuController@cmsMenu');
     Route::get('/newMenu', 'MenuController@cmsNewMenu');
     Route::get('/nieuwsbrief', 'MenuController@cmsNieuwsbrief');
+    Route::get('/vacature', 'VacatureController@getCmsVacature');
+    Route::get('/vacature/edit/{id}', 'VacatureController@getCMSRUVacature');
+    Route::patch('/vacature/update/{id}', 'VacatureController@update');
+    Route::get('/vacature/getcreate','VacatureController@getcreate');
+    Route::post('/vacature/create','VacatureController@create');
+    Route::get('/vacature/delete/{id}', 'VacatureController@delete');
+    Route::post('/vacature/toon/{id}', 'VacatureController@updateToon');
+
     // TODO hier komt hoogstwaarschijnlijk nog meer bij
 });
+
 
 Auth::routes();
 
