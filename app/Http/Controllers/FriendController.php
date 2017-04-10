@@ -65,6 +65,7 @@ class FriendController extends Controller
         $payment_id = 'tr_WDqYK6vllg';
         $payment = Mollie::api()->payments->get($payment_id);
 
+
         if ($payment->isPaid())
         {
             $user = Auth::user();
