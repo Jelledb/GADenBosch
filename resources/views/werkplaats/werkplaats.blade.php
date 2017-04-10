@@ -100,7 +100,7 @@
                 <br><br>
                 <strong>Kosten</strong><br>
                 <a href="http://fedha.nl/prijzen" class="link">Prijslijst 2017</a><br><br>
-                <button type="button" class="btn btn-default" id="werkplaats-btn">Reserveer</button>
+                <a href="{{url('/werkplaats-overzicht')}}" class="btn btn-default" id="werkplaats-btn">Reserveer</a>
                 </p>
 
 

@@ -355,3 +355,33 @@ button {
     float: none;
     margin: 0 auto;
 }
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+/* Werkplaats CSS */
+
+.workspaces ul {
+    padding: 0;
+    list-style: none;
+}
+
+.workspaces {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    align-content: center;
+}
