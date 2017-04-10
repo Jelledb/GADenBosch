@@ -32,6 +32,10 @@ Route::get('/sponsors', 'SponsorController@getSponsorPage');
 
 Route::get('/vriend-worden', 'MenuController@friendPage');
 
+Route::get('/vriend-worden-pay', 'FriendController@becomeFriend');
+
+Route::post('/vriend-worden-redirect', 'FriendController@paymentUpdate');
+
 Route::get('/winkel', 'ShopController@getShopWindow');
 
 Route::get('/agenda', 'AgendaController@getExpositions');
