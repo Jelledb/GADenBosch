@@ -26,8 +26,9 @@ class Calender
 
         $this->totalSecondsInDay = 28800;
 
-        $this->naviHref = htmlentities($_SERVER['PHP_SELF']);
-        
+        $this->naviHref = url()->current();
+
+
     }
 
     /********************* PROPERTY ********************/
