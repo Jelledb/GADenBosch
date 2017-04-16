@@ -57,7 +57,7 @@ class WorkplaceController extends Controller
         $reservation = new Reservation();
         $reservation->date_in = $start;
         $reservation->date_out = $end;
-        $reservation->user_id = 2;
+        $reservation->user_id = auth()->id();
 
         $reservation->save();
 
@@ -66,5 +66,10 @@ class WorkplaceController extends Controller
         reservation_workspace::create(['reservation_id' => $id, 'workspace_id' => $request->werkplaats]);
 
         return redirect('werkplaats-overzicht');
+    }
+    function myReservations(){
+        $reservations = Reservation::MyReservations()->get();
+        dd($reservations);
+        return view('werkplaats.mijn-reserveringen',compact('reservations'));
     }
 }
