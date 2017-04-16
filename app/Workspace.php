@@ -7,8 +7,8 @@ class Workspace extends BaseModel
     protected $table = 'workspaces';
     protected $fillable = ['name', 'size'];
 
-    function Reservation(){
-        $this->belongsToMany('App\Workspace');
+    public function Reservations(){
+        $this->belongsToMany('App\Reservation','reservation_workspace','workspace_id','reservation_id');
     }
     function scopeWorkspace($query,$id){
         return $query->join('reservation_workspace','workspace_id','=','workspaces.id' )
