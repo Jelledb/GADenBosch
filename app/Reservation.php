@@ -11,11 +11,7 @@ class Reservation extends BaseModel
        return $this->belongsToMany('App\Workspace','reservation_workspace','reservation_id','workspace_id');
 
     }
-//    function scopeMyReservations($query){
-//        return $query->join('reservation_workspace','workspace_id','=','workspaces.id' )
-//            ->where('user_id','=', auth()->id())
-//            ->select('workspaces.*');
-//    }
+
     function scopeMyReservations(){
 
 

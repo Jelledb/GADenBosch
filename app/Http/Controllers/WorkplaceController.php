@@ -43,7 +43,7 @@ class WorkplaceController extends Controller
         $dateLater = date('Y-m-d H:i:s', strtotime($date . '+1 hour'));
 
         DB::table('reservation')->insert(
-            array('date_in' => $date, 'date_out' => $dateLater, 'user_id' => 3)
+            array('date_in' => $date, 'date_out' => $dateLater, 'user_id' => auth()->id())
         );
     }
 
@@ -69,7 +69,7 @@ class WorkplaceController extends Controller
     }
     function myReservations(){
         $reservations = Reservation::MyReservations()->get();
-        dd($reservations);
+
         return view('werkplaats.mijn-reserveringen',compact('reservations'));
     }
 }
