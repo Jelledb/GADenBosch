@@ -17,7 +17,7 @@ class UpdateVacature extends Migration
             //
             $table->string('short_description');
             $table->text('description')->change();
-            $table->int('show');
+            $table->boolean('show');
         });
     }
 
