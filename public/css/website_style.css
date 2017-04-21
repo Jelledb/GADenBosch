@@ -12,89 +12,86 @@
     src: url("../fonts/Brandon_reg.otf") format("opentype");
 }
 
-
 /* Remove the default margin */
 body {
     margin: 0;
 }
+
+body {
+    padding-top: 70px;
+}
+
 #map_canvas {
     height: 400px;
     padding-top: 60px;
 }
-#vacatureblok{
+
+#vacatureblok {
     position: relative !important;
     top: 0px !important;
 }
-.vacature{
+
+.vacature {
     height: auto;
     width: auto;
     margin-bottom: 10px !important;
     padding-bottom: 10px !important;
 }
-.contact-content, .over-content{
+
+.contact-content, .over-content {
     padding: 5%;
 }
 
-#contact-container{
+#contact-container {
     margin-bottom: 5%;
 }
 
-.kopje{
+.kopje {
     font-weight: bold;
     text-decoration: underline;
 }
 
-#werkplaats-btn{
+#werkplaats-btn {
     background-color: #f05a29;
     font-weight: bold;
 }
 
-#vriend-btn{
+#vriend-btn {
     background-color: #f05a29;
     font-weight: bold;
     margin-top: 5%;
     margin-bottom: 5%;
 }
 
-#vriend-a{
+#vriend-a {
     text-decoration: none;
     color: white;
 }
 
-.wrapper-btn{
+.wrapper-btn {
     text-align: center;
 }
 
-.link{
+.link {
     color: #f3848d;
-}
-.navbar-nav.nav {
-    float: right;
-}
-
-nav {
-    padding: 0 20px;
-}
-.container {
-    padding-top: 70px;
 }
 
 .slider {
     width: 100%;
 }
 
-.fotoblok, .fotoblok img{
+.fotoblok, .fotoblok img {
     width: 100%;
     height: auto;
 }
 
 .nieuws-nu {
-    border: 3px solid rgb(238,134,141);
+    border: 3px solid rgb(238, 134, 141);
     padding: 10px;
 }
 
 .nieuws-workshops {
-    border: 3px solid rgb(0,174,239);
+    border: 3px solid rgb(0, 174, 239);
     padding: 10px;
 }
 
@@ -111,10 +108,11 @@ nav {
 }
 
 .nieuws-archief {
-    border: 3px solid rgb(241,90,41);
+    border: 3px solid rgb(241, 90, 41);
     padding: 10px;
 }
 
+/* Footer styling. */
 footer {
     width: 100%;
     border-top: 1px solid #e7e7e7;
@@ -150,6 +148,7 @@ footer > .container {
     -o-transition: all .4s ease-out;
     transition: all .4s ease-out;
 }
+
 .social-media-channels a:hover {
     text-decoration: none;
     color: white;
@@ -200,54 +199,38 @@ footer > .container {
     padding: 7px;
 }
 
+/* Navigation styling. */
 nav {
-    height: 60px;
-    border-bottom: 1px solid #bbbbbb;
-    position: fixed;
-    width: 100%;
-    background: white;
-    z-index: 99999;
-}
-
-nav .dropdown-menu {
-    position: relative;
-}
-
-.nav-logo {
-    float: left;
-}
-
-.nav-logo img {
-    height: 60px;
-    padding-left: 20px;
-}
-
-.nav-elements {
-    float: right;
-    height: inherit;
-}
-
-#nav-list {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    line-height: 60px;
-}
-
-#nav-list li {
     float: left;
     font-family: 'Brandon', serif;
     font-size: 14px;
     text-transform: uppercase;
 }
 
-#nav-list a {
+.nav-logo {
+    float: left;
+    height: 50px;
+    font-size: 18px;
+    line-height: 20px;
+}
+
+nav .dropdown-menu {
+    position: relative;
+}
+
+.nav-logo img {
+    height: inherit;
+    padding-left: 20px;
+}
+
+.navbar-custom {
+    border-bottom: 1px solid #bbbbbb;
+    background: white;
+    z-index: 99999 !important;
+}
+
+.navbar-custom li a {
     color: black;
-    display: block;
-    height: 100%;
-    width: 100%;
-    padding: 0 14px;
     /* Fade out effect */
     -webkit-transition: all .4s ease-out;
     -moz-transition: all .4s ease-out;
@@ -255,16 +238,12 @@ nav .dropdown-menu {
     transition: all .4s ease-out;
 }
 
-#nav-list a:hover {
+.navbar-custom li a:hover {
     color: #f05a29;
     -webkit-transition: all .4s ease;
     -moz-transition: all .4s ease;
     -o-transition: all .4s ease;
     transition: all .4s ease;
-}
-
-#nav-list a:hover, #nav-list a:focus {
-    text-decoration: none;
 }
 
 .dropdown:hover .dropdown-menu {
@@ -278,7 +257,7 @@ nav .dropdown-menu {
     align-content: center;
 }
 
-.sponsors td, th{
+.sponsors td, th {
     text-align: center;
 }
 
@@ -336,10 +315,10 @@ nav .dropdown-menu {
     display: block;
     margin: 0 auto;
 }
+
 .nieuws-item-foto-groot {
     overflow: hidden;
 }
-
 
 /* General shit */
 .centerH1 {
@@ -373,7 +352,6 @@ tr:nth-child(even) {
 }
 
 /* Werkplaats CSS */
-
 .workspaces ul {
     padding: 0;
     list-style: none;

@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="{{ config('app.locale') }}">
 <head>
-    <!-- Onze eigen CSS voor de website -->
-    <link rel="stylesheet" href="{{ asset('css/website_style.css') }}">
-
     <!-- Bootstrap -->
     <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
 
     <!-- Font awesome -->
     <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
+
+    <!-- Onze eigen CSS voor de website -->
+    <link rel="stylesheet" href="{{ asset('css/website_style.css') }}">
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,13 +21,14 @@
     <!-- Bootstrap settings -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!-- bxSlider Javascript file -->
-    <script src="{{asset('js/jquery.bxslider.min.js')}}"></script>
-    <script src="{{asset('js/jquery.easing.1.3.js')}}"></script>
-    <script src="{{asset('js/slider-script.js')}}"></script>
+    <script src="{{ asset('js/jquery.bxslider.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.easing.1.3.js') }}"></script>
+    <script src="{{ asset('js/slider-script.js') }}"></script>
     <!-- bxSlider CSS file -->
-    <link rel="stylesheet" type="text/css" href="{{asset('css/slider_style.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/slider_style.css') }}" />
 
     <!-- Scripts -->
     <script>
@@ -38,70 +39,73 @@
 </head>
 <body>
 <div id="app">
-    <nav>
-        <div class="nav-logo">
-            <a href="/">
-                <img src="{{ asset('images/logo.svg') }}">
-            </a>
-        </div>
-        <div class="nav-elements">
-            <ul id="nav-list">
-                <li>
-                    <a href="{{ url('/nieuws') }}">nieuws</a>
-                </li>
-                <li>
-                    <a href="{{ url('/winkel') }}">winkel</a>
-                </li>
-                <li>
-                    <a href="{{ url('vriend-worden') }} ">vrienden</a>
-                </li>
-                <li>
-                    <a href="{{ url('agenda') }}">agenda</a>
-                </li>
-                <li>
-                    <a href="{{ url('/werkplaats') }}">werkplaats</a>
-                </li>
-                <li>
-                    <a href="{{ url('/sponsors') }}">sponsoren</a>
-                </li>
-                <li>
-                    <a href="{{ url('/over') }}">over ons</a>
-                </li>
-                <li>
-                    <a href="{{ url('/contact') }}">contact</a>
-                </li>
-                @if (Auth::guest())
-                    <li><a href="{{ route('login') }}">Inloggen</a></li>
-                    <li><a href="{{ route('register') }}">Registreer</a></li>
-                @else
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                            Ingelogd als {{ Auth::user()->name }} <span class="caret"></span>
-                        </a>
-
-                        <ul class="dropdown-menu" role="menu">
-
-                            <li>
-                                <a href="{{ route('logout') }}"
-                                   onclick="event.preventDefault();
-                                                    document.getElementById('logout-form').submit();">
-                                    Uitloggen
-                                </a>
-
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                    {{ csrf_field() }}
-                                </form>
-                            </li>
-                        </ul>
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    &#9776;
+                </button>
+                <a class="nav-logo" href="/">
+                    <img src="{{ asset('images/logo.svg') }}">
+                </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="{{ url('/nieuws') }}">nieuws</a>
                     </li>
-                @endif
-            </ul>
-            <div class="menu-icon icon hidden-lg hidden-md">
-                <a onclick="toggleNavigation()">&#9776;</a>
+                    <li>
+                        <a href="{{ url('/winkel') }}">winkel</a>
+                    </li>
+                    <li>
+                        <a href="{{ url('vriend-worden') }} ">vrienden</a>
+                    </li>
+                    <li>
+                        <a href="{{ url('agenda') }}">agenda</a>
+                    </li>
+                    <li>
+                        <a href="{{ url('/werkplaats') }}">werkplaats</a>
+                    </li>
+                    <li>
+                        <a href="{{ url('/sponsors') }}">sponsoren</a>
+                    </li>
+                    <li>
+                        <a href="{{ url('/over') }}">over ons</a>
+                    </li>
+                    <li>
+                        <a href="{{ url('/contact') }}">contact</a>
+                    </li>
+                    @if (Auth::guest())
+                        <li><a href="{{ route('login') }}">Inloggen</a></li>
+                        <li><a href="{{ route('register') }}">Registreer</a></li>
+                    @else
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                Ingelogd als {{ Auth::user()->name }} <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu" role="menu">
+
+                                <li>
+                                    <a href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                    document.getElementById('logout-form').submit();">
+                                        Uitloggen
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        {{ csrf_field() }}
+                                    </form>
+                                </li>
+                            </ul>
+                        </li>
+                    @endif
+                </ul>
             </div>
         </div>
     </nav>
-
     @yield('content')
 </div>
 
