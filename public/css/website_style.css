@@ -223,10 +223,6 @@ nav {
     }
 }
 
-nav .dropdown-menu {
-    position: relative;
-}
-
 .nav-logo img {
     height: inherit;
     padding-left: 20px;
