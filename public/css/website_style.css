@@ -208,10 +208,19 @@ nav {
 }
 
 .nav-logo {
-    float: left;
     height: 50px;
-    font-size: 18px;
-    line-height: 20px;
+}
+
+.navbar-custom .navbar-toggle {
+    margin: 0;
+    padding: 6px 10px;
+    font-size: 24px;
+}
+
+@media (min-width: 768px) {
+    .navbar-custom ul {
+        float: right;
+    }
 }
 
 nav .dropdown-menu {
