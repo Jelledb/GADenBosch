@@ -9,10 +9,9 @@
 
 
                 <h1 class="centerH1"> Uw reserveringen</h1>
-                    <br>
+                <br>
                 <div class="col-md-8 col-md-offset-2">
                     <table id="time-table">
-                        <tbody>
                         <thead>
                         <tr>
                             <th>Starttijd</th>
@@ -30,19 +29,19 @@
                             $size = $res->Workspace[0]->size;
                             ?>
                             <tr>
-                                <td>{{$dateIn}}</td>
-                                <td>{{$dateOut}}</td>
-                                <td>{{$type}}</td>
-                                <td>{{$size}}</td>
+                                <th>{{$dateIn}}</th>
+                                <th>{{$dateOut}}</th>
+                                <th>{{$type}}</th>
+                                <th>{{$size}}</th>
 
                             </tr>
-                            @endforeach
+                        @endforeach
                         </thead>
-                        </tbody>
                     </table>
 
 
                 </div>
+
             </div>
         </div>
     </div>

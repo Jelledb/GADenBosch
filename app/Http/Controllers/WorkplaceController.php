@@ -25,7 +25,7 @@ class WorkplaceController extends Controller
          $selectedWorkspace = Workspace::workspace($id)->get();
 
 
-        return view('werkplaats.detailed-werkplaats', compact('occupation','selectedWorkspace'));
+        return view('werkplaats.Calender', compact('occupation','selectedWorkspace'));
     }
 
     function getDayplanning($currentDay, $id)
