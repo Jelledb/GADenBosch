@@ -29,10 +29,10 @@
                             $size = $res->Workspace[0]->size;
                             ?>
                             <tr>
-                                <th>{{$dateIn}}</th>
-                                <th>{{$dateOut}}</th>
-                                <th>{{$type}}</th>
-                                <th>{{$size}}</th>
+                                <td>{{$dateIn}}</td>
+                                <td>{{$dateOut}}</td>
+                                <td>{{$type}}</td>
+                                <td>{{$size}}</td>
 
                             </tr>
                             @endforeach
