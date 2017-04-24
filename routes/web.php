@@ -58,8 +58,11 @@ Route::get('/agenda', 'AgendaController@getExpositions');
 Route::get('/agendaitem/{id}', 'AgendaItemController@getExpositionItem');
 
 Route::get('/archief-agenda', 'ArchiveAgendaController@getArchiveAgenda');
-Route::get('/mijn-reserveringen', 'WorkplaceController@myReservations');
 
+
+Route::group(['middleware' => ['auth']],function(){
+    Route::get('/mijn-reserveringen', 'WorkplaceController@myReservations');
+});
 
 /* CMS routes. */
 Route::group(['prefix' => 'cms', 'middleware' => 'admin'], function () {
