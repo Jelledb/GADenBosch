@@ -12,6 +12,7 @@
                     <br>
                 <div class="col-md-8 col-md-offset-2">
                     <table id="time-table">
+                        <tbody>
                         <thead>
                         <tr>
                             <th>Starttijd</th>
@@ -37,6 +38,7 @@
                             </tr>
                             @endforeach
                         </thead>
+                        </tbody>
                     </table>
 
 
