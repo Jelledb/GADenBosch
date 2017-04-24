@@ -33,8 +33,9 @@
                                 <th>{{$dateOut}}</th>
                                 <th>{{$type}}</th>
                                 <th>{{$size}}</th>
-                                @endforeach
+
                             </tr>
+                            @endforeach
                         </thead>
                     </table>
 
