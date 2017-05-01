@@ -163,7 +163,7 @@
         </div>
     </div>
     <div class="copyright-statement text-center">
-        <p>Copyright © 2017-20<?php echo date("y") ?> Grafisch Atelier Den Bosch</p>
+        <p>Copyright © 2017-20<?php echo date("y") ?> Grafisch Atelier Den Bosch. Versie 0.3</p>
     </div>
 </footer>
 </body>
