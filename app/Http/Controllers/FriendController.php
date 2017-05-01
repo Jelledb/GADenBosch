@@ -47,7 +47,7 @@ class FriendController extends Controller
 
 
         }
-        return Redirect::route('login')->withInput()->with('errmessage', 'Log eerst in of registreer als u nog geen account heeft');
+        return Redirect::route('login')->with('message', 'Log eerst in of registreer als u nog geen account heeft');
 
 
     }
