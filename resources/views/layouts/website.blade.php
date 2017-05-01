@@ -40,7 +40,14 @@
 <body>
 <div id="app">
     <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
-        <div class="">
+        @if(Auth::check())
+            @if(Auth::user()->isAdmin())
+                <div class="admin-header">
+                    <p>Welkom {{ Auth::user()->name }}. <a href="{{ url('cms/startpagina') }}">Klik hier om naar het CMS te gaan.</a></p>
+                </div>
+            @endif
+        @endif
+        <div>
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">

@@ -255,6 +255,18 @@ nav {
     display: block;
 }
 
+.navbar-custom .admin-header {
+    background: #363435;
+    width: 100%;
+    color: white;
+    text-align: center;
+    padding: 7px 0;
+}
+
+.navbar-custom .admin-header a {
+    color: white;
+}
+
 /* Sponsoren */
 .sponsors {
     padding: 5px;
