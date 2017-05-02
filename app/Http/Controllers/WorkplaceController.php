@@ -12,40 +12,44 @@ class WorkplaceController extends Controller
 {
     //
 
-    public function getWorkspacePage() {
+    public function getWorkspacePage()
+    {
         $workplaces = Workspace::all();
         return view('werkplaats.werkplaats-overzicht', compact('workplaces'));
     }
 
-    public function getDetailedWerkplaats($id) {
+    public function getDetailedWerkplaats($id)
+    {
+        $occupation = reservation_workspace::occupation($id)->get();;
 
+        $selectedWorkspace = Workspace::findOrFail($id);
 
-         $occupation =  reservation_workspace::occupation($id)->get();;
-
-         $selectedWorkspace = Workspace::workspace($id)->get();
-
-
-        return view('werkplaats.detailed-werkplaats', compact('occupation','selectedWorkspace'));
+        return view('werkplaats.Calender', compact('occupation', 'selectedWorkspace'));
     }
 
     function getDayplanning($currentDay, $id)
-    {   $data['occupation'] =  reservation_workspace::Occupationday($id,$currentDay)->get();;
-        $data["day"] = $currentDay;
-        $data["id"] = $id;
+    {
+        $data['occupation'] = reservation_workspace::Occupationday($id, $currentDay)->get();;
+        $data['day'] = $currentDay;
+        $data['id'] = $id;
+        $data['workspace'] = Workspace::find($id);
+
 
         return view('werkplaats.dagPlanning', compact('data'));
     }
 
-    function saveToDatabase() {
+    function saveToDatabase()
+    {
         $date = date('Y-m-d H:i:s');
         $dateLater = date('Y-m-d H:i:s', strtotime($date . '+1 hour'));
 
         DB::table('reservation')->insert(
-            array('date_in' => $date, 'date_out' => $dateLater, 'user_id' => 3)
+            array('date_in' => $date, 'date_out' => $dateLater, 'user_id' => auth()->id())
         );
     }
 
-    function createReservation(Request $request) {
+    function createReservation(Request $request)
+    {
 
         $start = $request->dag . " " . $request->start . ":00";
         $end = $request->dag . " " . $request->end . ":00";
@@ -55,7 +59,7 @@ class WorkplaceController extends Controller
         $reservation = new Reservation();
         $reservation->date_in = $start;
         $reservation->date_out = $end;
-        $reservation->user_id = 2;
+        $reservation->user_id = auth()->id();
 
         $reservation->save();
 
@@ -64,5 +68,12 @@ class WorkplaceController extends Controller
         reservation_workspace::create(['reservation_id' => $id, 'workspace_id' => $request->werkplaats]);
 
         return redirect('werkplaats-overzicht');
+    }
+
+    function myReservations()
+    {
+        $reservations = Reservation::MyReservations()->get();
+
+        return view('werkplaats.mijn-reserveringen', compact('reservations'));
     }
 }

@@ -4,7 +4,22 @@
 </head>
 
 </html>
+
+@extends('layouts.website')
+@section('content')
+
+    <div class="container">
+        <?php
+        $c = new Calender($occupation, $selectedWorkspace);
+        echo $c->show();
+
+        ?>
+
+    </div>
+@endsection
+
 <?php
+
 
 
 class Calender
@@ -299,5 +314,10 @@ class Calender
 
 
 }
+?>
+
+
+
+
 
 
