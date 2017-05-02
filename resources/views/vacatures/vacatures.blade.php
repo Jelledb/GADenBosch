@@ -20,7 +20,7 @@
     </div>
 
             @foreach($vacatures as $vacature)
-                @if($vacature->show === 1)
+                @if($vacature->show == 1)
                 @if($counter === 0)
                     <div class="row">
                 @endif

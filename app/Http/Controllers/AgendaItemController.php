@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\expositions;
+use App\Expositions;
 
 class AgendaItemController extends Controller
 {
@@ -12,7 +12,7 @@ class AgendaItemController extends Controller
      * @return view
      */
     public function getExpositionItem($id){
-        $exposition = expositions::where('id', $id)
+        $exposition = Expositions::where('id', $id)
             ->take(1)
             ->get();
         return view('agendaitem')->with('specificExposition', $exposition);

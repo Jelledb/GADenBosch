@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\expositions;
+use App\Expositions;
 use Illuminate\Support\Facades\Redirect;
 use Request;
 use Illuminate\Support\Facades\Validator;
@@ -27,7 +27,7 @@ class CmsTentoonstelling extends Controller
         ]);
 
         if(!$validator->fails()){
-            $exposition = new expositions;
+            $exposition = new Expositions;
 
             $exposition->title = $input['title'];
             if(!empty($input['subtitle'])) {
@@ -72,7 +72,7 @@ class CmsTentoonstelling extends Controller
 
     public function editTentoonstelling(Request $request, $id){
         $input = $request::all();
-        $exposition = expositions::where('id', $id)->first();
+        $exposition = Expositions::where('id', $id)->first();
 
         $validator = Validator::make($input, [
             'title' => 'required|max:255',
@@ -132,7 +132,7 @@ class CmsTentoonstelling extends Controller
     }
 
     public function deleteTentoonstelling($id){
-        $exposition = expositions::where('id', $id)->first();
+        $exposition = Expositions::where('id', $id)->first();
 
         $exposition->delete();
 

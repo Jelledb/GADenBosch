@@ -12,9 +12,9 @@
 */
 
 /* Website routes. */
-Route::get('/','HomeController@index');
+Route::get('/', 'HomeController@index');
 
-Route::get('nieuws','NewsController@getNewsList');
+Route::get('nieuws', 'NewsController@getNewsList');
 
 Route::get('nieuws/{id}', 'NewsController@getNewsItem');
 
@@ -22,19 +22,16 @@ Route::get('/over', 'MenuController@getOverons');
 
 Route::get('/werkplaats', 'MenuController@getWerkplaats');
 
-//Route::get('/detailedWerkplaats/{id}', 'WorkplaceController@getDetailedWerkplaats');
 
 Route::get('/contact', 'MenuController@getContact');
 
 Route::get('/vrienden-overzicht', 'MenuController@friendPage');
 
-Route::group(array('prefix' => 'vacatures'), function(){
+Route::group(array('prefix' => 'vacatures'), function () {
     Route::get('', 'VacatureController@getVacaturePage');
     Route::get('/{id}', 'VacatureController@getDetailPage');
 
 });
-
-
 
 
 Route::get('/sponsors', 'SponsorController@getSponsorPage');
@@ -51,18 +48,8 @@ Route::get('/werkplaats-overzicht', 'WorkplaceController@getWorkspacePage');
 
 Route::get('/detailed-werkplaats/{id}', 'WorkplaceController@getDetailedWerkplaats');
 
-Route::get('/dag-planning/{currentday}/{id}','WorkplaceController@getDayplanning');
+Route::get('/dag-planning/{currentday}/{id}', 'WorkplaceController@getDayplanning');
 Route::post('/dag-planning/{currentday}/{id}', 'WorkplaceController@createReservation');
-
-//Route::get('function', 'WorkplaceController@saveToDatabase');
-//Route::get('/dagPlanning/{currentDay}', function ($currentDay){
-//    dd($currentDay);
-//});
-
-// temporary rout without an id parameter
-Route::get('/detailedWerkplaats', 'WorkplaceController@getDetailedWerkplaats');
-
-
 
 
 /* CMS routes. */
@@ -73,8 +60,12 @@ Route::get('/agendaitem/{id}', 'AgendaItemController@getExpositionItem');
 Route::get('/archief-agenda', 'ArchiveAgendaController@getArchiveAgenda');
 
 
+Route::group(['middleware' => ['auth']],function(){
+    Route::get('/mijn-reserveringen', 'WorkplaceController@myReservations');
+});
+
 /* CMS routes. */
-Route::group(['prefix' => 'cms', 'middleware' => 'admin'], function() {
+Route::group(['prefix' => 'cms', 'middleware' => 'admin'], function () {
 
     Route::resource('news', 'NewsItemController');
 
@@ -102,8 +93,8 @@ Route::group(['prefix' => 'cms', 'middleware' => 'admin'], function() {
     Route::get('/vacature', 'VacatureController@getCmsVacature');
     Route::get('/vacature/edit/{id}', 'VacatureController@getCMSRUVacature');
     Route::patch('/vacature/update/{id}', 'VacatureController@update');
-    Route::get('/vacature/getcreate','VacatureController@getcreate');
-    Route::post('/vacature/create','VacatureController@create');
+    Route::get('/vacature/getcreate', 'VacatureController@getcreate');
+    Route::post('/vacature/create', 'VacatureController@create');
     Route::get('/vacature/delete/{id}', 'VacatureController@delete');
     Route::post('/vacature/toon/{id}', 'VacatureController@updateToon');
 

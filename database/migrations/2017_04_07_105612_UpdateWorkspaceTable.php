@@ -13,8 +13,6 @@ class UpdateWorkspaceTable extends Migration
      */
     public function up()
     {
-
-
         Schema::table('workspaces', function ($table) {
             $table->string('name');
             $table->string('size');

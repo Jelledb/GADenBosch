@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class expositions extends Model
+class Expositions extends Model
 {
-    public $timestamps = false;
+    //
 }

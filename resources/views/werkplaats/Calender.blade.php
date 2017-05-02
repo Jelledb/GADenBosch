@@ -4,7 +4,22 @@
 </head>
 
 </html>
+
+@extends('layouts.website')
+@section('content')
+
+    <div class="container">
+        <?php
+        $c = new Calender($occupation, $selectedWorkspace);
+        echo $c->show();
+
+        ?>
+
+    </div>
+@endsection
+
 <?php
+
 
 
 class Calender
@@ -26,10 +41,9 @@ class Calender
 
         $this->totalSecondsInDay = 28800;
 
+        $this->naviHref = url()->current();
 
-        $this->naviHref = htmlentities($_SERVER['PHP_SELF']);
 
-        $this->afspraak = date('Y-m-d', strtotime("2017" . '-' . "03" . '-' . "17"));
     }
 
     /********************* PROPERTY ********************/
@@ -138,15 +152,10 @@ class Calender
             $this->currentDate = date('Y-m-d', strtotime($this->currentYear . '-' . $this->currentMonth . '-' . ($this->currentDay)));
 
 
-//            <a href="{{ route('detailedWerkplaats',['currentDay' =>$this->currentDay])}}"> $this->currentDay </a>
-
             $cellContent =
 
-                // '<a href="'.' {{ route('.'dagPlanning'.',['.'currentDay'.' =>'.$this->currentDay.'])}}'.'"> '.$this->currentDay.' </a>';
-                '<a href="/dag-planning/' . $this->currentDate . '/' . $this->selectedWorkspace->id . '"> ' . $this->currentDay . ' </a>';
 
-            //'<a href="'.' {{ route('.'dagPlanning'.',['.'currentDay'.' =>'.$this->currentDay.'])}}'.'"> '.$this->currentDay.' </a>';
-//$cellContent = '<a href="{{ route('.'dagPlanning'.',['.'currentDay'.' =>$this->currentDay])}}"> $this->currentDay </a>';
+                '<a href="/dag-planning/' . $this->currentDate . '/' . $this->selectedWorkspace->id . '"> ' . $this->currentDay . ' </a>';
 
 
             $this->currentDay++;
@@ -253,7 +262,8 @@ class Calender
 
     // return status
     private function colorChanger()
-    {   $percent = null;
+    {
+        $percent = null;
 
         foreach ($this->occupation as $oc) {
 
@@ -275,8 +285,6 @@ class Calender
                 $total_secs = $end_time - $start_time;
 
 
-
-
                 //$elapsed_secs = $this->totalSecondsInDay - $start_time;
 
 
@@ -287,19 +295,15 @@ class Calender
                 }
 
 
-
-
             }
 
 
-
-
         }
 
-        if ( isset($percent)||$percent < 25) {
+        if (isset($percent) || $percent < 25) {
             $this->dayColor = 'good';
         }
-        if ($percent < 51 && $percent >24) {
+        if ($percent < 51 && $percent > 24) {
             $this->dayColor = 'normal';
         }
         if ($percent > 50) {
@@ -310,5 +314,10 @@ class Calender
 
 
 }
+?>
+
+
+
+
 
 

@@ -52,16 +52,18 @@ class FriendController extends Controller
 
     }
 
-    public function paymentUpdate(Request $request) {
+    public function paymentUpdate() {
         // checken bij mollie of betaling is gelukt
         // als het gelukt is, database updaten: User.isFriend op true zetten.
         /// become_friend_date op vandaag zetten.
 
 
 //        $mijnId = $request->input('id');
-        $payment = Mollie::api()->payments()->get(Input::get('id'));
+        //$payment = Mollie::api()->payments()->get(Input::get('id'));
 
         // $payment = Mollie::api()->payments()->get($_POST["id"]);
+        $payment_id = 'tr_WDqYK6vllg';
+        $payment = Mollie::api()->payments->get($payment_id);
 
 
         if ($payment->isPaid())
