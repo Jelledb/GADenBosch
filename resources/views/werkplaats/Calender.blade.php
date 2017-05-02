@@ -9,6 +9,13 @@
 @section('content')
 
     <div class="container">
+
+        <div class="row">
+            <div class="panel panel-default">
+                <h4>{{$selectedWorkspace->name.  $selectedWorkspace->size}} </h4>
+            </div>
+        </div>
+
         <?php
         $c = new Calender($occupation, $selectedWorkspace);
         echo $c->show();
@@ -35,7 +42,7 @@ class Calender
      */
     public function __construct($occupation, $selectedWorkspace)
     {
-        $this->selectedWorkspace = $selectedWorkspace[0];
+        $this->selectedWorkspace = $selectedWorkspace;
 
         $this->occupation = $occupation;
 

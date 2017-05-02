@@ -46,26 +46,27 @@ $start = ["9:00" => "9:00", "10:00" => "10:00", "11:00" => "11:00", "12:00" => "
             });
         });
 
-//        jQuery(document).ready(function ($) {
-//            function lala() {
-//                $('#submit').attr('disabled', 'disabled');
-//                var x = document.getElementById('submit').value;
-//                if (x != '') {
-//                    $('#submit').attr('disabled', '');
-//                }
-//                else {
-//                    $('#submit').attr('disabled', 'disabled');
-//                }
-//            }
-//        });
+        //        jQuery(document).ready(function ($) {
+        //            function lala() {
+        //                $('#submit').attr('disabled', 'disabled');
+        //                var x = document.getElementById('submit').value;
+        //                if (x != '') {
+        //                    $('#submit').attr('disabled', '');
+        //                }
+        //                else {
+        //                    $('#submit').attr('disabled', 'disabled');
+        //                }
+        //            }
+        //        });
 
     </script>
 
     <div class="container">
         <div class="row">
             <div class="panel panel-default">
-                <h1 class="centerH1">{{$data['workspace']->name .': '. $data['workspace']->size}}  </h1>
-                <h2 class="centerH1">Reserveringen </h2>
+                <h6 class="centerH1">{{$data['day']}}</h6>
+                <h4 class="centerH1">{{$data['workspace']->name .': '. $data['workspace']->size}}  </h4>
+                <h1 class="centerH1">Reserveringen </h1>
                 <br/>
                 <div class="col-md-8 col-md-offset-2">
                     <table id="time-table">
@@ -73,16 +74,18 @@ $start = ["9:00" => "9:00", "10:00" => "10:00", "11:00" => "11:00", "12:00" => "
                         <tr>
                             <th>Starttijd</th>
                             <th>Eindtijd</th>
+                            <th>Naam</th>
                         </tr>
-                        @foreach($data['occupation'] as $oc)
+                        @for($i =0; $i< count($data['occupation']);$i ++)
                             <?php
-                            $dateIn = Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $oc->date_in)->format('H:i');
-                            $dateOut = Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $oc->date_out)->format('H:i');
+                            $dateIn = Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $data['occupation'][$i]->date_in)->format('H:i');
+                            $dateOut = Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $data['occupation'][$i]->date_out)->format('H:i');
                             ?>
                             <tr>
                                 <th>{{$dateIn}}</th>
                                 <th>{{$dateOut}}</th>
-                                @endforeach
+                                <th>{{$data['user'][$i]->name}}</th>
+                                @endfor
                             </tr>
                         </thead>
                     </table>

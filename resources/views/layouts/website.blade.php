@@ -43,7 +43,7 @@
         @if(Auth::check())
             @if(Auth::user()->isAdmin())
                 <div class="admin-header">
-                    <p>Welkom {{ Auth::user()->name }}. <a href="{{ url('cms/startpagina') }}">Klik hier om naar het CMS te gaan.</a></p>
+                    <p >Welkom {{ Auth::user()->name }}. <a href="{{ url('cms/startpagina') }}">Klik hier om naar het CMS te gaan.</a></p>
                 </div>
             @endif
         @endif
