@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Redirect;
+use App\User;
 use Mollie\Laravel\Facades\Mollie;
 use Carbon\Carbon;
 use Socialite;
@@ -65,7 +67,7 @@ class FriendController extends Controller
             $user->frienddate = Carbon::now();
             $user->save();
 
-            echo "Payment received.";
+
         }
     }
 }
