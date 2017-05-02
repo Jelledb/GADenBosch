@@ -3,12 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\expositions;
+use App\Expositions;
 
 class ArchiveAgendaController extends Controller
 {
     public function getArchiveAgenda(){
-        $expositions = expositions::whereDate('date_to', '<', date('Y-m-d'))
+        $expositions = Expositions::whereDate('date_to', '<', date('Y-m-d'))
             ->get()
             ->reverse();
         return view('archief-agenda')->with('ArchiveExpos', $expositions);
