@@ -30,4 +30,11 @@ class User extends Authenticatable
     public function role() {
         return Role::where('id', $this->role_id)->get()[0];
     }
+
+    /**
+     * @return bool whether the user is admin
+     */
+    public function isAdmin() {
+        return $this->role()->rolename == 'admin';
+    }
 }

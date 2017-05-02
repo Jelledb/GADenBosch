@@ -12,24 +12,24 @@ class WorkplaceController extends Controller
 {
     //
 
-    public function getWorkspacePage() {
+    public function getWorkspacePage()
+    {
         $workplaces = Workspace::all();
         return view('werkplaats.werkplaats-overzicht', compact('workplaces'));
     }
 
-    public function getDetailedWerkplaats($id) {
+    public function getDetailedWerkplaats($id)
+    {
+        $occupation = reservation_workspace::occupation($id)->get();;
 
+        $selectedWorkspace = Workspace::findOrFail($id);
 
-         $occupation =  reservation_workspace::occupation($id)->get();;
-
-         $selectedWorkspace = Workspace::workspace($id)->get();
-
-
-        return view('werkplaats.Calender', compact('occupation','selectedWorkspace'));
+        return view('werkplaats.Calender', compact('occupation', 'selectedWorkspace'));
     }
 
     function getDayplanning($currentDay, $id)
-    {   $data['occupation'] =  reservation_workspace::Occupationday($id,$currentDay)->get();;
+    {
+        $data['occupation'] = reservation_workspace::Occupationday($id, $currentDay)->get();;
         $data['day'] = $currentDay;
         $data['id'] = $id;
         $data['workspace'] = Workspace::find($id);
@@ -40,7 +40,8 @@ class WorkplaceController extends Controller
         return view('werkplaats.dagPlanning', compact('data'));
     }
 
-    function saveToDatabase() {
+    function saveToDatabase()
+    {
         $date = date('Y-m-d H:i:s');
         $dateLater = date('Y-m-d H:i:s', strtotime($date . '+1 hour'));
 
@@ -49,7 +50,8 @@ class WorkplaceController extends Controller
         );
     }
 
-    function createReservation(Request $request) {
+    function createReservation(Request $request)
+    {
 
         $start = $request->dag . " " . $request->start . ":00";
         $end = $request->dag . " " . $request->end . ":00";
@@ -69,9 +71,11 @@ class WorkplaceController extends Controller
 
         return redirect('werkplaats-overzicht');
     }
-    function myReservations(){
+
+    function myReservations()
+    {
         $reservations = Reservation::MyReservations()->get();
 
-        return view('werkplaats.mijn-reserveringen',compact('reservations'));
+        return view('werkplaats.mijn-reserveringen', compact('reservations'));
     }
 }
