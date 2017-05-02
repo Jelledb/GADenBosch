@@ -44,34 +44,25 @@ class FriendController extends Controller
                 "webhookUrl" => "http://gadenbosch.ga/vriend-worden-redirect",
             ]);
             return Redirect::to($payment->getPaymentUrl());
-
-
-        }
+     }
         return Redirect::route('login')->with('message', 'Log eerst in of registreer als u nog geen account heeft');
 
 
     }
 
-    public function paymentUpdate() {
+    public function paymentUpdate(Request $request) {
         // checken bij mollie of betaling is gelukt
-        // als het gelukt is, database updaten: User.isFriend op true zetten.
-        /// become_friend_date op vandaag zetten.
-
-
-//        $mijnId = $request->input('id');
+        // $mijnId = $request->input('id');
         //$payment = Mollie::api()->payments()->get(Input::get('id'));
-
         // $payment = Mollie::api()->payments()->get($_POST["id"]);
         $payment_id = 'tr_WDqYK6vllg';
-        $payment = Mollie::api()->payments->get($payment_id);
-
+        $payment = Mollie::api()->payments()->get($payment_id);
 
         if ($payment->isPaid())
         {
             $user = Auth::user();
             $user->isFriend = '1';
             $user->frienddate = Carbon::now();
-            // frienddate updaten
             $user->save();
 
             echo "Payment received.";
