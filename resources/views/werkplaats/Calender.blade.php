@@ -11,8 +11,14 @@
     <div class="container">
 
         <div class="row">
+
+
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href='/werkplaats-overzicht'>Werkplaatsen</a></li>
+                <li class="breadcrumb-item active">Kalender</li>
+            </ol>
             <div class="panel panel-default">
-                <h4>{{$selectedWorkspace->name.  $selectedWorkspace->size}} </h4>
+                <h4 class="centerH1">Soort tafel: {{$selectedWorkspace->name.', '.$selectedWorkspace->size}} </h4>
             </div>
         </div>
 
@@ -172,12 +178,15 @@ class Calender
             $this->currentDate = null;
 
             $cellContent = null;
+
+            return;
+
         }
 
         $this->colorChanger();
 
         return '<li id="' . $this->dayColor . '" class="' . ($cellNumber % 7 == 1 ? ' start ' : ($cellNumber % 7 == 0 ? ' end ' : ' ')) .
-            ($cellContent == null ? 'mask' : '') . '">' . $cellContent . '</li>';
+            ($cellContent == null ? 'nine' : '') . '">' . $cellContent . '</li>';
     }
 
     /**
@@ -307,15 +316,21 @@ class Calender
 
         }
 
+
         if (isset($percent) || $percent < 25) {
             $this->dayColor = 'good';
+
         }
-        if ($percent < 51 && $percent > 24) {
+        if ($percent < 51 && $percent > 26) {
             $this->dayColor = 'normal';
         }
         if ($percent > 50) {
             $this->dayColor = 'bad';
         }
+        if ($percent == 100) {
+            $this->dayColor = 'booked';
+        }
+
 
     }
 

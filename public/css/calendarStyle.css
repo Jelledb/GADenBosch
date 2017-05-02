@@ -119,6 +119,23 @@ div.clear{
     clear:both;
 }
 
+#none{
+    margin:0px;
+    padding:0px;
+    margin-right:5px;
+    margin-top: 5px;
+    line-height:80px;
+    vertical-align:middle;
+    float:left;
+    list-style-type:none;
+    width:80px;
+    height:80px;
+    font-size:25px;
+    background-color: #DDDc;
+    color:#DDD;
+    text-align:center;
+}
+
 #bad{
     margin:0px;
     padding:0px;
@@ -166,5 +183,22 @@ div.clear{
     font-size:25px;
     background-color: #ffff00;
     color:#ffff00;
+    text-align:center;
+}
+
+#booked{
+    margin:0px;
+    padding:0px;
+    margin-right:5px;
+    margin-top: 5px;
+    line-height:80px;
+    vertical-align:middle;
+    float:left;
+    list-style-type:none;
+    width:80px;
+    height:80px;
+    font-size:25px;
+    background-color: #000000;
+    color:#000000;
     text-align:center;
 }
