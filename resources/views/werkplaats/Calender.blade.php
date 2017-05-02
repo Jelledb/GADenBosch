@@ -327,7 +327,7 @@ class Calender
         if ($percent > 50) {
             $this->dayColor = 'bad';
         }
-        if ($percent == 100) {
+        if ($percent >= 100) {
             $this->dayColor = 'booked';
         }
 
