@@ -29,12 +29,19 @@ class WorkplaceController extends Controller
 
     function getDayplanning($currentDay, $id)
     {
-        $data['occupation'] = reservation_workspace::Occupationday($id, $currentDay)->get();;
+        $data['occupation'] = reservation_workspace::Occupationday($id, $currentDay)->get();
         $data['day'] = $currentDay;
         $data['id'] = $id;
         $data['workspace'] = Workspace::find($id);
-        $data['username'] =reservation_workspace::find($id)->User;
+        $data['user'] = reservation_workspace::User($id, $currentDay)->get();
 
+      //  dd($data['user']);
+
+       //dd( $res = Workspace::find($id)->Reservations);
+
+
+//        $data['username'] = Reservation::all()[0]->User();
+//        dd($data['username']);
 
 
         return view('werkplaats.dagPlanning', compact('data'));
