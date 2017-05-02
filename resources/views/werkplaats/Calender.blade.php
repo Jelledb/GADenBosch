@@ -9,12 +9,17 @@
 @section('content')
 
     <div class="container">
+
         <?php
         $c = new Calender($occupation, $selectedWorkspace);
         echo $c->show();
 
         ?>
-
+            <div class="row">
+                <div class="panel panel-default">
+                    <h4>{{$selectedWorkspace}} </h4>
+            </div>
+        </div>
     </div>
 @endsection
 
