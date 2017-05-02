@@ -46,18 +46,18 @@ $start = ["9:00" => "9:00", "10:00" => "10:00", "11:00" => "11:00", "12:00" => "
             });
         });
 
-//        jQuery(document).ready(function ($) {
-//            function lala() {
-//                $('#submit').attr('disabled', 'disabled');
-//                var x = document.getElementById('submit').value;
-//                if (x != '') {
-//                    $('#submit').attr('disabled', '');
-//                }
-//                else {
-//                    $('#submit').attr('disabled', 'disabled');
-//                }
-//            }
-//        });
+        //        jQuery(document).ready(function ($) {
+        //            function lala() {
+        //                $('#submit').attr('disabled', 'disabled');
+        //                var x = document.getElementById('submit').value;
+        //                if (x != '') {
+        //                    $('#submit').attr('disabled', '');
+        //                }
+        //                else {
+        //                    $('#submit').attr('disabled', 'disabled');
+        //                }
+        //            }
+        //        });
 
     </script>
 
