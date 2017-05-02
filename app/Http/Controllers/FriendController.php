@@ -10,10 +10,12 @@ use Illuminate\Support\Facades\Redirect;
 use Mollie\Laravel\Facades\Mollie;
 use Carbon\Carbon;
 use Socialite;
+
 class FriendController extends Controller
 {
 
-    public function create() {
+    public function create()
+    {
         return view('wordVriend');
     }
 
@@ -29,7 +31,7 @@ class FriendController extends Controller
     {
         // Mollie shit doen hier
         // payment aanmaken
-        if(Auth::check()) {
+        if (Auth::check()) {
             $user = Auth::user();
             $customer = Mollie::api()->customers()->create([
                 "name" => $user->name,
@@ -44,13 +46,12 @@ class FriendController extends Controller
                 "webhookUrl" => "http://gadenbosch.ga/vriend-worden-redirect",
             ]);
             return Redirect::to($payment->getPaymentUrl());
-     }
+        }
         return Redirect::route('login')->with('message', 'Log eerst in of registreer als u nog geen account heeft');
-
-
     }
 
-    public function paymentUpdate() {
+    public function paymentUpdate()
+    {
         // checken bij mollie of betaling is gelukt
         // $mijnId = $request->input('id');
         //$payment = Mollie::api()->payments()->get(Input::get('id'));
@@ -58,8 +59,7 @@ class FriendController extends Controller
         $payment_id = 'tr_WDqYK6vllg';
         $payment = Mollie::api()->payments()->get($payment_id);
 
-        if ($payment->isPaid())
-        {
+        if ($payment->isPaid()) {
             $user = Auth::user();
             $user->isFriend = '1';
             $user->frienddate = Carbon::now();
@@ -67,6 +67,5 @@ class FriendController extends Controller
 
             echo "Payment received.";
         }
-
     }
 }
