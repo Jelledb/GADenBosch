@@ -60,7 +60,7 @@ class FriendController extends Controller
         $payment = Mollie::api()->payments()->get(request('id'));
 
         if ($payment->isPaid()) {
-            $user = Auth::user();
+            $user = auth()->user();
             $user->isFriend = '1';
             $user->frienddate = Carbon::now();
             $user->save();
