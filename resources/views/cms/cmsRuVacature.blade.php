@@ -44,6 +44,16 @@
         </div>
         <div class="col-md-4"></div>
     </div>
+    <div class="checkbox toonbutton">
+        <label>
+            @if($vacature->show == 1)
+                <input name="toon1" type="checkbox" value="1" checked>
+            @else
+                <input name="toon2" type="checkbox" value="1">
+            @endif
+        </label>
+    </div>
+
     <hr class="breeklijn"/>
             <div class="row">
             <div class="col-md-3">

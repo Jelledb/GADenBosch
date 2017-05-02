@@ -46,6 +46,14 @@
         <div class="col-md-4"></div>
     </div>
     <hr class="breeklijn"/>
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="form-group">
+            <strong>Zichtbaar</strong>
+            <input type='hidden' value='0' name='zichtbaar'>
+            <input type='checkbox' value='1' name='zichtbaar'>
+        </div>
+    </div>
+    <hr class="breeklijn"/>
     <div class="row">
         <div class="col-md-3">
             <button type="submit" class="btn btn-primary">Sla Vacature op</button>
