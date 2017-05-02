@@ -12,7 +12,7 @@ class VerifyCsrfToken extends BaseVerifier
      * @var array
      */
     protected $except = [
-        '/vriend-worden-webhook/{user}'
+        '/vriend-worden-webhook/*'
     ];
 
 
