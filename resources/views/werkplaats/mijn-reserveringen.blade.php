@@ -4,8 +4,9 @@
 
 
     <div class="container">
+        <div class="panel panel-default">
         <div class="row">
-            <div class="panel panel-default">
+
 
 
                 <h1 class="centerH1"> Uw reserveringen</h1>

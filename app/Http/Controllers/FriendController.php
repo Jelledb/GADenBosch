@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Redirect;
+use App\User;
 use Mollie\Laravel\Facades\Mollie;
 use Carbon\Carbon;
 use Socialite;
@@ -43,14 +45,14 @@ class FriendController extends Controller
                 'recurringType' => 'first',
                 "description" => "1 Jaar Vriend Worden GA Den Bosch",
                 "redirectUrl" => "http://gadenbosch.ga/vriend-worden",
-                "webhookUrl" => "http://gadenbosch.ga/vriend-worden-redirect",
+                "webhookUrl" => 'http://gadenbosch.ga/vriend-worden-webhook/' . $user->id,
             ]);
             return Redirect::to($payment->getPaymentUrl());
         }
         return Redirect::route('login')->with('message', 'Log eerst in of registreer als u nog geen account heeft');
     }
 
-    public function paymentUpdate()
+    public function paymentUpdate($user)
     {
         // checken bij mollie of betaling is gelukt
         // $mijnId = $request->input('id');
@@ -60,12 +62,12 @@ class FriendController extends Controller
         $payment = Mollie::api()->payments()->get(request('id'));
 
         if ($payment->isPaid()) {
-            $user = Auth::user();
+            $user = User::find($user);
             $user->isFriend = '1';
             $user->frienddate = Carbon::now();
             $user->save();
 
-            echo "Payment received.";
+
         }
     }
 }
