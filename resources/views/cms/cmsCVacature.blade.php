@@ -43,7 +43,7 @@
     <div class="row">
         <div class="col-md-8">
             <h3>Volledige beschrijving:</h3>
-            {!! Form::textarea('description', null, array('class' => 'form-control')) !!}
+            {!! Form::textarea('description', null, array('class' => 'form-control summeredit')) !!}
         </div>
         <div class="col-md-4"></div>
     </div>

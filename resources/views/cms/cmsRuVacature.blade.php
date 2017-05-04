@@ -42,7 +42,8 @@
     <div class="row">
         <div class="col-md-8">
             <h3>Volledige beschrijving:</h3>
-            <div id="summernote"></div>
+            {!! Form::textarea('description', null, array('placeholder' => "$vacature->description",'class' => 'form-control summeredit')) !!}
+
         </div>
         <div class="col-md-4"></div>
     </div>
