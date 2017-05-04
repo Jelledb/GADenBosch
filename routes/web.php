@@ -85,10 +85,15 @@ Route::group(['prefix' => 'cms', 'middleware' => 'admin'], function () {
     Route::get('/newShopItem', 'MenuController@cmsnewShopItem');
     Route::get('/sponsors', 'MenuController@cmssponsors');
     Route::get('/newSponsor', 'MenuController@cmsNewSponsor');
-    Route::get('/informatie', 'MenuController@cmsInformatie');
+
+    Route::get('/informatie', 'OverOnsController@cmsInformatie');
+    Route::patch('/informatie/update', 'OverOnsController@update');
+
     Route::get('/menu', 'MenuController@cmsMenu');
     Route::get('/newMenu', 'MenuController@cmsNewMenu');
     Route::get('/nieuwsbrief', 'MenuController@cmsNieuwsbrief');
+
+
 
     Route::get('/vacature', 'VacatureController@getCmsVacature');
     Route::get('/vacature/edit/{id}', 'VacatureController@getCMSRUVacature');
