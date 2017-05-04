@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 
 
+use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
@@ -66,7 +67,7 @@ class FriendController extends Controller
             $user->isFriend = '1';
             $user->frienddate = Carbon::now();
             $user->save();
-
+            Session::flash('message', 'De betaling is gelukt! U bent nu vriend van GA Den Bosch');
 
         }
     }
