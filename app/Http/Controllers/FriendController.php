@@ -67,9 +67,10 @@ class FriendController extends Controller
             $user->isFriend = '1';
             $user->frienddate = Carbon::now();
             $user->save();
-            return Redirect::route('vriend-worden')->with('success', 'De betaling is gelukt! U bent nu vriend van GA Den Bosch');
-            //Session::put('success', 'De betaling is gelukt! U bent nu vriend van GA Den Bosch');
+            //return Redirect::route('vriend-worden')->with('success', 'De betaling is gelukt! U bent nu vriend van GA Den Bosch');
+            Session::flash('success', 'De betaling is gelukt! U bent nu vriend van GA Den Bosch');
 
         }
+        Session::flash('success', 'De betaling is gelukt! U bent nu vriend van GA Den Bosch');
     }
 }
