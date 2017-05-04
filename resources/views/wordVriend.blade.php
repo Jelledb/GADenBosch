@@ -7,15 +7,11 @@
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
                     <h1 class="centerH1">Vriend worden?</h1>
-                    @if(session('success'))
-                        <div class="alert alert-success">Betaling is gelukt</div>
-                        @else
-                            <div class="alert alert-success">Betaling is mislukt</div>
-                    @endif
+
 
                     <div class="text">
 
-                        Ook in 2017 kunnen wij niet zonder onze vrienden.<br>
+                        Oook in 2017 kunnen wij niet zonder onze vrienden.<br>
                         Met een kleine of grote vriendendonatie helpt u het Grafisch Atelier ook in 2017 weer aan de weg te timmeren. We hebben weer veel mooie plannen voor projecten, workshops en exposities.
                         Vrienden ontvangen in 2017 een grafisch vriendengeschenk van Alexia Pnevmatikos gratis!
                         <br><br>
@@ -28,7 +24,11 @@
                         @else
                                 <button type="button" class="btn btn-default" id="vriend-btn"><a id="vriend-a" href="/vriend-worden-pay">Ja, ik word vriend!</a></button>
                             @endif
-
+                                @if(session('success'))
+                                    <div class="alert alert-success">Betaling is gelukt</div>
+                                @elseif(session('fail'))
+                                    <div class="alert alert-warning">Betaling is mislukt</div>
+                                @endif
                         </div>
                     </div>
                 </div>
