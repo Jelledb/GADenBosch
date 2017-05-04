@@ -10,7 +10,7 @@
                     <br>
                     <div class="text">
                         @if(Session::has('success')) <div class="alert alert-success"> {{Session::get('success')}} </div> @endif
-                        Oook in 2017 kunnen wij niet zonder onze vrienden.<br>
+                        Ook in 2017 kunnen wij niet zonder onze vrienden.<br>
                         Met een kleine of grote vriendendonatie helpt u het Grafisch Atelier ook in 2017 weer aan de weg te timmeren. We hebben weer veel mooie plannen voor projecten, workshops en exposities.
                         Vrienden ontvangen in 2017 een grafisch vriendengeschenk van Alexia Pnevmatikos gratis!
                         <br><br>
