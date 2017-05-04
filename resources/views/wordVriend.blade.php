@@ -7,6 +7,9 @@
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
                     <h1 class="centerH1">Vriend worden?</h1>
+                    @if(session('success'))
+                        <div class="alert alert-success"></div>
+                    @endif
                     @if(Session::has('success')) <div class="alert alert-success"> {{Session::get('success')}} </div> @endif
                     <br>
                     <div class="text">
