@@ -68,13 +68,13 @@ class FriendController extends Controller
             $user->frienddate = Carbon::now();
             $user->save();
             //return Redirect::route('vriend-worden')->with('success', 'De betaling is gelukt! U bent nu vriend van GA Den Bosch');
-            //Session::flash('success', 'De betaling is gelukt! U bent nu vriend van GA Den Bosch');
+            Session::flash('success', 'De betaling is gelukt! U bent nu vriend van GA Den Bosch');
 
             //dit berichtje gaat terug naar mollie om te laten weten dat we hier kaar zijn en dat het gelukt is.
             //het gaat erom dat het een status 200 terug stuurt (oftewel request gelukt)
-            return redirect()->route('vriend-worden')->with('success', 'Bedankt voor je betaling!');
+            //return redirect()->route('vriend-worden')->with('success', 'Bedankt voor je betaling!');
         }else{
-            return redirect()->route('vriend-worden')->with('fail', 'Betaling is niet gelukt');
+            Session::flash('fail', 'De betaling is misukt!');
         }
     }
 }
