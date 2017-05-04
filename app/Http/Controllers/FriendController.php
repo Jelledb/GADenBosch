@@ -55,7 +55,6 @@ class FriendController extends Controller
 
     public function paymentUpdate($user)
     {
-        echo "joepie! :D";
         // checken bij mollie of betaling is gelukt
         // $mijnId = $request->input('id');
         //$payment = Mollie::api()->payments()->get(Input::get('id'));
@@ -70,7 +69,7 @@ class FriendController extends Controller
             $user->save();
             //return Redirect::route('vriend-worden')->with('success', 'De betaling is gelukt! U bent nu vriend van GA Den Bosch');
             //Session::flash('success', 'De betaling is gelukt! U bent nu vriend van GA Den Bosch');
-            return redirect()->route('vriend-worden')->with('success', 'De betaling is gelukt! U bent nu vriend van GA Den Bosch!');
+            return redirect()->route('stijn')->with('success', 'De betaling is gelukt! U bent nu vriend van GA Den Bosch!');
 
         }
     }
