@@ -22,13 +22,9 @@ class FriendController extends Controller
         return view('wordVriend');
     }
 
-//    public function unFriend(){
-//        foreach($users as $user) {
-//            if ($user->isFriend == 1) {
-//                $user->isFriend = 0;
-//            }
-//        }
-//    }
+    public function unFriend($user){
+        $user->isFriend = '0';
+    }
 
     public function becomeFriend()
     {
@@ -67,6 +63,8 @@ class FriendController extends Controller
             $user->isFriend = '1';
             $user->frienddate = Carbon::now();
             $user->save();
+            $this->unFriend($user)->everyMinute();;
+
             //return Redirect::route('vriend-worden')->with('success', 'De betaling is gelukt! U bent nu vriend van GA Den Bosch');
             Session::flash('success', 'De betaling is gelukt! U bent nu vriend van GA Den Bosch');
 

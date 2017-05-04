@@ -23,12 +23,6 @@
                         <br><br>
                         Vriend van het GA ben je al vanaf € 45,- per jaar, maar een groter bedrag is meer dan welkom.
                         <br>
-                        @if(session('success'))
-                            <div class="alert alert-success">Betaling is gelukt</div>
-                        @elseif(session('fail'))
-                            <div class="alert alert-warning">Betaling is mislukt</div>
-                        @endif
-
                         <div class="wrapper-btn">
                             @if (Auth::check() && Auth::user()->isfriend == 1)
                             <button type="button" class="btn btn-default" id="vriend-btn"><span id="vriend-a">U bent al een vriend</span></button>
