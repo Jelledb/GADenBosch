@@ -22,6 +22,7 @@
                         @else
                                 <button type="button" class="btn btn-default" id="vriend-btn"><a id="vriend-a" href="/vriend-worden-pay">Ja, ik word vriend!</a></button>
                             @endif
+                                @if(Session::has('message')) <div class="alert alert-info"> {{Session::get('message')}} </div> @endif
                         </div>
                     </div>
                 </div>
