@@ -67,7 +67,7 @@ class FriendController extends Controller
             $user->isFriend = '1';
             $user->frienddate = Carbon::now();
             $user->save();
-            Session::flash('message', 'De betaling is gelukt! U bent nu vriend van GA Den Bosch');
+            Session::flash('success', 'De betaling is gelukt! U bent nu vriend van GA Den Bosch');
 
         }
     }
