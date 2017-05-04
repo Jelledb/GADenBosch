@@ -45,7 +45,7 @@ class FriendController extends Controller
                 'customerId' => $customer->id,
                 'recurringType' => 'first',
                 "description" => "1 Jaar Vriend Worden GA Den Bosch",
-                "redirectUrl" => "http://gadenbosch.ga/vriend-worden-pay",
+                "redirectUrl" => "http://gadenbosch.ga/vriend-worden",
                 "webhookUrl" => 'http://gadenbosch.ga/vriend-worden-webhook/' . $user->id,
             ]);
             return Redirect::to($payment->getPaymentUrl());
