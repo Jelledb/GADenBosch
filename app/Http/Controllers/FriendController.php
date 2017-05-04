@@ -72,10 +72,9 @@ class FriendController extends Controller
 
             //dit berichtje gaat terug naar mollie om te laten weten dat we hier kaar zijn en dat het gelukt is.
             //het gaat erom dat het een status 200 terug stuurt (oftewel request gelukt)
-            return redirect()->route('vriend-worden')->with('mess', 'Bedankt voor je betaling!');
-
+            return redirect()->route('vriend-worden')->with('success', 'Bedankt voor je betaling!');
         }else{
-            return redirect()->route('vriend-worden')->with('mess', 'Betaling is niet gelukt');
+            return redirect()->route('vriend-worden')->with('fail', 'Betaling is niet gelukt');
         }
     }
 }
