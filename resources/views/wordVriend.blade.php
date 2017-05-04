@@ -3,9 +3,9 @@
 @section('content')
 
     <div class="container">
-        @if(session('success'))
+        @if(Session::has('success')))
             <div class="alert alert-success">Betaling is gelukt</div>
-        @elseif(session('fail'))
+        @elseif(Session::has('fail'))
             <div class="alert alert-warning">Betaling is mislukt</div>
         @endif
         <div class="row">
@@ -17,7 +17,7 @@
 
                     <div class="text">
 
-                        Oook in 2017 kunnen wij niet zonder onze vrienden.<br>
+                        Ook in 2017 kunnen wij niet zonder onze vrienden.<br>
                         Met een kleine of grote vriendendonatie helpt u het Grafisch Atelier ook in 2017 weer aan de weg te timmeren. We hebben weer veel mooie plannen voor projecten, workshops en exposities.
                         Vrienden ontvangen in 2017 een grafisch vriendengeschenk van Alexia Pnevmatikos gratis!
                         <br><br>
