@@ -5,12 +5,14 @@
     <div class="row">
         <div class="col-md-12 breadcrumb breadcrumbs">CMS >> Vacatures >> Vacature </div>
     </div>
-    <div class="row">
-        <div class="col-md-9">
-            <h2>Vacature aanmaken</h2>
-        </div>
-        <div class="col-md-3">
-
+    <div>
+        <div class="col-lg-12 margin-tb">
+            <div class="pull-left">
+                <h2>Vacature aanmaken</h2>
+            </div>
+            <div class="pull-right">
+                <a class="btn btn-primary" href="{{ url('cms/vacature') }}">Ga terug</a>
+            </div>
         </div>
     </div>
     @if (count($errors) > 0)
@@ -41,11 +43,18 @@
     <div class="row">
         <div class="col-md-8">
             <h3>Volledige beschrijving:</h3>
-            {!! Form::textarea('description', null, array('class' => 'form-control')) !!}
+            {!! Form::textarea('description', null, array('class' => 'form-control summeredit')) !!}
         </div>
         <div class="col-md-4"></div>
     </div>
-    <hr class="breeklijn"/>
+
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="form-group">
+            <strong>Zichtbaar:</strong>
+            <input type='hidden' value='0' name='zichtbaar'>
+            <input type='checkbox' value='1' name='zichtbaar'>
+        </div>
+    </div>
     <div class="row">
         <div class="col-md-3">
             <button type="submit" class="btn btn-primary">Sla Vacature op</button>

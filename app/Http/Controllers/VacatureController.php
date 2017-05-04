@@ -30,7 +30,6 @@ class VacatureController extends Controller
             'title' => 'required',
             'description' => 'required',
             'short_description' => 'required'
-
         ]);
 
         $vacature = vacatures::find($id);
@@ -38,6 +37,20 @@ class VacatureController extends Controller
 
             $vacature->title = "$request->title";
             $vacature->timestamps = false;
+            if($vacature->show === 1){
+                if($request->toon1 === "1"){
+                    $vacature->show = 1;
+                }else{
+                    $vacature->show = 0;
+                }
+
+            }else{
+                if($request->toon2 === "1"){
+                    $vacature->show = 1;
+                }else{
+                    $vacature->show = 0;
+                }
+            }
             $vacature->short_description = "$request->short_description";
             $vacature->description = "$request->description";
             $vacature->save();
