@@ -9,7 +9,8 @@
                     <h1 class="centerH1">Vriend worden?</h1>
                     <br>
                     <div class="text">
-                        Ook in 2017 kunnen wij niet zonder onze vrienden.<br>
+                        @if(Session::has('message')) <div class="alert alert-info"> {{Session::get('message')}} </div> @endif
+                        Oook in 2017 kunnen wij niet zonder onze vrienden.<br>
                         Met een kleine of grote vriendendonatie helpt u het Grafisch Atelier ook in 2017 weer aan de weg te timmeren. We hebben weer veel mooie plannen voor projecten, workshops en exposities.
                         Vrienden ontvangen in 2017 een grafisch vriendengeschenk van Alexia Pnevmatikos gratis!
                         <br><br>
