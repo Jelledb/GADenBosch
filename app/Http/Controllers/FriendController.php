@@ -55,6 +55,7 @@ class FriendController extends Controller
 
     public function paymentUpdate($user)
     {
+        echo "joepie! :D";
         // checken bij mollie of betaling is gelukt
         // $mijnId = $request->input('id');
         //$payment = Mollie::api()->payments()->get(Input::get('id'));
