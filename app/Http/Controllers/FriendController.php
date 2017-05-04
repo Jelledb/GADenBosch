@@ -45,7 +45,7 @@ class FriendController extends Controller
                 'customerId' => $customer->id,
                 'recurringType' => 'first',
                 "description" => "1 Jaar Vriend Worden GA Den Bosch",
-                "redirectUrl" => "http://gadenbosch.ga/stijn",
+                "redirectUrl" => "http://gadenbosch.ga/vriend-worden",
                 "webhookUrl" => 'http://gadenbosch.ga/vriend-worden-webhook/' . $user->id,
             ]);
             return Redirect::to($payment->getPaymentUrl());
@@ -72,7 +72,7 @@ class FriendController extends Controller
 
             //dit berichtje gaat terug naar mollie om te laten weten dat we hier kaar zijn en dat het gelukt is.
             //het gaat erom dat het een status 200 terug stuurt (oftewel request gelukt)
-            return 'success';
+            return redirect()->route('vriend-worden')->with('success', 'Bedankt voor je betaling!');
 
         }
     }
