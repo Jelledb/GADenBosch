@@ -18,7 +18,7 @@ Route::get('nieuws', 'NewsController@getNewsList');
 
 Route::get('nieuws/{id}', 'NewsController@getNewsItem');
 
-Route::get('/over', 'MenuController@getOverons');
+Route::get('/over', 'OverOnsController@informatie');
 
 Route::get('/werkplaats', 'MenuController@getWerkplaats');
 
