@@ -148,9 +148,10 @@ div.clear{
     width:80px;
     height:80px;
     font-size:25px;
-    background-color: #c9302c;
-    color:#c9302c;
+    background-color: #f05a29;
+    color:#01acf0;
     text-align:center;
+
 }
 #good{
 
@@ -165,9 +166,12 @@ div.clear{
     width:80px;
     height:80px;
     font-size:25px;
-    background-color: #4cae4c;
-    color:#4cae4c;
+    background-color: #32ae45;
+    color: #000000;
     text-align:center;
+
+
+
 }
 #normal{
     margin:0px;
@@ -181,9 +185,11 @@ div.clear{
     width:80px;
     height:80px;
     font-size:25px;
-    background-color: #ffff00;
-    color:#ffff00;
+    background-color: #ffe400;
+    color:#01acf0;
     text-align:center;
+
+
 }
 
 #booked{
@@ -199,6 +205,14 @@ div.clear{
     height:80px;
     font-size:25px;
     background-color: #000000;
-    color:#000000;
+    color:#01acf0;
     text-align:center;
+
+
+
 }
+
+
+
+
+

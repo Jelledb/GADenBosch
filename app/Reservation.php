@@ -23,8 +23,12 @@ class Reservation extends BaseModel
 
 
         return $this->where('user_id', auth()->id())->with('Workspace');
+
+
     }
-//    function scopeUser($id){
-//        return $this->join('user','user.id', '=' ,'reservation.user_id')->where('reservation.user.id','=',$id)->select('user.*');
-//    }
+
+    function scopeUser($id)
+    {
+        return $this->join('user', 'user.id', '=', 'reservation.user_id')->where('reservation.user.id', '=', $id)->select('user.*');
+    }
 }

@@ -61,7 +61,9 @@ Route::get('/archief-agenda', 'ArchiveAgendaController@getArchiveAgenda');
 
 
 Route::group(['middleware' => ['auth']],function(){
-    Route::get('/mijn-reserveringen', 'WorkplaceController@myReservations');
+    Route::get('/mijn-reserveringen',['as' => 'mijn-reserveringen','uses' => 'WorkplaceController@myReservations']);
+    Route::get('/delete-reservering/{res}',['as' => 'delete-reservering','uses' => 'WorkplaceController@deleteReservation']);
+
 });
 
 /* CMS routes. */

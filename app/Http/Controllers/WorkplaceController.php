@@ -77,4 +77,31 @@ class WorkplaceController extends Controller
 
         return view('werkplaats.mijn-reserveringen', compact('reservations'));
     }
+
+    function deleteReservation($id)
+    {
+
+        $isOwner = false;
+
+
+        $reservations = Reservation::MyReservations()->get();
+
+        foreach ($reservations as $res) {
+
+            if ($res->id == $id) {
+                $isOwner = true;
+            }
+        }
+
+
+
+        if ($isOwner == true) {
+            $toDelete = Reservation::find($id);
+
+            $toDelete->delete();
+        }
+
+        return redirect('mijn-reserveringen');
+
+    }
 }
