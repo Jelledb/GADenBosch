@@ -4,7 +4,7 @@
 
     <div class="container">
         @if(Session::has('success')))
-            <div class="alert alert-success">Betaling is gelukt</div>
+        <div class="alert alert-success">Betaling is gelukt</div>
         @elseif(Session::has('fail'))
             <div class="alert alert-warning">Betaling is mislukt</div>
         @endif

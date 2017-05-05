@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Redirect;
 use App\User;
+use Illuminate\Console\Scheduling\Schedule;
 use Mollie\Laravel\Facades\Mollie;
 use Carbon\Carbon;
 use Socialite;
@@ -24,6 +25,13 @@ class FriendController extends Controller
 
     public function unFriend($user){
         $user->isFriend = '0';
+    }
+
+    protected function schedule(Schedule $schedule, $user)
+    {
+        $schedule->call(function () {
+            $user->isFriend = '0';
+        })->everyMinute();
     }
 
     public function becomeFriend()
@@ -41,12 +49,21 @@ class FriendController extends Controller
                 'customerId' => $customer->id,
                 'recurringType' => 'first',
                 "description" => "1 Jaar Vriend Worden GA Den Bosch",
-                "redirectUrl" => "http://gadenbosch.ga/vriend-worden",
+                "redirectUrl" => "http://gadenbosch.ga/vriend-worden-redirect/" . $user->id,
                 "webhookUrl" => 'http://gadenbosch.ga/vriend-worden-webhook/' . $user->id,
             ]);
             return Redirect::to($payment->getPaymentUrl());
         }
         return Redirect::route('login')->with('message', 'Log eerst in of registreer als u nog geen account heeft');
+    }
+
+    public function paymentRedirect($user)
+    {
+        $user = User::find($user);
+        if ($user->isFriend == '1')
+            return Redirect::route('vriend-worden')->with('success', 'De betaling is gelukt! U bent nu vriend van GA Den Bosch');
+        else
+            return Redirect::route('vriend-worden')->with('fail', 'De betaling is mislukt!');
     }
 
     public function paymentUpdate($user)
@@ -63,16 +80,7 @@ class FriendController extends Controller
             $user->isFriend = '1';
             $user->frienddate = Carbon::now();
             $user->save();
-            $this->unFriend($user)->everyMinute();;
-
-            //return Redirect::route('vriend-worden')->with('success', 'De betaling is gelukt! U bent nu vriend van GA Den Bosch');
-            Session::flash('success', 'De betaling is gelukt! U bent nu vriend van GA Den Bosch');
-
-            //dit berichtje gaat terug naar mollie om te laten weten dat we hier kaar zijn en dat het gelukt is.
-            //het gaat erom dat het een status 200 terug stuurt (oftewel request gelukt)
-            //return redirect()->route('vriend-worden')->with('success', 'Bedankt voor je betaling!');
-        }else{
-            Session::flash('fail', 'De betaling is misukt!');
+            $this->unFriend($user)->everyMinute();
         }
     }
 }
