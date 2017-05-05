@@ -14,8 +14,8 @@ class WorkplaceController extends Controller
 
     public function getWorkspacePage()
     {
-        $workplaces = Workspace::all();
-        return view('werkplaats.werkplaats-overzicht', compact('workplaces'));
+        $workspaces = Workspace::all();
+        return view('werkplaats.werkplaats-overzicht', compact('workspaces'));
     }
 
     public function getDetailedWerkplaats($id)
@@ -32,7 +32,7 @@ class WorkplaceController extends Controller
         $data['occupation'] = reservation_workspace::Occupationday($id, $currentDay)->get();;
         $data['day'] = $currentDay;
         $data['id'] = $id;
-        $data['workspace'] = Workspace::find($id);
+        $data['workspace'] = Workspace::findOrFail($id);
 
 
         return view('werkplaats.dagPlanning', compact('data'));

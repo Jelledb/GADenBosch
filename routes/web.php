@@ -49,7 +49,7 @@ Route::get('/werkplaats-overzicht', 'WorkplaceController@getWorkspacePage');
 Route::get('/detailed-werkplaats/{id}', 'WorkplaceController@getDetailedWerkplaats');
 
 Route::get('/dag-planning/{currentday}/{id}', 'WorkplaceController@getDayplanning');
-Route::post('/dag-planning/{currentday}/{id}', 'WorkplaceController@createReservation');
+
 
 
 /* CMS routes. */
@@ -62,6 +62,7 @@ Route::get('/archief-agenda', 'ArchiveAgendaController@getArchiveAgenda');
 
 Route::group(['middleware' => ['auth']],function(){
     Route::get('/mijn-reserveringen', 'WorkplaceController@myReservations');
+    Route::post('/dag-planning/{currentday}/{id}', 'WorkplaceController@createReservation');
 });
 
 /* CMS routes. */

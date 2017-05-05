@@ -1,15 +1,6 @@
 @extends('layouts.website')
 
-<?php
-
-
-
-?>
-
-
-
 @section('content');
-
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
@@ -19,24 +10,20 @@
                     <br/>
                 </div>
                 <div class="workspaces">
+                    Klik op een van de werkplaatsen om te beginnen met reserveren! <br /> <br />
                     <ul>
-                        @foreach($workplaces as $workplace)
-
-                            <li>
-                                <a href="{{url("detailed-werkplaats/".$workplace->id)}}">{{$workplace->name . " " . $workplace->size}}</a>
-                            </li>
-
+                        @foreach($workspaces as $workspace)
+                            <ul>
+                                <a class="{{ $workspace->name }}" href="{{url("detailed-werkplaats/".$workspace->id)}}">{{$workspace->name . " " . $workspace->size}}</a>
+                            </ul>
                         @endforeach
-
                     </ul>
                 </div>
             </div>
             <div class="panel panel-default">
-                {{--{!! Html::image(asset('images/werkplaats-overzicht.png')) !!}}--}}
-                <img src="{{asset('images/werkplaats-overzicht.png')}}" alt="image" width="750px" height="400px">
+                <img src="{{asset('images/werkplaats-overzicht.png')}}" alt="plattegrond" width="750px" height="400px">
             </div>
         </div>
     </div>
 </div>
-
 @endsection
