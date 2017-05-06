@@ -118,7 +118,6 @@ div#calendar ul.dates{
 div.clear{
     clear:both;
 }
-
 #none{
     margin:0px;
     padding:0px;
@@ -207,10 +206,12 @@ div.clear{
     background-color: #000000;
     color:#01acf0;
     text-align:center;
-
-
-
 }
+
+.smallerfont{
+    font-size: 15px !important;
+}
+
 
 
 

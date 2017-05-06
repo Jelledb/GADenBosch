@@ -22,8 +22,8 @@
                 <h4 class="centerH1">Soort tafel: {{$selectedWorkspace->name.', '.$selectedWorkspace->size}} </h4>
             </div>
         </div>
-            <div class="row-fluid">
-                <div class="col-xs-11" >
+            <div class="row">
+                <div class="col-md-11 " >
 
                     <?php
                     $c = new Calender($occupation, $selectedWorkspace);
@@ -34,15 +34,15 @@
 
                 </div>
 
-                <div class="col-xs-1" >
+                <div class="col-md-1" >
 
                     <ul ul style="list-style: none" class="dates">
 
                         <li class=h4>legenda</li>
-                        <li id="good" >rustig</li>
-                        <li id="normal" >normaal</li>
-                        <li id="bad" >druk</li>
-                        <li id="booked">vol</li>
+                        <li id="good" class="smallerfont" >rustig</li>
+                        <li id="normal" class="smallerfont">normaal</li>
+                        <li id="bad" class="smallerfont">druk</li>
+                        <li id="booked" class="smallerfont">vol</li>
 
                     </ul>
 
