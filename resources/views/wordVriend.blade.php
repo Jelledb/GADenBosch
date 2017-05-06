@@ -3,8 +3,8 @@
 @section('content')
 
     <div class="container">
-        @if(Session::has('success')))
-        <div class="alert alert-success">'De betaling is gelukt! U bent nu vriend van GA Den Boscht</div>
+        @if(Session::has('success'))
+        <div class="alert alert-success">De betaling is gelukt! U bent nu vriend van GA Den Bosch</div>
         @elseif(Session::has('fail'))
             <div class="alert alert-warning">Betaling is mislukt</div>
         @endif
