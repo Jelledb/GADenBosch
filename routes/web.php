@@ -25,12 +25,9 @@ Route::get('/werkplaats', 'MenuController@getWerkplaats');
 
 Route::get('/contact', 'MenuController@getContact');
 
-Route::get('/vrienden-overzicht', 'MenuController@friendPage');
-
 Route::group(array('prefix' => 'vacatures'), function () {
     Route::get('', 'VacatureController@getVacaturePage');
     Route::get('/{id}', 'VacatureController@getDetailPage');
-
 });
 
 
@@ -97,8 +94,6 @@ Route::group(['prefix' => 'cms', 'middleware' => 'admin'], function () {
     Route::post('/vacature/create', 'VacatureController@create');
     Route::get('/vacature/delete/{id}', 'VacatureController@delete');
     Route::post('/vacature/toon/{id}', 'VacatureController@updateToon');
-
-    // TODO hier komt hoogstwaarschijnlijk nog meer bij
 });
 
 
