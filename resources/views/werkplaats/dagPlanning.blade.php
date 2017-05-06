@@ -63,6 +63,11 @@ $start = ["9:00" => "9:00", "10:00" => "10:00", "11:00" => "11:00", "12:00" => "
 
     <div class="container">
         <div class="row">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href='/werkplaats-overzicht'>Werkplaatsen</a></li>
+                <li class="breadcrumb-item"><a href='/detailed-werkplaats/{{$data['id']}}'>kalender</a></li>
+                <li class="breadcrumb-item active">Inplannen</li>
+            </ol>
             <div class="panel panel-default">
                 <h6 class="centerH1">{{$data['day']}}</h6>
                 <h4 class="centerH1">{{$data['workspace']->name .': '. $data['workspace']->size}}  </h4>

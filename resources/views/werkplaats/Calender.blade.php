@@ -11,20 +11,41 @@
     <div class="container">
 
         <div class="row">
+
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href='/werkplaats-overzicht'>Werkplaatsen</a></li>
+                <li class="breadcrumb-item active">Kalender</li>
+            </ol>
             <div class="panel panel-default">
-                <h4>{{$selectedWorkspace->name.  $selectedWorkspace->size}} </h4>
+                <h4 class="centerH1">Soort tafel: {{$selectedWorkspace->name.', '.$selectedWorkspace->size}} </h4>
             </div>
         </div>
+        <div class="row">
+            <div class="col-md-11 ">
 
-        <?php
-        $c = new Calender($occupation, $selectedWorkspace);
-        echo $c->show();
+                <?php
+                $c = new Calender($occupation, $selectedWorkspace);
+                echo $c->show();
 
-        ?>
+                ?>
 
+            </div>
+
+            <div class="col-md-1">
+                <ul ul style="list-style: none" class="dates">
+
+                    <li class=h4>legenda</li>
+                    <li id="good" class="smallerfont">rustig</li>
+                    <li id="normal" class="smallerfont">normaal</li>
+                    <li id="bad" class="smallerfont">druk</li>
+                    <li id="booked" class="smallerfont">vol</li>
+
+                </ul>
+
+            </div>
+        </div>
     </div>
 @endsection
-
 <?php
 
 
@@ -172,12 +193,15 @@ class Calender
             $this->currentDate = null;
 
             $cellContent = null;
+
+            return;
+
         }
 
         $this->colorChanger();
 
         return '<li id="' . $this->dayColor . '" class="' . ($cellNumber % 7 == 1 ? ' start ' : ($cellNumber % 7 == 0 ? ' end ' : ' ')) .
-            ($cellContent == null ? 'mask' : '') . '">' . $cellContent . '</li>';
+            ($cellContent == null ? 'nine' : '') . '">' . $cellContent . '</li>';
     }
 
     /**
@@ -218,8 +242,6 @@ class Calender
 
         return $content;
     }
-
-
     /**
      * calculate number of weeks in a particular month
      */
@@ -251,7 +273,6 @@ class Calender
 
         return $numOfweeks;
     }
-
     /**
      * calculate number of days in a particular month
      */
@@ -300,26 +321,22 @@ class Calender
                 } else {
                     $percent = round(($total_secs / $this->totalSecondsInDay) * 100);
                 }
-
-
             }
-
-
         }
-
         if (isset($percent) || $percent < 25) {
             $this->dayColor = 'good';
+
         }
-        if ($percent < 51 && $percent > 24) {
+        if ($percent < 51 && $percent > 26) {
             $this->dayColor = 'normal';
         }
         if ($percent > 50) {
             $this->dayColor = 'bad';
         }
-
+        if ($percent >= 100) {
+            $this->dayColor = 'booked';
+        }
     }
-
-
 }
 ?>
 

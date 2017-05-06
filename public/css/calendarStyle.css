@@ -57,9 +57,6 @@ div#calendar div.box-content{
     border:1px solid #787878 ;
     border-top:none;
 }
-
-
-
 div#calendar ul.label{
     float:left;
     margin: 0px;
@@ -67,7 +64,6 @@ div#calendar ul.label{
     margin-top:5px;
     margin-left: 5px;
 }
-
 div#calendar ul.label li{
     margin:0px;
     padding:0px;
@@ -83,8 +79,6 @@ div#calendar ul.label li{
     font-size: 15px;
     background-color: transparent;
 }
-
-
 div#calendar ul.dates{
     float:left;
     margin: 0px;
@@ -92,33 +86,28 @@ div#calendar ul.dates{
     margin-left: 5px;
     margin-bottom: 5px;
 }
-
-/** overall width = width+padding-right**/
-/*div#calendar ul.dates li{*/
-    /*margin:0px;*/
-    /*padding:0px;*/
-    /*margin-right:5px;*/
-    /*margin-top: 5px;*/
-    /*line-height:80px;*/
-    /*vertical-align:middle;*/
-    /*float:left;*/
-    /*list-style-type:none;*/
-    /*width:80px;*/
-    /*height:80px;*/
-    /*font-size:25px;*/
-    /*background-color: #DDD;*/
-    /*color:#000;*/
-    /*text-align:center;*/
-/*}*/
-
 :focus{
     outline:none;
 }
-
 div.clear{
     clear:both;
 }
-
+#none{
+    margin:0px;
+    padding:0px;
+    margin-right:5px;
+    margin-top: 5px;
+    line-height:80px;
+    vertical-align:middle;
+    float:left;
+    list-style-type:none;
+    width:80px;
+    height:80px;
+    font-size:25px;
+    background-color: #DDDc;
+    color:#DDD;
+    text-align:center;
+}
 #bad{
     margin:0px;
     padding:0px;
@@ -131,8 +120,8 @@ div.clear{
     width:80px;
     height:80px;
     font-size:25px;
-    background-color: #c9302c;
-    color:#c9302c;
+    background-color: #f05a29;
+    color:#01acf0;
     text-align:center;
 }
 #good{
@@ -148,8 +137,8 @@ div.clear{
     width:80px;
     height:80px;
     font-size:25px;
-    background-color: #4cae4c;
-    color:#4cae4c;
+    background-color: #32ae45;
+    color: #000000;
     text-align:center;
 }
 #normal{
@@ -164,7 +153,27 @@ div.clear{
     width:80px;
     height:80px;
     font-size:25px;
-    background-color: #ffff00;
-    color:#ffff00;
+    background-color: #ffe400;
+    color:#01acf0;
     text-align:center;
+}
+#booked{
+    margin:0px;
+    padding:0px;
+    margin-right:5px;
+    margin-top: 5px;
+    line-height:80px;
+    vertical-align:middle;
+    float:left;
+    list-style-type:none;
+    width:80px;
+    height:80px;
+    font-size:25px;
+    background-color: #000000;
+    color:#01acf0;
+    text-align:center;
+}
+
+.smallerfont{
+    font-size: 15px !important;
 }
