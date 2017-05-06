@@ -9,6 +9,7 @@ use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Redirect;
 use Session;
 use Validator;
+use File;
 
 class CmsSponsorController extends Controller
 {
@@ -66,7 +67,13 @@ class CmsSponsorController extends Controller
 
     public function destroy($id)
     {
-        sponsors::find($id)->delete();
+        $sponsor = sponsors::find($id);
+
+        $filelocation = $sponsor->photo;
+
+        File::delete($filelocation);
+
+        $sponsor->delete();
         return redirect()->route('sponsors')
             ->with('success', 'De sponsor is verwijderd.');
     }

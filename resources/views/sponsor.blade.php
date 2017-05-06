@@ -25,7 +25,7 @@
                                     <td>
                                         <h1 class="sponsorTitleH1"> {{ $sponsor->name }} </h1>
                                         <br/>
-                                        <a href="{{ $sponsor->website }}"><img src="{{$sponsor->photo}}"/></a>
+                                        <a href="http://{{ $sponsor->website }}"><img src="{{$sponsor->photo}}"/></a>
                                         <br/>
                                         <?php
                                         $counter++;
@@ -39,7 +39,7 @@
                                         <td>
                                             <h1 class="sponsorTitleH1"> {{ $sponsor->name }} </h1>
                                             <br/>
-                                            <a href="{{ $sponsor->website }}"><img src="{{$sponsor->photo}}"/></a>
+                                            <a href="http://{{ $sponsor->website }}"><img src="{{$sponsor->photo}}"/></a>
                                             <br/>
                                             <?php
                                             $counter++;
