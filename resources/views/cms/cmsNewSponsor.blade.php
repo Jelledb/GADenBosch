@@ -14,28 +14,28 @@
 
         </div>
     </div>
-    <form action="upload.php" method="post" enctype="multipart/form-data">
+    <form class="form-horizontal" role="form" method="post">
+        {{ csrf_field() }}
         <div class="row">
-            <div class="col-md-3">
-                Upload de foto van de sponsor:
-                <input type="file" name="ImageToUpload" id="fileToUpload">
-                <input type="submit" value="Upload" name="submit">
-            </div>
-            <div class="col-md-3"></div>
-            <div class="col-md-2"></div>
-            <div class="col-md-1"></div>
-            <div class="col-md-3"></div>
+            <div class="col-md-12 breadcrumb breadcrumbs"></div>
         </div>
-        <hr class="breeklijn"/>
-        <p>Zet hier de url van de website van de sponsor:</p>
-        <input type="text">
-        <hr class="breeklijn"/>
-
         <div class="row">
-            <div class="col-md-3">
-                <input type="submit" value="Zet op de site" name="submit">
+            <div class="col-md-8">
+                <h4>Naam</h4><br />
+                <input name="name" value="" />
             </div>
-            <div class="col-md-9"></div>
+        </div>
+
+        <br />
+        <br />
+        <div class="row">
+            <div class="col-md-12 breadcrumb breadcrumbs"></div>
+        </div>
+        <div class="row">
+            <div class="col-md-8">
+                <h4>Website:</h4><br />
+                <input name="website" value="" />
+            </div>
         </div>
     </form>
 @endsection
