@@ -15,7 +15,7 @@ class DatabaseSeeder extends Seeder
         // $this->call(UsersTableSeeder::class);
 
         $this->seedWorkplaces();
-
+        $this->seedRouteMetaTags();
 
     }
 
@@ -44,6 +44,27 @@ class DatabaseSeeder extends Seeder
             ['name' => 'Hoog/diepdruk', 'size' => 'groot'],
 
             ['name' => 'Overig', 'size' => null],
+        ]);
+    }
+
+    /**
+     * Seed the route_meta_tags table with default values.
+     */
+    private function seedRouteMetaTags() {
+        DB::table('route_meta_tags')->insert([
+            ['route' => '/', 'title' => 'GADenBosch', 'description' => 'Welkom bij het Grafisch Atelier Den Bosch!'],
+            ['route' => 'login', 'title' => 'GADenBosch - Inloggen', 'description' => 'Welkom bij het Grafisch Atelier Den Bosch!'],
+            ['route' => 'register', 'title' => 'GADenBosch - Registreren', 'description' => 'Welkom bij het Grafisch Atelier Den Bosch!'],
+            ['route' => 'nieuws', 'title' => 'Nieuws', 'description' => 'Dit is een beschrijving'],
+            ['route' => 'over', 'title' => 'Over Ons', 'description' => 'Dit is een beschrijving'],
+            ['route' => 'werkplaats', 'title' => 'Werkplaats', 'description' => 'Dit is een beschrijving'],
+            ['route' => 'contact', 'title' => 'Contact', 'description' => 'Dit is een beschrijving'],
+            ['route' => 'vacatures', 'title' => 'Vacatures', 'description' => 'Dit is een beschrijving'],
+            ['route' => 'sponsors', 'title' => 'Sponsoren', 'description' => 'Dit is een beschrijving'],
+            ['route' => 'vriend-worden', 'title' => 'Vriend worden', 'description' => 'Dit is een beschrijving'],
+            ['route' => 'winkel', 'title' => 'Dit is een titel', 'description' => 'Dit is een beschrijving'],
+            ['route' => 'werkplaats-overzicht', 'title' => 'Dit is een titel', 'description' => 'Dit is een beschrijving'],
+            ['route' => 'agenda', 'title' => 'Dit is een titel', 'description' => 'Dit is een beschrijving'],
         ]);
     }
 
