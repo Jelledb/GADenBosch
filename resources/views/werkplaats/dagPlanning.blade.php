@@ -80,7 +80,21 @@
 
     </script>
 
+
     <div class="container">
+
+        @if(session('reservationOK'))
+            <div class="alert alert-success text-center">Reservering is geplaatst!</div>
+
+        @elseif(session('reservationBAD'))
+            <div class="alert alert-warning text-center">{{session('reservationBAD')}}</div>
+        @endif
+
+        @if(!Auth::check())
+            <div class="alert alert-warning text-center">Je moet eerst inloggen voordat je kan reserveren!</div>
+        @endif
+
+
         <div class="row">
             <div class="panel panel-default">
                 <h1 class="centerH1">{{$data['workspace']->name .': '. $data['workspace']->size}}  </h1>
@@ -140,11 +154,11 @@
                             {{--{!! Form::submit('Verstuur', ['class' => 'btn btn-primary form-control', 'id' => 'submit', 'disabled' => 'disabled']) !!}--}}
                         </div>
 
-                        {!! Form::hidden('dag', $data["day"]) !!}
+                        {!! Form::hidden('dag', $data['day']) !!}
                         {!! Form::hidden('gebruiker', Auth::id()) !!}
-                        {!! Form::hidden('werkplaats', $data["id"]) !!}
-
+                        {!! Form::hidden('werkplaats', $data['id']) !!}
                         {!! Form::close() !!}
+
 
                     </div>
                 </div>

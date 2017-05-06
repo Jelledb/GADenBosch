@@ -61,12 +61,12 @@ class WorkplaceController extends Controller
         if(isset($reserveringen)) {
             foreach ($reserveringen as $reservering) {
 
-                if($start < $reservering->date_in && $end < $reservering->date_in) {
+                if($start < $reservering->date_in && $end > $reservering->date_in) {
                     return redirect()->back()->with(session()->flash('reservationBAD', 'Reserveren is mislukt!'));
                 }
-                if($start < $reservering->date_out && $end < $reservering->date_out) {
-                    return redirect()->back()->with(session()->flash('reservationBAD', 'Reserveren is mislukt!'));
-                }
+//                if($start < $reservering->date_out && $end < $reservering->date_out) {
+//                    return redirect()->back()->with(session()->flash('reservationBAD', 'Reserveren is mislukt!'));
+//                }
                 if($start < $reservering->date_in && $end > $reservering->date_in) {
                     return redirect()->back()->with(session()->flash('reservationBAD', 'Reserveren is mislukt!'));
                 }
