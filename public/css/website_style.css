@@ -57,6 +57,13 @@ body {
 }
 
 #vriend-btn {
+    background-color: #32ae45;
+    font-weight: bold;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+#vriend-btn2 {
     background-color: #f05a29;
     font-weight: bold;
     margin-top: 5%;
