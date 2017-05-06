@@ -57,9 +57,6 @@ div#calendar div.box-content{
     border:1px solid #787878 ;
     border-top:none;
 }
-
-
-
 div#calendar ul.label{
     float:left;
     margin: 0px;
@@ -67,7 +64,6 @@ div#calendar ul.label{
     margin-top:5px;
     margin-left: 5px;
 }
-
 div#calendar ul.label li{
     margin:0px;
     padding:0px;
@@ -83,8 +79,6 @@ div#calendar ul.label li{
     font-size: 15px;
     background-color: transparent;
 }
-
-
 div#calendar ul.dates{
     float:left;
     margin: 0px;
@@ -92,29 +86,9 @@ div#calendar ul.dates{
     margin-left: 5px;
     margin-bottom: 5px;
 }
-
-/** overall width = width+padding-right**/
-/*div#calendar ul.dates li{*/
-    /*margin:0px;*/
-    /*padding:0px;*/
-    /*margin-right:5px;*/
-    /*margin-top: 5px;*/
-    /*line-height:80px;*/
-    /*vertical-align:middle;*/
-    /*float:left;*/
-    /*list-style-type:none;*/
-    /*width:80px;*/
-    /*height:80px;*/
-    /*font-size:25px;*/
-    /*background-color: #DDD;*/
-    /*color:#000;*/
-    /*text-align:center;*/
-/*}*/
-
 :focus{
     outline:none;
 }
-
 div.clear{
     clear:both;
 }
@@ -134,7 +108,6 @@ div.clear{
     color:#DDD;
     text-align:center;
 }
-
 #bad{
     margin:0px;
     padding:0px;
@@ -150,7 +123,6 @@ div.clear{
     background-color: #f05a29;
     color:#01acf0;
     text-align:center;
-
 }
 #good{
 
@@ -168,9 +140,6 @@ div.clear{
     background-color: #32ae45;
     color: #000000;
     text-align:center;
-
-
-
 }
 #normal{
     margin:0px;
@@ -187,10 +156,7 @@ div.clear{
     background-color: #ffe400;
     color:#01acf0;
     text-align:center;
-
-
 }
-
 #booked{
     margin:0px;
     padding:0px;

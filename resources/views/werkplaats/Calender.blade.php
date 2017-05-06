@@ -11,8 +11,6 @@
     <div class="container">
 
         <div class="row">
-            {{--<div class="col-xs-8 col-xs-offset-3">--}}
-
 
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href='/werkplaats-overzicht'>Werkplaatsen</a></li>
@@ -30,7 +28,6 @@
                     echo $c->show();
 
                     ?>
-
 
                 </div>
 
