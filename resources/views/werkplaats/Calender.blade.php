@@ -20,43 +20,32 @@
                 <h4 class="centerH1">Soort tafel: {{$selectedWorkspace->name.', '.$selectedWorkspace->size}} </h4>
             </div>
         </div>
-            <div class="row">
-                <div class="col-md-11 " >
+        <div class="row">
+            <div class="col-md-11 ">
 
-                    <?php
-                    $c = new Calender($occupation, $selectedWorkspace);
-                    echo $c->show();
+                <?php
+                $c = new Calender($occupation, $selectedWorkspace);
+                echo $c->show();
 
-                    ?>
+                ?>
 
-                </div>
-
-                <div class="col-md-1" >
-
-                    <ul ul style="list-style: none" class="dates">
-
-                        <li class=h4>legenda</li>
-                        <li id="good" class="smallerfont" >rustig</li>
-                        <li id="normal" class="smallerfont">normaal</li>
-                        <li id="bad" class="smallerfont">druk</li>
-                        <li id="booked" class="smallerfont">vol</li>
-
-                    </ul>
-
-                </div>
-            </div>
             </div>
 
+            <div class="col-md-1">
+                <ul ul style="list-style: none" class="dates">
+
+                    <li class=h4>legenda</li>
+                    <li id="good" class="smallerfont">rustig</li>
+                    <li id="normal" class="smallerfont">normaal</li>
+                    <li id="bad" class="smallerfont">druk</li>
+                    <li id="booked" class="smallerfont">vol</li>
+
+                </ul>
+
+            </div>
+        </div>
     </div>
-
-
-
-
-
-
-
 @endsection
-
 <?php
 
 
