@@ -242,8 +242,6 @@ class Calender
 
         return $content;
     }
-
-
     /**
      * calculate number of weeks in a particular month
      */
@@ -275,7 +273,6 @@ class Calender
 
         return $numOfweeks;
     }
-
     /**
      * calculate number of days in a particular month
      */
@@ -324,14 +321,8 @@ class Calender
                 } else {
                     $percent = round(($total_secs / $this->totalSecondsInDay) * 100);
                 }
-
-
             }
-
-
         }
-
-
         if (isset($percent) || $percent < 25) {
             $this->dayColor = 'good';
 
@@ -345,11 +336,7 @@ class Calender
         if ($percent >= 100) {
             $this->dayColor = 'booked';
         }
-
-
     }
-
-
 }
 ?>
 
