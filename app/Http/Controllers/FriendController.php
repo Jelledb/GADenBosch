@@ -23,17 +23,6 @@ class FriendController extends Controller
         return view('wordVriend');
     }
 
-    public function unFriend($user){
-        $user->isFriend = '0';
-    }
-
-    protected function schedule(Schedule $schedule, $user)
-    {
-        $schedule->call(function () {
-            $user->isFriend = '0';
-        })->everyMinute();
-    }
-
     public function becomeFriend()
     {
         // Mollie shit doen hier
@@ -60,20 +49,15 @@ class FriendController extends Controller
     public function paymentRedirect($user)
     {
         $user = User::find($user);
-        if ($user->isFriend == '0')
-            return Redirect::route('vriend-worden')->with('fail', 'De betaling is mislukt!');
-
-        else
+        if ($user->isFriend == true)
             return Redirect::route('vriend-worden')->with('success', 'De betaling is gelukt!');
+        else
+            return Redirect::route('vriend-worden')->with('fail', 'De betaling is mislukt!');
     }
 
     public function paymentUpdate($user)
     {
         // checken bij mollie of betaling is gelukt
-        // $mijnId = $request->input('id');
-        //$payment = Mollie::api()->payments()->get(Input::get('id'));
-        // $payment = Mollie::api()->payments()->get($_POST["id"]);
-        //$payment_id = 'tr_WDqYK6vllg';
         $payment = Mollie::api()->payments()->get(request('id'));
 
         if ($payment->isPaid()) {
@@ -81,7 +65,6 @@ class FriendController extends Controller
             $user->isFriend = '1';
             $user->frienddate = Carbon::now();
             $user->save();
-            $this->unFriend($user)->everyMinute();
         }
     }
 }
