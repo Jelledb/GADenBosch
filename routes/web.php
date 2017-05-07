@@ -88,6 +88,7 @@ Route::group(['prefix' => 'cms', 'middleware' => 'admin'], function () {
     Route::get('/nieuwsponsor', ['as' => 'nieuwsponsor', 'uses' => 'CmsSponsorController@newsponsor']);
     Route::post('/nieuwsponsor', ['as' => 'opslaan', 'uses' => 'CmsSponsorController@opslaan']);
     Route::get('/bewerksponsor/{id}', ['as' => 'bewerksponsor', 'uses' => 'CmsSponsorController@edit']);
+    Route::post('/bewerksponsor/{id}', ['as' => 'bewerksponsoropslaan', 'uses' => 'CmsSponsorController@editOpslaan']);
     Route::get('/deletesponsor/{id}', ['as' => 'deletesponsor', 'uses' => 'CmsSponsorController@destroy']);
     Route::get('/newSponsor', 'MenuController@cmsNewSponsor');
     Route::get('/informatie', 'MenuController@cmsInformatie');

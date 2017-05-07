@@ -77,4 +77,57 @@ class CmsSponsorController extends Controller
         return redirect()->route('sponsors')
             ->with('success', 'De sponsor is verwijderd.');
     }
+
+    public function edit($id){
+        $sponsor = sponsors::where('id', $id)
+            ->take(1)
+            ->get();
+
+        return view('cms/cmsEditSponsor')->with('editSponsor', $sponsor);
+    }
+
+    /**
+     * @param Request $request
+     * @return mixed
+     */
+    public function editOpslaan(Request $request, $id)
+    {
+        $data = $request::all();
+
+        $file = array('image' => Input::file('image'));
+
+        $rules = array(
+            'image' => 'required',
+        );
+
+        $validator = Validator::make($file, $rules);
+
+        if($validator->fails()){
+            return Redirect::route('sponsors');
+        }
+        else {
+            if(Input::file('image')->isValid()) {
+
+                $destinationPath = 'images/logos/';
+                $extension = Input::file('image')->getClientOriginalExtension();
+                $filename = 'sponsor-'.rand(11111, 99999).'.'.$extension;
+                Input::file('image')->move($destinationPath, $filename);
+
+                Session::flash('succes', 'Upload successfully');
+
+                $png_url = $destinationPath.$filename;
+
+                $sponsor = sponsors::where('id', $id)->first();
+                $sponsor->timestamps = false;
+                $sponsor->name = $data['name'];
+                $sponsor->website = $data['website'];
+                $sponsor->photo = $png_url;
+                $sponsor->visible = $data['visible'];
+
+                $sponsor->save();
+
+                return Redirect::route('sponsors');
+            }
+        }
+    }
 }
