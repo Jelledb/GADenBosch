@@ -33,9 +33,11 @@ Route::group(array('prefix' => 'vacatures'), function () {
 
 Route::get('/sponsors', 'SponsorController@getSponsorPage');
 
-Route::get('/vriend-worden', 'MenuController@friendPage');
+Route::get('/vriend-worden', ['as' => 'vriend-worden', 'uses' => 'MenuController@friendPage']);
 
 Route::get('/vriend-worden-pay', 'FriendController@becomeFriend');
+
+Route::get('/vriend-worden-redirect/{user}', 'FriendController@paymentRedirect');
 
 Route::post('/vriend-worden-webhook/{user}', 'FriendController@paymentUpdate');
 

@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Redirect;
 use App\User;
+use Illuminate\Console\Scheduling\Schedule;
 use Mollie\Laravel\Facades\Mollie;
 use Carbon\Carbon;
 use Socialite;
@@ -21,14 +22,6 @@ class FriendController extends Controller
     {
         return view('wordVriend');
     }
-
-//    public function unFriend(){
-//        foreach($users as $user) {
-//            if ($user->isFriend == 1) {
-//                $user->isFriend = 0;
-//            }
-//        }
-//    }
 
     public function becomeFriend()
     {
@@ -45,7 +38,7 @@ class FriendController extends Controller
                 'customerId' => $customer->id,
                 'recurringType' => 'first',
                 "description" => "1 Jaar Vriend Worden GA Den Bosch",
-                "redirectUrl" => "http://gadenbosch.ga/vriend-worden",
+                "redirectUrl" => "http://gadenbosch.ga/vriend-worden-redirect/" . $user->id,
                 "webhookUrl" => 'http://gadenbosch.ga/vriend-worden-webhook/' . $user->id,
             ]);
             return Redirect::to($payment->getPaymentUrl());
@@ -53,22 +46,25 @@ class FriendController extends Controller
         return Redirect::route('login')->with('message', 'Log eerst in of registreer als u nog geen account heeft');
     }
 
+    public function paymentRedirect($user)
+    {
+        $user = User::find($user);
+        if ($user->isfriend == '1')
+            return Redirect::route('vriend-worden')->with('success', 'De betaling is gelukt!');
+        else
+            return Redirect::route('vriend-worden')->with('fail', 'De betaling is mislukt!');
+    }
+
     public function paymentUpdate($user)
     {
         // checken bij mollie of betaling is gelukt
-        // $mijnId = $request->input('id');
-        //$payment = Mollie::api()->payments()->get(Input::get('id'));
-        // $payment = Mollie::api()->payments()->get($_POST["id"]);
-        //$payment_id = 'tr_WDqYK6vllg';
         $payment = Mollie::api()->payments()->get(request('id'));
 
         if ($payment->isPaid()) {
             $user = User::find($user);
-            $user->isFriend = '1';
+            $user->isfriend = '1';
             $user->frienddate = Carbon::now();
             $user->save();
-            Session::flash('message', 'De betaling is gelukt! U bent nu vriend van GA Den Bosch');
-
         }
     }
 }
