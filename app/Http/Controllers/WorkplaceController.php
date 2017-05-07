@@ -48,10 +48,14 @@ class WorkplaceController extends Controller
 
     function createReservation(Request $request)
     {
+        // Create the starting and ending time of the reservation.
         $start = $request->dag . " " . $request->start . ":00";
         $end = $request->dag . " " . $request->end . ":00";
+        // The current reservations have to be pulled from the database at this point.
+        // If it is not done in this moment, we will face the struggles of double reservations.
         $reserveringen = reservation_workspace::Occupationday($request->werkplaats, $request->dag)->get();;
 
+        // Check if the reservation is possible.
         if(isset($reserveringen)) {
             foreach ($reserveringen as $reservering) {
 
@@ -70,12 +74,15 @@ class WorkplaceController extends Controller
             }
         }
 
+        // Create a new reservation.
         $reservation = new Reservation();
         $reservation->date_in = $start;
         $reservation->date_out = $end;
         $reservation->user_id = auth()->id();
         $reservation->save();
         $id = $reservation->id;
+
+        // Pivot entry.
         reservation_workspace::create(['reservation_id' => $id, 'workspace_id' => $request->werkplaats]);
 
         return redirect()->back()->with(session()->flash('reservationOK', 'Reserveren is gelukt!!'));
