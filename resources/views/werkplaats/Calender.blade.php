@@ -32,7 +32,7 @@
             </div>
 
             <div class="col-md-1">
-                <ul ul style="list-style: none" class="dates">
+                <ul style="list-style: none" class="dates">
 
                     <li class=h4>legenda</li>
                     <li id="good" class="smallerfont">rustig</li>

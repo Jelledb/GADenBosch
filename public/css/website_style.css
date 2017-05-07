@@ -433,3 +433,7 @@ tr:nth-child(even) {
 .Overig:hover {
     background-color: #ffe400;
 }
+
+.plattegrond {
+    width: 100%;
+}

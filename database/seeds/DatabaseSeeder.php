@@ -14,7 +14,7 @@ class DatabaseSeeder extends Seeder
     {
         // $this->call(UsersTableSeeder::class);
 
-        $this->seedWorkplaces();
+        // $this->seedWorkplaces();
         $this->seedRouteMetaTags();
 
     }
