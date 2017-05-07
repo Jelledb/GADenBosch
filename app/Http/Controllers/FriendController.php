@@ -49,6 +49,7 @@ class FriendController extends Controller
     public function paymentRedirect($user)
     {
         $user = User::find($user);
+        dd($user->isFriend);
         if ($user->isFriend == true)
             return Redirect::route('vriend-worden')->with('success', 'De betaling is gelukt!');
         else
