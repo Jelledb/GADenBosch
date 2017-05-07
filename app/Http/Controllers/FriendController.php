@@ -49,8 +49,8 @@ class FriendController extends Controller
     public function paymentRedirect($user)
     {
         $user = User::find($user);
-        dd($user);
-        if ($user->isFriend == '1')
+        dd($user->name);
+        if ($user->isfriend == '1')
             return Redirect::route('vriend-worden')->with('success', 'De betaling is gelukt!');
         else
             return Redirect::route('vriend-worden')->with('fail', 'De betaling is mislukt!');
@@ -63,7 +63,7 @@ class FriendController extends Controller
 
         if ($payment->isPaid()) {
             $user = User::find($user);
-            $user->isFriend = '1';
+            $user->isfriend = '1';
             $user->frienddate = Carbon::now();
             $user->save();
         }
