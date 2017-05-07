@@ -70,6 +70,7 @@
                     <li><a href="{{ url('cms/sponsors')}}">Sponsoren</a></li>
                     <li><a href="{{ url('cms/informatie') }}">Informatie</a></li>
                     <li><a href="{{ url('cms/vacature') }}">Vacature</a></li>
+                    <li><a href="{{ url('cms/titel-beschrijving') }}">Titel en beschrijvingen</a></li>
                 </ul>
                 <h5><i class="glyphicon "></i>
                     <!--<small><b>USERS</b></small>-->

@@ -70,6 +70,12 @@ Route::group(['middleware' => ['auth']], function () {
 Route::group(['prefix' => 'cms', 'middleware' => 'admin'], function () {
 
     Route::resource('news', 'NewsItemController');
+    Route::get('titel-beschrijving', [
+        'as' => 'titel-beschrijving.index',
+        'uses' => 'TitleDescriptionController@index'
+    ]);
+    Route::get('titel-beschrijving/edit/{id}', 'TitleDescriptionController@edit');
+    Route::patch('titel-beschrijving/update/{id}', 'TitleDescriptionController@update');
 
     Route::get('/startpagina', 'MenuController@cmshome');
     Route::get('/nieuwtentoonstelling', 'MenuController@cmsTentoonstellingen');
