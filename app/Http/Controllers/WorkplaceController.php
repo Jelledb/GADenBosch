@@ -7,14 +7,15 @@ use App\reservation_workspace;
 use App\Workspace;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 
 class WorkplaceController extends Controller
 {
 
     public function getWorkspacePage()
     {
-        $workplaces = Workspace::all();
-        return view('werkplaats.werkplaats-overzicht', compact('workplaces'));
+        $workspaces = Workspace::all();
+        return view('werkplaats.werkplaats-overzicht', compact('workspaces'));
     }
 
     public function getDetailedWerkplaats($id)
@@ -30,7 +31,7 @@ class WorkplaceController extends Controller
         $data['occupation'] = reservation_workspace::Occupationday($id, $currentDay)->get();
         $data['day'] = $currentDay;
         $data['id'] = $id;
-        $data['workspace'] = Workspace::find($id);
+        $data['workspace'] = Workspace::findOrFail($id);
         $data['user'] = reservation_workspace::User($id, $currentDay)->get();
 
         return view('werkplaats.dagPlanning', compact('data'));
@@ -47,21 +48,44 @@ class WorkplaceController extends Controller
 
     function createReservation(Request $request)
     {
-
+        // Create the starting and ending time of the reservation.
         $start = $request->dag . " " . $request->start . ":00";
         $end = $request->dag . " " . $request->end . ":00";
-        // TODO AUTH
-        // $user = $request->gebruiker;
+        // The current reservations have to be pulled from the database at this point.
+        // If it is not done in this moment, we will face the struggles of double reservations.
+        $reserveringen = reservation_workspace::Occupationday($request->werkplaats, $request->dag)->get();;
 
+        // Check if the reservation is possible.
+        if(isset($reserveringen)) {
+            foreach ($reserveringen as $reservering) {
+
+                if($start < $reservering->date_in && $end > $reservering->date_in) {
+                    return redirect()->back()->with(session()->flash('reservationBAD', 'Reserveren is mislukt!'));
+                }
+                if($start == $reservering->date_in) {
+                    return redirect()->back()->with(session()->flash('reservationBAD', 'Reserveren is mislukt!'));
+                }
+                if($start < $reservering->date_in && $end > $reservering->date_in) {
+                    return redirect()->back()->with(session()->flash('reservationBAD', 'Reserveren is mislukt!'));
+                }
+                if($start > $reservering->date_in && $start < $reservering->date_out) {
+                    return redirect()->back()->with(session()->flash('reservationBAD', 'Reserveren is mislukt!'));
+                }
+            }
+        }
+
+        // Create a new reservation.
         $reservation = new Reservation();
         $reservation->date_in = $start;
         $reservation->date_out = $end;
         $reservation->user_id = auth()->id();
         $reservation->save();
         $id = $reservation->id;
+
+        // Pivot entry.
         reservation_workspace::create(['reservation_id' => $id, 'workspace_id' => $request->werkplaats]);
 
-        return redirect('werkplaats-overzicht');
+        return redirect()->back()->with(session()->flash('reservationOK', 'Reserveren is gelukt!!'));
     }
 
     function myReservations()

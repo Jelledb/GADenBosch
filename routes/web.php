@@ -46,7 +46,6 @@ Route::get('/werkplaats-overzicht', 'WorkplaceController@getWorkspacePage');
 Route::get('/detailed-werkplaats/{id}', 'WorkplaceController@getDetailedWerkplaats');
 
 Route::get('/dag-planning/{currentday}/{id}', 'WorkplaceController@getDayplanning');
-Route::post('/dag-planning/{currentday}/{id}', 'WorkplaceController@createReservation');
 
 
 /* CMS routes. */
@@ -57,9 +56,11 @@ Route::get('/agendaitem/{id}', 'AgendaItemController@getExpositionItem');
 Route::get('/archief-agenda', 'ArchiveAgendaController@getArchiveAgenda');
 
 
-Route::group(['middleware' => ['auth']],function(){
-    Route::get('/mijn-reserveringen',['as' => 'mijn-reserveringen','uses' => 'WorkplaceController@myReservations']);
-    Route::get('/delete-reservering/{res}',['as' => 'delete-reservering','uses' => 'WorkplaceController@deleteReservation']);
+Route::group(['middleware' => ['auth']], function () {
+//    Route::get('/mijn-reserveringen', 'WorkplaceController@myReservations');
+    Route::post('/dag-planning/{currentday}/{id}', 'WorkplaceController@createReservation');
+    Route::get('/mijn-reserveringen', ['as' => 'mijn-reserveringen', 'uses' => 'WorkplaceController@myReservations']);
+    Route::get('/delete-reservering/{res}', ['as' => 'delete-reservering', 'uses' => 'WorkplaceController@deleteReservation']);
 
 });
 

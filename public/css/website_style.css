@@ -380,3 +380,60 @@ tr:nth-child(even) {
     text-align: center;
     align-content: center;
 }
+
+/* Werkplaats disciplines CSS */
+.Zeefdruk, .Lithografie, .Hoog\/diepdruk, .Overig {
+    display: inline-block;
+    padding: 10px 15px;
+    margin: 5px auto;
+    border-radius: 10px;
+    color: black;
+    transition: all 1s ease-out;
+}
+
+.Zeefdruk:hover, .Lithografie:hover, .Hoog\/diepdruk:hover, .Overig:hover {
+    text-decoration: none;
+    color: black;
+    padding: 15px 20px;
+    /*width: 100%;*/
+}
+
+.Zeefdruk {
+    background-color: rgb(240, 197, 201);
+    /*background-color: #f3848d;*/
+}
+
+.Lithografie {
+    background-color: rgb(204, 233, 244);
+    /*background-color: #01acf0;*/
+}
+
+.Hoog\/diepdruk {
+    background-color: rgb(176, 220, 197);
+    /*background-color: #32ae45;*/
+}
+
+.Overig {
+    background-color: rgb(255, 255, 194);
+    /*background-color: #ffe400;*/
+}
+
+.Zeefdruk:hover {
+    background-color: #f3848d;
+}
+
+.Lithografie:hover {
+    background-color: #01acf0;
+}
+
+.Hoog\/diepdruk:hover {
+    background-color: #32ae45;
+}
+
+.Overig:hover {
+    background-color: #ffe400;
+}
+
+.plattegrond {
+    width: 100%;
+}

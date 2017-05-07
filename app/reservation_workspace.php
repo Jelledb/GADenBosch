@@ -29,7 +29,9 @@ class reservation_workspace extends BaseModel
 
 
         return $query->join('reservation', 'reservation.id', '=', 'reservation_workspace.reservation_id')
-            ->where('reservation_workspace.workspace_id', '=', $id)->whereDate('reservation.date_in', '=', $day)
+            ->where('reservation_workspace.workspace_id', '=', $id)
+            ->whereDate('reservation.date_in', '=', $day)
+            ->orderBy('date_in', 'asc')
             ->select('reservation.*');
 
     }
