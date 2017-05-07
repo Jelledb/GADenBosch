@@ -77,7 +77,6 @@
 
             });
         });
-
     </script>
 
 
@@ -96,9 +95,15 @@
 
 
         <div class="row">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href='/werkplaats-overzicht'>Werkplaatsen</a></li>
+                <li class="breadcrumb-item"><a href='/detailed-werkplaats/{{$data['id']}}'>kalender</a></li>
+                <li class="breadcrumb-item active">Inplannen</li>
+            </ol>
             <div class="panel panel-default">
-                <h1 class="centerH1">{{$data['workspace']->name .': '. $data['workspace']->size}}  </h1>
-                <h2 class="centerH1">Geplaatste reserveringen </h2>
+                <h6 class="text-center">{{$data['day']}}</h6>
+                <h4 class="text-center">{{$data['workspace']->name .': '. $data['workspace']->size}}  </h4>
+                <h1 class="text-center">Geplaatste reserveringen </h1>
                 <br/>
                 <div class="col-md-8 col-md-offset-2">
                     <table id="time-table">
@@ -106,16 +111,18 @@
                         <tr>
                             <th>Starttijd</th>
                             <th>Eindtijd</th>
+                            <th>Naam</th>
                         </tr>
-                        @foreach($data['occupation'] as $oc)
+                        @for($i = 0; $i < count($data['occupation']); $i++)
                             <?php
-                            $dateIn = Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $oc->date_in)->format('H:i');
-                            $dateOut = Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $oc->date_out)->format('H:i');
+                            $dateIn = Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $data['occupation'][$i]->date_in)->format('H:i');
+                            $dateOut = Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $data['occupation'][$i]->date_out)->format('H:i');
                             ?>
                             <tr>
                                 <th>{{$dateIn}}</th>
                                 <th>{{$dateOut}}</th>
-                                @endforeach
+                                <th>{{$data['user'][$i]->name}}</th>
+                                @endfor
                             </tr>
                         </thead>
                     </table>

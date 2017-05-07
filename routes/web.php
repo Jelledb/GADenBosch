@@ -25,12 +25,9 @@ Route::get('/werkplaats', 'MenuController@getWerkplaats');
 
 Route::get('/contact', 'MenuController@getContact');
 
-Route::get('/vrienden-overzicht', 'MenuController@friendPage');
-
 Route::group(array('prefix' => 'vacatures'), function () {
     Route::get('', 'VacatureController@getVacaturePage');
     Route::get('/{id}', 'VacatureController@getDetailPage');
-
 });
 
 
@@ -40,7 +37,7 @@ Route::get('/vriend-worden', 'MenuController@friendPage');
 
 Route::get('/vriend-worden-pay', 'FriendController@becomeFriend');
 
-Route::post('/vriend-worden-redirect', 'FriendController@paymentUpdate');
+Route::post('/vriend-worden-webhook/{user}', 'FriendController@paymentUpdate');
 
 Route::get('/winkel', 'ShopController@getShopWindow');
 
@@ -51,7 +48,6 @@ Route::get('/detailed-werkplaats/{id}', 'WorkplaceController@getDetailedWerkplaa
 Route::get('/dag-planning/{currentday}/{id}', 'WorkplaceController@getDayplanning');
 
 
-
 /* CMS routes. */
 Route::get('/agenda', 'AgendaController@getExpositions');
 
@@ -60,9 +56,12 @@ Route::get('/agendaitem/{id}', 'AgendaItemController@getExpositionItem');
 Route::get('/archief-agenda', 'ArchiveAgendaController@getArchiveAgenda');
 
 
-Route::group(['middleware' => ['auth']],function(){
-    Route::get('/mijn-reserveringen', 'WorkplaceController@myReservations');
+Route::group(['middleware' => ['auth']], function () {
+//    Route::get('/mijn-reserveringen', 'WorkplaceController@myReservations');
     Route::post('/dag-planning/{currentday}/{id}', 'WorkplaceController@createReservation');
+    Route::get('/mijn-reserveringen', ['as' => 'mijn-reserveringen', 'uses' => 'WorkplaceController@myReservations']);
+    Route::get('/delete-reservering/{res}', ['as' => 'delete-reservering', 'uses' => 'WorkplaceController@deleteReservation']);
+
 });
 
 /* CMS routes. */
@@ -98,8 +97,6 @@ Route::group(['prefix' => 'cms', 'middleware' => 'admin'], function () {
     Route::post('/vacature/create', 'VacatureController@create');
     Route::get('/vacature/delete/{id}', 'VacatureController@delete');
     Route::post('/vacature/toon/{id}', 'VacatureController@updateToon');
-
-    // TODO hier komt hoogstwaarschijnlijk nog meer bij
 });
 
 
