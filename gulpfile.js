@@ -7,8 +7,8 @@ var GulpSSH = require('gulp-ssh');
 gulp.task('deploy', function() {
     // get branch name
     const branch = args.branch;
-    if (branch !== 'develop' && branch !== 'master' && branch !== 'feature/molliefix'
-    ) {
+    if (branch !== 'develop' && branch !== 'master')
+    {
         return;
     }
 
