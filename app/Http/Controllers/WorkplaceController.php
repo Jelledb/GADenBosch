@@ -50,9 +50,6 @@ class WorkplaceController extends Controller
     {
         $start = $request->dag . " " . $request->start . ":00";
         $end = $request->dag . " " . $request->end . ":00";
-        // TODO AUTH
-        // $user = $request->gebruiker;
-
         $reserveringen = reservation_workspace::Occupationday($request->werkplaats, $request->dag)->get();;
 
         if(isset($reserveringen)) {

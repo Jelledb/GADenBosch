@@ -19,7 +19,7 @@ class Reservation extends BaseModel
 
     function scopeMyReservations()
     {
-        return $this->where('user_id', auth()->id())->with('Workspace');
+        return $this->where('user_id', auth()->id())->with('Workspace')->orderBy('date_in', 'asc');
     }
 
     function scopeUser($id)
