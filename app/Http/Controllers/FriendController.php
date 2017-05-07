@@ -46,16 +46,12 @@ class FriendController extends Controller
         return Redirect::route('login')->with('message', 'Log eerst in of registreer als u nog geen account heeft');
     }
 
-    public function paymentRedirect()
+    public function paymentRedirect($user)
     {
-        //$user = User::find($user);
-        $payment = Mollie::api()->payments()->get(request('id'));
-
-        if ($payment->isPaid()) {
+        $user = User::find($user);
+        dd($user);
+        if ($user->isFriend == '1')
             return Redirect::route('vriend-worden')->with('success', 'De betaling is gelukt!');
-        }
-        //if ($user->isFriend == '1')
-            //return Redirect::route('vriend-worden')->with('success', 'De betaling is gelukt!');
         else
             return Redirect::route('vriend-worden')->with('fail', 'De betaling is mislukt!');
     }
