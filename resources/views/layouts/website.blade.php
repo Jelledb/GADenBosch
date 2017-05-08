@@ -66,8 +66,11 @@
                     <li>
                         <a href="{{ url('agenda') }}">agenda</a>
                     </li>
-                    <li>
-                        <a href="{{ url('/werkplaats') }}">werkplaats</a>
+                    <li class="dropdown">
+                        <a href="{{ url('/werkplaats') }}">werkplaats <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="{{url('werkplaats-overzicht')}}">Reserveer</a></li>
+                        </ul>
                     </li>
                     <li>
                         <a href="{{ url('/sponsors') }}">sponsoren</a>
@@ -88,6 +91,7 @@
                             </a>
 
                             <ul class="dropdown-menu" role="menu">
+
                                 @if(Auth::user()->isAdmin())
                                     <li>
                                         <a href="{{ url('cms/startpagina') }}">cms</a>
