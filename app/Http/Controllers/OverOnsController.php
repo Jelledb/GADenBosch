@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Over_Ons;
 use App\overons;
 use Illuminate\Http\Request;
 
