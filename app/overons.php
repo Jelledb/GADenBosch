@@ -10,7 +10,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class overons extends Model
+class OverOns extends Model
 {
 
 }
