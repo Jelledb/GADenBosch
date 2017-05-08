@@ -23,9 +23,9 @@
                             @if ($counter === 0)
                                 <tr>
                                     <td>
-                                        <h1 class="sponsorTitle"> {{ $sponsor->name }} </h1>
+                                        <h1 class="sponsorTitleH1"> {{ $sponsor->name }} </h1>
                                         <br/>
-                                        <a href="{{ $sponsor->url }}"><?php echo '<img src="data:image/png;base64,' . base64_encode($sponsor->logo) . '"/>';  ?></a>
+                                        <a href="http://{{ $sponsor->website }}"><img src="{{$sponsor->photo}}"/></a>
                                         <br/>
                                         <?php
                                         $counter++;
@@ -37,9 +37,9 @@
 
                                     @else
                                         <td>
-                                            <h1 class="sponsorTitle"> {{ $sponsor->name }} </h1>
+                                            <h1 class="sponsorTitleH1"> {{ $sponsor->name }} </h1>
                                             <br/>
-                                            <a href="{{ $sponsor->url }}"><?php echo '<img src="data:image/png;base64,' . base64_encode($sponsor->logo) . '"/>';  ?></a>
+                                            <a href="http://{{ $sponsor->website }}"><img src="{{$sponsor->photo}}"/></a>
                                             <br/>
                                             <?php
                                             $counter++;

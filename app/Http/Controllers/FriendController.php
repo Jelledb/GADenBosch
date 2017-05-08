@@ -3,33 +3,31 @@
 namespace App\Http\Controllers;
 
 
+
+use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Redirect;
+use App\User;
+use Illuminate\Console\Scheduling\Schedule;
 use Mollie\Laravel\Facades\Mollie;
 use Carbon\Carbon;
 use Socialite;
+
 class FriendController extends Controller
 {
 
-    public function create() {
+    public function create()
+    {
         return view('wordVriend');
     }
-
-//    public function unFriend(){
-//        foreach($users as $user) {
-//            if ($user->isFriend == 1) {
-//                $user->isFriend = 0;
-//            }
-//        }
-//    }
 
     public function becomeFriend()
     {
         // Mollie shit doen hier
         // payment aanmaken
-        if(Auth::check()) {
+        if (Auth::check()) {
             $user = Auth::user();
             $customer = Mollie::api()->customers()->create([
                 "name" => $user->name,
@@ -40,42 +38,33 @@ class FriendController extends Controller
                 'customerId' => $customer->id,
                 'recurringType' => 'first',
                 "description" => "1 Jaar Vriend Worden GA Den Bosch",
-                "redirectUrl" => "http://gadenbosch.ga/vriend-worden",
-                "webhookUrl" => "http://gadenbosch.ga/vriend-worden-redirect",
+                "redirectUrl" => "http://gadenbosch.ga/vriend-worden-redirect/" . $user->id,
+                "webhookUrl" => 'http://gadenbosch.ga/vriend-worden-webhook/' . $user->id,
             ]);
             return Redirect::to($payment->getPaymentUrl());
-
-
         }
-        return Redirect::route('login')->withInput()->with('errmessage', 'Log eerst in of registreer als u nog geen account heeft');
-
-
+        return Redirect::route('login')->with('message', 'Log eerst in of registreer als u nog geen account heeft');
     }
 
-    public function paymentUpdate() {
+    public function paymentRedirect($user)
+    {
+        $user = User::find($user);
+        if ($user->isfriend == '1')
+            return Redirect::route('vriend-worden')->with('success', 'De betaling is gelukt!');
+        else
+            return Redirect::route('vriend-worden')->with('fail', 'De betaling is mislukt!');
+    }
+
+    public function paymentUpdate($user)
+    {
         // checken bij mollie of betaling is gelukt
-        // als het gelukt is, database updaten: User.isFriend op true zetten.
-        /// become_friend_date op vandaag zetten.
+        $payment = Mollie::api()->payments()->get(request('id'));
 
-
-//        $mijnId = $request->input('id');
-        //$payment = Mollie::api()->payments()->get(Input::get('id'));
-
-        // $payment = Mollie::api()->payments()->get($_POST["id"]);
-        $payment_id = 'tr_WDqYK6vllg';
-        $payment = Mollie::api()->payments->get($payment_id);
-
-
-        if ($payment->isPaid())
-        {
-            $user = Auth::user();
-            $user->isFriend = '1';
+        if ($payment->isPaid()) {
+            $user = User::find($user);
+            $user->isfriend = '1';
             $user->frienddate = Carbon::now();
-            // frienddate updaten
             $user->save();
-
-            echo "Payment received.";
         }
-
     }
 }

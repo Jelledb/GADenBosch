@@ -25,22 +25,21 @@ Route::get('/werkplaats', 'MenuController@getWerkplaats');
 
 Route::get('/contact', 'MenuController@getContact');
 
-Route::get('/vrienden-overzicht', 'MenuController@friendPage');
-
 Route::group(array('prefix' => 'vacatures'), function () {
     Route::get('', 'VacatureController@getVacaturePage');
     Route::get('/{id}', 'VacatureController@getDetailPage');
-
 });
 
 
 Route::get('/sponsors', 'SponsorController@getSponsorPage');
 
-Route::get('/vriend-worden', 'MenuController@friendPage');
+Route::get('/vriend-worden', ['as' => 'vriend-worden', 'uses' => 'MenuController@friendPage']);
 
 Route::get('/vriend-worden-pay', 'FriendController@becomeFriend');
 
-Route::post('/vriend-worden-redirect', 'FriendController@paymentUpdate');
+Route::get('/vriend-worden-redirect/{user}', 'FriendController@paymentRedirect');
+
+Route::post('/vriend-worden-webhook/{user}', 'FriendController@paymentUpdate');
 
 Route::get('/winkel', 'ShopController@getShopWindow');
 
@@ -49,7 +48,6 @@ Route::get('/werkplaats-overzicht', 'WorkplaceController@getWorkspacePage');
 Route::get('/detailed-werkplaats/{id}', 'WorkplaceController@getDetailedWerkplaats');
 
 Route::get('/dag-planning/{currentday}/{id}', 'WorkplaceController@getDayplanning');
-Route::post('/dag-planning/{currentday}/{id}', 'WorkplaceController@createReservation');
 
 
 /* CMS routes. */
@@ -60,17 +58,31 @@ Route::get('/agendaitem/{id}', 'AgendaItemController@getExpositionItem');
 Route::get('/archief-agenda', 'ArchiveAgendaController@getArchiveAgenda');
 
 
+Route::group(['middleware' => ['auth']], function () {
+//    Route::get('/mijn-reserveringen', 'WorkplaceController@myReservations');
+    Route::post('/dag-planning/{currentday}/{id}', 'WorkplaceController@createReservation');
+    Route::get('/mijn-reserveringen', ['as' => 'mijn-reserveringen', 'uses' => 'WorkplaceController@myReservations']);
+    Route::get('/delete-reservering/{res}', ['as' => 'delete-reservering', 'uses' => 'WorkplaceController@deleteReservation']);
+
+});
+
 /* CMS routes. */
 Route::group(['prefix' => 'cms', 'middleware' => 'admin'], function () {
 
     Route::resource('news', 'NewsItemController');
+    Route::get('titel-beschrijving', [
+        'as' => 'titel-beschrijving.index',
+        'uses' => 'TitleDescriptionController@index'
+    ]);
+    Route::get('titel-beschrijving/edit/{id}', 'TitleDescriptionController@edit');
+    Route::patch('titel-beschrijving/update/{id}', 'TitleDescriptionController@update');
 
     Route::get('/startpagina', 'MenuController@cmshome');
     Route::get('/nieuwtentoonstelling', 'MenuController@cmsTentoonstellingen');
-    Route::post('/nieuwtentoonstelling', 'CmsTentoonstelling@newTentoonstelling');
+    Route::post('/nieuwtentoonstelling', 'CmsTentoonstellingController@newTentoonstelling');
     Route::get('/bewerktentoonstelling/{id}', 'MenuController@cmsEditTentoonstelling');
-    Route::post('/bewerktentoonstelling/{id}', ['as' => 'bewerktentoonstelling', 'uses' => 'CmsTentoonstelling@editTentoonstelling']);
-    Route::get('/deletetentoonstelling/{id}', ['as' => 'deletetentoonstelling', 'uses' => 'CmsTentoonstelling@deleteTentoonstelling']);
+    Route::post('/bewerktentoonstelling/{id}', ['as' => 'bewerktentoonstelling', 'uses' => 'CmsTentoonstellingController@editTentoonstelling']);
+    Route::get('/deletetentoonstelling/{id}', ['as' => 'deletetentoonstelling', 'uses' => 'CmsTentoonstellingController@deleteTentoonstelling']);
     Route::get('/workshop', 'MenuController@cmsWorkshop');
     Route::get('/lijsttentoonstellingen', ['as' => 'lijsttentoonstellingen', 'uses' => 'MenuController@cmslijstTentoonstellingen']);
     Route::get('/workshops', 'MenuController@cmsworkshops');
@@ -80,6 +92,12 @@ Route::group(['prefix' => 'cms', 'middleware' => 'admin'], function () {
     Route::get('/Shop', 'MenuController@cmsShop');
     Route::get('/newShopItem', 'MenuController@cmsnewShopItem');
     Route::get('/sponsors', 'MenuController@cmssponsors');
+    Route::get('/sponsors', ['as' => 'sponsors', 'uses' => 'MenuController@cmssponsors']);
+    Route::get('/nieuwsponsor', ['as' => 'nieuwsponsor', 'uses' => 'CmsSponsorController@newsponsor']);
+    Route::post('/nieuwsponsor', ['as' => 'opslaan', 'uses' => 'CmsSponsorController@opslaan']);
+    Route::get('/bewerksponsor/{id}', ['as' => 'bewerksponsor', 'uses' => 'CmsSponsorController@edit']);
+    Route::post('/bewerksponsor/{id}', ['as' => 'bewerksponsoropslaan', 'uses' => 'CmsSponsorController@editOpslaan']);
+    Route::get('/deletesponsor/{id}', ['as' => 'deletesponsor', 'uses' => 'CmsSponsorController@destroy']);
     Route::get('/newSponsor', 'MenuController@cmsNewSponsor');
     Route::get('/informatie', 'MenuController@cmsInformatie');
     Route::get('/menu', 'MenuController@cmsMenu');
@@ -93,8 +111,6 @@ Route::group(['prefix' => 'cms', 'middleware' => 'admin'], function () {
     Route::post('/vacature/create', 'VacatureController@create');
     Route::get('/vacature/delete/{id}', 'VacatureController@delete');
     Route::post('/vacature/toon/{id}', 'VacatureController@updateToon');
-
-    // TODO hier komt hoogstwaarschijnlijk nog meer bij
 });
 
 

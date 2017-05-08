@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class UpdateWorkspaceTable extends Migration
+class SponsorWebsite extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,8 @@ class UpdateWorkspaceTable extends Migration
      */
     public function up()
     {
-
-
-        Schema::table('workspaces', function ($table) {
-            $table->string('name');
-            $table->string('size');
-            $table->dropColumn('workspace_type_id');
-            $table->dropColumn('size_id');
+        Schema::table('sponsors', function($table) {
+            $table->string('website')->before("photo");
         });
     }
 

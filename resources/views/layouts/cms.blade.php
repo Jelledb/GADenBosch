@@ -18,7 +18,11 @@
     <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
     <!-- endbuild -->
 
-
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js" defer></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js" defer></script>
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.3/summernote.css" rel="stylesheet">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.3/summernote.js" defer></script>
+    <script src="{{ asset('js/editor.js') }}" defer></script>
     <!-- bxSlider Javascript file -->
 
     <!-- Bootstrap settings -->
@@ -66,6 +70,7 @@
                     <li><a href="{{ url('cms/sponsors')}}">Sponsoren</a></li>
                     <li><a href="{{ url('cms/informatie') }}">Informatie</a></li>
                     <li><a href="{{ url('cms/vacature') }}">Vacature</a></li>
+                    <li><a href="{{ url('cms/titel-beschrijving') }}">Titel en beschrijvingen</a></li>
                 </ul>
                 <h5><i class="glyphicon "></i>
                     <!--<small><b>USERS</b></small>-->

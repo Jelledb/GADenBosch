@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Redirect;
 use Request;
 use Illuminate\Support\Facades\Validator;
 
-class CmsTentoonstelling extends Controller
+class CmsTentoonstellingController extends Controller
 {
     public function newTentoonstelling(Request $request){
         $input = $request::all();

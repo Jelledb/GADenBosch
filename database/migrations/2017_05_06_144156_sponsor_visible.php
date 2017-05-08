@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateWorkspaceTypeTable extends Migration
+class SponsorVisible extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,8 @@ class CreateWorkspaceTypeTable extends Migration
      */
     public function up()
     {
-        // Create the Workspace Type table
-
-        Schema::create('workspace_type', function(Blueprint $table) {
-           $table->increments('id')->unsigned();
-           $table->string('name');
-
+        Schema::table('sponsors', function($table) {
+            $table->enum('visible', ['yes', 'no']);
         });
     }
 

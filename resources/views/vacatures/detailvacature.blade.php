@@ -9,7 +9,7 @@
             <p>{{$vacature->datum}}</p>
         </div>
         <div class="row">
-            <p>{{$vacature->description}}</p>
+            {!! $vacature->description !!}
         </div>
         <div class="row">
             <p>

@@ -7,6 +7,8 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">Inloggen</div>
                     <div class="panel-body">
+                        @if(Session::has('message')) <div class="alert alert-info"> {{Session::get('message')}} </div> @endif
+
                         <form class="form-horizontal" role="form" method="POST" action="{{ route('login') }}">
                             {{ csrf_field() }}
 

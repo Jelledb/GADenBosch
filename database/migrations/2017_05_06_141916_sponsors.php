@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class UpdateVacature extends Migration
+class Sponsors extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class UpdateVacature extends Migration
      */
     public function up()
     {
-        Schema::table('vacatures', function (Blueprint $table) {
-            //
-            $table->string('short_description');
-            $table->text('description')->change();
-            $table->boolean('show');
+        Schema::create('sponsors',function(Blueprint $table){
+            $table->increments('id');
+            $table->string('name');
+            $table->string('photo');
         });
     }
 
@@ -28,8 +27,6 @@ class UpdateVacature extends Migration
      */
     public function down()
     {
-        Schema::table('vacatures', function (Blueprint $table) {
-            //
-        });
+        //
     }
 }

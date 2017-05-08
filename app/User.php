@@ -7,6 +7,8 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
+protected $table = 'users';
+
     use Notifiable;
 
     /**
@@ -29,5 +31,12 @@ class User extends Authenticatable
 
     public function role() {
         return Role::where('id', $this->role_id)->get()[0];
+    }
+
+    /**
+     * @return bool whether the user is admin
+     */
+    public function isAdmin() {
+        return $this->role()->rolename == 'admin';
     }
 }
