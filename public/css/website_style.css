@@ -25,6 +25,25 @@ body {
     padding-top: 25px;
 }
 
+/* Sticky footer */
+html,body {
+    height:100%;
+    width: 100%;
+}
+
+body {
+    display: table;
+}
+
+.container {
+    height: auto;
+}
+
+footer {
+    display: table-row;
+    height: 1px;
+}
+
 #map_canvas {
     height: 400px;
     padding-top: 60px;
