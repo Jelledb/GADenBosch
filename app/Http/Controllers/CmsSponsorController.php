@@ -96,38 +96,24 @@ class CmsSponsorController extends Controller
 
         $file = array('image' => Input::file('image'));
 
-        $rules = array(
-            'image' => 'required',
-        );
+        $destinationPath = 'images/logos/';
+        $extension = Input::file('image')->getClientOriginalExtension();
+        $filename = 'sponsor-'.rand(11111, 99999).'.'.$extension;
+        Input::file('image')->move($destinationPath, $filename);
 
-        $validator = Validator::make($file, $rules);
+        Session::flash('succes', 'Upload successfully');
 
-        if($validator->fails()){
-            return Redirect::route('sponsors');
-        }
-        else {
-            if(Input::file('image')->isValid()) {
+        $png_url = $destinationPath.$filename;
 
-                $destinationPath = 'images/logos/';
-                $extension = Input::file('image')->getClientOriginalExtension();
-                $filename = 'sponsor-'.rand(11111, 99999).'.'.$extension;
-                Input::file('image')->move($destinationPath, $filename);
+        $sponsor = sponsors::where('id', $id)->first();
+        $sponsor->timestamps = false;
+        $sponsor->name = $data['name'];
+        $sponsor->website = $data['website'];
+        $sponsor->photo = $png_url;
+        $sponsor->visible = $data['visible'];
 
-                Session::flash('succes', 'Upload successfully');
+        $sponsor->save();
 
-                $png_url = $destinationPath.$filename;
-
-                $sponsor = sponsors::where('id', $id)->first();
-                $sponsor->timestamps = false;
-                $sponsor->name = $data['name'];
-                $sponsor->website = $data['website'];
-                $sponsor->photo = $png_url;
-                $sponsor->visible = $data['visible'];
-
-                $sponsor->save();
-
-                return Redirect::route('sponsors');
-            }
-        }
+        return Redirect::route('sponsors');
     }
 }
