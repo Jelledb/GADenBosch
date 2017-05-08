@@ -45,7 +45,7 @@ class CmsSponsorController extends Controller
                 $destinationPath = 'images/logos/';
                 $extension = Input::file('image')->getClientOriginalExtension();
                 $filename = 'sponsor-'.rand(11111, 99999).'.'.$extension;
-                Input::file('image')->move($destinationPath, $filename);
+                Input::file('image')->move(public_path().$destinationPath, $filename);
 
                 Session::flash('succes', 'Upload successfully');
 
