@@ -259,6 +259,7 @@ nav {
     -o-transition: all .4s ease;
     transition: all .4s ease;
     box-shadow:inset 0 -4px 0px -1px #f05a29;
+    background-color: white;
 }
 
 .dropdown:hover .dropdown-menu {
