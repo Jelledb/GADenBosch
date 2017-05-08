@@ -10,7 +10,8 @@ class SponsorController extends Controller
 {
     // Return the SponserView with the sponsors.
     public function getSponsorPage() {
-        $sponsors = sponsors::all();
+        $sponsors = sponsors::where('visible', 'yes')
+            ->get();
         return view('sponsor', compact('sponsors'));
     }
 }

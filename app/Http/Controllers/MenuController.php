@@ -6,6 +6,7 @@ use App\expositions;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use App\Products;
+use App\sponsors;
 
 class MenuController extends Controller
 {
@@ -69,7 +70,8 @@ class MenuController extends Controller
         return view('cms/cmsnewShopItem');
     }
     public function cmssponsors(){
-        return view('cms/cmssponsors');
+        $sponsors = sponsors::all();
+        return view('cms/cmssponsors')->with('sponsors', $sponsors);
     }
     public function cmsNewSponsor(){
         return view('cms/cmsNewSponsor');
