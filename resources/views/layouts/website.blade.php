@@ -73,8 +73,11 @@
                     <li>
                         <a href="{{ url('agenda') }}">agenda</a>
                     </li>
-                    <li>
-                        <a href="{{ url('/werkplaats') }}">werkplaats</a>
+                    <li class="dropdown">
+                        <a href="{{ url('/werkplaats') }}">werkplaats <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li class="text-center"><a href="{{url('werkplaats-overzicht')}}">Reserveer</a></li>
+                        </ul>
                     </li>
                     <li>
                         <a href="{{ url('/sponsors') }}">sponsoren</a>
@@ -96,7 +99,7 @@
 
                             <ul class="dropdown-menu" role="menu">
 
-                                </li>
+                                <li class="text-center">
                                 <a href="{{route ('mijn-reserveringen')}}"> mijn reserveringen </a>
                                 <li/>
 
