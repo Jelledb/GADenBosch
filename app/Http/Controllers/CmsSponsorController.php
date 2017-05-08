@@ -42,7 +42,7 @@ class CmsSponsorController extends Controller
         else {
             if(Input::file('image')->isValid()) {
 
-                $destinationPath = 'images/logos/';
+                $destinationPath = '/images/logos/';
                 $extension = Input::file('image')->getClientOriginalExtension();
                 $filename = 'sponsor-'.rand(11111, 99999).'.'.$extension;
                 Input::file('image')->move(public_path().$destinationPath, $filename);
