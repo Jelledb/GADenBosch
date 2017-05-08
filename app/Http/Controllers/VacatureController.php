@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\overons;
 use App\vacatures;
 use Illuminate\Http\Request;
 
@@ -32,7 +33,7 @@ class VacatureController extends Controller
             'short_description' => 'required'
         ]);
 
-        $vacature = vacatures::find($id);
+        $vacature = overons::find($id);
         if($vacature){
 
             $vacature->title = "$request->title";

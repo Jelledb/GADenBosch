@@ -18,7 +18,7 @@ Route::get('nieuws', 'NewsController@getNewsList');
 
 Route::get('nieuws/{id}', 'NewsController@getNewsItem');
 
-Route::get('/over', 'MenuController@getOverons');
+Route::get('/over', 'OverOnsController@informatie');
 
 Route::get('/werkplaats', 'MenuController@getWerkplaats');
 
@@ -99,10 +99,15 @@ Route::group(['prefix' => 'cms', 'middleware' => 'admin'], function () {
     Route::post('/bewerksponsor/{id}', ['as' => 'bewerksponsoropslaan', 'uses' => 'CmsSponsorController@editOpslaan']);
     Route::get('/deletesponsor/{id}', ['as' => 'deletesponsor', 'uses' => 'CmsSponsorController@destroy']);
     Route::get('/newSponsor', 'MenuController@cmsNewSponsor');
-    Route::get('/informatie', 'MenuController@cmsInformatie');
+
+    Route::get('/informatie', 'OverOnsController@cmsInformatie');
+    Route::patch('/informatie/update', 'OverOnsController@update');
+
     Route::get('/menu', 'MenuController@cmsMenu');
     Route::get('/newMenu', 'MenuController@cmsNewMenu');
     Route::get('/nieuwsbrief', 'MenuController@cmsNieuwsbrief');
+
+
 
     Route::get('/vacature', 'VacatureController@getCmsVacature');
     Route::get('/vacature/edit/{id}', 'VacatureController@getCMSRUVacature');
