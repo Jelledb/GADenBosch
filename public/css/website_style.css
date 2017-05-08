@@ -18,7 +18,7 @@ body {
 }
 
 body {
-    padding-top: 70px;
+    padding-top: 50px;
 }
 
 #map_canvas {
@@ -242,7 +242,7 @@ nav {
     box-sizing: border-box;
 }
 
-.navbar-custom li a {
+.navbar-nav > li > a {
     color: black;
     /* Fade out effect */
     -webkit-transition: all .4s ease-out;
@@ -252,7 +252,7 @@ nav {
     box-sizing: border-box;
 }
 
-.navbar-custom li a:hover {
+.navbar-nav > li > a:hover {
     color: #f05a29;
     -webkit-transition: all .4s ease;
     -moz-transition: all .4s ease;
@@ -263,14 +263,6 @@ nav {
 
 .dropdown:hover .dropdown-menu {
     display: block;
-}
-
-.navbar-custom .admin-header {
-    background: #363435;
-    width: 100%;
-    color: white;
-    text-align: center;
-    padding: 7px 0;
 }
 
 .navbar-custom .admin-header a {

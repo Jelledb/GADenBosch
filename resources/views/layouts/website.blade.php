@@ -41,13 +41,6 @@
 <body>
 <div id="app">
     <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
-        @if(Auth::check())
-            @if(Auth::user()->isAdmin())
-                <div class="admin-header">
-                    <p >Welkom {{ Auth::user()->name }}. <a href="{{ url('cms/startpagina') }}">Klik hier om naar het CMS te gaan.</a></p>
-                </div>
-            @endif
-        @endif
         <div>
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -95,12 +88,14 @@
                             </a>
 
                             <ul class="dropdown-menu" role="menu">
-
+                                @if(Auth::user()->isAdmin())
+                                    <li>
+                                        <a href="{{ url('cms/startpagina') }}">cms</a>
+                                    </li>
+                                @endif
+                                <li>
+                                    <a href="{{ route ('mijn-reserveringen') }}">mijn reserveringen</a>
                                 </li>
-                                <a href="{{route ('mijn-reserveringen')}}"> mijn reserveringen </a>
-                                <li/>
-
-
                                 <li>
                                     <a href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
@@ -110,8 +105,7 @@
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         {{ csrf_field() }}
                                     </form>
-
-
+                                </li>
                             </ul>
                         </li>
                     @endif
