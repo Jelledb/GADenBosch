@@ -61,7 +61,7 @@
                         <a href="{{ url('/winkel') }}">winkel</a>
                     </li>
                     <li>
-                        <a href="{{ url('vriend-worden') }} ">vrienden</a>
+                        <a href="{{ url('vriend-worden') }} ">vriend worden</a>
                     </li>
                     <li>
                         <a href="{{ url('agenda') }}">agenda</a>
