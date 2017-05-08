@@ -21,6 +21,10 @@ body {
     padding-top: 50px;
 }
 
+.container {
+    padding-top: 25px;
+}
+
 #map_canvas {
     height: 400px;
     padding-top: 60px;
