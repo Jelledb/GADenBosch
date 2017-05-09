@@ -319,9 +319,11 @@ nav {
 }
 
 .nieuws-item-home {
-    height: 180px;
+    min-height: 180px;
     border: solid 1px red;
     padding: 10px;
+    text-align: justify;
+    text-justify: inter-word;
 }
 
 .nieuws-date {
@@ -337,7 +339,7 @@ nav {
 }
 
 .nieuws-item-home .nieuws-item-foto {
-    height: 100%;
+    height: 180px;
     width: 180px;
     float: left;
     margin-right: 10px;
