@@ -57,7 +57,7 @@
 }
 #myCarousel {
      width: 100%;
-     height: 500px;
+     max-height: 500px;
  }
 
 /* LOADER */
@@ -210,5 +210,5 @@
      padding: 10px;
 }
 .carousel-inner {
-     height: 500px;
+     max-height: 500px;
 }
