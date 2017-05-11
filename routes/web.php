@@ -29,6 +29,10 @@ Route::group(array('prefix' => 'vacatures'), function () {
     Route::get('', 'VacatureController@getVacaturePage');
     Route::get('/{id}', 'VacatureController@getDetailPage');
 });
+Route::group(array('prefix' => 'educatie'), function () {
+    Route::get('', 'EducationController@education');
+    Route::get('{id}', 'EducationController@index');
+});
 
 
 Route::get('/sponsors', 'SponsorController@getSponsorPage');
@@ -48,6 +52,7 @@ Route::get('/werkplaats-overzicht', 'WorkplaceController@getWorkspacePage');
 Route::get('/detailed-werkplaats/{id}', 'WorkplaceController@getDetailedWerkplaats');
 
 Route::get('/dag-planning/{currentday}/{id}', 'WorkplaceController@getDayplanning');
+
 
 
 /* CMS routes. */
