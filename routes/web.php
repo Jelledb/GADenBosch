@@ -103,3 +103,25 @@ Route::group(['prefix' => 'cms', 'middleware' => 'admin'], function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
+//webshop routes
+
+Route::get('/myCart', ['as'=>'/myCart' ,'uses'=>'CartController@index']);
+
+Route::get('/products',['as'=>'/products','uses'=>'ProductsController@getProducts'] );
+
+Route::resource('product', 'ProductsController');
+
+
+Route::get('/search/{id}', ['as' => 'search', 'uses' => 'ProductsController@search']);
+
+Route::get('/purchase',['as'=>'product.purchase','uses'=> 'CartController@purchase']);
+
+Route::get('/removeOrder',['as'=>'/removeOrder','uses'=> 'CartController@removeOrder']);
+
+Route::get('/addtocart/{id}',['uses' => 'ProductsController@getAddToCart','as' => 'product.addToCart']);
+
+Route::get('/remove/{id}',['uses' => 'CartController@removeFromCart','as' => 'product.remove']);
+
+Route::get('/dashboard', 'AdminController@index');
+
