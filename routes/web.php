@@ -53,9 +53,6 @@ Route::get('/detailed-werkplaats/{id}', 'WorkplaceController@getDetailedWerkplaa
 
 Route::get('/dag-planning/{currentday}/{id}', 'WorkplaceController@getDayplanning');
 
-
-
-/* CMS routes. */
 Route::get('/agenda', 'AgendaController@getExpositions');
 
 Route::get('/agendaitem/{id}', 'AgendaItemController@getExpositionItem');

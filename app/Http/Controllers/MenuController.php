@@ -29,30 +29,24 @@ class MenuController extends Controller
     }
 
     public function cmsTentoonstellingen(){
-        return view('cms/cmsnewtentoonstellingen');
+        return view('cms/tentoonstellingen/create');
     }
     public function cmsEditTentoonstelling($id){
         $exposition = expositions::where('id', $id)
             ->take(1)
             ->get();
-        return view('cms/cmsedittentoonstelling')->with('editExpo', $exposition);
-    }
-    public function cmsWorkshop(){
-        return view('cms/cmsnewworkshop');
+        return view('cms/tentoonstellingen/edit')->with('editExpo', $exposition);
     }
     public function cmslijstTentoonstellingen(){
         $expositions = expositions::orderBy('id', 'desc')
             ->get();
-        return view('cms/cmstentoonstellingen')->with('allExpositions', $expositions);
+        return view('cms/tentoonstellingen/index')->with('allExpositions', $expositions);
+    }
+    public function cmsWorkshop(){
+        return view('cms/cmsnewworkshop');
     }
     public function cmsworkshops(){
         return view('cms/cmsworkshops');
-    }
-    public function cmsnewnews(){
-        return view('cms/cmsnewnews');
-    }
-    public function cmsnews(){
-        return view('cms/cmsnews');
     }
     public function cmsEducatie(){
         return view('cms/cmseducatieWorkshops');
@@ -71,10 +65,7 @@ class MenuController extends Controller
     }
     public function cmssponsors(){
         $sponsors = sponsors::all();
-        return view('cms/cmssponsors')->with('sponsors', $sponsors);
-    }
-    public function cmsNewSponsor(){
-        return view('cms/cmsNewSponsor');
+        return view('cms/sponsor/index')->with('sponsors', $sponsors);
     }
 
     public function cmsMenu(){
@@ -85,9 +76,6 @@ class MenuController extends Controller
     }
     public function cmsNieuwsbrief(){
         return view('cms/cmsNieuwsbrief');
-    }
-    public function friendPage() {
-        return view('wordVriend');
     }
     public function getWebShop() {
         return view('webshop');
