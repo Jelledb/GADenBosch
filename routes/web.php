@@ -89,6 +89,10 @@ Route::group(['prefix' => 'cms', 'middleware' => 'admin'], function () {
     Route::get('/workshops', 'MenuController@cmsworkshops');
     Route::get('/educatie', 'MenuController@cmsEducatie');
     Route::get('/newEducatie', 'MenuController@cmsNewEducatie');
+    Route::get('/fotos-slider', 'MenuController@cmsFotosSlider');
+    Route::get('/nieuwfoto-slider', ['as' => 'newimageslider', 'uses' => 'CmsImageSliderController@newImage']);
+    Route::get('/bewerkfoto-slider/{id}', ['as' => 'bewerkimageslider', 'uses' => 'CmsImageSliderController@newImage']);
+    Route::get('/verwijder-slider/{id}', ['as' => 'deleteimageslider', 'uses' => 'CmsImageSliderController@newImage']);
     Route::get('/Scholen', 'MenuController@cmsSchool');
     Route::get('/Shop', 'MenuController@cmsShop');
     Route::get('/newShopItem', 'MenuController@cmsnewShopItem');

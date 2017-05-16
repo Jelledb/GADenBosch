@@ -65,6 +65,7 @@
 
                     <!--<li><a href="#">Events</a></li>-->
                     <li><a href="{{ url('cms/educatie') }}">Educatie</a></li>
+                    <li><a href="{{ url('cms/fotos-slider') }}">Foto's slider</a></li>
                     <li><a href="{{ url('cms/Scholen') }}">Scholen</a></li>
                     <li><a href="{{ url('cms/Shop') }}">Shop</a></li>
                     <li><a href="{{ url('cms/sponsors')}}">Sponsoren</a></li>
