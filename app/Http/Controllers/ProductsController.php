@@ -32,7 +32,7 @@ class ProductsController extends Controller
         $products = Product::all();
 
         //return View('product.products',$products);
-        return view('admin.products', compact('products'));
+        return view('cms.webshop.products', compact('products'));
 
     }
 

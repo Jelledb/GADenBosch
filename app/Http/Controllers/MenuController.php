@@ -6,6 +6,7 @@ use App\expositions;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use App\Products;
+use App\sponsors;
 
 class MenuController extends Controller
 {
@@ -28,30 +29,24 @@ class MenuController extends Controller
     }
 
     public function cmsTentoonstellingen(){
-        return view('cms/cmsnewtentoonstellingen');
+        return view('cms/tentoonstellingen/create');
     }
     public function cmsEditTentoonstelling($id){
         $exposition = expositions::where('id', $id)
             ->take(1)
             ->get();
-        return view('cms/cmsedittentoonstelling')->with('editExpo', $exposition);
-    }
-    public function cmsWorkshop(){
-        return view('cms/cmsnewworkshop');
+        return view('cms/tentoonstellingen/edit')->with('editExpo', $exposition);
     }
     public function cmslijstTentoonstellingen(){
         $expositions = expositions::orderBy('id', 'desc')
             ->get();
-        return view('cms/cmstentoonstellingen')->with('allExpositions', $expositions);
+        return view('cms/tentoonstellingen/index')->with('allExpositions', $expositions);
+    }
+    public function cmsWorkshop(){
+        return view('cms/cmsnewworkshop');
     }
     public function cmsworkshops(){
         return view('cms/cmsworkshops');
-    }
-    public function cmsnewnews(){
-        return view('cms/cmsnewnews');
-    }
-    public function cmsnews(){
-        return view('cms/cmsnews');
     }
     public function cmsEducatie(){
         return view('cms/cmseducatieWorkshops');
@@ -69,14 +64,10 @@ class MenuController extends Controller
         return view('cms/cmsnewShopItem');
     }
     public function cmssponsors(){
-        return view('cms/cmssponsors');
+        $sponsors = sponsors::all();
+        return view('cms/sponsor/index')->with('sponsors', $sponsors);
     }
-    public function cmsNewSponsor(){
-        return view('cms/cmsNewSponsor');
-    }
-    public function cmsInformatie(){
-        return view('cms/cmsInformatie');
-    }
+
     public function cmsMenu(){
         return view('cms/cmsHoofdmenu');
     }

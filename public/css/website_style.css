@@ -18,7 +18,30 @@ body {
 }
 
 body {
-    padding-top: 70px;
+    padding-top: 50px;
+}
+
+.container {
+    padding-top: 25px;
+}
+
+/* Sticky footer */
+html,body {
+    height:100%;
+    width: 100%;
+}
+
+body {
+    display: table;
+}
+
+.container {
+    height: auto;
+}
+
+footer {
+    display: table-row;
+    height: 1px;
 }
 
 #map_canvas {
@@ -54,6 +77,13 @@ body {
 #werkplaats-btn {
     background-color: #f05a29;
     font-weight: bold;
+}
+
+#vriend-btnn {
+    background-color: #32ae45;
+    font-weight: bold;
+    margin-top: 5%;
+    margin-bottom: 5%;
 }
 
 #vriend-btn {
@@ -232,35 +262,31 @@ nav {
     border-bottom: 1px solid #bbbbbb;
     background: white;
     z-index: 99999 !important;
+    box-sizing: border-box;
 }
 
-.navbar-custom li a {
+.navbar-nav > li > a {
     color: black;
     /* Fade out effect */
     -webkit-transition: all .4s ease-out;
     -moz-transition: all .4s ease-out;
     -o-transition: all .4s ease-out;
     transition: all .4s ease-out;
+    box-sizing: border-box;
 }
 
-.navbar-custom li a:hover {
+.navbar-nav > li > a:hover {
     color: #f05a29;
     -webkit-transition: all .4s ease;
     -moz-transition: all .4s ease;
     -o-transition: all .4s ease;
     transition: all .4s ease;
+    box-shadow:inset 0 -4px 0px -1px #f05a29;
+    background-color: white;
 }
 
 .dropdown:hover .dropdown-menu {
     display: block;
-}
-
-.navbar-custom .admin-header {
-    background: #363435;
-    width: 100%;
-    color: white;
-    text-align: center;
-    padding: 7px 0;
 }
 
 .navbar-custom .admin-header a {
@@ -283,7 +309,7 @@ nav {
     height: 200px;
 }
 
-.sponsorTitle {
+.sponsorTitleH1 {
     padding: 0 5px;
     margin: 0 5px;
 }
@@ -293,9 +319,11 @@ nav {
 }
 
 .nieuws-item-home {
-    height: 180px;
+    min-height: 180px;
     border: solid 1px red;
     padding: 10px;
+    text-align: justify;
+    text-justify: inter-word;
 }
 
 .nieuws-date {
@@ -311,8 +339,8 @@ nav {
 }
 
 .nieuws-item-home .nieuws-item-foto {
-    height: 100%;
-    width: 180px;
+    height: 160px;
+    width: 160px;
     float: left;
     margin-right: 10px;
     overflow: hidden;

@@ -103,7 +103,7 @@
             <div class="panel panel-default">
                 <h6 class="text-center">{{$data['day']}}</h6>
                 <h4 class="text-center">{{$data['workspace']->name .': '. $data['workspace']->size}}  </h4>
-                <h1 class="text-center">Geplaatste reserveringen </h1>
+                <h3 class="text-center">Geplaatste reserveringen </h3>
                 <br/>
                 <div class="col-md-8 col-md-offset-2">
                     <table id="time-table">
@@ -126,7 +126,7 @@
                             </tr>
                         </thead>
                     </table>
-                    <h1 class="centerH1">Reserveer</h1>
+                    <h3 class="centerH1">Reserveer</h3>
                 </div>
 
                 <div class="row justify-content-md-center">

@@ -37,17 +37,15 @@
             'csrfToken' => csrf_token(),
         ]) !!};
     </script>
+    <script>
+        $(document).ready(function() {
+            $("body").tooltip({ selector: '[data-toggle=tooltip]' });
+        });
+    </script>
 </head>
 <body>
 <div id="app">
     <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
-        @if(Auth::check())
-            @if(Auth::user()->isAdmin())
-                <div class="admin-header">
-                    <p >Welkom {{ Auth::user()->name }}. <a href="{{ url('cms/startpagina') }}">Klik hier om naar het CMS te gaan.</a></p>
-                </div>
-            @endif
-        @endif
         <div>
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -68,14 +66,32 @@
                         <a href="{{ url('/winkel') }}">winkel</a>
                     </li>
                     <li>
-                        <a href="{{ url('vriend-worden') }} ">vrienden</a>
+                        <a href="{{ url('vriend-worden') }} ">vriend worden</a>
                     </li>
                     <li>
                         <a href="{{ url('agenda') }}">agenda</a>
                     </li>
-                    <li>
-                        <a href="{{ url('/werkplaats') }}">werkplaats</a>
+                    <li class="dropdown">
+                        <a href="{{ url('/werkplaats') }}">werkplaats <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="{{url('werkplaats-overzicht')}}">Reserveer</a></li>
+                        </ul>
                     </li>
+
+                    <li class="dropdown">
+                        <a href="{{ url('educatie') }}">educatie
+                            @if(count($educationItems) > 0)
+                                <span class="caret"></span>
+                            @endif
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            @foreach($educationItems as $educationItem)
+                            <li><a href="{{ url('educatie/'.$educationItem->id) }}">{!! $educationItem->title !!}</a></li>
+                            @endforeach
+                        </ul>
+
+                    </li>
+
                     <li>
                         <a href="{{ url('/sponsors') }}">sponsoren</a>
                     </li>
@@ -96,11 +112,14 @@
 
                             <ul class="dropdown-menu" role="menu">
 
+                                @if(Auth::user()->isAdmin())
+                                    <li>
+                                        <a target="_blank" href="{{ url('cms/startpagina') }}">cms</a>
+                                    </li>
+                                @endif
+                                <li>
+                                    <a href="{{ route ('mijn-reserveringen') }}">mijn reserveringen</a>
                                 </li>
-                                <a href="{{route ('mijn-reserveringen')}}"> mijn reserveringen </a>
-                                <li/>
-
-
                                 <li>
                                     <a href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
@@ -110,8 +129,7 @@
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         {{ csrf_field() }}
                                     </form>
-
-
+                                </li>
                             </ul>
                         </li>
                     @endif

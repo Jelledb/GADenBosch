@@ -2,28 +2,29 @@
 
 namespace App\Http\Controllers;
 
-use App\vacatures;
+use App\overons;
+use App\Vacatures;
 use Illuminate\Http\Request;
 
 class VacatureController extends Controller
 {
     public $timestamps = false;
-    // Return the SponserView with the sponsors.
+
     public function getVacaturePage() {
-        $vacatures = vacatures::all();
+        $vacatures = Vacatures::all();
         return view('vacatures/vacatures', compact('vacatures'));
     }
-    public function  getDetailPage($id){
-        $vacature = vacatures::find($id);
+    public function getDetailPage($id){
+        $vacature = Vacatures::find($id);
         return view('vacatures/detailvacature', compact('vacature'));
     }
     public function getCmsVacature(){
-        $vacatures = vacatures::all();
-        return view('cms/cmsVacature', compact('vacatures'));
+        $vacatures = Vacatures::all();
+        return view('cms/vacature/index', compact('vacatures'));
     }
     public function getCMSRUVacature($id){
-        $vacature = vacatures::find($id);
-        return view('cms/cmsRuVacature', compact('vacature'));
+        $vacature = Vacatures::find($id);
+        return view('cms/vacature/edit', compact('vacature'));
     }
     public function update(Request $request, $id){
         $this->validate($request, [
@@ -32,7 +33,7 @@ class VacatureController extends Controller
             'short_description' => 'required'
         ]);
 
-        $vacature = vacatures::find($id);
+        $vacature = overons::find($id);
         if($vacature){
 
             $vacature->title = "$request->title";
@@ -61,7 +62,7 @@ class VacatureController extends Controller
 
     }
     public function getcreate(){
-        return view('cms/cmsCVacature');
+        return view('cms/vacature/create');
     }
     public function create(Request $request){
         $this->validate($request, [
@@ -70,7 +71,7 @@ class VacatureController extends Controller
             'short_description' => 'required'
         ]);
 
-        $vacature = new vacatures();
+        $vacature = new Vacatures();
         $vacature->title = "$request->title";
         $vacature->description = "$request->description";
         $vacature->short_description = "$request->short_description";
@@ -80,12 +81,12 @@ class VacatureController extends Controller
             ->with('success','Product is bewerkt!');
     }
     public function delete($id){
-        vacatures::find($id)->delete();
+        Vacatures::find($id)->delete();
         return redirect('cms/vacature')
             ->with('success','Product is bewerkt!');
     }
     public function updateToon(Request $request, $id){
-        $vacature = vacatures::find($id);
+        $vacature = Vacatures::find($id);
         if($vacature->show === 1){
             if($request->toon1 === "1"){
                 $vacature->show = 1;

@@ -184,6 +184,7 @@ return [
         App\Providers\MetaTagProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\WorkplaceProvider::class,
+        App\Providers\EducationMenuProvider::class,
         Collective\Html\HtmlServiceProvider::class,
 
         Collective\Html\HtmlServiceProvider::class,
