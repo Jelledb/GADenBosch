@@ -140,10 +140,4 @@ Route::group(['middleware' => ['auth', 'admin']], function () {
 
 });
 
-
 Route::get('/search/{id}', ['as' => 'search', 'uses' => 'ProductsController@search']);
-
-
-
-
-
