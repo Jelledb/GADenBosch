@@ -77,6 +77,9 @@ class MenuController extends Controller
     public function cmsNieuwsbrief(){
         return view('cms/cmsNieuwsbrief');
     }
+    public function friendPage() {
+        return view('wordVriend');
+    }
     public function getWebShop() {
         return view('webshop');
     }
