@@ -41,11 +41,11 @@ Route::get('/vriend-worden', ['as' => 'vriend-worden', 'uses' => 'MenuController
 
 Route::get('/vriend-worden-pay', 'FriendController@becomeFriend');
 
+Route::get('/winkel',['as'=>'/products','uses'=>'ProductsController@getProducts'] );
+
 Route::get('/vriend-worden-redirect/{user}', 'FriendController@paymentRedirect');
 
 Route::post('/vriend-worden-webhook/{user}', 'FriendController@paymentUpdate');
-
-Route::get('/winkel', 'ShopController@getShopWindow');
 
 Route::get('/werkplaats-overzicht', 'WorkplaceController@getWorkspacePage');
 
@@ -61,7 +61,6 @@ Route::get('/archief-agenda', 'ArchiveAgendaController@getArchiveAgenda');
 
 
 Route::group(['middleware' => ['auth']], function () {
-//    Route::get('/mijn-reserveringen', 'WorkplaceController@myReservations');
     Route::post('/dag-planning/{currentday}/{id}', 'WorkplaceController@createReservation');
     Route::get('/mijn-reserveringen', ['as' => 'mijn-reserveringen', 'uses' => 'WorkplaceController@myReservations']);
     Route::get('/delete-reservering/{res}', ['as' => 'delete-reservering', 'uses' => 'WorkplaceController@deleteReservation']);
@@ -124,3 +123,21 @@ Route::group(['prefix' => 'cms', 'middleware' => 'admin'], function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
+//webshop routes
+
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/myCart', ['as'=>'/myCart' ,'uses'=>'CartController@index']);
+    Route::get('/purchase',['as'=>'product.purchase','uses'=> 'CartController@purchase']);
+    Route::get('/removeOrder',['as'=>'/removeOrder','uses'=> 'CartController@removeOrder']);
+    Route::get('/addtocart/{id}',['uses' => 'ProductsController@getAddToCart','as' => 'product.addToCart']);
+
+});
+Route::group(['middleware' => ['auth', 'admin']], function () {
+    Route::resource('product', 'ProductsController');
+    Route::get('/remove/{id}',['uses' => 'CartController@removeFromCart','as' => 'product.remove']);
+    Route::get('/dashboard', 'AdminController@index');
+
+});
+
+Route::get('/search/{id}', ['as' => 'search', 'uses' => 'ProductsController@search']);
