@@ -37,6 +37,11 @@
             'csrfToken' => csrf_token(),
         ]) !!};
     </script>
+    <script>
+        $(document).ready(function() {
+            $("body").tooltip({ selector: '[data-toggle=tooltip]' });
+        });
+    </script>
 </head>
 <body>
 <div id="app">

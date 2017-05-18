@@ -15,7 +15,7 @@ class CmsSponsorController extends Controller
 {
     public function newsponsor()
     {
-        return view('cms/cmsNewSponsor');
+        return view('cms/sponsor/create');
     }
 
     /**
@@ -83,7 +83,7 @@ class CmsSponsorController extends Controller
             ->take(1)
             ->get();
 
-        return view('cms/cmsEditSponsor')->with('editSponsor', $sponsor);
+        return view('cms/sponsor/edit')->with('editSponsor', $sponsor);
     }
 
     /**
