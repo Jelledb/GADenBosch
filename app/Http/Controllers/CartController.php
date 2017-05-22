@@ -54,15 +54,34 @@ class CartController extends Controller
 
         $products = Product::order()->get();
 
-        return view('product.orders', compact('products'));
+        $user = Auth::user();
+        $customer = Mollie::api()->customers()->create([
+            "name" => $user->name,
+            "email" => $user->email,
+        ]);
+        $payment = Mollie::api()->payments()->create([
+            "amount" => $products,
+            'customerId' => $customer->id,
+            'recurringType' => 'first',
+            "description" => "Betaling GA Den Bosch",
+            "redirectUrl" => "http://gadenbosch.ga/mycart" . $user->id,
+            "webhookUrl" => 'http://gadenbosch.ga/winkel-webhook/' . $user->id,
+        ]);
+        return Redirect::to($payment->getPaymentUrl());
+
+        //return view('product.orders', compact('products'));
 
 
 
     }
     function removeOrder(){
-        $toRemove = new product_users();
-        $toRemove->removeOrder();
 
-        return redirect()->route('/myCart');
+        $payment = Mollie::api()->payments()->get(request('id'));
+
+        if ($payment->isPaid()) {
+            $toRemove = new product_users();
+            $toRemove->removeOrder();
+        }
+        //return redirect()->route('/myCart');
     }
 }

@@ -25,8 +25,6 @@ class FriendController extends Controller
 
     public function becomeFriend()
     {
-        // Mollie shit doen hier
-        // payment aanmaken
         if (Auth::check()) {
             $user = Auth::user();
             $customer = Mollie::api()->customers()->create([
