@@ -56,7 +56,6 @@ class VacatureController extends Controller
             $vacature->description = "$request->description";
             $vacature->save();
         }
-        //todo
         return redirect('cms/vacature')
             ->with('success','Product is bewerkt!');
 

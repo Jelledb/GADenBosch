@@ -54,12 +54,7 @@ class MenuController extends Controller
     public function cmsnews(){
         return view('cms/cmsnews');
     }
-    public function cmsEducatie(){
-        return view('cms/cmseducatieWorkshops');
-    }
-    public function cmsNewEducatie(){
-        return view('cms/cmseducatieWorkshop');
-    }
+
     public function cmsSchool(){
         return view('cms/cmsEducatieScholen');
     }

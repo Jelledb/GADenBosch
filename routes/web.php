@@ -75,10 +75,15 @@ Route::group(['middleware' => ['auth']], function () {
 Route::group(['prefix' => 'cms', 'middleware' => 'admin'], function () {
 
     Route::resource('news', 'NewsItemController');
+    Route::resource('educatie', 'EducationCMSController');
     Route::get('titel-beschrijving', [
         'as' => 'titel-beschrijving.index',
         'uses' => 'TitleDescriptionController@index'
     ]);
+    Route::post('upload/image', 'ImageUploadController@uploadImage' );
+
+    //})->before('auth');
+
     Route::get('titel-beschrijving/edit/{id}', 'TitleDescriptionController@edit');
     Route::patch('titel-beschrijving/update/{id}', 'TitleDescriptionController@update');
 
@@ -91,8 +96,6 @@ Route::group(['prefix' => 'cms', 'middleware' => 'admin'], function () {
     Route::get('/workshop', 'MenuController@cmsWorkshop');
     Route::get('/lijsttentoonstellingen', ['as' => 'lijsttentoonstellingen', 'uses' => 'MenuController@cmslijstTentoonstellingen']);
     Route::get('/workshops', 'MenuController@cmsworkshops');
-    Route::get('/educatie', 'MenuController@cmsEducatie');
-    Route::get('/newEducatie', 'MenuController@cmsNewEducatie');
     Route::get('/Scholen', 'MenuController@cmsSchool');
     Route::get('/Shop', 'MenuController@cmsShop');
     Route::get('/newShopItem', 'MenuController@cmsnewShopItem');
