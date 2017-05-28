@@ -57,7 +57,6 @@ class CartController extends Controller
         foreach($productsInCart as $product){
             $totalprice= $totalprice + $product->price;
         }
-        dd($productsInCart);
         if (Auth::check()) {
             $user = Auth::user();
             $customer = Mollie::api()->customers()->create([
