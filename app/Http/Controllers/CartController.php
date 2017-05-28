@@ -12,6 +12,7 @@ use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Mollie\Laravel\Facades\Mollie;
 
 
 class CartController extends Controller
@@ -70,7 +71,7 @@ class CartController extends Controller
         foreach($productsInCart as $product){
             $totalprice= $totalprice + $product->price;
         }
-
+        dd($totalprice);
         if (Auth::check()) {
             $user = Auth::user();
             $customer = Mollie::api()->customers()->create([
