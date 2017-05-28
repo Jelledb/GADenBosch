@@ -128,6 +128,7 @@ Route::get('/home', 'HomeController@index');
 
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/myCart', ['as'=>'/myCart' ,'uses'=>'CartController@index']);
+    Route::get('/orders', 'CartController@showOrders');
     Route::post('/purchase',['as'=>'product.purchase','uses'=> 'CartController@purchase']);
     Route::get('/removeOrder',['as'=>'/removeOrder','uses'=> 'CartController@removeOrder']);
     Route::get('/addtocart/{id}',['uses' => 'ProductsController@getAddToCart','as' => 'product.addToCart']);

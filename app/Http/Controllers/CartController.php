@@ -73,6 +73,11 @@ class CartController extends Controller
         return view('product.orders', compact('products'));
     }
 
+    function showOrders() {
+        $products = Product::order()->get();
+        return view('product.orders', compact('products'));
+    }
+
     function removeOrder(){
         $toRemove = new product_users();
         $toRemove->removeOrder();
