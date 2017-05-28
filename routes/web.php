@@ -130,7 +130,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/myCart', ['as'=>'/myCart' ,'uses'=>'CartController@index']);
     Route::get('/purchase',['as'=>'product.purchase','uses'=> 'CartController@purchase']);
     Route::get('/cart-redirect', 'CartController@paymentRedirect');
-    Route::get('/winkel-webhook','CartController@removeFromCart');
+    Route::get('/winkel-webhook/{id}','CartController@removeFromCart');
     Route::get('/removeOrder',['as'=>'/removeOrder','uses'=> 'CartController@removeOrder']);
     Route::get('/addtocart/{id}',['uses' => 'ProductsController@getAddToCart','as' => 'product.addToCart']);
 

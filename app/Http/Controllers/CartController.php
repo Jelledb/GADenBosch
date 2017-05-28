@@ -29,8 +29,6 @@ class CartController extends Controller
 
     function index()
     {
-
-
         $productsInCart = Product::ProductsInCart()->get();
 
         return view('product.myCart', compact('productsInCart'));
@@ -38,15 +36,14 @@ class CartController extends Controller
 
 
     function removeFromCart($productid){
+        $payment = Mollie::api()->payments()->get(request('id'));
+        if ($payment->isPaid()) {
+            $toRemove = new product_users();
+            $toRemove->remove($productid);
 
+            $productsInCart = Product::ProductsInCart()->get();
+        }
 
-       $toRemove = new product_users();
-       $toRemove->remove($productid);
-
-        $productsInCart = Product::ProductsInCart()->get();
-
-
-        return redirect()->route('/myCart');
     }
     function purchase(){
         $toPurchase = new product_users();
@@ -73,15 +70,15 @@ class CartController extends Controller
                 'recurringType' => 'first',
                 "description" => "Betaling GA Den Bosch",
                 "redirectUrl" => "http://gadenbosch.ga/cart-redirect",
-                "webhookUrl" => 'http://gadenbosch.ga/winkel-webhook/',
+                "webhookUrl" => 'http://gadenbosch.ga/winkel-webhook/' . $toPurchase -> id,
             ]);
 
         return Redirect::to($payment->getPaymentUrl());
         }
         return Redirect::route('login')->with('message', 'Log eerst in of registreer als u nog geen account heeft');
         //return view('product.orders', compact('products'));
-
     }
+
 
     public function paymentRedirect()
     {
