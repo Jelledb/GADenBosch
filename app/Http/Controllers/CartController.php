@@ -27,7 +27,8 @@ class CartController extends Controller
      */
 
 
-    function index(){
+    function index()
+    {
 
 
 

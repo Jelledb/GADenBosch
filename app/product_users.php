@@ -19,6 +19,7 @@ class product_users extends Model
     function Remove($productid){
 
            $inq = DB::table('product_users')->where('product_id',$productid)->where('users_id',Auth::id())->select('product_users.num')->first();
+
             DB::table('product_users')->where('num','=',$inq->num)->delete();
 
     }
