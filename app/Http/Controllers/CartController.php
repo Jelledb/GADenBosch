@@ -27,11 +27,13 @@ class CartController extends Controller
      */
 
 
-    function index()
-    {
+    function index(){
+
 
 
         $productsInCart = Product::ProductsInCart()->get();
+
+
 
         return view('product.myCart', compact('productsInCart'));
     }
@@ -41,6 +43,7 @@ class CartController extends Controller
 
 
        $toRemove = new product_users();
+
        $toRemove->remove($productid);
 
         $productsInCart = Product::ProductsInCart()->get();
@@ -53,8 +56,9 @@ class CartController extends Controller
         $toPurchase->purchase();
 
         $products = Product::order()->get();
+        $isAdmin = Auth::user()->isAdmin();
 
-        return view('product.orders', compact('products'));
+        return view('product.orders', compact('products','isAdmin'));
 
 
 
