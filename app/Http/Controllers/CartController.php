@@ -47,10 +47,10 @@ class CartController extends Controller
 
     }
     function purchase(){
-        $toPurchase = new product_users();
-        $toPurchase->purchase();
-
-        $products = Product::order()->get();
+//        $toPurchase = new product_users();
+//        $toPurchase->purchase();
+//
+//        $products = Product::order()->get();
 
         $totalprice = 0;
         $productsInCart = Product::ProductsInCart()->get();
