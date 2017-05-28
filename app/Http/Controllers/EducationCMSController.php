@@ -41,7 +41,6 @@ class EducationCMSController extends Controller
         $educatiepagina->title = "$request->titel";
         $educatiepagina->content_left = "$request->leftcolum";
         $educatiepagina->content_right = "$request->rightcolum";
-        $educatiepagina->timestamps = false;
         $educatiepagina->save();
 
         return redirect()->route('educatie.index')
@@ -67,7 +66,8 @@ class EducationCMSController extends Controller
      */
     public function edit($id)
     {
-        return view('cms/educatie/edit', compact(''));
+        $educatie = Educatie::find($id);
+        return view('cms/educatie/edit', compact('educatie'));
     }
 
     /**
@@ -79,7 +79,16 @@ class EducationCMSController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $this->validate($request, [
+            'title' => 'required'
+        ]);
+
+
+        Educatie::find($id)->update(array_merge($request->all()));
+
+        return redirect()->route('educatie.index')
+            ->with('success', 'De pagina is bijgewerkt.');
     }
 
     /**
@@ -90,6 +99,8 @@ class EducationCMSController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Educatie::find($id)->delete();
+        return redirect()->route('educatie.index')
+            ->with('success', 'De pagina is verwijderd.');
     }
 }

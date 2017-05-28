@@ -10,5 +10,6 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Educatie extends Model
 {
-
+    public $timestamps = false;
+    protected $fillable = ['id', 'title', 'content_left', 'content_right'];
 }

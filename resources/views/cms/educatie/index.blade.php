@@ -34,8 +34,10 @@
                     <td>{{ $item->id }}</td>
                     <td>{{ $item->title }}</td>
                     <td>
-                        <a class="btn btn-primary" href="{{ url('cms/newEducatie'), [$item->id] }}">Bewerk</a>
-                        <a class="btn btn-danger" href="{{ url('cms/vacature/delete', [$item->id]) }}">Delete</a>
+                        <a class="btn btn-primary" href="{{ route('educatie.edit', $item->id)}}">Bewerk</a>
+                        {!! Form::open(['method' => 'DELETE','route' => ['educatie.destroy', $item->id],'style'=>'display:inline']) !!}
+                        {!! Form::submit('Verwijder', ['class' => 'btn btn-danger']) !!}
+                        {!! Form::close() !!}
                     </td>
                 </tr>
             @endforeach
