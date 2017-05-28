@@ -16,7 +16,7 @@
 
                     <div class="panel-heading"><h1 style="text-align: center">Shopping cart</h1></div>
                     @if(Session::has('success'))
-                        <div class="alert alert-success">De betaling is gelukt! U bent nu vriend van GA Den Bosch</div>
+                        <div class="alert alert-success">De betaling is gelukt! Uw bestelling is geplaatst</div>
                     @elseif(Session::has('fail'))
                         <div class="alert alert-warning">Betaling is mislukt</div>
                     @endif
