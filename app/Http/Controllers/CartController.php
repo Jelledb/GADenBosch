@@ -52,7 +52,7 @@ class CartController extends Controller
 
         $products = Product::order()->get();
 
-        $totalprice = 0;
+        $totalprice = null;
         $productsInCart = Product::ProductsInCart()->get();
         foreach($productsInCart as $product){
             $totalprice= $totalprice + $product->price;
