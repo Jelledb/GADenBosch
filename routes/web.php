@@ -78,8 +78,6 @@ Route::group(['prefix' => 'cms', 'middleware' => 'admin'], function () {
     ]);
     Route::post('upload/image', 'ImageUploadController@uploadImage' );
 
-    //})->before('auth');
-
     Route::get('titel-beschrijving/edit/{id}', 'TitleDescriptionController@edit');
     Route::patch('titel-beschrijving/update/{id}', 'TitleDescriptionController@update');
 

@@ -17,7 +17,6 @@ class EducationCMSController extends Controller
         $educaties = Educatie::all();
         return view('cms.educatie.index', compact('educaties'));
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -36,7 +35,6 @@ class EducationCMSController extends Controller
      */
     public function store(Request $request)
     {
-
         $educatiepagina = new Educatie();
         $educatiepagina->title = "$request->titel";
         $educatiepagina->content_left = "$request->leftcolum";
@@ -46,18 +44,6 @@ class EducationCMSController extends Controller
         return redirect()->route('educatie.index')
             ->with('success', 'Pagina is aangemaakt');
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -79,14 +65,10 @@ class EducationCMSController extends Controller
      */
     public function update(Request $request, $id)
     {
-
         $this->validate($request, [
             'title' => 'required'
         ]);
-
-
         Educatie::find($id)->update(array_merge($request->all()));
-
         return redirect()->route('educatie.index')
             ->with('success', 'De pagina is bijgewerkt.');
     }
