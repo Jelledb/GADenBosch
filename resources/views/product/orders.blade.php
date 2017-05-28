@@ -78,11 +78,13 @@
                         </table>
                     </div>
 
-                    <div class="purchase">
-                        <a href="{{route('/removeOrder')}}"
-                           class="btn-success btn-lg" role="button">remove order</a>
-                    </div>
+
                 </div>
+                <div class="purchase">
+                    <a href="{{route('/removeOrder')}}"
+                       class="btn-success btn-lg" role="button">remove order</a>
+                </div>
+                <br>
             </div>
         </div>
     </div>

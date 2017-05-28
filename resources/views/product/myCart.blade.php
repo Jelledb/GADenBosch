@@ -87,6 +87,7 @@
                         <a href="{{route('product.purchase')}}"
                            class="btn-success btn-lg" role="button">purchase</a>
                     </div>
+                    <br>
 
                 </div>
             </div>
