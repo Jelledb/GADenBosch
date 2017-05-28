@@ -14,6 +14,18 @@
                     <div class="panel-heading"><h3 style="text-align: center">Winkelwagen</h3></div>
 
                     <div class="panel-body">
+
+                        @if (count($errors) > 0)
+                            <div class="alert alert-danger">
+                                <strong>Oeps!</strong> Er missen een aantal velden:<br><br>
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+
                         <table>
 
 
@@ -124,7 +136,7 @@
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="form-group">
                                     <strong>Huisnummer:</strong>
-                                    {!! Form::text('city', null, array('class' => 'form-control')) !!}
+                                    {!! Form::text('house_number', null, array('class' => 'form-control')) !!}
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-12">

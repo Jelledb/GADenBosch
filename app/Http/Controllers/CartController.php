@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\product_users;
+use App\ProductUsersInfo;
 use App\shoppingcart;
 use App\Product;
 use App\Users;
@@ -49,16 +50,29 @@ class CartController extends Controller
         return redirect()->route('/myCart');
     }
     function purchase(Request $request) {
+        // get product users info.
+        $this->validate($request, [
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'email' => 'required',
+            'phone_number' => 'required',
+            'zip_code' => 'required',
+            'street' => 'required',
+            'house_number' => 'required',
+            'city' => 'required'
+        ]);
+
+        $info = ProductUsersInfo::create($request->all());
+        $info->save();
+
         $toPurchase = new product_users();
-        $toPurchase->purchase();
+        $toPurchase->purchase($info->id);
 
         $products = Product::order()->get();
 
         return view('product.orders', compact('products'));
-
-
-
     }
+
     function removeOrder(){
         $toRemove = new product_users();
         $toRemove->removeOrder();
