@@ -30,8 +30,6 @@ class CartController extends Controller
 
     function index()
     {
-
-
         $productsInCart = Product::ProductsInCart()->get();
 
         return view('product.myCart', compact('productsInCart'));
@@ -39,15 +37,14 @@ class CartController extends Controller
 
 
     function removeFromCart($productid){
+        $payment = Mollie::api()->payments()->get(request('id'));
+        if ($payment->isPaid()) {
+            $toRemove = new product_users();
+            $toRemove->remove($productid);
 
+            $productsInCart = Product::ProductsInCart()->get();
+        }
 
-       $toRemove = new product_users();
-       $toRemove->remove($productid);
-
-        $productsInCart = Product::ProductsInCart()->get();
-
-
-        return redirect()->route('/myCart');
     }
     function purchase(Request $request) {
         // get product users info.
@@ -68,9 +65,32 @@ class CartController extends Controller
         $toPurchase = new product_users();
         $toPurchase->purchase($info->id);
 
-        $products = Product::order()->get();
+        $totalprice = 0;
+        $productsInCart = Product::ProductsInCart()->get();
+        foreach($productsInCart as $product){
+            $totalprice= $totalprice + $product->price;
+        }
 
-        return view('product.orders', compact('products'));
+        if (Auth::check()) {
+            $user = Auth::user();
+            $customer = Mollie::api()->customers()->create([
+                "name" => $user->name,
+                "email" => $user->email,
+            ]);
+
+            $payment = Mollie::api()->payments()->create([
+                "amount" => $totalprice,
+                'customerId' => $customer->id,
+                'recurringType' => 'first',
+                "description" => "Betaling GA Den Bosch",
+                "redirectUrl" => "http://gadenbosch.ga/cart-redirect",
+                "webhookUrl" => 'http://gadenbosch.ga/winkel-webhook/' . $toPurchase -> id,
+            ]);
+
+            return Redirect::to($payment->getPaymentUrl());
+        }
+        return Redirect::route('login')->with('message', 'Log eerst in of registreer als u nog geen account heeft');
+        //return view('product.orders', compact('products'));
     }
 
     function showOrders() {
@@ -78,10 +98,20 @@ class CartController extends Controller
         return view('product.orders', compact('products'));
     }
 
+
+    public function paymentRedirect()
+    {
+        if (Product::ProductsInCart()->get() == 0)
+            return Redirect::route('myCart')->with('success', 'De betaling is gelukt!');
+        else
+            return Redirect::route('myCart')->with('fail', 'De betaling is mislukt!');
+    }
+
     function removeOrder(){
+
         $toRemove = new product_users();
         $toRemove->removeOrder();
-
         return redirect()->route('/myCart');
+
     }
 }

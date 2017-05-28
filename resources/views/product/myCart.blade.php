@@ -14,6 +14,11 @@
                     <div class="panel-heading"><h3 style="text-align: center">Winkelwagen</h3></div>
 
                     <div class="panel-body">
+                        @if(Session::has('success'))
+                            <div class="alert alert-success">De betaling is gelukt! Uw bestelling is geplaatst</div>
+                        @elseif(Session::has('fail'))
+                            <div class="alert alert-warning">Betaling is mislukt</div>
+                        @endif
 
                         @if (count($errors) > 0)
                             <div class="alert alert-danger">
