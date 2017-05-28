@@ -18,9 +18,9 @@ class product_users extends Model
     }
     function Remove($productid){
 
-           $inq = DB::table('product_users')->where('product_id',$productid)->where('users_id',Auth::id())->select('product_users.num')->first();
+           $inq = DB::table('product_users')->where('product_id',$productid)->where('users_id',Auth::id())->select('product_users.id')->first();
 
-            DB::table('product_users')->where('num',$inq->num)->delete();
+            DB::table('product_users')->where('id',$inq->id)->delete();
 
     }
     function purchase()

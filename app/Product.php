@@ -2,7 +2,6 @@
 
 namespace App;
 
-use Illuminate\Foundation\Auth\User;
 use Illuminate\Support\Facades\Auth;
 
 class Product extends BaseModel

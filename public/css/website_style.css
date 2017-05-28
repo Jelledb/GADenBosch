@@ -465,3 +465,8 @@ tr:nth-child(even) {
 .plattegrond {
     width: 100%;
 }
+
+.purchase-button {
+    display: block;
+    width: 100px;
+}

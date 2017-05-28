@@ -48,7 +48,7 @@ class CartController extends Controller
 
         return redirect()->route('/myCart');
     }
-    function purchase(){
+    function purchase(Request $request) {
         $toPurchase = new product_users();
         $toPurchase->purchase();
 
