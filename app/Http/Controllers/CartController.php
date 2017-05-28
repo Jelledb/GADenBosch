@@ -52,12 +52,12 @@ class CartController extends Controller
 
         $products = Product::order()->get();
 
-        $totalprice = 0;
+        $totalprice = null;
         $productsInCart = Product::ProductsInCart()->get();
         foreach($productsInCart as $product){
             $totalprice= $totalprice + $product->price;
         }
-        dd($totalprice);
+
         if (Auth::check()) {
             $user = Auth::user();
             $customer = Mollie::api()->customers()->create([
