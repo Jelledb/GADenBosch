@@ -116,9 +116,9 @@ class CartController extends Controller
 
         if ($counter == 0)
 
-            return Redirect::route('myCart')->with('success', 'De betaling is gelukt!');
+            return Redirect::route('/myCart')->with('success', 'De betaling is gelukt!');
         else
-            return Redirect::route('myCart')->with('fail', 'De betaling is mislukt!');
+            return Redirect::route('/myCart')->with('fail', 'De betaling is mislukt!');
     }
 
     function removeOrder(){
