@@ -29,6 +29,7 @@ class product_users extends Model
 
     }
 
+
     function RemoveEntireCart()
     {
 
@@ -41,11 +42,20 @@ class product_users extends Model
 
     }
 
-    function purchase()
-    {
+    function purchase($productid){
 
-        $inq = DB::table('product_users')->where('users_id', Auth::id())->update(['isorder' => '1']);
+           $inq = DB::table('product_users')->where('product_id',$productid)->where('users_id',Auth::id())->select('product_users.id')->first();
+
+            DB::table('product_users')->where('id',$inq->id)->delete();
+
     }
+//    function purchase($infoId)
+//
+//    {
+//
+//        $inq = DB::table('product_users')->where('users_id', Auth::id())->update(['isorder' => '1']);
+//        DB::table('product_users')->where('users_id', Auth::id())->update(['info_id' => $infoId]);
+//    }
 
 
     function removeOrder()
