@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\product_users;
+use App\ProductUsersInfo;
 use App\shoppingcart;
 use App\Product;
 use App\Users;
@@ -11,6 +12,7 @@ use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Mollie\Laravel\Facades\Mollie;
 
 
 class CartController extends Controller
@@ -29,8 +31,6 @@ class CartController extends Controller
 
     function index()
     {
-
-
         $productsInCart = Product::ProductsInCart()->get();
 
         return view('product.myCart', compact('productsInCart'));
@@ -38,31 +38,85 @@ class CartController extends Controller
 
 
     function removeFromCart($productid){
+        $payment = Mollie::api()->payments()->get(request('id'));
+        if ($payment->isPaid()) {
+            $toRemove = new product_users();
+            $toRemove->remove($productid);
 
+            $productsInCart = Product::ProductsInCart()->get();
+        }
 
-       $toRemove = new product_users();
-       $toRemove->remove($productid);
+    }
 
+    function purchase(Request $request) {
+        // get product users info.
+        $this->validate($request, [
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'email' => 'required',
+            'phone_number' => 'required',
+            'zip_code' => 'required',
+            'street' => 'required',
+            'house_number' => 'required',
+            'city' => 'required'
+        ]);
+
+        $totalprice = 0;
         $productsInCart = Product::ProductsInCart()->get();
 
+        foreach($productsInCart as $product){
+            $totalprice= $totalprice + $product->price;
+        }
 
-        return redirect()->route('/myCart');
+        if (Auth::check()) {
+
+            // create user info.
+            $info = ProductUsersInfo::create($request->all());
+            $info->save();
+
+            $toPurchase = new product_users();
+            $toPurchase->purchase($info->id);
+
+            $user = Auth::user();
+            $customer = Mollie::api()->customers()->create([
+                "name" => $user->name,
+                "email" => $user->email,
+            ]);
+
+            $payment = Mollie::api()->payments()->create([
+                "amount" => $totalprice,
+                'customerId' => $customer->id,
+                'recurringType' => 'first',
+                "description" => "Betaling GA Den Bosch",
+                "redirectUrl" => "http://gadenbosch.ga/cart-redirect",
+                "webhookUrl" => 'http://gadenbosch.ga/winkel-webhook/' . $toPurchase -> id,
+            ]);
+
+            return Redirect::to($payment->getPaymentUrl());
+        }
+        return Redirect::route('login')->with('message', 'Log eerst in of registreer als u nog geen account heeft');
+        //return view('product.orders', compact('products'));
     }
-    function purchase(){
-        $toPurchase = new product_users();
-        $toPurchase->purchase();
 
+    function showOrders() {
         $products = Product::order()->get();
-
         return view('product.orders', compact('products'));
-
-
-
     }
+
+
+    public function paymentRedirect()
+    {
+        if (Product::ProductsInCart()->get() == 0)
+            return Redirect::route('myCart')->with('success', 'De betaling is gelukt!');
+        else
+            return Redirect::route('myCart')->with('fail', 'De betaling is mislukt!');
+    }
+
     function removeOrder(){
+
         $toRemove = new product_users();
         $toRemove->removeOrder();
-
         return redirect()->route('/myCart');
+
     }
 }

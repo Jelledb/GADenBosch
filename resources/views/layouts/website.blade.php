@@ -62,8 +62,14 @@
                     <li>
                         <a href="{{ url('/nieuws') }}">nieuws</a>
                     </li>
-                    <li>
+                    <li class="dropdown">
                         <a href="{{ url('/winkel') }}">winkel</a>
+
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="{{url('/myCart')}}">Winkelwagen</a></li>
+                            <li><a href="{{url('/orders')}}">Orders</a></li>
+                        </ul>
+
                     </li>
                     <li>
                         <a href="{{ url('vriend-worden') }} ">vriend worden</a>
@@ -75,22 +81,27 @@
                         <a href="{{ url('/werkplaats') }}">werkplaats <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="{{url('werkplaats-overzicht')}}">Reserveer</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="dropdown">
-                        <a href="{{ url('educatie') }}">educatie
-                            @if(count($educationItems) > 0)
-                                <span class="caret"></span>
-                            @endif
-                        </a>
-                        <ul class="dropdown-menu" role="menu">
-                            @foreach($educationItems as $educationItem)
-                            <li><a href="{{ url('educatie/'.$educationItem->id) }}">{!! $educationItem->title !!}</a></li>
-                            @endforeach
+                            <li><a href="{{ route ('mijn-reserveringen') }}">mijn reserveringen</a>
                         </ul>
 
+
+
+
                     </li>
+
+                    {{--<li class="dropdown">--}}
+                        {{--<a href="{{ url('educatie') }}">educatie--}}
+                            {{--@if(count($educationItems) > 0)--}}
+                                {{--<span class="caret"></span>--}}
+                            {{--@endif--}}
+                        {{--</a>--}}
+                        {{--<ul class="dropdown-menu" role="menu">--}}
+                            {{--@foreach($educationItems as $educationItem)--}}
+                            {{--<li><a href="{{ url('educatie/'.$educationItem->id) }}">{!! $educationItem->title !!}</a></li>--}}
+                            {{--@endforeach--}}
+                        {{--</ul>--}}
+
+                    {{--</li>--}}
 
                     <li>
                         <a href="{{ url('/sponsors') }}">sponsoren</a>
@@ -117,9 +128,6 @@
                                         <a target="_blank" href="{{ url('cms/startpagina') }}">cms</a>
                                     </li>
                                 @endif
-                                <li>
-                                    <a href="{{ route ('mijn-reserveringen') }}">mijn reserveringen</a>
-                                </li>
                                 <li>
                                     <a href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
