@@ -1,6 +1,7 @@
 .idea/
 node_modules/
 build/
+/public/images/logos/*.jpg
 /public/storage
 /public/hot
 /storage/*.key
