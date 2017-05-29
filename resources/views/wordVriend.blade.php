@@ -27,7 +27,9 @@
                             @if (Auth::check() && Auth::user()->isfriend == 1)
                             <button type="button" class="btn btn-default" id="vriend-btn"><span id="vriend-a">U bent al een vriend</span></button>
                         @else
-                                <a type="button" class="btn btn-default" id="vriend-btnn" id="vriend-a" href="/vriend-worden-pay">Ja, ik word vriend!</></a>
+
+                                <a type="button" class="btn btn-default" id="vriend-btnn" id="vriend-a" href="/vriend-worden-pay">Ja, ik word vriend!</a>
+
                             @endif
 
                         </div>
