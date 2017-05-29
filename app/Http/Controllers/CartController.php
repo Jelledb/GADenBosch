@@ -107,8 +107,14 @@ class CartController extends Controller
 
     public function paymentRedirect()
     {
-        $products=Product::ProductsInCart()->get();
-        if ($products.length == 0)
+
+        $productsInCart = Product::ProductsInCart()->get();
+        $counter=0;
+        foreach($productsInCart as $product){
+            $counter++;
+        }
+
+        if ($counter == 0)
 
             return Redirect::route('myCart')->with('success', 'De betaling is gelukt!');
         else
