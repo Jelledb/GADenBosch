@@ -109,7 +109,7 @@ Route::group(['prefix' => 'cms', 'middleware' => 'admin'], function () {
     Route::get('/newMenu', 'MenuController@cmsNewMenu');
     Route::get('/nieuwsbrief', 'MenuController@cmsNieuwsbrief');
 
-
+    Route::get('/orders', 'OrderController@index');
 
     Route::get('/vacature', 'VacatureController@getCmsVacature');
     Route::get('/vacature/edit/{id}', 'VacatureController@getCMSRUVacature');

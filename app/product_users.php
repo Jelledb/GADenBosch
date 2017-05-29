@@ -27,7 +27,7 @@ class product_users extends Model
     {
 
         $inq = DB::table('product_users')->where('users_id', Auth::id())->update(['isorder' => '1']);
-        DB::table('product_users')->where('info_id', Auth::id())->update(['info_id' => $infoId]);
+        DB::table('product_users')->where('users_id', Auth::id())->update(['info_id' => $infoId]);
     }
 
 
