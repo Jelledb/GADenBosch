@@ -33,8 +33,8 @@
                         </div>
 
                     </div>
-                    <div class="col-md-7"></div>
-                        @if($counter !== 0)
+                    <div class="col-md-1"></div>
+                        @if($counter != 0)
                             </div>
                             <?php
                                 $counter =0;
@@ -46,6 +46,9 @@
                         @endif
                 @endif
             @endforeach
+            @if($counter == 1)
+                </div>
+            @endif
 
 </div>
 
