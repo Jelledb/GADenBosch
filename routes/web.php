@@ -71,10 +71,13 @@ Route::group(['middleware' => ['auth']], function () {
 Route::group(['prefix' => 'cms', 'middleware' => 'admin'], function () {
 
     Route::resource('news', 'NewsItemController');
+    Route::resource('educatie', 'EducationCMSController');
     Route::get('titel-beschrijving', [
         'as' => 'titel-beschrijving.index',
         'uses' => 'TitleDescriptionController@index'
     ]);
+    Route::post('upload/image', 'ImageUploadController@uploadImage' );
+
     Route::get('titel-beschrijving/edit/{id}', 'TitleDescriptionController@edit');
     Route::patch('titel-beschrijving/update/{id}', 'TitleDescriptionController@update');
 
@@ -87,8 +90,6 @@ Route::group(['prefix' => 'cms', 'middleware' => 'admin'], function () {
     Route::get('/workshop', 'MenuController@cmsWorkshop');
     Route::get('/lijsttentoonstellingen', ['as' => 'lijsttentoonstellingen', 'uses' => 'MenuController@cmslijstTentoonstellingen']);
     Route::get('/workshops', 'MenuController@cmsworkshops');
-    Route::get('/educatie', 'MenuController@cmsEducatie');
-    Route::get('/newEducatie', 'MenuController@cmsNewEducatie');
     Route::get('/Scholen', 'MenuController@cmsSchool');
     Route::get('/Shop', 'MenuController@cmsShop');
     Route::get('/newShopItem', 'MenuController@cmsnewShopItem');
@@ -129,6 +130,8 @@ Route::get('/home', 'HomeController@index');
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/myCart', ['as'=>'/myCart' ,'uses'=>'CartController@index']);
     Route::get('/purchase',['as'=>'product.purchase','uses'=> 'CartController@purchase']);
+    Route::get('/cart-redirect', 'CartController@paymentRedirect');
+    Route::get('/winkel-webhook/{id}','CartController@removeFromCart');
     Route::get('/removeOrder',['as'=>'/removeOrder','uses'=> 'CartController@removeOrder']);
     Route::get('/addtocart/{id}',['uses' => 'ProductsController@getAddToCart','as' => 'product.addToCart']);
 
