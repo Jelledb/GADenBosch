@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\product_users;
+use App\ProductUsersInfo;
 use App\shoppingcart;
 use App\Product;
 use App\Users;
@@ -46,18 +47,36 @@ class CartController extends Controller
         }
 
     }
-    function purchase(){
-//        $toPurchase = new product_users();
-//        $toPurchase->purchase();
-//
-//        $products = Product::order()->get();
+
+    function purchase(Request $request) {
+        // get product users info.
+        $this->validate($request, [
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'email' => 'required',
+            'phone_number' => 'required',
+            'zip_code' => 'required',
+            'street' => 'required',
+            'house_number' => 'required',
+            'city' => 'required'
+        ]);
 
         $totalprice = 0;
         $productsInCart = Product::ProductsInCart()->get();
+
         foreach($productsInCart as $product){
             $totalprice= $totalprice + $product->price;
         }
+
         if (Auth::check()) {
+
+            // create user info.
+            $info = ProductUsersInfo::create($request->all());
+            $info->save();
+
+            $toPurchase = new product_users();
+            $toPurchase->purchase($info->id);
+
             $user = Auth::user();
             $customer = Mollie::api()->customers()->create([
                 "name" => $user->name,
@@ -73,10 +92,15 @@ class CartController extends Controller
                 "webhookUrl" => 'http://gadenbosch.ga/winkel-webhook/' . $toPurchase -> id,
             ]);
 
-        return Redirect::to($payment->getPaymentUrl());
+            return Redirect::to($payment->getPaymentUrl());
         }
         return Redirect::route('login')->with('message', 'Log eerst in of registreer als u nog geen account heeft');
         //return view('product.orders', compact('products'));
+    }
+
+    function showOrders() {
+        $products = Product::order()->get();
+        return view('product.orders', compact('products'));
     }
 
 
