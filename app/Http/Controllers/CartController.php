@@ -37,7 +37,7 @@ class CartController extends Controller
         return view('product.myCart', compact('productsInCart'));
     }
 
-
+    // verwijderd 1 product uit de winkelwagen
     function removeFromCart($productid)
     {
 
@@ -51,7 +51,7 @@ class CartController extends Controller
 
         return redirect()->route('/myCart');
     }
-
+    // purchase plaatst de winkelwagen producten in de orders, en maakt vervolgens de winkelwagen leeg.
     function purchase()
     {
         $toPurchase = new product_users();
@@ -72,7 +72,7 @@ class CartController extends Controller
 
 
     }
-
+    // verwijderd alle producten in orders
     function removeOrder()
     {
         $toRemove = new product_users();
