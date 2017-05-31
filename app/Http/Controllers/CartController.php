@@ -31,43 +31,60 @@ class CartController extends Controller
     {
 
 
-
         $productsInCart = Product::ProductsInCart()->get();
-
 
 
         return view('product.myCart', compact('productsInCart'));
     }
 
 
-    function removeFromCart($productid){
+    function removeFromCart($productid)
+    {
 
 
-       $toRemove = new product_users();
+        $toRemove = new product_users();
 
-       $toRemove->remove($productid);
+        $toRemove->remove($productid);
 
         $productsInCart = Product::ProductsInCart()->get();
 
 
         return redirect()->route('/myCart');
     }
-    function purchase(){
+
+    function purchase()
+    {
         $toPurchase = new product_users();
         $toPurchase->purchase();
 
         $products = Product::order()->get();
         $isAdmin = Auth::user()->isAdmin();
 
-        return view('product.orders', compact('products','isAdmin'));
+        $toRemove = new product_users();
 
+        $productsInCart = Product::ProductsInCart()->get();
+        foreach ($productsInCart as $i) {
+            $toRemove->remove($i->id);
+        }
+
+
+        return view('product.orders', compact('products', 'isAdmin'));
 
 
     }
-    function removeOrder(){
+
+    function removeOrder()
+    {
         $toRemove = new product_users();
         $toRemove->removeOrder();
 
         return redirect()->route('/myCart');
+    }
+
+    function showOrders()
+    {
+        $products = Product::order()->get();
+        $isAdmin = Auth::user()->isAdmin();
+        return view('product.orders', compact('products', 'isAdmin'));
     }
 }
