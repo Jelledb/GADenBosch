@@ -16,8 +16,10 @@ class Vacatures extends Migration
         Schema::create('vacatures',function(Blueprint $table){
             $table->increments('id');
             $table->string('title');
-            $table->string('description');
-            $table->date('datum');
+            $table->string('short_description');
+            $table->text('description');
+            $table->timestamp('datum');
+            $table->integer('show')->default(0);
         });
     }
 

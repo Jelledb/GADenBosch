@@ -14,10 +14,11 @@ class CreateOveronsTable extends Migration
     public function up()
     {
         //
-        Schema::create('overons', function($table)
+        Schema::create('over_ons', function($table)
         {
             $table->increments('id');
-            $table->text('content');
+            $table->text('content_right');
+            $table->text('content_left');
             $table->text('file_location');
         });
     }
