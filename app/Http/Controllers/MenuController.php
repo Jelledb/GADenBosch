@@ -7,6 +7,7 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use App\Products;
 use App\sponsors;
+use App\images_sliders;
 
 class MenuController extends Controller
 {
@@ -72,6 +73,10 @@ class MenuController extends Controller
     public function cmssponsors(){
         $sponsors = sponsors::all();
         return view('cms/sponsor/index')->with('sponsors', $sponsors);
+    }
+    public function cmsFotosSlider(){
+        $fotos = images_sliders::all();
+        return view('cms/image-slider/index')->with('items', $fotos);
     }
 
     public function cmsMenu(){
