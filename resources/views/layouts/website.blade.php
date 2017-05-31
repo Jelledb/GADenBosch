@@ -67,7 +67,7 @@
 
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="{{url('/myCart')}}">Winkelwagen</a></li>
-                            <li><a href="{{url('/purchase')}}">Orders</a></li>
+                            <li><a href="{{url('/orders')}}">Orders</a></li>
                         </ul>
 
                     </li>
