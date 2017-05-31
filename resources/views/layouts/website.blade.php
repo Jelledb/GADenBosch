@@ -89,19 +89,19 @@
 
                     </li>
 
-                    {{--<li class="dropdown">--}}
-                        {{--<a href="{{ url('educatie') }}">educatie--}}
-                            {{--@if(count($educationItems) > 0)--}}
-                                {{--<span class="caret"></span>--}}
-                            {{--@endif--}}
-                        {{--</a>--}}
-                        {{--<ul class="dropdown-menu" role="menu">--}}
-                            {{--@foreach($educationItems as $educationItem)--}}
-                            {{--<li><a href="{{ url('educatie/'.$educationItem->id) }}">{!! $educationItem->title !!}</a></li>--}}
-                            {{--@endforeach--}}
-                        {{--</ul>--}}
+                    <li class="dropdown">
+                        <a href="{{ url('educatie') }}">educatie
+                            @if(count($educationItems) > 0)
+                                <span class="caret"></span>
+                            @endif
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            @foreach($educationItems as $educationItem)
+                            <li><a href="{{ url('educatie/'.$educationItem->id) }}">{!! $educationItem->title !!}</a></li>
+                            @endforeach
+                        </ul>
 
-                    {{--</li>--}}
+                    </li>
 
                     <li>
                         <a href="{{ url('/sponsors') }}">sponsoren</a>

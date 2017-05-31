@@ -4,29 +4,33 @@
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->
         <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-            <li data-target="#myCarousel" data-slide-to="3"></li>
+            <?php $counter = 0; ?>
+            @foreach($sliderImages as $sliderImage)
+                <?php if($counter == 0){?>
+
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <?php } else {?>
+                <li data-target="#myCarousel" data-slide-to="<?php echo $counter ?>"></li>
+                <?php }
+                $counter = $counter + 1; ?>
+            @endforeach
         </ol>
 
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
-            <div class="item active">
-                <img src="{{asset('images/hp_home1.jpg')}}" alt="home1" style="width:100%;">
-            </div>
-
-            <div class="item">
-                <img src="{{asset('images/hp_home2.jpg')}}" alt="Home2" style="width:100%;">
-            </div>
-
-            <div class="item">
-                <img src="{{asset('images/hp_home5.jpg')}}" alt="Home5" style="width:100%;">
-            </div>
-
-            <div class="item">
-                <img src="{{asset('images/hp_werkplaatsfoto web 4.jpg')}}" alt="Werkplaatsfoto" style="width:100%;">
-            </div>
+            <?php $counter = 0; ?>
+            @foreach($sliderImages as $sliderImage)
+                <?php if($counter == 0){?>
+                    <div class="item active">
+                        <img src="{{ $sliderImage->foto }}" alt="home1" style='width:100%; margin-top: -14%' />
+                    </div>
+                <?php } else { ?>
+                    <div class="item">
+                        <img src="{{ $sliderImage->foto }}" alt="home1" style='width:100%; margin-top: -14%' />
+                    </div>
+                <?php }
+                $counter = $counter + 1; ?>
+            @endforeach
         </div>
 
         <!-- Left and right controls -->
