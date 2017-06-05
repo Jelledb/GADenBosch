@@ -80,10 +80,13 @@
 
 
                 </div>
+
+                @if($isAdmin == true)
                 <div class="purchase">
                     <a href="{{route('/removeOrder')}}"
                        class="btn-success btn-lg" role="button">remove order</a>
                 </div>
+                @endif
                 <br>
             </div>
         </div>

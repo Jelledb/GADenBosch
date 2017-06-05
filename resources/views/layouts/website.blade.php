@@ -28,6 +28,7 @@
     <script src="{{ asset('js/jquery.bxslider.min.js') }}"></script>
     <script src="{{ asset('js/jquery.easing.1.3.js') }}"></script>
     <script src="{{ asset('js/slider-script.js') }}"></script>
+    <script src="{{ asset('js/zoomable-image.js') }}"></script>
     <!-- bxSlider CSS file -->
     <link rel="stylesheet" type="text/css" href="{{ asset('css/slider_style.css') }}" />
 
@@ -203,6 +204,15 @@
     </div>
     <div class="copyright-statement text-center">
         <p>Copyright © 2017-20<?php echo date("y") ?> Grafisch Atelier Den Bosch. Versie 0.3</p>
+    </div>
+
+    <div id="img-modal" class="modal">
+
+        <!-- The Close Button -->
+        <span class="close-modal">&times;</span>
+
+        <!-- Modal Content (The Image) -->
+        <img class="modal-content" id="modal-image">
     </div>
 </footer>
 </body>

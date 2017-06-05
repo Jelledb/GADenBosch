@@ -1,6 +1,6 @@
 @extends('layouts.website')
 @section('content')
-    <div class="container">
+    <div class="container zoomable">
         <h2 class="col-md-offset-2">{!! $page->title !!}</h2>
         <br><br>
         <div class="row">
