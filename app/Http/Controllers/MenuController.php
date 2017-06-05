@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\expositions;
+use App\Expositions;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use App\Products;
@@ -33,13 +33,13 @@ class MenuController extends Controller
         return view('cms/tentoonstellingen/create');
     }
     public function cmsEditTentoonstelling($id){
-        $exposition = expositions::where('id', $id)
+        $exposition = Expositions::where('id', $id)
             ->take(1)
             ->get();
         return view('cms/tentoonstellingen/edit')->with('editExpo', $exposition);
     }
     public function cmslijstTentoonstellingen(){
-        $expositions = expositions::orderBy('id', 'desc')
+        $expositions = Expositions::orderBy('id', 'desc')
             ->get();
         return view('cms/tentoonstellingen/index')->with('allExpositions', $expositions);
     }

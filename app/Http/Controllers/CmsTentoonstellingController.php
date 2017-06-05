@@ -28,6 +28,7 @@ class CmsTentoonstellingController extends Controller
 
         if(!$validator->fails()){
             $exposition = new Expositions;
+            $exposition->timestamps = false;
 
             $exposition->title = $input['title'];
             if(!empty($input['subtitle'])) {
@@ -43,8 +44,8 @@ class CmsTentoonstellingController extends Controller
                 $exposition->introduction = "";
             }
             $exposition->text = $input['text'];
-            $exposition->date_from = $input['date_from'];
-            $exposition->date_to = $input['date_to'];
+            $exposition->date_from = date('Y-m-d', strtotime($input['date_from']));
+            $exposition->date_to = date('Y-m-d', strtotime($input['date_to']));
             $exposition->location = $input['location'];
             $exposition->toon = $input['toon'];
             $exposition->open_times = $input['open_times'];
@@ -89,6 +90,7 @@ class CmsTentoonstellingController extends Controller
         ]);
 
         if(!$validator->fails() && $exposition != null){
+            $exposition->timestamps = false;
             $exposition->title = $input['title'];
             if(!empty($input['subtitle'])) {
                 $exposition->subtitle = $input['subtitle'];
@@ -103,8 +105,8 @@ class CmsTentoonstellingController extends Controller
                 $exposition->introduction = "";
             }
             $exposition->text = $input['text'];
-            $exposition->date_from = $input['date_from'];
-            $exposition->date_to = $input['date_to'];
+            $exposition->date_from = date('Y-m-d', strtotime($input['date_from']));
+            $exposition->date_to = date('Y-m-d', strtotime($input['date_to']));
             $exposition->location = $input['location'];
             $exposition->toon = $input['toon'];
             $exposition->open_times = $input['open_times'];
@@ -124,7 +126,7 @@ class CmsTentoonstellingController extends Controller
             }
             $exposition->template = $input['optradio'];
 
-            $exposition->save(['timestamps' => false]);
+            $exposition->save();
             return Redirect::route('bewerktentoonstelling', $id)->with('$editExpo', $exposition);
         }
 

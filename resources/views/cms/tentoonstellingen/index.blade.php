@@ -18,32 +18,27 @@
     <div class="row">
         <div class="container">
 
-            <table class="table">
-                <thead>
+            <table class="table table-bordered">
                 <tr>
-                    <th class="col-md-1">ID</th>
-                    <th class="col-md-1">Toon</th>
-                    <th class="col-md-2">Datum van</th>
-                    <th class="col-md-2">Datum tot</th>
-                    <th class="col-md-5">Titel</th>
+                    <th>ID</th>
+                    <th>Toon</th>
+                    <th>Datum van</th>
+                    <th>Datum tot</th>
+                    <th>Titel</th>
+                    <th width="280px">Actie</th>
                 </tr>
-                </thead>
-                <tbody>
                 @foreach($allExpositions as $expos)
                     <tr>
                         <td>
                             <p>{{ $expos->id }}</p>
                         </td>
                         <td>
-                            <div class="checkbox toonbutton">
-                                <label>
-                                    @if($expos->visible == 1)
-                                        <input type="checkbox" value="{{ $expos->id }}" checked disabled>
-                                    @else
-                                        <input type="checkbox" value="{{ $expos->id }}" disabled>
-                                    @endif
-                                </label>
-                            </div>
+                            @if($expos->toon == "yes")
+                                Ja
+                            @endif
+                            @if($expos->toon == "no")
+                                Nee
+                            @endif
                         </td>
                         <td>
                             <form>
@@ -57,12 +52,11 @@
                         </td>
                         <td>{!! $expos->title !!}</td>
                         <td>
-                            <a href="bewerktentoonstelling/{{$expos->id}}"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-                            <a href="{{route('deletetentoonstelling', $expos->id)}}"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                            <a class="btn btn-primary" href="bewerktentoonstelling/{{$expos->id}}">Bewerk</a>
+                            <a class="btn btn-danger" href="{{route('deletetentoonstelling', $expos->id)}}">Verwijder</a>
                         </td>
                     </tr>
                 @endforeach
-                </tbody>
             </table>
         </div>
     </div>

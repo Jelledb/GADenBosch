@@ -17,9 +17,9 @@
                 <table cellspacing="10">
                     @foreach($allExpositions as $expos)
                         <tr>
-                            <td><strong>{{ $expos->date_from }}</strong></td>
+                            <td><strong>{{ date('d-m-Y', strtotime($expos->date_from)) }}</strong></td>
                             <td>&nbsp;t/m&nbsp;</td>
-                            <td><strong>{{ $expos->date_to }}</strong></td>
+                            <td><strong>{{ date('d-m-Y', strtotime($expos->date_to)) }}</strong></td>
                             <td>&nbsp;</td>
                             <td><a href="/agendaitem/{{ $expos->id }}">{{ preg_replace('/ {2,}/', ' ', preg_replace('/<[^>]*>/', ' ', $expos->title)) }}</a></td>
                         </tr>
