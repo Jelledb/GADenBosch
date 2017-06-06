@@ -142,6 +142,10 @@ footer {
     padding: 10px;
 }
 
+.no-item{
+    text-align: center;
+    margin: auto;
+}
 /* Footer styling. */
 footer {
     width: 100%;
