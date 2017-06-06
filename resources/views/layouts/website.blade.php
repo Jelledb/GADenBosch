@@ -29,6 +29,7 @@
     <script src="{{ asset('js/jquery.easing.1.3.js') }}"></script>
     <script src="{{ asset('js/slider-script.js') }}"></script>
     <script src="{{ asset('js/zoomable-image.js') }}"></script>
+    <script src="{{ asset('js/tooltip.js') }}" defer></script>
     <!-- bxSlider CSS file -->
     <link rel="stylesheet" type="text/css" href="{{ asset('css/slider_style.css') }}" />
 
