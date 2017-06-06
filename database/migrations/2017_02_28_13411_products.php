@@ -14,8 +14,6 @@ class Products extends Migration
      */
     public function up()
     {
-
-
         Schema::create('products', function(Blueprint $table){
             $table->increments('id');
             $table->string('name');
@@ -23,11 +21,7 @@ class Products extends Migration
             $table->string('description_short');
             $table->string('alt');
             $table->string('image');
-            $table->integer('price');
-
-
-
-
+            $table->decimal('price');
         });
     }
 

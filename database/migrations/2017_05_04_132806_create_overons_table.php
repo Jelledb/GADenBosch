@@ -19,7 +19,6 @@ class CreateOveronsTable extends Migration
             $table->increments('id');
             $table->text('content_right');
             $table->text('content_left');
-            $table->text('file_location');
         });
     }
 
