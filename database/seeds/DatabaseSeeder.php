@@ -15,6 +15,8 @@ class DatabaseSeeder extends Seeder
         // $this->call(UsersTableSeeder::class);
 
         $this->seedRoles();
+        $this->seedOverOns();
+        $this->seedEducation();
         $this->seedWorkplaces();
         $this->seedRouteMetaTags();
 
@@ -24,6 +26,12 @@ class DatabaseSeeder extends Seeder
         DB::table('roles')->insert([['id' => 1, 'rolename' => 'admin'],['id' => 2, 'rolename' => 'vrijwilliger'],['id' => 3, 'rolename' => 'klant']]);
     }
 
+    private function seedOverOns(){
+        DB::table('over_ons')->insert(['id' => 1, 'content_right' => '', 'content_left' => '']);
+    }
+    private function seedEducation(){
+        DB::table('educaties')->insert(['id' => 1, 'title' => '', 'content_left' => '', 'content_right' => '']);
+    }
 
 
     // Seed script voor werkplaatsen. S.V.P. niet verwijderen!!
