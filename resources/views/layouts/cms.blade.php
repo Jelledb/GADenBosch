@@ -55,22 +55,19 @@
                     <li><a href="{{ url('cms/fotos-slider') }}">Foto's startpagina slider</a></li>
                 </ul>
                 <h5><i class="glyphicon"></i>
-                    <!--<small><b>MANAGEMENT</b></small>-->
                 </h5>
                 <ul class="nav nav-pills nav-stacked">
-
                     <li><a href="{{ url('cms/lijsttentoonstellingen') }}">Tentoonstellingen</a></li>
                     <li><a href="{{ url('cms/news') }}">Nieuws</a></li>
 
                     <li><a href="{{ url('cms/educatie') }}">Educatie</a></li>
                     <li><a href="{{ url('cms/Shop') }}">Shop</a></li>
                     <li><a href="{{ url('cms/sponsors')}}">Sponsoren</a></li>
-                    <li><a href="{{ url('cms/informatie') }}">Informatie</a></li>
+                    <li><a href="{{ url('cms/informatie') }}">Over ons</a></li>
                     <li><a href="{{ url('cms/vacature') }}">Vacature</a></li>
                     <li><a href="{{ url('cms/titel-beschrijving') }}">Titel en beschrijvingen</a></li>
                     <li><a href="{{ url('cms/orders') }}">Orders</a></li>
                 </ul>
-                    <!--<li><a href="#">Footer</a></li>-->
                 <h5><i class="glyphicon"></i>
                 </h5>
 
