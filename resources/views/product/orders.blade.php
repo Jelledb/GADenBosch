@@ -16,6 +16,11 @@
                     <div class="panel-heading"><h1 style="text-align: center">Ordered products</h1></div>
 
                     <div class="panel-body">
+                        @if(Session::has('success'))
+                            <div class="alert alert-success">De betaling is gelukt! Uw bestelling is geplaatst</div>
+                        @elseif(Session::has('fail'))
+                            <div class="alert alert-warning">Betaling is mislukt</div>
+                        @endif
                         <table>
 
 
@@ -80,10 +85,13 @@
 
 
                 </div>
+
+                @if($isAdmin == true)
                 <div class="purchase">
                     <a href="{{route('/removeOrder')}}"
                        class="btn-success btn-lg" role="button">remove order</a>
                 </div>
+                @endif
                 <br>
             </div>
         </div>

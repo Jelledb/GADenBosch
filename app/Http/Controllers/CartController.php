@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\product_users;
-use App\ProductUsersInfo;
 use App\shoppingcart;
 use App\Product;
 use App\Users;
@@ -32,100 +31,106 @@ class CartController extends Controller
 
     function index()
     {
+
+
         $productsInCart = Product::ProductsInCart()->get();
+
 
         return view('product.myCart', compact('productsInCart'));
     }
 
 
-    function removeFromCart($productid){
-        $payment = Mollie::api()->payments()->get(request('id'));
-        if ($payment->isPaid()) {
-            $toRemove = new product_users();
-            $toRemove->remove($productid);
+    function removeFromCart($productid)
+    {
 
-            $productsInCart = Product::ProductsInCart()->get();
-        }
 
-    }
+        $toRemove = new product_users();
 
-    function purchase(Request $request) {
-        // get product users info.
-        $this->validate($request, [
-            'first_name' => 'required',
-            'last_name' => 'required',
-            'email' => 'required',
-            'phone_number' => 'required',
-            'zip_code' => 'required',
-            'street' => 'required',
-            'house_number' => 'required',
-            'city' => 'required'
-        ]);
+        $toRemove->remove($productid);
 
-        $totalprice = 0;
         $productsInCart = Product::ProductsInCart()->get();
 
+
+        return redirect()->route('/myCart');
+    }
+
+    function purchase()
+    {
+        $totalprice = 0;
+        $productsInCart = Product::ProductsInCart()->get();
         foreach($productsInCart as $product){
             $totalprice= $totalprice + $product->price;
         }
-
         if (Auth::check()) {
 
-            // create user info.
-            $info = ProductUsersInfo::create($request->all());
-            $info->save();
-
             $toPurchase = new product_users();
-            $toPurchase->purchase($info->id);
-
+            $toPurchase->purchase();
             $user = Auth::user();
             $customer = Mollie::api()->customers()->create([
                 "name" => $user->name,
                 "email" => $user->email,
             ]);
-
             $payment = Mollie::api()->payments()->create([
                 "amount" => $totalprice,
                 'customerId' => $customer->id,
                 'recurringType' => 'first',
                 "description" => "Betaling GA Den Bosch",
                 "redirectUrl" => "http://gadenbosch.ga/cart-redirect",
-                "webhookUrl" => 'http://gadenbosch.ga/winkel-webhook/' . $toPurchase -> id,
+                "webhookUrl" => 'http://gadenbosch.ga/winkel-webhook/',
             ]);
-
             return Redirect::to($payment->getPaymentUrl());
         }
         return Redirect::route('login')->with('message', 'Log eerst in of registreer als u nog geen account heeft');
-        //return view('product.orders', compact('products'));
+
+
     }
 
-    function showOrders() {
-        $products = Product::order()->get();
-        return view('product.orders', compact('products'));
-    }
+    function paymentUpdate()
+    {
+        $payment = Mollie::api()->payments()->get(request('id'));
+        if ($payment->isPaid()) {
+            $toPurchase = new product_users();
+            $toPurchase->purchase();
 
+            $products = Product::order()->get();
+            $isAdmin = Auth::user()->isAdmin();
+
+            $toRemove = new product_users();
+
+            $productsInCart = Product::ProductsInCart()->get();
+            foreach ($productsInCart as $i) {
+                $toRemove->remove($i->id);
+            }
+        }
+
+        return view('product.orders', compact('products', 'isAdmin'));
+    }
 
     public function paymentRedirect()
     {
-
         $productsInCart = Product::ProductsInCart()->get();
         $counter=0;
         foreach($productsInCart as $product){
             $counter++;
         }
-
         if ($counter == 0)
-
-            return Redirect::route('/myCart')->with('success', 'De betaling is gelukt!');
+            return Redirect::route('/orders')->with('success', 'De betaling is gelukt!');
         else
-            return Redirect::route('/myCart')->with('fail', 'De betaling is mislukt!');
+            return Redirect::route('/orders')->with('fail', 'De betaling is mislukt!');
     }
 
-    function removeOrder(){
-
+    function removeOrder()
+    {
         $toRemove = new product_users();
         $toRemove->removeOrder();
-        return redirect()->route('/myCart');
 
+        return redirect()->route('/myCart');
+    }
+
+    function showOrders()
+    {
+        $products = Product::order()->get();
+        $isAdmin = Auth::user()->isAdmin();
+        return view('product.orders', compact('products', 'isAdmin'));
     }
 }
