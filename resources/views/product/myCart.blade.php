@@ -14,7 +14,7 @@
                     <div class="panel-heading">Dashboard</div>
 
 
-                    <div class="panel-heading"><h1 style="text-align: center">Shopping cart</h1></div>
+                    <div class="panel-heading"><h1 style="text-align: center">Winkelwagen</h1></div>
 
                     <div class="panel-body">
                         <table>
@@ -32,7 +32,7 @@
                                             <br/>
                                             <br>
                                             <a href="{{route('product.remove',['id'=>$product->id])}}"
-                                               class="btn-success btn-lg" role="button">remove</a>
+                                               class="btn-success btn-lg" role="button">verwijder</a>
                                             <br>
                                             <br>
                                             <?php
@@ -53,7 +53,7 @@
                                                 <br/>
                                                 <br>
                                                 <a href="{{route('product.remove',['id'=>$product->id])}}"
-                                                   class="btn-success btn-lg" role="button">remove</a>
+                                                   class="btn-success btn-lg" role="button">verwijder</a>
                                                 <br>
                                                 <br>
                                                 <?php
@@ -79,14 +79,14 @@
                             <?php  $totalprice = $totalprice + $product->price ?>
                         @endforeach
 
-                        Total price: <label class="label label-default">{{$totalprice}}</label>
+                        Totaalprijs: <label class="label label-default">{{$totalprice}}</label>
 
 
                     </div>
                     <br>
                     <div class="purchase">
                         <a href="{{route('product.purchase')}}"
-                           class="btn-success btn-lg" role="button">purchase</a>
+                           class="btn-success btn-lg" role="button">koop</a>
                     </div>
                     <br>
 

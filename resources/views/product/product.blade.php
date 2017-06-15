@@ -12,7 +12,7 @@
             <div class="col-md-8">
                 <div class="panel panel-default">
 
-                    <div class="panel-heading"><h1 style="text-align: center">Products</h1></div>
+                    <div class="panel-heading"><h1 style="text-align: center">Producten</h1></div>
                     @include('partials.all-products')
                     <div class="panel-body">
 

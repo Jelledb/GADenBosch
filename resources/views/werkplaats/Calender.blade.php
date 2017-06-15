@@ -34,7 +34,7 @@
             <div class="col-md-1">
                 <ul style="list-style: none" class="dates">
 
-                    <li class=h4>legenda</li>
+                    <li data-toggle="tooltip" title="De legenda geeft de drukte aan met een kleur"  class=h4>legenda</li>
                     <li id="good" class="smallerfont">rustig</li>
                     <li id="normal" class="smallerfont">normaal</li>
                     <li id="bad" class="smallerfont">druk</li>
@@ -75,7 +75,7 @@ class Calender
     }
 
     /********************* PROPERTY ********************/
-    private $dayLabels = array("Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun");
+    private $dayLabels = array("Ma", "Di", "Wo", "Do", "Vr", "Zat", "Zon");
 
     private $currentYear = 0;
 
@@ -219,10 +219,10 @@ class Calender
         $preYear = $this->currentMonth == 1 ? intval($this->currentYear) - 1 : $this->currentYear;
 
         return
-            '<div class="header">' .
-            '<a class="prev" href="' . $this->naviHref . '?month=' . sprintf('%02d', $preMonth) . '&year=' . $preYear . '">Prev</a>' .
+            '<div data-toggle="tooltip" title="Selecteer een dag in de kalender om een werkplek te reserveren" class="header">' .
+            '<a  data-toggle="tooltip" title="Ga naar de vorige maand" class="prev" href="' . $this->naviHref . '?month=' . sprintf('%02d', $preMonth) . '&year=' . $preYear . '">Prev</a>' .
             '<span class="title">' . date('Y M', strtotime($this->currentYear . '-' . $this->currentMonth . '-1')) . '</span>' .
-            '<a class="next" href="' . $this->naviHref . '?month=' . sprintf("%02d", $nextMonth) . '&year=' . $nextYear . '">Next</a>' .
+            '<a data-toggle="tooltip" title="Ga naar de volgende maand"  class="next" href="' . $this->naviHref . '?month=' . sprintf("%02d", $nextMonth) . '&year=' . $nextYear . '">Next</a>' .
             '</div>';
     }
 
