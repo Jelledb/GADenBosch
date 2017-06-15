@@ -126,6 +126,8 @@ Route::group(['prefix' => 'cms', 'middleware' => 'admin'], function () {
     Route::post('/vacature/create', 'VacatureController@create');
     Route::get('/vacature/delete/{id}', 'VacatureController@delete');
     Route::post('/vacature/toon/{id}', 'VacatureController@updateToon');
+
+    Route::get('/reserveringen', 'ReserveringenController@showView');
 });
 
 
