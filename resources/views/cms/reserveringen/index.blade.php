@@ -18,33 +18,26 @@
 
         <table class="table table-bordered">
             <tr>
-                <th>#</th>
-                <th>Titel</th>
-                <th>Foto</th>
-                <th>Website</th>
-                <th>Zichtbaar</th>
-                <th width="280px">Actie</th>
+                <th>Werkplaats</th>
             </tr>
-            {{--@foreach ($sponsors as $sponsor)--}}
-                {{--<tr>--}}
-                    {{--<td>{{ $sponsor->id }}</td>--}}
-                    {{--<td>{{ $sponsor->name }}</td>--}}
-                    {{--<td>{{ $sponsor->photo }}</td>--}}
-                    {{--<td>{{ $sponsor->website }}</td>--}}
-                    {{--<td>--}}
-                        {{--@if($sponsor->visible == "yes")--}}
-                            {{--Ja--}}
-                        {{--@endif--}}
-                        {{--@if($sponsor->visible == "no")--}}
-                            {{--Nee--}}
-                        {{--@endif--}}
-                    {{--</td>--}}
-                    {{--<td>--}}
-                        {{--<a class="btn btn-primary" href="{{ route('bewerksponsor', $sponsor->id) }}">Bewerk</a>--}}
-                        {{--<a class="btn btn-danger" href="{{ route('deletesponsor', $sponsor->id) }}">Verwijder</a>--}}
-                    {{--</td>--}}
-                {{--</tr>--}}
-            {{--@endforeach--}}
+            <tr>
+                <td>
+                <select class="form-group" name="workspace_name">
+                    @foreach($workspaces as $workspace)
+                        <option value="{{$workspace->id}}">{{$workspace->name}}</option>
+                    @endforeach
+                </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    {{-- TODO::Data dat uit de select komt hierin stoppen.  --}}
+                </td>
+                <td>
+                    {{-- Delete button hier --}}
+                </td>
+            </tr>
+
         </table>
     </div>
 @endsection
