@@ -9,13 +9,13 @@
             <li class="breadcrumb-item active">Werkplaatsen</li>
         </ol>
         <div class="col-md-3">
-            <div class="panel panel-default">
+            <div data-toggle="tooltip" title="selecteer een werkplaats uit de onderstaande knoppen"  class="panel panel-default">
                 <div>
-                    <h1 class="text-center">Werkplaatsen</h1>
+                    <h1  class="text-center">Werkplaatsen</h1>
                     <br/>
                 </div>
                 <div class="workspaces">
-                    Klik op een van de werkplaatsen om te beginnen met reserveren! <br/> <br/>
+                    <br/> <br/>
                     <ul>
                         @foreach($workspaces as $workspace)
                             <ul>
@@ -29,9 +29,9 @@
         </div>
         <div class="col-md-9">
             <div class="panel panel-default">
-                <h1 class="text-center">Plattegrond</h1>
+                <h1  class="text-center">Plattegrond</h1>
                 <br>
-                <img src="{{asset('images/werkplaats-overzicht.png')}}" alt="plattegrond" class="plattegrond">
+                <img src="{{asset('images/werkplaats-overzicht.png')}}" alt="plattegrond" class="plattegrond" >
             </div>
         </div>
     </div>

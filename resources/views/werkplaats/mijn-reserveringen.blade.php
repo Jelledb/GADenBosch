@@ -6,7 +6,7 @@
     <div class="container">
         <div class="panel panel-default">
             <div class="row">
-                <h1 class="centerH1"> Mijn reserveringen</h1>
+                <h1  class="centerH1"> Mijn reserveringen</h1>
                 <br>
                 <div class="col-md-8 col-md-offset-2">
                     <table id="time-table">
@@ -34,7 +34,7 @@
                                 <th>{{$dateOut}}</th>
                                 <th>{{$type}}</th>
                                 <th>{{$size}}</th>
-                                <th><a class="btn btn-danger btn-block" href="delete-reservering/{{$id}}">verwijder </a>
+                                <th><a data-toggle="tooltip" title="verwijder deze reservering" class="btn btn-danger btn-block" href="delete-reservering/{{$id}}">verwijder </a>
                                 </th>
                             </tr>
                         @endforeach
