@@ -7,12 +7,12 @@
 
 
     <div class="container">
-
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-12">
                 <div class="panel panel-default">
 
-                    <div class="panel-heading"><h1 style="text-align: center">Producten</h1></div>
+                    <div class="panel-heading"><h3 style="text-align: center">Producten</h3></div>
+
                     @include('partials.all-products')
                     <div class="panel-body">
 

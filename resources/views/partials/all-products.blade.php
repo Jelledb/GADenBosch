@@ -7,19 +7,19 @@ $counter = 0;
         @if ($counter === 0)
             <tr>
                 <td>
-                    <h1> {{ $product->name }} </h1>
+                    <h4 class="text-center"> {{ $product->name }} </h4>
                     <br/>
 
-                    <a href="{{ url('product/'. $product->id) }}">{!! Html::image(asset("images/".$product->image)) !!}</a>
+                    <a href="{{ url('product/'. $product->id) }}" class="product-image">{!! Html::image(asset("images/".$product->image)) !!}</a>
                     <br/>
                     {{ $product->description_short }}
                     <br/>
                     <br/>
-                    {{ $product->price }}
+                    € {{ $product->price }}
                     <br/>
                     <br>
                     <a href="{{route('product.addToCart',['id'=>$product->id])}}"
-                       class="btn-success btn-lg" role="button">Add To Cart </a>
+                       class="btn-success btn-lg" role="button">Zet in winkelwagen</a>
                     <br>
                     <br>
                     <?php
@@ -32,19 +32,19 @@ $counter = 0;
 
                 @else
                     <td>
-                        <h1> {{ $product->name }} </h1>
+                        <h4 class="text-center"> {{ $product->name }} </h4>
                         <br/>
-                        <a href="{{ url('product/'. $product->id) }}">{!! Html::image(asset("images/".$product->image)) !!}</a>
+                        <a href="{{ url('product/'. $product->id) }}" class="product-image">{!! Html::image(asset("images/".$product->image)) !!}</a>
 
                         <br/>
                         {{ $product->description_short }}
                         <br/>
                         <br/>
-                        {{ $product->price }}
+                        € {{ $product->price }}
                         <br/>
                         <br>
                         <a href="{{route('product.addToCart', ['id'=>$product->id])}}"
-                           class="btn-success btn-lg" role="button">Add To Cart</a>
+                           class="btn-success btn-lg" role="button">Zet in winkelwagen</a>
                         <br>
                         <br>
                         <?php
