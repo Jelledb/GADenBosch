@@ -194,7 +194,7 @@ class Calender
 
             $cellContent = null;
 
-            return;
+
 
         }
 
