@@ -127,9 +127,10 @@ Route::group(['prefix' => 'cms', 'middleware' => 'admin'], function () {
     Route::get('/vacature/delete/{id}', 'VacatureController@delete');
     Route::post('/vacature/toon/{id}', 'VacatureController@updateToon');
 
-    Route::get('/reserveringen', 'CMS\ReserveringenController@showView');
+    Route::get('/reserveringen', ['as' => 'reserveringen','uses' => 'CMS\ReserveringenController@showView']);
     Route::get('/reserveringen/{id}', 'CMS\ReserveringenController@getReservationsFrom');
     Route::get('/deleteReservering/{id}', 'CMS\ReserveringenController@deleteReservation');
+
 });
 
 

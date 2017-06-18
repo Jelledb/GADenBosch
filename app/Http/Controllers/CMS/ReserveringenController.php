@@ -25,9 +25,9 @@ class ReserveringenController extends Controller
     public function deleteReservation($id){
 
         $toDelete = Reservation::find($id);
-        $toDelete->delete();
+       $toDelete->delete();
 
-        return redirect()->route('reserveringen.index')->with('success', 'De reservering is verwijderd.');
+        return redirect()->route('reserveringen')->with('success', 'De reservering is verwijderd.');;
 
     }
 
