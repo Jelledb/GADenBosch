@@ -17,7 +17,7 @@ class CreateWorkspaceTable extends Migration
         Schema::create('workspaces', function(Blueprint $table) {
            $table->increments('id');
            $table->string('name');
-           $table->string('size');
+           $table->string('size')->nullable();
         });
     }
 

@@ -13,7 +13,11 @@ class EducationController extends Controller
         return view('educatie')->with('page', $page);
     }
     public function education(){
-        $page = Educatie::find(1);
-        return view('educatie')->with('page', $page);
+        $page = Educatie::all();
+        if($page != null){
+            $currentpage = $page[0];
+        }
+
+        return view('educatie')->with('page', $currentpage);
     }
 }
