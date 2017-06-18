@@ -70,44 +70,44 @@ Route::group(['middleware' => ['auth']], function () {
 /* CMS routes. */
 Route::group(['prefix' => 'cms', 'middleware' => 'admin'], function () {
 
-    Route::resource('news', 'NewsItemController');
-    Route::resource('educatie', 'EducationCMSController');
+    Route::resource('news', 'Cms\NewsItemController');
+    Route::resource('educatie', 'Cms\EducationCMSController');
     Route::get('titel-beschrijving', [
         'as' => 'titel-beschrijving.index',
-        'uses' => 'TitleDescriptionController@index'
+        'uses' => 'Cms\TitleDescriptionController@index'
     ]);
     Route::post('upload/image', 'ImageUploadController@uploadImage' );
 
-    Route::get('titel-beschrijving/edit/{id}', 'TitleDescriptionController@edit');
-    Route::patch('titel-beschrijving/update/{id}', 'TitleDescriptionController@update');
+    Route::get('titel-beschrijving/edit/{id}', 'Cms\TitleDescriptionController@edit');
+    Route::patch('titel-beschrijving/update/{id}', 'Cms\TitleDescriptionController@update');
 
     Route::get('/startpagina', 'MenuController@cmshome');
     Route::get('/nieuwtentoonstelling', 'MenuController@cmsTentoonstellingen');
-    Route::post('/nieuwtentoonstelling', 'CmsTentoonstellingController@newTentoonstelling');
+    Route::post('/nieuwtentoonstelling', 'Cms\CmsTentoonstellingController@newTentoonstelling');
     Route::get('/bewerktentoonstelling/{id}', 'MenuController@cmsEditTentoonstelling');
-    Route::post('/bewerktentoonstelling/{id}', ['as' => 'bewerktentoonstelling', 'uses' => 'CmsTentoonstellingController@editTentoonstelling']);
-    Route::get('/deletetentoonstelling/{id}', ['as' => 'deletetentoonstelling', 'uses' => 'CmsTentoonstellingController@deleteTentoonstelling']);
+    Route::post('/bewerktentoonstelling/{id}', ['as' => 'bewerktentoonstelling', 'uses' => 'Cms\CmsTentoonstellingController@editTentoonstelling']);
+    Route::get('/deletetentoonstelling/{id}', ['as' => 'deletetentoonstelling', 'uses' => 'Cms\CmsTentoonstellingController@deleteTentoonstelling']);
     Route::get('/workshop', 'MenuController@cmsWorkshop');
     Route::get('/lijsttentoonstellingen', ['as' => 'lijsttentoonstellingen', 'uses' => 'MenuController@cmslijstTentoonstellingen']);
     Route::get('/workshops', 'MenuController@cmsworkshops');
 
     Route::get('/fotos-slider', ['as' => 'fotos-slider', 'uses' => 'MenuController@cmsFotosSlider']);
-    Route::get('/nieuwfoto-slider', ['as' => 'newimageslider', 'uses' => 'CmsImageSliderController@newImage']);
-    Route::post('/nieuwfoto-slider', ['as' => 'newimageslider', 'uses' => 'CmsImageSliderController@newImageOpslaan']);
-    Route::get('/bewerkfoto-slider/{id}', ['as' => 'bewerkimageslider', 'uses' => 'CmsImageSliderController@editImage']);
-    Route::post('/bewerkfoto-slider/{id}', ['as' => 'bewerkimageslider', 'uses' => 'CmsImageSliderController@editOpslaan']);
-    Route::get('/verwijder-slider/{id}', ['as' => 'deleteimageslider', 'uses' => 'CmsImageSliderController@destroy']);
+    Route::get('/nieuwfoto-slider', ['as' => 'newimageslider', 'uses' => 'Cms\CmsImageSliderController@newImage']);
+    Route::post('/nieuwfoto-slider', ['as' => 'newimageslider', 'uses' => 'Cms\CmsImageSliderController@newImageOpslaan']);
+    Route::get('/bewerkfoto-slider/{id}', ['as' => 'bewerkimageslider', 'uses' => 'Cms\CmsImageSliderController@editImage']);
+    Route::post('/bewerkfoto-slider/{id}', ['as' => 'bewerkimageslider', 'uses' => 'Cms\CmsImageSliderController@editOpslaan']);
+    Route::get('/verwijder-slider/{id}', ['as' => 'deleteimageslider', 'uses' => 'Cms\CmsImageSliderController@destroy']);
 
     Route::get('/Scholen', 'MenuController@cmsSchool');
     Route::get('/Shop', 'MenuController@cmsShop');
     Route::get('/newShopItem', 'MenuController@cmsnewShopItem');
     Route::get('/sponsors', 'MenuController@cmssponsors');
     Route::get('/sponsors', ['as' => 'sponsors', 'uses' => 'MenuController@cmssponsors']);
-    Route::get('/nieuwsponsor', ['as' => 'nieuwsponsor', 'uses' => 'CmsSponsorController@newsponsor']);
-    Route::post('/nieuwsponsor', ['as' => 'opslaan', 'uses' => 'CmsSponsorController@opslaan']);
-    Route::get('/bewerksponsor/{id}', ['as' => 'bewerksponsor', 'uses' => 'CmsSponsorController@edit']);
-    Route::post('/bewerksponsor/{id}', ['as' => 'bewerksponsoropslaan', 'uses' => 'CmsSponsorController@editOpslaan']);
-    Route::get('/deletesponsor/{id}', ['as' => 'deletesponsor', 'uses' => 'CmsSponsorController@destroy']);
+    Route::get('/nieuwsponsor', ['as' => 'nieuwsponsor', 'uses' => 'Cms\CmsSponsorController@newsponsor']);
+    Route::post('/nieuwsponsor', ['as' => 'opslaan', 'uses' => 'Cms\CmsSponsorController@opslaan']);
+    Route::get('/bewerksponsor/{id}', ['as' => 'bewerksponsor', 'uses' => 'Cms\CmsSponsorController@edit']);
+    Route::post('/bewerksponsor/{id}', ['as' => 'bewerksponsoropslaan', 'uses' => 'Cms\CmsSponsorController@editOpslaan']);
+    Route::get('/deletesponsor/{id}', ['as' => 'deletesponsor', 'uses' => 'Cms\CmsSponsorController@destroy']);
     Route::get('/newSponsor', 'MenuController@cmsNewSponsor');
 
     Route::get('/informatie', 'OverOnsController@cmsInformatie');
@@ -120,7 +120,7 @@ Route::group(['prefix' => 'cms', 'middleware' => 'admin'], function () {
     Route::get('/newMenu', 'MenuController@cmsNewMenu');
     Route::get('/nieuwsbrief', 'MenuController@cmsNieuwsbrief');
 
-    Route::get('/orders', 'OrderController@index');
+    Route::get('/orders', 'Cms\OrderController@index');
 
     Route::get('/vacature', 'VacatureController@getCmsVacature');
     Route::get('/vacature/edit/{id}', 'VacatureController@getCMSRUVacature');
