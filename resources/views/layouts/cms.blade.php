@@ -52,7 +52,7 @@
             <!-- It can be fixed with bootstrap affix http://getbootstrap.com/javascript/#affix-->
             <div id="sidebar" class="well sidebar-nav">
                 <ul class="nav nav-pills nav-stacked">
-                    <li><a href="{{ url('cms/fotos-slider') }}">Foto's startpagina slider</a></li>
+                    <li><a href="{{ url('cms/fotos-slider') }}">Foto's slider Hoofdpagina</a></li>
                 </ul>
                 <h5><i class="glyphicon"></i>
                 </h5>

@@ -13,7 +13,7 @@
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
 
-                    <div class="panel-heading"><h1 style="text-align: center">Ordered products</h1></div>
+                    <div class="panel-heading"><h1 style="text-align: center">Producten op bestelling</h1></div>
 
                     <div class="panel-body">
                         @if(Session::has('success'))
@@ -89,7 +89,7 @@
                 @if($isAdmin == true)
                 <div class="purchase">
                     <a href="{{route('/removeOrder')}}"
-                       class="btn-success btn-lg" role="button">remove order</a>
+                       class="btn-success btn-lg" role="button">verwijder bestelling</a>
                 </div>
                 @endif
                 <br>

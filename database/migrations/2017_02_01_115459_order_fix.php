@@ -24,10 +24,7 @@ class OrderFix extends Migration
             $table->string('house_number');
             $table->string('city');
         });
-        Schema::table('product_users', function (Blueprint $table) {
-            $table->integer('info_id')->unsigned();
-            $table->foreign('info_id')->references('id')->on('product_users_info');
-        });
+
     }
 
     /**
