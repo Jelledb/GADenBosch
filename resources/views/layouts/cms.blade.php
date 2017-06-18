@@ -69,6 +69,7 @@
                     <li><a href="{{ url('cms/Shop') }}">Shop</a></li>
                     <li><a href="{{ url('cms/sponsors')}}">Sponsoren</a></li>
                     <li><a href="{{ url('cms/informatie') }}">Informatie</a></li>
+                    <li><a href="{{ url('cms/contact') }}">Contact</a></li>
                     <li><a href="{{ url('cms/vacature') }}">Vacature</a></li>
                     <li><a href="{{ url('cms/titel-beschrijving') }}">Titel en beschrijvingen</a></li>
                     <li><a href="{{ url('cms/orders') }}">Orders</a></li>
