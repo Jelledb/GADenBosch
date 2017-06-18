@@ -23,7 +23,7 @@ Route::get('/over', 'OverOnsController@informatie');
 Route::get('/werkplaats', 'MenuController@getWerkplaats');
 
 
-Route::get('/contact', 'MenuController@getContact');
+Route::get('/contact', 'ContactController@contact');
 
 Route::group(array('prefix' => 'vacatures'), function () {
     Route::get('', 'VacatureController@getVacaturePage');
@@ -112,6 +112,9 @@ Route::group(['prefix' => 'cms', 'middleware' => 'admin'], function () {
 
     Route::get('/informatie', 'OverOnsController@cmsInformatie');
     Route::patch('/informatie/update', 'OverOnsController@update');
+
+    Route::get('/contact', 'ContactController@cmsContact');
+    Route::patch('/contact/update', 'ContactController@update');
 
     Route::get('/menu', 'MenuController@cmsMenu');
     Route::get('/newMenu', 'MenuController@cmsNewMenu');
