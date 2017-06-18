@@ -17,8 +17,8 @@
         <div class="col-md-1"></div>
         <div class="col-md-8">
             <h3>Text voor de word-vriend-pagina:</h3>
-            
-            {!! Form::model($vriend, ['method' => 'PATCH','url' => ['cms/vriend/update']]) !!}
+
+            {!! Form::model($vriend, ['method' => 'PATCH','url' => ['cms/vriend-worden/update']]) !!}
             {!! Form::textarea('text', "$vriend->content", array('class' => 'form-control summeredit')) !!}
         </div>
         <div class="col-md-3"></div>
