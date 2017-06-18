@@ -29,6 +29,7 @@
     <script src="{{ asset('js/jquery.easing.1.3.js') }}"></script>
     <script src="{{ asset('js/slider-script.js') }}"></script>
     <script src="{{ asset('js/zoomable-image.js') }}"></script>
+    <script src="{{ asset('js/tooltip.js') }}" defer></script>
     <!-- bxSlider CSS file -->
     <link rel="stylesheet" type="text/css" href="{{ asset('css/slider_style.css') }}" />
 
@@ -37,11 +38,6 @@
         window.Laravel = {!! json_encode([
             'csrfToken' => csrf_token(),
         ]) !!};
-    </script>
-    <script>
-        $(document).ready(function() {
-            $("body").tooltip({ selector: '[data-toggle=tooltip]' });
-        });
     </script>
 </head>
 <body>
@@ -68,7 +64,7 @@
 
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="{{url('/myCart')}}">Winkelwagen</a></li>
-                            <li><a href="{{url('/orders')}}">Orders</a></li>
+                            <li><a href="{{url('/orders')}}">Bestelling</a></li>
                         </ul>
 
                     </li>

@@ -101,8 +101,8 @@
                 <li class="breadcrumb-item active">Inplannen</li>
             </ol>
             <div class="panel panel-default">
-                <h6 class="text-center">{{$data['day']}}</h6>
-                <h4 class="text-center">{{$data['workspace']->name .': '. $data['workspace']->size}}  </h4>
+                <h6  data-toggle="tooltip" title="Dag van reservering" class="text-center">{{$data['day']}}</h6>
+                <h4  data-toggle="tooltip" title="Gelecteerde werkplaats" class="text-center">{{$data['workspace']->name .': '. $data['workspace']->size}}  </h4>
                 <h3 class="text-center">Geplaatste reserveringen </h3>
                 <br/>
                 <div class="col-md-8 col-md-offset-2">
