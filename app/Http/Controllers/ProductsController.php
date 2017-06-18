@@ -113,6 +113,7 @@ class ProductsController extends Controller
         $product->update();
 //        $product->save();
         return redirect('cms/producten');
+
     }
 
     public function edit($id) {

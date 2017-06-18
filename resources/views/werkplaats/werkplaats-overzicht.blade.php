@@ -1,6 +1,6 @@
 @extends('layouts.website')
 
-@section('content');
+@section('content')
 <div class="container">
     <div class="row">
 
