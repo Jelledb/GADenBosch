@@ -37,7 +37,7 @@ Route::group(array('prefix' => 'educatie'), function () {
 
 Route::get('/sponsors', 'SponsorController@getSponsorPage');
 
-Route::get('/vriend-worden', ['as' => 'vriend-worden', 'uses' => 'MenuController@friendPage']);
+Route::get('/vriend-worden', ['as' => 'vriend-worden', 'uses' => 'CmsFriendController@vriendWorden']);
 
 Route::get('/vriend-worden-pay', 'FriendController@becomeFriend');
 
@@ -112,6 +112,9 @@ Route::group(['prefix' => 'cms', 'middleware' => 'admin'], function () {
 
     Route::get('/informatie', 'OverOnsController@cmsInformatie');
     Route::patch('/informatie/update', 'OverOnsController@update');
+
+    Route::get('/vriend-worden', 'CmsFriendController@cmsWordVriend');
+    Route::patch('/vriend-worden/update', 'CmsFriendController@update');
 
     Route::get('/menu', 'MenuController@cmsMenu');
     Route::get('/newMenu', 'MenuController@cmsNewMenu');

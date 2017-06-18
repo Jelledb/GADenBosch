@@ -12,7 +12,7 @@
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
 
-                    <h1 class="centerH1">Vriend worden?</h1>
+                    <h3 class="centerH1">Vriend worden?</h3>
 
 
                     <div class="text">
@@ -23,14 +23,14 @@
                         <br><br>
                         Vriend van het GA ben je al vanaf € 45,- per jaar, maar een groter bedrag is meer dan welkom.
                         <br>
-                        <div class="wrapper-btn">
-                            @if (Auth::check() && Auth::user()->isfriend == 1)
-                            <button type="button" class="btn btn-default" id="vriend-btn"><span id="vriend-a">U bent al een vriend</span></button>
-                        @else
-                                <a type="button" class="btn btn-default" id="vriend-btnn" id="vriend-a" href="/vriend-worden-pay">Ja, ik word vriend!</a>
-                            @endif
 
                         </div>
+                    <div class="wrapper-btn">
+                        @if (Auth::check() && Auth::user()->isfriend == 1)
+                            <button type="button" class="btn btn-default" id="vriend-btn"><span id="vriend-a">U bent al een vriend</span></button>
+                        @else
+                            <a type="button" class="btn btn-default" id="vriend-btnn" id="vriend-a" href="/vriend-worden-pay">Ja, ik word vriend!</a>
+                        @endif
                     </div>
                 </div>
             </div>
