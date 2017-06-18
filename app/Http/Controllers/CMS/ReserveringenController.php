@@ -5,6 +5,7 @@ namespace App\Http\Controllers\CMS;
 use App\Http\Controllers\Controller;
 use App\Workspace;
 use App\reservation_workspace;
+use App\Reservation;
 
 class ReserveringenController extends Controller
 {
@@ -20,6 +21,14 @@ class ReserveringenController extends Controller
         $data['reservist'] = reservation_workspace::reservist($id)->get();
 
         return view('cms.reserveringen.index', compact('data'));
+    }
+    public function deleteReservation($id){
+
+        $toDelete = Reservation::find($id);
+        $toDelete->delete();
+
+        return redirect()->route('reserveringen.index')->with('success', 'De reservering is verwijderd.');
+
     }
 
 }

@@ -129,6 +129,7 @@ Route::group(['prefix' => 'cms', 'middleware' => 'admin'], function () {
 
     Route::get('/reserveringen', 'CMS\ReserveringenController@showView');
     Route::get('/reserveringen/{id}', 'CMS\ReserveringenController@getReservationsFrom');
+    Route::get('/deleteReservering/{id}', 'CMS\ReserveringenController@deleteReservation');
 });
 
 

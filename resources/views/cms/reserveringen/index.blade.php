@@ -63,7 +63,7 @@
                         <td>{{ $reservation->date_in }}</td>
                         <td>{{ $reservation->date_out }}</td>
                         <td>{{ $reservation->name }}</td>
-                        <td><a class="btn btn-danger" href="{{ route('deletesponsor', $reservation->id) }}">Verwijder</a></td>
+                        <td><a class="btn btn-danger" href="/cms/deleteReservering/{{$reservation->id}}">Verwijder</a></td>
                     </tr>
                 @endforeach
 
