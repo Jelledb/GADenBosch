@@ -3,7 +3,7 @@
 @section('content')
     <div class="container nieuws-item">
         <h2>{{ $newsItem->titel }}</h2>
-        <p class="nieuws-date">Geplaatst op {{ $newsItem->aangemaakt }}</p>
+        <p class="nieuws-date">Geplaatst op {{ date("d-m-Y", strtotime($newsItem->aangemaakt)) }}</p>
 
         <div class="row">
             <div class="col-md-6">

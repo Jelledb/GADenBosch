@@ -24,7 +24,7 @@ class ScheduleExpositions extends Migration
             $table->string('message');
             $table->string('title');
             $table->string('subtitle');
-            $table->string('introduction');
+            $table->text('introduction');
             $table->text('text');
             $table->enum('location', ['exporuimte', 'portiersloge'])->default('exporuimte');
             $table->enum('toon', ['yes', 'no'])->default('yes');
