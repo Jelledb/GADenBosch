@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
         $this->seedEducation();
         $this->seedWorkplaces();
         $this->seedRouteMetaTags();
+        $this->seedContact();
 
     }
 
