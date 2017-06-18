@@ -18,8 +18,9 @@ class CreateSponsorsTable extends Migration
         Schema::create('sponsors', function (Blueprint $table){
             $table->increments('id');
             $table->string('name');
-            $table->string('url');
-            $table->binary('image');
+            $table->string('photo');
+            $table->enum('visible', ['yes', 'no']);
+            $table->string('website');
         });
     }
 

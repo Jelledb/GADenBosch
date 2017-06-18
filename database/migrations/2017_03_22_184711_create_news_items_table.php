@@ -20,7 +20,7 @@ class CreateNewsItemsTable extends Migration
             $table->text('tekst');
             $table->boolean('zichtbaar');
             $table->date('aangemaakt');
-            $table->binary('foto')->nullable();
+            $table->string('foto')->nullable();
         });
     }
 

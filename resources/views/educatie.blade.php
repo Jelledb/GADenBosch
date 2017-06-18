@@ -1,7 +1,10 @@
 @extends('layouts.website')
 @section('content')
-@if($page != null)
-    <div class="container zoomable">
+
+
+        @if($page != null)
+<div class="container zoomable">
+
         <h2 class="col-md-offset-2">{!! $page->title !!}</h2>
         <br><br>
         <div class="row">
@@ -12,7 +15,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4" >
+            <div class="col-md-4">
                 <div class="panel panel-default">
                     <div class="over-content">
                         {!! $page->content_right !!}
@@ -20,6 +23,21 @@
                 </div>
             </div>
         </div>
+        @else
+            <div class="row">
+                <div class="col-md-3 col-md-offset-2"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    <div class="panel panel-default">
+                        <p class="no-item">Sorry er zijn geen educatie pagina's</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 col-md-offset-2"></div>
+            </div>
+            @endif
     </div>
 @else
     <div class="container zoomable">

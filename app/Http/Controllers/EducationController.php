@@ -13,6 +13,7 @@ class EducationController extends Controller
         return view('educatie')->with('page', $page);
     }
     public function education(){
+
         $pageproces = Educatie::take(1)->get();
         if($pageproces->isNotEmpty()){
 
@@ -22,5 +23,6 @@ class EducationController extends Controller
             $page = null;
         }
         return view('educatie')->with('page', $page);
+
     }
 }
