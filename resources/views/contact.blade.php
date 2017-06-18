@@ -23,15 +23,12 @@
     </script>
     <div id="map_canvas"></div>
     <div class="container" id="contact-container">
-
-
-
+        <h2 class="col-md-offset-2">Contact</h2>
+        <br><br>
         <div class="row" >
 
             <div class="col-md-4 col-md-offset-2">
 
-                        <h2>Contact</h2>
-                        <br>
                         <div class="panel panel-default">
                             <div class="contact-content">
                                 {!! $contact->content_left !!}

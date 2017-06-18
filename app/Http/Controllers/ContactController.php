@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 class ContactController extends Controller
 {
     public $timestamps = false;
+
     public function contact(){
         //load content
         $contact = Contact::find(1);
