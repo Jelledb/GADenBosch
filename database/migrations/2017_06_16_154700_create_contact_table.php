@@ -13,7 +13,7 @@ class CreateContactTable extends Migration
      */
     public function up()
     {
-        Schema::create('contact', function($table)
+        Schema::create('contacts', function($table)
         {
             $table->increments('id');
             $table->text('content_left');
