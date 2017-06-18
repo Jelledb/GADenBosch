@@ -8,32 +8,20 @@
     <div class="row">
         <div class="col-md-9">
             <!--hier komt de content in -->
-            <h2>Scholen</h2>
-
+            <h2>Contact</h2>
         </div>
         <div class="col-md-3">
-
         </div>
     </div>
     <div class="row">
         <div class="col-md-1"></div>
         <div class="col-md-8">
-
-            <h3>Foto's voor de pagina</h3>
-            <form action="upload.php" method="post" enctype="multipart/form-data">
-                Select image to upload:
-                <input type="file" name="ImageToUpload" id="fileToUpload">
-                <input type="submit" value="Upload" name="submit">
-            </form>
-        </div>
-        <div class="col-md-3"></div>
-    </div>
-    <hr class="breeklijn"/>
-    <div class="row">
-        <div class="col-md-1"></div>
-        <div class="col-md-8">
-            <h3>Text voor de 'Educatie voor scholen'-pagina:</h3>
-            <textarea rows="5" cols="80"></textarea>
+            <h3>Text voor de contact-pagina:</h3>
+            <h3>Linker kolom:</h3>
+            {!! Form::model($contact, ['method' => 'PATCH','url' => ['cms/contact/update']]) !!}
+            {!! Form::textarea('text-links', "$contact->content_left", array('class' => 'form-control summeredit')) !!}
+            <h3>Rechter kolom:</h3>
+            {!! Form::textarea('text-rechts', "$contact->content_right", array('class' => 'form-control summeredit')) !!}
         </div>
         <div class="col-md-3"></div>
     </div>
@@ -44,5 +32,5 @@
         </div>
         <div class="col-md-9"></div>
     </div>
-    </form>
+    {!! Form::close() !!}
 @endsection

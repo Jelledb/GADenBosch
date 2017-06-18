@@ -1,6 +1,7 @@
 @extends('layouts.website')
 @section('content')
 
+
         @if($page != null)
 <div class="container zoomable">
 
@@ -38,4 +39,11 @@
             </div>
             @endif
     </div>
+@else
+    <div class="container zoomable">
+        <h2 class="col-md-offset-2">
+            Er zijn helaas geen educatie pagina's.
+        </h2>
+    </div>
+    @endif
 @endsection
