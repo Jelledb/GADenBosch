@@ -18,7 +18,6 @@ class CreateContactTable extends Migration
             $table->increments('id');
             $table->text('content_left');
             $table->text('content_right');
-            $table->text('file_location');
         });
     }
 
