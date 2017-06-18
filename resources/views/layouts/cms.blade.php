@@ -52,10 +52,9 @@
             <!-- It can be fixed with bootstrap affix http://getbootstrap.com/javascript/#affix-->
             <div id="sidebar" class="well sidebar-nav">
                 <ul class="nav nav-pills nav-stacked">
-                    <li><a href="{{ url('cms/startpagina') }}">Startpagina</a></li>
+                    <li><a href="{{ url('cms/fotos-slider') }}">Foto's slider Hoofdpagina</a></li>
                 </ul>
                 <h5><i class="glyphicon"></i>
-                    <!--<small><b>MANAGEMENT</b></small>-->
                 </h5>
                 <ul class="nav nav-pills nav-stacked">
 
@@ -65,12 +64,12 @@
 
                     <!--<li><a href="#">Events</a></li>-->
                     <li><a href="{{ url('cms/educatie') }}">Educatie</a></li>
-                    <li><a href="{{ url('cms/fotos-slider') }}">Foto's slider</a></li>
-                    <li><a href="{{ url('cms/reserveringen') }}">Reserveringen</a></li>
+
                     <li><a href="{{ url('cms/Scholen') }}">Scholen</a></li>
                     <li><a href="{{ url('cms/Shop') }}">Shop</a></li>
                     <li><a href="{{ url('cms/sponsors')}}">Sponsoren</a></li>
                     <li><a href="{{ url('cms/informatie') }}">Informatie</a></li>
+                    <li><a href="{{ url('cms/contact') }}">Contact</a></li>
                     <li><a href="{{ url('cms/vacature') }}">Vacature</a></li>
                     <li><a href="{{ url('cms/titel-beschrijving') }}">Titel en beschrijvingen</a></li>
                     <li><a href="{{ url('cms/orders') }}">Orders</a></li>
@@ -80,9 +79,7 @@
                 </h5>
                 <ul class="nav nav-pills nav-stacked">
                     <li><a href="{{ url('cms/menu') }}">Hoofdmenu</a></li>
-                    <!--<li><a href="#">Foto's homepage</a></li>-->
-                    <!--<li><a href="#">Footer</a></li>-->
-                </ul>
+                    </ul>
                 <h5><i class="glyphicon"></i>
 
                 </h5>

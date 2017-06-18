@@ -14,8 +14,12 @@ class DatabaseSeeder extends Seeder
     {
         // $this->call(UsersTableSeeder::class);
 
-        // $this->seedWorkplaces();
+        $this->seedRoles();
+        $this->seedOverOns();
+        $this->seedEducation();
+        $this->seedWorkplaces();
         $this->seedRouteMetaTags();
+        $this->seedContact();
 
     }
 
@@ -23,10 +27,14 @@ class DatabaseSeeder extends Seeder
         DB::table('roles')->insert([['id' => 1, 'rolename' => 'admin'],['id' => 2, 'rolename' => 'vrijwilliger'],['id' => 3, 'rolename' => 'klant']]);
     }
 
-    private function seedVacatures() {
-        DB::table('vacatures')->insert([
-            ['id' => 1, 'datum' => 07/04/2017, 'description' => 'Dit is een vacature voor beheerder van de werkplaats.', 'title' => 'Werkplaatsbeheerder'],
-            ['id' => 2, 'datum' => 21/03/2017, 'description' => 'Dit is een vacature voor beheerder van het atelier.', 'title' => 'Atelierbeheerder']]);
+    private function seedOverOns(){
+        DB::table('over_ons')->insert(['id' => 1, 'content_right' => '', 'content_left' => '']);
+    }
+    private function seedEducation(){
+        DB::table('educaties')->insert(['id' => 1, 'title' => '', 'content_left' => '', 'content_right' => '']);
+    }
+    private function seedContact(){
+        DB::table('contacts')->insert(['id' => 1, 'content_left' => '', 'content_right' => '']);
     }
 
     // Seed script voor werkplaatsen. S.V.P. niet verwijderen!!
