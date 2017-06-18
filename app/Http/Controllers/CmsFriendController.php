@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Vriend;
+use App\Friend;
 use Illuminate\Http\Request;
 
 class CmsFriendController extends Controller
@@ -10,19 +10,19 @@ class CmsFriendController extends Controller
     public $timestamps = false;
     public function vriendWorden(){
         //load content
-        $vriend = Vriend::find(1);
+        $vriend = Friend::find(1);
         //show content
-        return view('vriend-worden', compact('vriend'));
+        return view('wordVriend', compact('vriend'));
     }
 
     public function cmsWordVriend(){
-        $vriend = Vriend::find(1);
-        return view('cms/vriend-worden', compact('vriend'));
+        $vriend = Friend::find(1);
+        return view('cms/cmsFriend', compact('vriend'));
     }
 
     public function update(Request $request)
     {
-        $vriend = Vriend::find(1);
+        $vriend = Friend::find(1);
         $vriend->timestamps = false;
 
         //put input in variable
