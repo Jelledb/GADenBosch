@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
         $this->seedEducation();
         $this->seedWorkplaces();
         $this->seedRouteMetaTags();
+        $this->seedFriend();
         $this->seedContact();
 
     }
@@ -33,8 +34,13 @@ class DatabaseSeeder extends Seeder
     private function seedEducation(){
         DB::table('educaties')->insert(['id' => 1, 'title' => '', 'content_left' => '', 'content_right' => '']);
     }
+
+    private function seedFriend(){
+        DB::table('friends')->insert(['id' => 1, 'content' => '']);
+
     private function seedContact(){
         DB::table('contacts')->insert(['id' => 1, 'content_left' => '', 'content_right' => '']);
+
     }
 
     // Seed script voor werkplaatsen. S.V.P. niet verwijderen!!
