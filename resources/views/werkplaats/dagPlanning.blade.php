@@ -122,8 +122,9 @@
                                 <th>{{$dateIn}}</th>
                                 <th>{{$dateOut}}</th>
                                 <th>{{$data['user'][$i]->name}}</th>
-                                @endfor
+
                             </tr>
+                        @endfor
                         </thead>
                     </table>
                     <h3 class="centerH1">Reserveer</h3>

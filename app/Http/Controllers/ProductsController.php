@@ -107,7 +107,7 @@ class ProductsController extends Controller
         //Storage::disk('uploads')->put($file->getFilename(),$file);
         $product->update();
 //        $product->save();
-        return redirect('/products');
+        return redirect('/product');
     }
 
     public function edit(Product $product) {
