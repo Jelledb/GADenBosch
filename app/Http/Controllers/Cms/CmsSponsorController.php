@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Cms;
 
+use App\Http\Controllers\Controller;
 use Request;
 use App\sponsors;
 use Illuminate\Support\Facades\Input;

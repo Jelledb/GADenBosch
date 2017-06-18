@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Cms;
 
+use App\Http\Controllers\Controller;
 use App\Product;
 use App\ProductUsersInfo;
 use App\User;
