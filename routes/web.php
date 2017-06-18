@@ -81,6 +81,12 @@ Route::group(['prefix' => 'cms', 'middleware' => 'admin'], function () {
     Route::get('titel-beschrijving/edit/{id}', 'Cms\TitleDescriptionController@edit');
     Route::patch('titel-beschrijving/update/{id}', 'Cms\TitleDescriptionController@update');
 
+    Route::get('/producten', 'ProductsController@indexcms');
+    Route::get('/producten/create', 'ProductsController@create');
+    Route::get('/producten/edit/{id}', 'ProductsController@edit');
+    Route::get('/producten/delete/{id}', 'ProductsController@delete');
+
+
     Route::get('/startpagina', 'MenuController@cmshome');
     Route::get('/nieuwtentoonstelling', 'MenuController@cmsTentoonstellingen');
     Route::post('/nieuwtentoonstelling', 'Cms\CmsTentoonstellingController@newTentoonstelling');

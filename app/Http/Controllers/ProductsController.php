@@ -35,6 +35,11 @@ class ProductsController extends Controller
         return view('cms.webshop.products', compact('products'));
 
     }
+    public function indexcms(){
+        $products = Product::all();
+
+        return view('cms.webshop.index', compact('products'));
+    }
 
     // for session or logged in user
     public function getAddToCart(Request $request, $id)
@@ -107,21 +112,29 @@ class ProductsController extends Controller
         //Storage::disk('uploads')->put($file->getFilename(),$file);
         $product->update();
 //        $product->save();
-        return redirect('/product');
+        return redirect('cms/producten');
+
     }
 
-    public function edit(Product $product) {
-        return view('admin.edit-product', compact('product'));
+    public function edit($id) {
+        $product = Product::find($id);
+        return view('cms.webshop.edit-product', compact('product'));
     }
 
     public function update(Product $product, ProductRequest $request) {
         $product->update($request->all());
-        return redirect('/product');
+        return redirect('cms/producten');
     }
 
-    public function destroy(Product $product) {
+    public function destroy($id) {
+        $product = Product::find($id);
         $product->delete();
-        return redirect('/product');
+        return redirect('/producten');
+    }
+    public function delete($id){
+        $product = Product::find($id);
+        $product->delete();
+        return redirect('cms/producten');
     }
 
     public function search()

@@ -122,7 +122,7 @@
 
                                 @if(Auth::user()->isAdmin())
                                     <li>
-                                        <a target="_blank" href="{{ url('cms/startpagina') }}">cms</a>
+                                        <a target="_blank" href="{{ url('cms/fotos-slider') }}">cms</a>
                                     </li>
                                 @endif
                                 <li>
