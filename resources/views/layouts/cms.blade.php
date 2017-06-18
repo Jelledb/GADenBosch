@@ -61,7 +61,7 @@
                     <li><a href="{{ url('cms/news') }}">Nieuws</a></li>
 
                     <li><a href="{{ url('cms/educatie') }}">Educatie</a></li>
-                    <li><a href="{{ url('cms/Shop') }}">Shop</a></li>
+                    <li><a href="{{ url('cms/producten') }}">Shop</a></li>
                     <li><a href="{{ url('cms/sponsors')}}">Sponsoren</a></li>
                     <li><a href="{{ url('cms/informatie') }}">Informatie</a></li>
                     <li><a href="{{ url('cms/vriend-worden') }}">Vriend Worden</a></li>
