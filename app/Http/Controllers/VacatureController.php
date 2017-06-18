@@ -57,7 +57,7 @@ class VacatureController extends Controller
             $vacature->save();
         }
         return redirect('cms/vacature')
-            ->with('success','Product is bewerkt!');
+            ->with('success','Vacature is bewerkt!');
 
     }
     public function getcreate(){
@@ -77,12 +77,12 @@ class VacatureController extends Controller
         $vacature->timestamps = false;
         $vacature->save();
         return redirect('cms/vacature')
-            ->with('success','Product is bewerkt!');
+            ->with('success','Vacature is aangemaakt!');
     }
     public function delete($id){
         Vacatures::find($id)->delete();
         return redirect('cms/vacature')
-            ->with('success','Product is bewerkt!');
+            ->with('success','Vacature is verwijderd!');
     }
     public function updateToon(Request $request, $id){
         $vacature = Vacatures::find($id);
@@ -104,6 +104,6 @@ class VacatureController extends Controller
         $vacature->timestamps = false;
         $vacature->save();
         return redirect('cms/vacature')
-            ->with('success','Product is bewerkt!');
+            ->with('success','Vacature is bewerkt!');
     }
 }

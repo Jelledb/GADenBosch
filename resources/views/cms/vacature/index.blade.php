@@ -12,7 +12,7 @@
                     <h2>Vacatures beheren</h2>
                 </div>
                 <div class="pull-right">
-                    <a class="btn btn-success" href="{{ url('cms/vacature/getcreate') }}">Maak vacature</a>
+                    <a data-toggle="tooltip" title="Maak nieuwe Vacature" class="btn btn-success" href="{{ url('cms/vacature/getcreate') }}">Maak vacature</a>
                 </div>
             </div>
         </div>
@@ -47,8 +47,8 @@
                         {{ $item->datum }}
                     </td>
                     <td>
-                        <a class="btn btn-primary" href="{{ url('cms/vacature/edit', [$item->id]) }}">Bewerk</a>
-                        <a class="btn btn-danger" href="{{ url('cms/vacature/delete', [$item->id]) }}">Delete</a>
+                        <a data-toggle="tooltip" title="Pas de vacature aan" class="btn btn-primary" href="{{ url('cms/vacature/edit', [$item->id]) }}">Bewerk</a>
+                        <a data-toggle="tooltip" title="Verwijder de vacature" class="btn btn-danger" href="{{ url('cms/vacature/delete', [$item->id]) }}">Delete</a>
                     </td>
                 </tr>
             @endforeach
