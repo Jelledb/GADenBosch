@@ -15,7 +15,7 @@
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
                     <div>
-                        <h1 class="centerH1">Sponsoren</h1>
+                        <h2 class="centerH1">Sponsoren</h2>
                         <br />
                     </div>
                     <table class="sponsors">
@@ -37,7 +37,7 @@
 
                                     @else
                                         <td>
-                                            <h1 class="sponsorTitleH1"> {{ $sponsor->name }} </h1>
+                                            <h2 class="sponsorTitleH1"> {{ $sponsor->name }} </h2>
                                             <br/>
                                             <a href="http://{{ $sponsor->website }}"><img src="{{$sponsor->photo}}"/></a>
                                             <br/>

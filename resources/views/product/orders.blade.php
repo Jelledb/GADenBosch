@@ -13,7 +13,7 @@
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
 
-                    <div class="panel-heading"><h1 style="text-align: center">Producten op bestelling</h1></div>
+                    <div class="panel-heading"><h3 style="text-align: center">Producten op bestelling</h3></div>
 
                     <div class="panel-body">
                         @if(Session::has('success'))
@@ -28,7 +28,7 @@
                                 @if ($counter === 0)
                                     <tr>
                                         <td>
-                                            <h1> {{ $product->name }} </h1>
+                                            <h3> {{ $product->name }} </h3>
                                             <br/>
                                             <a href="{{ url('product/'. $product->id) }}">{!! Html::image(asset("images/".$product->image)) !!}</a>
 
@@ -49,7 +49,7 @@
 
                                         @else
                                             <td>
-                                                <h1> {{ $product->name }} </h1>
+                                                <h3> {{ $product->name }} </h3>
                                                 <br/>
                                                 <a href="{{ url('product/'. $product->id) }}">{!! Html::image(asset("images/".$product->image)) !!}</a>
 

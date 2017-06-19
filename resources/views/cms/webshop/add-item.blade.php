@@ -6,11 +6,11 @@
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
 
-                    <div class="panel-heading"><h1 style="text-align: center">Voeg een product toe</h1></div>
+                    <div class="panel-heading"><h2 style="text-align: center">Voeg een product toe</h2></div>
 
                     <div class="panel-body">
 
-                        <h1>Voeg een nieuw product toe</h1>
+                        <h2>Voeg een nieuw product toe</h2>
                         <hr/>
 
                         {!! Form::open(['url' => 'product', 'files' => true]) !!}

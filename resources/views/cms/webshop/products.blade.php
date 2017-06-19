@@ -11,7 +11,7 @@
             <div class="col-md-12 col-md-offset-2">
                 <div class="panel panel-default">
 
-                    <div class="panel-heading"><h1 style="text-align: center">Product list</h1></div>
+                    <div class="panel-heading"><h2 style="text-align: center">Product list</h2></div>
 
                     <div class="panel-body">
                         <table>
@@ -21,7 +21,7 @@
                                 @if ($counter === 0)
                                     <tr>
                                         <td>
-                                            <h1> {{ $product->name }} </h1>
+                                            <h3> {{ $product->name }} </h3>
                                             <br/>
                                             <a href="{{ url('product/'. $product->id) }}">{!! Html::image(asset("images/".$product->image)) !!}</a>
 
@@ -45,7 +45,7 @@
 
                                 @else
                                     <td>
-                                        <h1> {{ $product->name }} </h1>
+                                        <h3> {{ $product->name }} </h3>
                                         <br/>
                                         <a href="{{ url('product/'. $product->id) }}">{!! Html::image(asset("images/".$product->image)) !!}</a>
 

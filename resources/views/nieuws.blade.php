@@ -7,7 +7,7 @@
             <div class="col-md-6 col-md-offset-3">
                 <div>
                     <div>
-                        <h1 class="centerH1">Nieuwsberichten</h1>
+                        <h2 class="centerH1">Nieuwsberichten</h2>
                     </div>
                     @foreach($newsItems as $newsItem)
                         <div class="nieuws-item-home panel panel-default">

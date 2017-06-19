@@ -14,7 +14,7 @@
                     <div class="panel-heading">Dashboard</div>
 
 
-                    <div class="panel-heading"><h1 style="text-align: center">Winkelwagen</h1></div>
+                    <div class="panel-heading"><h2 style="text-align: center">Winkelwagen</h2></div>
 
                     <div class="panel-body">
                         <table>
@@ -24,7 +24,7 @@
                                 @if ($counter === 0)
                                     <tr>
                                         <td>
-                                            <h1> {{ $product->name }} </h1>
+                                            <h3> {{ $product->name }} </h3>
                                             <br/>
                                             <a href="{{ url('product/'. $product->id) }}">{!! Html::image(asset("images/".$product->image)) !!}</a>
                                             <br/>
@@ -45,7 +45,7 @@
 
                                         @else
                                             <td>
-                                                <h1> {{ $product->name }} </h1>
+                                                <h3> {{ $product->name }} </h3>
                                                 <br/>
                                                 <a href="{{ url('product/'. $product->id) }}">{!! Html::image(asset("images/".$product->image)) !!}</a>
                                                 <br/>

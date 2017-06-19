@@ -6,7 +6,7 @@
     <div class="container">
         <div class="panel panel-default">
             <div class="row">
-                <h1  class="centerH1"> Mijn reserveringen</h1>
+                <h2  class="centerH1"> Mijn reserveringen</h2>
                 <br>
                 <div class="col-md-8 col-md-offset-2">
                     <table id="time-table">

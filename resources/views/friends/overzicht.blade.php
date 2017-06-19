@@ -19,7 +19,7 @@
                             @if ($counter === 0)
                                 <tr>
                                     <td>
-                                        <h1> {{ $product->name }} </h1>
+                                        <h2> {{ $product->name }} </h2>
                                         <br/>
                                         <?php echo '<img src="data:image/png;base64,' . base64_encode($product->image) . '"/>';  ?>
                                         <br/>
@@ -35,7 +35,7 @@
 
                                     @else
                                         <td>
-                                            <h1> {{ $product->name }} </h1>
+                                            <h2> {{ $product->name }} </h2>
                                             <br/>
                                             <?php echo '<img src="data:image/png;base64,' . base64_encode($product->image) . '"/>';  ?>
                                             <br/>

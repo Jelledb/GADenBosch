@@ -7,7 +7,7 @@
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
 
-                    <div class="panel-heading"><h1 style="text-align: center">Pas {{$product->name}} aan</h1>
+                    <div class="panel-heading"><h2 style="text-align: center">Pas {{$product->name}} aan</h2>
                     </div>
 
                     <div class="panel-body">

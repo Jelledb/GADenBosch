@@ -9,15 +9,15 @@
                     <div class="panel panel-default">
                         <div style="padding:10px">
                             @if($expos->title != null)
-                                <h1 class="centerH1">{!! $expos->title !!}</h1>
+                                <h2 class="centerH1">{!! $expos->title !!}</h2>
                             @endif
                             <br />
                             @if($expos->subtitle != null)
-                                <h2 class="h2">{!! $expos->subtitle !!}</h2>
+                                <h3 class="h2">{!! $expos->subtitle !!}</h3>
                             @endif
 
                                 @if($expos->opening != '0000-00-00' && $expos->opening_time != null)
-                                    <h2 class="h2">Openingsdatum: {!! $expos->opening !!} {!! $expos->opening_time !!}</h2>
+                                    <h3 class="h2">Openingsdatum: {!! $expos->opening !!} {!! $expos->opening_time !!}</h3>
                                 @endif
                             {!! $expos->text !!}
 
