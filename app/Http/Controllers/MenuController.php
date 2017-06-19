@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\expositions;
+use App\Expositions;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use App\Products;
