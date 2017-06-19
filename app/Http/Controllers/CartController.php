@@ -79,7 +79,7 @@ class CartController extends Controller
             $info->save();
 
             $toPurchase = new product_users();
-            $toPurchase->purchase();
+            $toPurchase->purchase($info->id);
             $user = Auth::user();
             $customer = Mollie::api()->customers()->create([
                 "name" => $user->name,
