@@ -12,7 +12,7 @@
                     <h2>Educatie pagina's beheren</h2>
                 </div>
                 <div class="pull-right">
-                    <a class="btn btn-success" href="{{ route('educatie.create') }}">Maak nieuwe pagina</a>
+                    <a data-toggle="tooltip" title="Maak nieuwe Educatie pagina aan" class="btn btn-success" href="{{ route('educatie.create') }}">Maak nieuwe pagina</a>
                 </div>
             </div>
         </div>
@@ -34,7 +34,7 @@
                     <td>{{ $item->id }}</td>
                     <td>{{ $item->title }}</td>
                     <td>
-                        <a class="btn btn-primary" href="{{ route('educatie.edit', $item->id)}}">Bewerk</a>
+                        <a data-toggle="tooltip" title="Pas educatie pagina aan" class="btn btn-primary" href="{{ route('educatie.edit', $item->id)}}">Bewerk</a>
                         {!! Form::open(['method' => 'DELETE','route' => ['educatie.destroy', $item->id],'style'=>'display:inline']) !!}
                         {!! Form::submit('Verwijder', ['class' => 'btn btn-danger']) !!}
                         {!! Form::close() !!}

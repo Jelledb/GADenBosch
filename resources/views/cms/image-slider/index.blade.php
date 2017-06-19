@@ -8,7 +8,7 @@
                     <h2>Foto's slider aanpassen</h2>
                 </div>
                 <div class="pull-right">
-                    <a class="btn btn-success" href="{{ route('newimageslider') }}">Voeg foto toe</a>
+                    <a data-toggle="tooltip" title="Voeg nieuwe foto toe" class="btn btn-success" href="{{ route('newimageslider') }}">Voeg foto toe</a>
                 </div>
             </div>
         </div>

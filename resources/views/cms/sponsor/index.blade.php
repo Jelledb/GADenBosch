@@ -8,7 +8,7 @@
                     <h2>Sponsors beheren</h2>
                 </div>
                 <div class="pull-right">
-                    <a class="btn btn-success" href="{{ route('nieuwsponsor') }}">Maak sponsor</a>
+                    <a data-toggle="tooltip" title="Maak nieuwe sponsor aan" class="btn btn-success" href="{{ route('nieuwsponsor') }}">Maak sponsor</a>
                 </div>
             </div>
         </div>
@@ -43,8 +43,8 @@
                         @endif
                     </td>
                     <td>
-                        <a class="btn btn-primary" href="{{ route('bewerksponsor', $sponsor->id) }}">Bewerk</a>
-                        <a class="btn btn-danger" href="{{ route('deletesponsor', $sponsor->id) }}">Verwijder</a>
+                        <a data-toggle="tooltip" title="Bewerk sponsor" class="btn btn-primary" href="{{ route('bewerksponsor', $sponsor->id) }}">Bewerk</a>
+                        <a data-toggle="tooltip" title="Verwijder sponsor" class="btn btn-danger" href="{{ route('deletesponsor', $sponsor->id) }}">Verwijder</a>
                     </td>
                 </tr>
             @endforeach
