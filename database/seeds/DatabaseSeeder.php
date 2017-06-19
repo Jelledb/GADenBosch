@@ -35,9 +35,10 @@ class DatabaseSeeder extends Seeder
         DB::table('educaties')->insert(['id' => 1, 'title' => '', 'content_left' => '', 'content_right' => '']);
     }
 
-    private function seedFriend(){
+    private function seedFriend()
+    {
         DB::table('friends')->insert(['id' => 1, 'content' => '']);
-
+    }
     private function seedContact(){
         DB::table('contacts')->insert(['id' => 1, 'content_left' => '', 'content_right' => '']);
 
@@ -47,9 +48,9 @@ class DatabaseSeeder extends Seeder
     private function seedWorkplaces() {
         DB::table('workspaces')->insert([
             ['name' => 'Zeefdruk', 'size' => 'klein'],
-            ['name' => 'Zeefdruk', 'size' => 'middel'],
-            ['name' => 'Zeefdruk', 'size' => 'middel'],
-            ['name' => 'Zeefdruk', 'size' => 'middel'],
+            ['name' => 'Zeefdruk 4', 'size' => 'middel'],
+            ['name' => 'Zeefdruk 3', 'size' => 'middel'],
+            ['name' => 'Zeefdruk 2', 'size' => 'middel'],
             ['name' => 'Zeefdruk', 'size' => 'groot'],
 
             ['name' => 'Lithografie', 'size' => null],
