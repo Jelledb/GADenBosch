@@ -24,6 +24,7 @@
             </div>
         </div>
         @else
+            <div class="container zoomable">
             <div class="row">
                 <div class="col-md-3 col-md-offset-2"></div>
             </div>
@@ -39,11 +40,5 @@
             </div>
             @endif
     </div>
-@else
-    <div class="container zoomable">
-        <h2 class="col-md-offset-2">
-            Er zijn helaas geen educatie pagina's.
-        </h2>
-    </div>
-    @endif
+
 @endsection
