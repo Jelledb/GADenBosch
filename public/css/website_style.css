@@ -19,6 +19,7 @@ body {
 
 body {
     padding-top: 50px;
+    font-family: 'Brandon', serif;
 }
 
 .container {
@@ -385,7 +386,6 @@ button {
 }
 
 table {
-    font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 100%;
 }
