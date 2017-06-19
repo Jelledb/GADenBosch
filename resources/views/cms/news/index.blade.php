@@ -8,7 +8,7 @@
                     <h2>Nieuwsberichten beheren</h2>
                 </div>
                 <div class="pull-right">
-                    <a class="btn btn-success" href="{{ route('news.create') }}">Maak nieuwsbericht</a>
+                    <a data-toggle="tooltip" title="Maak nieuw nieuwsbericht" class="btn btn-success" href="{{ route('news.create') }}">Maak nieuwsbericht</a>
                 </div>
             </div>
         </div>
@@ -45,7 +45,7 @@
                         {{ date("d-m-Y", strtotime($item->aangemaakt)) }}
                     </td>
                     <td>
-                        <a class="btn btn-primary" href="{{ route('news.edit', $item->id) }}">Bewerk</a>
+                        <a data-toggle="tooltip" title="Bewerk nieuwsbericht" class="btn btn-primary" href="{{ route('news.edit', $item->id) }}">Bewerk</a>
                         {!! Form::open(['method' => 'DELETE','route' => ['news.destroy', $item->id],'style'=>'display:inline']) !!}
                         {!! Form::submit('Verwijder', ['class' => 'btn btn-danger']) !!}
                         {!! Form::close() !!}

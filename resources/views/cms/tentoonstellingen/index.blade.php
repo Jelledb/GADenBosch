@@ -11,7 +11,7 @@
         </div>
         <div class="col-md-5 newbutton">
             <div class="row">
-                <a href="{{ url('cms/nieuwtentoonstelling') }}"><input type="submit" value="Nieuwe tentoonstelling"  name="submit"></a>
+                <a data-toggle="tooltip" title="Maak nieuwe tentoonstelling aan" href="{{ url('cms/nieuwtentoonstelling') }}"><input type="submit" value="Nieuwe tentoonstelling"  name="submit"></a>
             </div>
         </div>
     </div>
@@ -57,8 +57,8 @@
                         </td>
                         <td>{!! $expos->title !!}</td>
                         <td>
-                            <a href="bewerktentoonstelling/{{$expos->id}}"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-                            <a href="{{route('deletetentoonstelling', $expos->id)}}"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                            <a data-toggle="tooltip" title="Pas tentoonstelling aan" href="bewerktentoonstelling/{{$expos->id}}"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                            <a data-toggle="tooltip" title="Verwijder tentoonstelling" href="{{route('deletetentoonstelling', $expos->id)}}"><i class="fa fa-trash" aria-hidden="true"></i></a>
                         </td>
                     </tr>
                 @endforeach
