@@ -26,7 +26,6 @@ class OrderController extends Controller
                 ->where('isorder', 1)
                 ->where('users_id', $orderUser->users_id)
                 ->first();
-            dd($orderUsers);
             $info = ProductUsersInfo::where('id', $infoId->info_id)->first();
 
             $userProductIds = DB::table('product_users')
