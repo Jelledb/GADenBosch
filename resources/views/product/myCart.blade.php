@@ -83,12 +83,67 @@
 
 
                     </div>
-                    <br>
-                    <div class="purchase">
-                        <a href="{{route('product.purchase')}}"
-                           class="btn-success btn-lg" role="button">koop</a>
+
+                    <div class="order-information">
+                        <h4>Bestelinformatie</h4>
+                        {!! Form::open(array('route' => 'product.purchase','method'=>'POST', 'files' => true)) !!}
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <div class="form-group">
+                                    <strong>Voornaam:</strong>
+                                    {!! Form::text('first_name', null, array('class' => 'form-control')) !!}
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <div class="form-group">
+                                    <strong>Achternaam:</strong>
+                                    {!! Form::text('last_name', null, array('class' => 'form-control')) !!}
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <div class="form-group">
+                                    <strong>E-mail:</strong>
+                                    {!! Form::text('email', null, array('class' => 'form-control')) !!}
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <div class="form-group">
+                                    <strong>Telefoonnummer:</strong>
+                                    {!! Form::text('phone_number', null, array('class' => 'form-control')) !!}
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <div class="form-group">
+                                    <strong>Postcode:</strong>
+                                    {!! Form::text('zip_code', null, array('class' => 'form-control')) !!}
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <div class="form-group">
+                                    <strong>Straatnaam:</strong>
+                                    {!! Form::text('street', null, array('class' => 'form-control')) !!}
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <div class="form-group">
+                                    <strong>Huisnummer:</strong>
+                                    {!! Form::text('house_number', null, array('class' => 'form-control')) !!}
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <div class="form-group">
+                                    <strong>Plaatsnaam:</strong>
+                                    {!! Form::text('city', null, array('class' => 'form-control')) !!}
+                                </div>
+
+                                <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                                    <button type="submit" class="btn btn-primary">Bestel</button>
+                                </div>
+                            </div>
+                            {!! Form::close() !!}
+                        </div>
                     </div>
-                    <br>
+                </div>
 
                 </div>
             </div>
